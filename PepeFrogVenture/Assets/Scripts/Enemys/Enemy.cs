@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
     protected StateMachine statemachine;
     public State[] states;
-
+    
     public float speed = 2;
+    private int currentPatrolPoint = 0;
     private CapsuleCollider Collider;
     [SerializeField] LayerMask CollisionMask;
     public PlayerKontroller3D player;
-    public List<Vector3> patrolPoints;
+    public Vector3[] patrolPoints;
     [SerializeField]private GameController controller;
     [SerializeField] private float damage = 2;
     private void Awake()
@@ -30,6 +31,14 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         statemachine.Run();
+    }
+    public int getCurrentPatrolPoint()
+    {
+        return currentPatrolPoint;
+    }
+    public void setPatrolPoint(int point)
+    {
+        currentPatrolPoint = point;
     }
     public float getDamage()
     {
