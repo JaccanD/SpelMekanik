@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Callback;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,14 +17,17 @@ public class Enemy : MonoBehaviour
     public List<Vector3> patrolPoints;
     [SerializeField]private GameController controller;
     [SerializeField] private float damage = 2;
+    [SerializeField] private float Health = 4;
     private void Awake()
     {
+        EventSystem.Current.RegisterListener<EnemyHitEvent>(OnHit);
         Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
         //lär mig navmesh när jag har tid
     }
     private void Start()
     {
+
         statemachine = new StateMachine(this, states);
     }
 
@@ -60,10 +64,22 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Kör Defeated");
         statemachine.TransitionTo<EnemyDefeatedState>();
+        EventSystem.Current.UnRegisterListener<EnemyHitEvent>(OnHit);
     }
     public GameController getGamecontroller()
     {
         return controller;
+    }
+    public void OnHit(EnemyHitEvent e)
+    {
+        if (e.EnemyHit != gameObject)
+            return;
+        Health -= e.Damage;
+        if(Health <= 0)
+        {
+
+            Defeated();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
