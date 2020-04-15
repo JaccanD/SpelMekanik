@@ -20,7 +20,7 @@ public abstract class PlayerBaseState : State
     protected GameController Controller { get { return Player.GetGameController(); } }
     protected GameObject Fireball { get { return Player.GetFireball(); } }
     protected LayerMask TalkMask {  get { return Player.GetTalkMask(); } }
-    protected float Gravity = 9.82f;
+    [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
 

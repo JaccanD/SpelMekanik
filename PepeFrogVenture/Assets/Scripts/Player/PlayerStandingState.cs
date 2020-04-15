@@ -33,5 +33,14 @@ public class PlayerStandingState : PlayerBaseState
         {
             ToungeFlick();
         }
+        Deccelerate();
+
+        MovePlayer();
+    }
+    private void Deccelerate()
+    {
+        Velocity *= 0.9f;
+        if (Velocity.magnitude < 0.1f)
+            Velocity = Vector3.zero;
     }
 }

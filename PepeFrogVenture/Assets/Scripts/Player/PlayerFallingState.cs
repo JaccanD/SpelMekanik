@@ -7,6 +7,7 @@ public class PlayerFallingState : PlayerBaseState
 {
     [SerializeField] private float Acceleration;
     [SerializeField] private float AirResistance;
+    [SerializeField] private float FallingGravity;
     public override void Enter()
     {
 
@@ -28,7 +29,7 @@ public class PlayerFallingState : PlayerBaseState
             ToungeFlick();
         }
 
-        Velocity += Gravity * Vector3.down * Time.deltaTime;
+        Velocity += FallingGravity * Vector3.down * Time.deltaTime;
         Velocity += Direction * Acceleration * Time.deltaTime;
         ApplyAirResistance(AirResistance);
 
