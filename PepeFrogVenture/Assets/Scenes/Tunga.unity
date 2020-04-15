@@ -585,7 +585,7 @@ MonoBehaviour:
   GroundCheckDistance: 0.2
   HookMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
   ToungeLength: 10
   PickUpMask:
     serializedVersion: 2
@@ -595,7 +595,7 @@ MonoBehaviour:
     type: 3}
   TalkMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 4096
 --- !u!136 &136581517
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 148709534}
   - component: {fileID: 148709533}
   - component: {fileID: 148709532}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 313988907}
   - component: {fileID: 313988906}
   - component: {fileID: 313988905}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 358727142}
   - component: {fileID: 358727141}
   - component: {fileID: 358727140}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 1160280976}
   - component: {fileID: 1160280975}
   - component: {fileID: 1160280974}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,6 +2214,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f7882e905e103a48bc3fff03bb93216, type: 3}
+--- !u!1 &1406314610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406314612}
+  - component: {fileID: 1406314611}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1406314611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406314610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfb284b41d9c8a4485b34d9e2c6f045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1406314612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406314610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.2362385, y: 13.985993, z: 6.3164196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441324429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,7 +2515,7 @@ GameObject:
   - component: {fileID: 1906262186}
   - component: {fileID: 1906262185}
   - component: {fileID: 1906262184}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
