@@ -17,7 +17,7 @@ public class FireFlySpawner : MonoBehaviour
     {
         if (CurrentNumberOfFireFlies < MaxNumberOfFireFlies && TimeSinceLastSpawn >= SpawnDelay)
         {
-            Vector3 position = new Vector3(1, 0, 1);
+            Vector3 position = new Vector3(1, 1, 1);
             Vector2 randomPos = Random.insideUnitCircle;
             position.x *= randomPos.x * Radius;
             position.z *= randomPos.y * Radius;
