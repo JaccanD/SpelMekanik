@@ -22,7 +22,6 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] private float MouseSensitivity = 1;
     [SerializeField] private float MinRotationX = -60;
     [SerializeField] private float MaxRotationX = 60;
-    [SerializeField] private float MaxVelocity = 5f;
     [SerializeField] private GameObject Camera;
     [SerializeField] Vector3 CameraDistance;
     [SerializeField] private float GroundCheckDistance;
@@ -36,10 +35,6 @@ public class PlayerKontroller3D : MonoBehaviour
 
     private Vector3 Direction = Vector3.zero;
 
-    public float getMaxVelocity()
-    {
-        return MaxVelocity;
-    }
     public Vector3 GetVelocity()
     {
         return Velocity;
