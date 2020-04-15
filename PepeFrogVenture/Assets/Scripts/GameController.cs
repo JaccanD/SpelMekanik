@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     public void Awake()
     {
         EventSystem.Current.RegisterListener<PlayerHitEvent>(TakeDamage);
-        
+        EventSystem.Current.RegisterListener<RespawnPointReachedEvent>(SetRespawnPoint);
 
     }
     public void AddHealth(float healthIncrease)
@@ -50,4 +50,8 @@ public class GameController : MonoBehaviour
         PlayerDeathEvent e = new PlayerDeathEvent(Player);
         EventSystem.Current.FireEvent(e);
      }
+    public void SetRespawnPoint(RespawnPointReachedEvent e)
+    {
+        CurrentRespawnPoint = e.RespawnPoint;
+    }
 }
