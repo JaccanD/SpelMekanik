@@ -8,7 +8,6 @@ public class PlayerMovingState : PlayerBaseState
     [SerializeField] private float Acceleration = 4.0f;
     public override void Enter()
     {
-        Debug.Log("Entered MovingState");
     }
     public override void Run()
     {

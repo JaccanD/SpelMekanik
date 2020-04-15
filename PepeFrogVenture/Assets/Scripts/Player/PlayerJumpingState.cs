@@ -10,7 +10,6 @@ public class PlayerJumpingState : PlayerBaseState
     [SerializeField] private float AirResistance;
     public override void Enter()
     {
-        Debug.Log("Entered JumpingState");
         Velocity += JumpForce * Vector3.up;
     }
     public override void Run()

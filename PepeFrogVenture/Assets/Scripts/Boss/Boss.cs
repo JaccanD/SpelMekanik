@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class Boss : Enemy
 {
@@ -10,6 +11,10 @@ public class Boss : Enemy
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
 
+    private void Awake()
+    {
+           
+    }
     private void SinkAPad(Lilypads pad)
     {
         pad.setIsSInking(true);
@@ -35,5 +40,12 @@ public class Boss : Enemy
         if(health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    
+    public void OnHit(EnemyHitEvent e)
+    {
+        Debug.Log("BossDamageTaken");
+        health -= e.Damage;
+        Debug.Log(health);
+        if (health <= 0)
+            statemachine.TransitionTo<BossDefeatedState>();
+    }
 }

@@ -12,9 +12,11 @@ public class GameController : MonoBehaviour
 
     public bool fire = false;
 
-    public void Start()
+    public void Awake()
     {
         EventSystem.Current.RegisterListener<PlayerHitEvent>(TakeDamage);
+        
+
     }
     public void AddHealth(float healthIncrease)
     {

@@ -7,7 +7,6 @@ public class PlayerStandingState : PlayerBaseState
 {
     public override void Enter()
     {
-        Debug.Log("Entererd Standing State");
     }
     public override void Run()
     {

@@ -14,42 +14,6 @@ public class PlayerSwingState : PlayerBaseState
 
     public override void Run()
     {
-
-       /* if (Input.GetKey(KeyCode.Space))
-        {
-            Vector3 newVel = Velocity;
-            newVel.y = 0;
-            Velocity = newVel;
-            stateMachine.TransitionTo<PlayerJumpingState>();
-            return;
-        }
-        Velocity += Acceleration * Direction * Time.deltaTime;
-        Velocity += Gravity * Vector3.down * Time.deltaTime;
-
-        float centerForce = Velocity.magnitude * Velocity.magnitude / CurrentToungeLength;
-        Vector3 direction = (Hook.position - transform.position).normalized;
-
-        Velocity += centerForce * direction * Time.deltaTime;
-
-        Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
-        transform.position += nextMove;
-
-        if((Hook.position - transform.position).magnitude > CurrentToungeLength)
-        {
-            Vector3 dir = (Hook.position - transform.position).normalized;
-            float dist = (Hook.position - transform.position).magnitude - CurrentToungeLength;
-            transform.position += dir * dist;
-        }
-
-        Destroy(Tounge);
-        drawTounge();
-
-        if (!Input.GetKey(KeyCode.R))
-        {
-            stateMachine.TransitionTo<PlayerFallingState>();
-            return;
-        }
-        */
     }
     public override void Enter()
     {

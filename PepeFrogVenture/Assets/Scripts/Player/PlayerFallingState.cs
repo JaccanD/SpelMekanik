@@ -9,7 +9,7 @@ public class PlayerFallingState : PlayerBaseState
     [SerializeField] private float AirResistance;
     public override void Enter()
     {
-        Debug.Log("Entered FallingState");
+
     }
     public override void Run()
     {
