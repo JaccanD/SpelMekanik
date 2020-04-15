@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovingState : PlayerBaseState
 {
     [SerializeField] private float Acceleration = 4.0f;
+    [SerializeField] private float MaxSpeed = 5f;
     public override void Enter()
     {
     }
@@ -32,6 +33,11 @@ public class PlayerMovingState : PlayerBaseState
         }
         Velocity += Direction * Acceleration * Time.deltaTime;
         Velocity += Gravity * Vector3.down * Time.deltaTime;
+
+        if(Velocity.magnitude > MaxSpeed)
+        {
+            Velocity = Velocity.normalized * MaxSpeed;
+        }
 
         MovePlayer();
 

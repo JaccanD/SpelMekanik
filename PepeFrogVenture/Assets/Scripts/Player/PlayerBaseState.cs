@@ -20,18 +20,12 @@ public abstract class PlayerBaseState : State
     protected GameController Controller { get { return Player.GetGameController(); } }
     protected GameObject Fireball { get { return Player.GetFireball(); } }
     protected LayerMask TalkMask {  get { return Player.GetTalkMask(); } }
-    protected float maxVelocity { get { return Player.getMaxVelocity(); } }
     [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
 
     protected void MovePlayer()
     {
-        if(Velocity.magnitude > maxVelocity)
-        {
-            Debug.Log("Maxspeed hit");
-            Velocity = Velocity.normalized * maxVelocity;
-        }
         Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
         transform.position += nextMove;
     }
