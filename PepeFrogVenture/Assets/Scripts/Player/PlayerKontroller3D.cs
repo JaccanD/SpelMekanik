@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 /*
  * ******************************
  * -----> 3D Kontroller <--------
@@ -110,8 +111,8 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
-        Controller.TakeDamage(2);
-        Debug.Log(Controller.Health);
+
+        EventSystem.Current.RegisterListener<PlayerDeathEvent>(Die);
     }
     void Update()
     {
@@ -165,7 +166,7 @@ public class PlayerKontroller3D : MonoBehaviour
         }
         Camera.transform.position = newPosition;
     }
-    public void Die()
+    public void Die(PlayerDeathEvent e)
     {
         stateMachine.TransitionTo<PlayerDeadState>();
     }

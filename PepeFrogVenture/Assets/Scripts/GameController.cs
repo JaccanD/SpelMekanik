@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class GameController : MonoBehaviour
 {
@@ -11,13 +12,17 @@ public class GameController : MonoBehaviour
 
     public bool fire = false;
 
+    public void Start()
+    {
+        EventSystem.Current.RegisterListener<PlayerHitEvent>(TakeDamage);
+    }
     public void AddHealth(float healthIncrease)
     {
         Health += healthIncrease;
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(PlayerHitEvent e)
     {
-        Health -= damage;
+        Health -= e.Damage;
         Debug.Log(Health);
         if (Health <= 0)
             PlayerDead();
@@ -40,6 +45,7 @@ public class GameController : MonoBehaviour
     }
     private void PlayerDead()
     {
-        Player.GetComponent<PlayerKontroller3D>().Die();
+        PlayerDeathEvent e = new PlayerDeathEvent(Player);
+        EventSystem.Current.FireEvent(e);
      }
 }

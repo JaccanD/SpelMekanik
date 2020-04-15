@@ -6,5 +6,6 @@ namespace Callback
     public class EnemyHitEvent : MonoBehaviour
     {
         public GameObject EnemyHit;
+
     }
 }

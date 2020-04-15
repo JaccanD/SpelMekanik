@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "EnemyState/AttackState")]
 public class EnemyAttackState : EnemyBaseState
@@ -31,7 +32,7 @@ public class EnemyAttackState : EnemyBaseState
         if (currentCool > 0)
             return;
 
-        Enemy.player.GetComponent<PlayerKontroller3D>().GetGameController().TakeDamage(damage);
+        EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
         currentCool = cooldown;
     }
 }

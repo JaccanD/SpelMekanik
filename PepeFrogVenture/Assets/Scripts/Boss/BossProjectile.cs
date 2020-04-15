@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class BossProjectile : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class BossProjectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerKontroller3D>().GetGameController().TakeDamage(damage);
+            EventSystem.Current.FireEvent(new PlayerHitEvent(collision.gameObject, damage));
+            //collision.gameObject.GetComponent<PlayerKontroller3D>().GetGameController().TakeDamage(damage);
             Debug.Log("player toke damage");
         }
         //gör skit, explosion, skada etc...
