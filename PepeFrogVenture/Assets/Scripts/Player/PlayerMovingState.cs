@@ -25,16 +25,17 @@ public class PlayerMovingState : PlayerBaseState
         {
             Talk();
         }
+        if (Direction.magnitude == 0)
+        {
+            stateMachine.TransitionTo<PlayerStandingState>();
+            return;
+        }
         Velocity += Direction * Acceleration * Time.deltaTime;
         Velocity += Gravity * Vector3.down * Time.deltaTime;
 
         MovePlayer();
 
-        if (Player.GetVelocity().magnitude == 0)
-        {
-            stateMachine.TransitionTo<PlayerStandingState>();
-            return;
-        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             ToungeFlick();

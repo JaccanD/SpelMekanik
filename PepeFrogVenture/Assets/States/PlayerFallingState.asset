@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f2c5b6802386a4ebc73e1e9023cfe9, type: 3}
   m_Name: PlayerFallingState
   m_EditorClassIdentifier: 
-  StaticFriktionKoeficcent: 0.8
-  DynamicFriktionKoeficcent: 0.6
+  Gravity: 0
+  StaticFriktionKoeficcent: 0.5
+  DynamicFriktionKoeficcent: 0.3
   Acceleration: 2
   AirResistance: 0.5
+  FallingGravity: 16

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a7d713ea5f6c049a5590bebbe95963, type: 3}
   m_Name: PlayerJumpingState
   m_EditorClassIdentifier: 
-  StaticFriktionKoeficcent: 0.8
-  DynamicFriktionKoeficcent: 0.6
-  JumpForce: 10
+  Gravity: 12
+  StaticFriktionKoeficcent: 0.5
+  DynamicFriktionKoeficcent: 0.3
+  JumpForce: 9
   Acceleration: 2
   AirResistance: 0.5

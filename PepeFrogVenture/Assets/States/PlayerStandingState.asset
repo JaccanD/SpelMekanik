@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9556599d192b8db4aa8877bbcaf6fe65, type: 3}
   m_Name: PlayerStandingState
   m_EditorClassIdentifier: 
-  StaticFriktionKoeficcent: 0.8
-  DynamicFriktionKoeficcent: 0.6
+  Gravity: 9.82
+  StaticFriktionKoeficcent: 0.5
+  DynamicFriktionKoeficcent: 0.3
