@@ -5,11 +5,15 @@ using Callback;
 
 public class RespawnPoint : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    public void Update()
     {
-        if(collision.gameObject.tag == "Player")
+        bool hit = Physics.BoxCast(transform.position, transform.localScale, Vector3.up, out RaycastHit cast, transform.rotation, 1);
+        if (hit)
         {
-            EventSystem.Current.FireEvent(new RespawnPointReachedEvent(gameObject));
+            if(cast.transform.gameObject.tag == "Player")
+            {
+                EventSystem.Current.FireEvent(new RespawnPointReachedEvent(gameObject));
+            }
         }
     }
 }
