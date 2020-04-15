@@ -144,29 +144,6 @@ public class PlayerKontroller3D : MonoBehaviour
             GameObject fireball = Instantiate(Fireball, topPoint, Camera.transform.rotation);
             Controller.fire = false;
         }
-
-      /*  if (Input.GetKeyDown(KeyCode.R))
-        {
-            bool hookHit = Physics.SphereCast(transform.position, 0.3f, Camera.transform.rotation * new Vector3(0,0,1), out RaycastHit HookCast, 20.0f, HookMask);
-            if (hookHit)
-            {
-                GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                Debug.DrawRay(transform.position, Camera.transform.rotation * new Vector3(0, 0, 1) * 10, Color.red, 5);
-                Vector3 start = transform.position;
-                Vector3 end = HookCast.transform.position;
-                Vector3 toungePos = (start + end) / 2.0f;
-
-                Vector3 toungeDirection = (end - start).normalized;
-                Vector3 rotation = toungeDirection + Vector3.up;
-                rotation = rotation.normalized;
-
-                Quaternion rotate = new Quaternion(rotation.x, rotation.y, rotation.z, 0);
-
-                cylinder.transform.position = toungePos;
-                cylinder.transform.rotation = rotate;
-                cylinder.transform.localScale = new Vector3(0.3f, (end - start).magnitude / 2, 0.3f);
-            }
-        }*/
         //Flyttar kameran
         MoveCamera();
 
