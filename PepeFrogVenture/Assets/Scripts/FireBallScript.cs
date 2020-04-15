@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class FireBallScript : MonoBehaviour
 {
     [SerializeField] private float speed = 6;
     [SerializeField] private float Gravity = 6;
     [SerializeField] private LayerMask HitMask;
-    [SerializeField] private float bossDamage = 20;
+    [SerializeField] private float Damage = 20;
     private Vector3 Velocity = Vector3.zero;
     private SphereCollider Coll;
 
@@ -23,15 +24,14 @@ public class FireBallScript : MonoBehaviour
         {
             if(CollCast.transform.gameObject.tag == "Enemy")
             {
-                CollCast.transform.gameObject.GetComponent<Enemy>().Defeated();
-                Debug.Log("Träffar  Fiende");
+                EventSystem.Current.FireEvent(new EnemyHitEvent(CollCast.transform.gameObject, Damage));
             }else if(CollCast.transform.gameObject.tag == "Boss")
             {
-                CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(bossDamage);
+                CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(Damage);
                 Debug.Log("boss hit");
             }
 
-            Destroy(transform.gameObject);
+            Destroy(gameObject);
         }
     }
     private void Awake()
