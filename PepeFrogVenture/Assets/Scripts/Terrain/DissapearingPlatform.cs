@@ -6,8 +6,14 @@ public class DissapearingPlatform : MonoBehaviour
 {
     [SerializeField] BoxCollider coll;
     [SerializeField] Material color;
+    [SerializeField] float DissapearDelay;
+    [SerializeField] float ReapearDelay;
 
     private Material StartingMaterial;
+    private void Awake()
+    {
+        StartingMaterial = GetComponent<MeshRenderer>().material;
+    }
     void Update()
     {
         Collider[] overLaps = Physics.OverlapBox(transform.position + coll.center, coll.bounds.extents, transform.rotation);
@@ -15,9 +21,8 @@ public class DissapearingPlatform : MonoBehaviour
         {
             if (overLaps[i].transform.gameObject.tag == "Player")
             {
-                StartingMaterial = GetComponent<MeshRenderer>().material;
                 GetComponent<MeshRenderer>().material = color;
-                Invoke("Dissapear", 3);
+                Invoke("Dissapear", DissapearDelay);
                 coll.enabled = false;
                 break;
             }
@@ -26,13 +31,17 @@ public class DissapearingPlatform : MonoBehaviour
 
     void Reapear()
     {
-        transform.position += Vector3.up * 100;
+        //transform.position += Vector3.up * 100;
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
         coll.enabled = true;
         GetComponent<MeshRenderer>().material = StartingMaterial;
     }
     void Dissapear()
     {
-        transform.position += Vector3.down * 100;
-        Invoke("Reapear", 6);
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        //transform.position += Vector3.down * 100;
+        Invoke("Reapear", ReapearDelay);
     }
 }
