@@ -10,6 +10,7 @@ public class PlayerDeadState : PlayerBaseState
     public override void Enter()
     {
         RespawnPoint = Controller.CurrentRespawnPoint;
+        Velocity = Vector3.zero;
     }
     public override void Run()
     {
