@@ -111,7 +111,7 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
-
+        Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener<PlayerDeathEvent>(Die);
     }
     void Update()
