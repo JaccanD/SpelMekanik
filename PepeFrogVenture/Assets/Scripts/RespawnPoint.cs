@@ -5,14 +5,21 @@ using Callback;
 
 public class RespawnPoint : MonoBehaviour
 {
+    BoxCollider coll;
+    public void Awake()
+    {
+        coll = GetComponent<BoxCollider>();
+    }
     public void Update()
     {
-        bool hit = Physics.BoxCast(transform.position, transform.localScale, Vector3.up, out RaycastHit cast, transform.rotation, 1);
-        if (hit)
+
+        Collider[] overLaps = Physics.OverlapBox(transform.position + coll.center, coll.bounds.extents, transform.rotation);
+        for(int i = 0; i < overLaps.Length; i++)
         {
-            if(cast.transform.gameObject.tag == "Player")
+            if(overLaps[i].transform.gameObject.tag == "Player")
             {
                 EventSystem.Current.FireEvent(new RespawnPointReachedEvent(gameObject));
+                break;
             }
         }
     }
