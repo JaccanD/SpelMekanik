@@ -6,7 +6,7 @@ using UnityEngine;
 public class BossEmergingState : BossBaseState
 {
     private DestroyableLilypad chosenLilypad;
-    private float depthOffset = 4f;
+    [SerializeField] private float depthOffset = 4f;
     [SerializeField] private float emergingSpeed = 1.5f;
     [SerializeField] private float fullyEmergedThreshold = 1f;
 
