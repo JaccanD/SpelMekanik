@@ -5,34 +5,45 @@ using UnityEngine;
 public class DestroyableLilypad : MonoBehaviour
 {
     new private BoxCollider collider;
-    [SerializeField] private bool IsSinking = false;
+    //[SerializeField] private bool IsSinking = false;
+    [SerializeField] private float destructionTimer = 1.5f;
     //private float sinkingSpeed = 1.5f;
     // Start is called before the first frame update
 
-    public bool getIsSinking()
-    {
-        return IsSinking;
-    }
-    public void setIsSInking(bool value)
-    {
-        IsSinking = value;
-    }
+    //public bool getIsSinking()
+    //{
+    //    return IsSinking;
+    //}
+    //public void setIsSInking(bool value)
+    //{
+    //    IsSinking = value;
+    //}
 
     private void Awake()
     {
         collider = GetComponent<BoxCollider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    if (IsSinking)
+    //    {
+    //        DestroyLilypad();
+    //    }
+    //}
+    public void BossTarget()
     {
-        if (IsSinking)
-        {
-            DestroyLilypad();
-        }
+        gameObject.GetComponentInChildren<Renderer>().material.color = Color.black;
+        StartCoroutine(waitForDestruction());
     }
 
-    public void DestroyLilypad()
+    IEnumerator waitForDestruction()
+    {
+        yield return new WaitForSeconds(destructionTimer);
+        DestroyLilypad();
+    }
+
+    private void DestroyLilypad()
     {
         Destroy(gameObject);
     }
