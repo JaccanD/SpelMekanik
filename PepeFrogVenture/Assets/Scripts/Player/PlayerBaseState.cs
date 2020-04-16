@@ -96,8 +96,8 @@ public abstract class PlayerBaseState : State
     }
     protected void ToungeFlick()
     {
-        bool hookHit = Physics.SphereCast(transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength, HookMask);
-        bool pickUpHit = Physics.SphereCast(transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit PickUpCast, ToungeLength, PickUpMask);
+        bool hookHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength, HookMask);
+        bool pickUpHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit PickUpCast, ToungeLength, PickUpMask);
         if (hookHit)
         {
             Player.SetHook(HookCast.transform);

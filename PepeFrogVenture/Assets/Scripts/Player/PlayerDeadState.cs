@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PlayerState/DeadState")]
 public class PlayerDeadState : PlayerBaseState
 {
-    [SerializeField] private GameObject RespawnPoint;
+    private GameObject RespawnPoint;
 
     public override void Enter()
     {
