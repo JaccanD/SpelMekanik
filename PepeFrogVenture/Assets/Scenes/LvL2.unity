@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &17163534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &76479439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &97467263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &130743349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &139919576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &171755960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &217859696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &239342391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &435375393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &547054352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1806,7 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &593143924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &642867883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &821785214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &914269443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1000091531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2617,7 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1025016618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2960,6 +2960,9 @@ MonoBehaviour:
   CollisionMask:
     serializedVersion: 2
     m_Bits: 256
+  CameraMask:
+    serializedVersion: 2
+    m_Bits: 0
   MouseSensitivity: 1
   MinRotationX: -60
   MaxRotationX: 60
@@ -3047,7 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1159284019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3173,7 +3176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1192548778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3205,7 +3208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1238666664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3310,7 +3313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1284581574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3984,7 +3987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1659890380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4122,7 +4125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1675251543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4154,7 +4157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1694735486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4286,7 +4289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1753979106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4552,7 +4555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1807909275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4584,7 +4587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1809399803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4616,7 +4619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1856152383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4648,7 +4651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1862961008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5089,7 +5092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1955834789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5215,7 +5218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!65 &1962696248
 BoxCollider:
   m_ObjectHideFlags: 0
