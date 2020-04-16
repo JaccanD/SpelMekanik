@@ -127,6 +127,11 @@ public class PlayerKontroller3D : MonoBehaviour
         RotationY += mouse.x * MouseSensitivity;
         RotationX = Mathf.Clamp(RotationX, MinRotationX, MaxRotationX);
         Camera.transform.rotation = Quaternion.Euler(RotationX, RotationY, 0.0f);
+
+        // Ta bort när vi ska animera!
+        transform.rotation = Quaternion.Euler(0.0f, RotationY, 0.0f);
+
+  
         //Sätt rörelseriktningen mot hållet kameran tittar
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         
