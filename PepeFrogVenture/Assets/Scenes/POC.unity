@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &232800519
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &394027426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1001 &693120147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &906974669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &966974780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &1010346675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1001 &1052141790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2959,7 +2959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &1502796391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,7 +3066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1001 &1513547463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3335,7 +3335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &1641692466
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,7 +3442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &1649224140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,6 +3571,7 @@ MonoBehaviour:
   - {x: 10, y: -1.2, z: -25}
   controller: {fileID: 0}
   damage: 2
+  Health: 4
 --- !u!65 &1649224146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3728,7 +3729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1001 &1731752119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3921,6 +3922,7 @@ MonoBehaviour:
   patrolPoints: []
   controller: {fileID: 0}
   damage: 2
+  Health: 4
   lilypads:
   - {fileID: 966974785}
   - {fileID: 361768098}
@@ -4114,7 +4116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!4 &2006629660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4152157604096110613, guid: e053b8939ef04bd4d884fd1ddad31945,
@@ -4227,7 +4229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fd064fedede0c4da27d139de4a6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSinking: 0
+  destructionTimer: 1.5
 --- !u!1 &2045980855
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,6 +4273,9 @@ MonoBehaviour:
   CollisionMask:
     serializedVersion: 2
     m_Bits: 256
+  CameraMask:
+    serializedVersion: 2
+    m_Bits: 16640
   MouseSensitivity: 1
   MinRotationX: -60
   MaxRotationX: 60

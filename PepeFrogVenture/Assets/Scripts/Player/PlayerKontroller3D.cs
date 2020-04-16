@@ -16,7 +16,7 @@ public class PlayerKontroller3D : MonoBehaviour
     private CapsuleCollider Coll;
     [SerializeField] private float SkinWidth = 0.1f;
     [SerializeField] LayerMask CollisionMask;
-    
+    [SerializeField] LayerMask CameraMask;
     private float RotationX = 0;
     private float RotationY = 0;
     [SerializeField] private float MouseSensitivity = 1;
@@ -164,7 +164,7 @@ public class PlayerKontroller3D : MonoBehaviour
         Vector3 newPosition = Camera.transform.rotation * CameraDistance + transform.position;
         Vector3 castVector = newPosition - transform.position;
         RaycastHit cast;
-        bool hit = Physics.SphereCast(transform.position, Camera.GetComponent<SphereCollider>().radius, castVector.normalized, out cast, castVector.magnitude, CollisionMask);
+        bool hit = Physics.SphereCast(transform.position, Camera.GetComponent<SphereCollider>().radius, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
         if (hit)
         {
             newPosition = castVector.normalized * cast.distance + transform.position;
