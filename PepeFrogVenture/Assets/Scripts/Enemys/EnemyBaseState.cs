@@ -10,6 +10,7 @@ public class EnemyBaseState : State
     protected LayerMask CollisionMask { get { return Enemy.GetCollisionMask(); } }
     protected CapsuleCollider Collider { get { return Enemy.GetCollider(); } }
     protected float damage { get { return Enemy.getDamage(); } }
+    protected Vector3[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
     
 
     public override void Enter()

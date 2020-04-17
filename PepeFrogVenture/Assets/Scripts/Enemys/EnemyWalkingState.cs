@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "EnemyState/WalkingState")]
 public class EnemyWalkingState : EnemyBaseState
 {
-    [SerializeField] private Vector3[] patrolPoints;
+    //[SerializeField] private Vector3[] patrolPoints;
     [SerializeField] private float spotPlayerDistance;
     private int currentPatrolPoint = 0;
 

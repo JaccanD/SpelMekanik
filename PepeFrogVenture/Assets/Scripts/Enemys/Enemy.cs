@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     private CapsuleCollider Collider;
     [SerializeField] LayerMask CollisionMask;
     public PlayerKontroller3D player;
-    public List<Vector3> patrolPoints;
-    [SerializeField]private GameController controller;
+    [SerializeField] private Vector3[] patrolPoints;
+    [SerializeField] private GameController controller;
     [SerializeField] private float damage = 2;
     [SerializeField] private float Health = 4;
     private void Awake()
@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         statemachine.Run();
+    }
+    public Vector3[] getPatrolPoints()
+    {
+        return patrolPoints;
     }
     public float getDamage()
     {

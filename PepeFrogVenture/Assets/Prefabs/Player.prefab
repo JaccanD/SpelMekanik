@@ -215,7 +215,10 @@ MonoBehaviour:
   SkinWidth: 0.1
   CollisionMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
+  CameraMask:
+    serializedVersion: 2
+    m_Bits: 0
   MouseSensitivity: 1
   MinRotationX: -60
   MaxRotationX: 60
