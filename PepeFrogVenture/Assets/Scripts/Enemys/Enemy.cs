@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
         EventSystem.Current.RegisterListener<EnemyHitEvent>(OnHit);
         Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
-        //lär mig navmesh när jag har tid
     }
     private void Start()
     {

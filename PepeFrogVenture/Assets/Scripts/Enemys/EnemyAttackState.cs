@@ -7,12 +7,13 @@ using Callback;
 public class EnemyAttackState : EnemyBaseState
 {
     [SerializeField] private float chaseDistance;
-    [SerializeField] private float cooldown;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float startAttackCooldown;
     private float currentCool;
 
     public override void Enter()
     {
-        currentCool = 0.4f;
+        currentCool = startAttackCooldown;
         Debug.Log("attackingstate");
         Enemy.agent.isStopped = true;
     }
@@ -35,6 +36,6 @@ public class EnemyAttackState : EnemyBaseState
             return;
 
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
-        currentCool = cooldown;
+        currentCool = attackCooldown;
     }
 }

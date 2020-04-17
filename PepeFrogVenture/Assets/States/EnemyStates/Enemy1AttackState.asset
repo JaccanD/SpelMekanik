@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Enemy1AttackState
   m_EditorClassIdentifier: 
   chaseDistance: 3
-  cooldown: 2
+  attackCooldown: 1.5
+  startAttackCooldown: 0.2

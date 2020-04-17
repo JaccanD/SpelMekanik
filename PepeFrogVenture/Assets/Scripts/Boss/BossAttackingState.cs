@@ -8,7 +8,7 @@ public class BossAttackingState : BossBaseState
     private GameObject projectile;
     [SerializeField] private float cooldown;
     private float currentCool;
-    private int shootsLeftBeforeSubmerge = 3;
+    [SerializeField] private int shootsLeftBeforeSubmerge = 3;
     
 
     public override void Run()

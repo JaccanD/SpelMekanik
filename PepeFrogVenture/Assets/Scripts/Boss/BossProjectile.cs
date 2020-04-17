@@ -6,8 +6,10 @@ using Callback;
 public class BossProjectile : MonoBehaviour
 {
     private float speed;
+    [SerializeField] private float projectileSpeed;
     public Vector3 target;
     private Vector3 start;
+    [SerializeField] private float projectileHeight;
     [SerializeField] private float damage = 4;
 
     private void Start()
@@ -38,6 +40,6 @@ public class BossProjectile : MonoBehaviour
 
         speed = speed % 5f;
 
-        transform.position = MathParabola.Parabola(start, target, 5f, speed / 5f);
+        transform.position = MathParabola.Parabola(start, target, projectileHeight, speed / projectileSpeed);
     }
 }

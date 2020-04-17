@@ -107,8 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5465b1bbb2f1d449089f7f73ec4f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: -45.949356, y: 0.6, z: 2.139754}
-  damage: 20
+  projectileSpeed: 2
+  target: {x: 35.227562, y: 15.349999, z: 29.652176}
+  projectileHeight: 1.04
+  damage: 5
 --- !u!54 &5745492617607404602
 Rigidbody:
   m_ObjectHideFlags: 0
