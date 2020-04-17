@@ -13,6 +13,8 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         currentCool = 0.4f;
+        Debug.Log("attackingstate");
+        Enemy.agent.isStopped = true;
     }
 
     public override void Run()

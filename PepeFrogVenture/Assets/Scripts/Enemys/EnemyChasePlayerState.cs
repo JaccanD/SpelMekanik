@@ -8,6 +8,11 @@ public class EnemyChasePlayerState : EnemyBaseState
     [SerializeField] private float attackDistance;
     [SerializeField] private float lostPlayerDistance;
 
+    public override void Enter()
+    {
+        Debug.Log("Chasestate");
+        Enemy.agent.isStopped = false;
+    }
 
     public override void Run()
     {

@@ -29,7 +29,7 @@ public class FireFlySpawner : MonoBehaviour
 
             CurrentNumberOfFireFlies++;
             TimeSinceLastSpawn = 0;
-            Debug.Log(CurrentNumberOfFireFlies);
+            //Debug.Log(CurrentNumberOfFireFlies);
         }
         TimeSinceLastSpawn += Time.deltaTime;
 
