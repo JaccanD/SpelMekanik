@@ -17,7 +17,6 @@ public class EnemyWalkingState : EnemyBaseState
     public override void Run()
     {
         Enemy.agent.SetDestination(patrolPoints[currentPatrolPoint]);
-        //Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, patrolPoints[currentPatrolPoint], speed * Time.deltaTime);
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         if (Vector3.Distance(Enemy.transform.position, patrolPoints[currentPatrolPoint]) < 1)

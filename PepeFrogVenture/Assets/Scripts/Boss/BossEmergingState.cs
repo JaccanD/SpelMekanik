@@ -14,7 +14,7 @@ public class BossEmergingState : BossBaseState
     {
         //chosenLilypad = Boss.lilypads[Random.Range(0, Boss.lilypads.Count)];
         LilyPadWithPlayer();
-        Boss.transform.position = chosenLilypad.transform.position + Vector3.down * depthOffset;
+        //Boss.transform.position = chosenLilypad.transform.position + Vector3.down * depthOffset;
         chosenLilypad.BossTarget();
         Boss.lilypads.Remove(chosenLilypad);
         
