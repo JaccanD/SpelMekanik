@@ -26,7 +26,7 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
 
-        Debug.Log("Boss attacking");
+        //Debug.Log("Boss attacking");
 
         //LaunchProjectile();
         GameObject projectile = Boss.getProjectile();
