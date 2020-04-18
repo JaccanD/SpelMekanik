@@ -31,7 +31,8 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] private GameController Controller;
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
-    private Transform Hook;
+    [SerializeField] GameObject ToungePrefab;
+    private Vector3 Hook;
 
     private Vector3 Direction = Vector3.zero;
 
@@ -69,12 +70,12 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         return Direction;
     }
-    public Transform GetHook()
+    public Vector3 GetHook()
     {
         return Hook;
 
     }
-    public void SetHook(Transform newHook)
+    public void SetHook(Vector3 newHook)
     {
         Hook = newHook;
     }
@@ -107,12 +108,17 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         return TalkMask;
     }
+    public GameObject GetToungePrefab()
+    {
+        return ToungePrefab;
+    }
     void Start()
     {
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener<PlayerDeathEvent>(Die);
+        EventSystem.Current.RegisterListener<HookHitEvent>(Pull);
     }
     void Update()
     {
@@ -175,5 +181,10 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         stateMachine.TransitionTo<PlayerDeadState>();
     }
-    
+    public void Pull(HookHitEvent e)
+    {
+        Hook = e.Point;
+        stateMachine.TransitionTo<PlayerSwingState>();
+    }
+
 }
