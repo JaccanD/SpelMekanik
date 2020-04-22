@@ -22,7 +22,7 @@ public class BossProjectile : MonoBehaviour
     {
         target = targetVector;
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -31,7 +31,6 @@ public class BossProjectile : MonoBehaviour
             //collision.gameObject.GetComponent<PlayerKontroller3D>().GetGameController().TakeDamage(damage);
             Debug.Log("player toke damage");
         }
-        //gör skit, explosion, skada etc...
         Destroy(gameObject);
     }
     void Update()
@@ -41,5 +40,14 @@ public class BossProjectile : MonoBehaviour
         speed = speed % 5f;
 
         transform.position = MathParabola.Parabola(start, target, projectileHeight, speed / projectileSpeed);
+        if(Vector3.Distance(transform.position,target) < 0.1f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Traveling()
+    {
+
     }
 }
