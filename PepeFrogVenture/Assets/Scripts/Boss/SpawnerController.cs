@@ -34,19 +34,26 @@ public class SpawnerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Timer < RespawnDelay)
             return;
-
-        foreach(GameObject s in Spawners)
+        int index = 0;
+        do
         {
-            if (!IsOccupied[s])
+            index = Random.Range(0, Spawners.Length);
+
+        } while (IsOccupied[Spawners[index]]);
+        GameObject spawnTarget = Spawners[index];
+            if (!IsOccupied[spawnTarget])
             {
-                GameObject newFlies = Instantiate(FireFlyPrefab, s.transform.position + Vector3.up * 2, transform.rotation);
-                newFlies.GetComponent<FireFlyOnDestroy>().Parent = s;
-                IsOccupied[s] = true;
+                Vector3 spawnPoint = spawnTarget.transform.position + Vector3.up * 2;
+                Vector3 offset = Random.insideUnitSphere;
+                offset.x *= 3;
+                offset.z *= 3;
+                spawnPoint += offset;
+                GameObject newFlies = Instantiate(FireFlyPrefab, spawnPoint, transform.rotation);
+                newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
+                IsOccupied[spawnTarget] = true;
                 CurrentChildren++;
                 Timer = 0;
-                break;
             }
-        }
     }
 
     public void OnEatEvent(FireFlyDeathEvent e)
