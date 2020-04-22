@@ -1639,6 +1639,7 @@ MonoBehaviour:
   Berries: 0
   CurrentRespawnPoint: {fileID: 2137942650}
   Player: {fileID: 1136351206}
+  Tounge: 1
   fire: 0
 --- !u!4 &531704903
 Transform:
@@ -3446,6 +3447,7 @@ MonoBehaviour:
   TalkMask:
     serializedVersion: 2
     m_Bits: 4096
+  ToungePrefab: {fileID: 0}
 --- !u!136 &1136351208
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5168,17 +5170,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.397842
+      value: 36.92
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.54381
+      value: 14.54
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.466385
+      value: 35.45
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}

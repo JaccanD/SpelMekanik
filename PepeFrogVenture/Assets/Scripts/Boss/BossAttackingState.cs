@@ -6,15 +6,17 @@ using UnityEngine;
 public class BossAttackingState : BossBaseState
 {
     private GameObject projectile;
-    [SerializeField] private float cooldown;
     private float currentCool;
+    [SerializeField] private float cooldown;
     [SerializeField] private int shootsLeftBeforeSubmerge = 3;
+    [SerializeField] private float rotationSpeed = 3;
     
 
     public override void Run()
     {
         float rotationSpeed = Boss.speed * Time.deltaTime;
-        Boss.transform.rotation = Quaternion.LookRotation(Boss.player.transform.position);
+        rotateTowardPlayer(Boss.player.transform.position);
+        //Boss.transform.rotation = Quaternion.LookRotation(Boss.player.transform.position);
         //Boss.transform.position = Vector3.RotateTowards(Boss.transform.position, Boss.player.transform.position, rotationSpeed,0);
         Attack();
     }
@@ -41,7 +43,11 @@ public class BossAttackingState : BossBaseState
         }
         currentCool = cooldown;
     }
-
+    protected void rotateTowardPlayer(Vector3 to)
+    {
+        Quaternion rotation = Quaternion.LookRotation((to - Boss.transform.position).normalized);
+        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    }
     //private void LaunchProjectile()
     //{
     //    Vector3 velocity = CalculateVelocity(Boss.player.transform.position, Boss.getShootPoint().transform.position, 1f);
