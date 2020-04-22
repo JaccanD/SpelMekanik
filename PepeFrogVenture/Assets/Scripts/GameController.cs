@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public int Berries = 0;
     public GameObject CurrentRespawnPoint;
     public GameObject Player;
+    public bool Tounge = true;
 
     public bool fire = false;
 
@@ -16,7 +17,14 @@ public class GameController : MonoBehaviour
     {
         EventSystem.Current.RegisterListener<PlayerHitEvent>(TakeDamage);
         EventSystem.Current.RegisterListener<RespawnPointReachedEvent>(SetRespawnPoint);
+        EventSystem.Current.RegisterListener<PickupEvent>(OnPickup);
+        EventSystem.Current.RegisterListener<ToungeFlickEvent>(OnFlick);
+        EventSystem.Current.RegisterListener<ToungeDoneEvent>(OnToungeDone);
 
+    }
+    public bool CheckTounge()
+    {
+        return Tounge;
     }
     public void AddHealth(float healthIncrease)
     {
@@ -53,5 +61,28 @@ public class GameController : MonoBehaviour
     public void SetRespawnPoint(RespawnPointReachedEvent e)
     {
         CurrentRespawnPoint = e.RespawnPoint;
+    }
+    public void OnPickup(PickupEvent e)
+    {
+        if (e.Pickup.tag == "Fire")
+        {
+            fire = true;
+        }
+        if (e.Pickup.tag == "Flies")
+        {
+            AddHealth(2);
+        }
+        if (e.Pickup.tag == "Berry")
+        {
+            AddBerry();
+        }
+    }
+    public void OnFlick(ToungeFlickEvent e)
+    {
+        Tounge = false;
+    }
+    public void OnToungeDone(ToungeDoneEvent e)
+    {
+        Tounge = true;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public abstract class PlayerBaseState : State
 {
@@ -20,6 +21,7 @@ public abstract class PlayerBaseState : State
     protected GameController Controller { get { return Player.GetGameController(); } }
     protected GameObject Fireball { get { return Player.GetFireball(); } }
     protected LayerMask TalkMask {  get { return Player.GetTalkMask(); } }
+    protected GameObject ToungePrefab { get { return Player.GetToungePrefab(); } }
     [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
@@ -96,31 +98,30 @@ public abstract class PlayerBaseState : State
     }
     protected void ToungeFlick()
     {
-        bool hookHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength, HookMask);
-        bool pickUpHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit PickUpCast, ToungeLength, PickUpMask);
-        if (hookHit)
+        if (!Controller.CheckTounge())
         {
-            Player.SetHook(HookCast.transform);
-            stateMachine.TransitionTo<PlayerSwingState>();
             return;
         }
-        if (pickUpHit)
+        //Skicka event att vi använder tungan.
+        //Spawna tungan i munnen
+        //Tungan sträcker ut sig tills den träffar något
+        Vector3 start = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
+        Vector3 forward = Camera.transform.rotation * Vector3.forward;
+        bool hookHit = Physics.SphereCast(Camera.transform.position + forward * 5, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength + 5, HookMask);
+        if (!hookHit)
         {
-            string tag = PickUpCast.transform.gameObject.tag;
-            if (tag == "Fire")
-            {
-                Controller.fire = true;
-            }
-            if (tag == "Flies")
-            {
-                Controller.AddHealth(2);
-            }
-            if (tag == "Berry")
-            {
-                Controller.AddBerry();
-            }
-            Destroy(PickUpCast.transform.gameObject);
+            return;
         }
+        EventSystem.Current.FireEvent(new ToungeFlickEvent());
+        Vector3 end = HookCast.point;
+        Vector3 toungeDirection = (end - start).normalized;
+        Vector3 rotation = toungeDirection + Vector3.up;
+        Quaternion rotate = new Quaternion(rotation.x, rotation.y, rotation.z, 0);
+        GameObject go = Instantiate(ToungePrefab, transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius), rotate);
+        go.GetComponent<Tounge>().SetPoint(end);
+
+
+
     }
     protected void Talk()
     {

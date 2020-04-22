@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PlayerState/SwingState")]
 public class PlayerSwingState : PlayerBaseState
 {
-    private Transform Hook { get { return Player.GetHook(); } }
+    private Vector3 Hook { get { return Player.GetHook(); } }
     private GameObject Tounge;
     private float CurrentToungeLength;
     [SerializeField] private float ToungeForce;
@@ -18,7 +18,7 @@ public class PlayerSwingState : PlayerBaseState
     public override void Enter()
     {
         drawTounge();
-        Vector3 dir = (Hook.position - transform.position).normalized;
+        Vector3 dir = (Hook - transform.position).normalized;
         Velocity += ToungeForce * dir;
 
         stateMachine.TransitionTo<PlayerJumpingState>();
@@ -31,7 +31,7 @@ public class PlayerSwingState : PlayerBaseState
     {
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         Vector3 start = transform.position;
-        Vector3 end = Hook.position;
+        Vector3 end = Hook;
         Vector3 toungePos = (start + end) / 2.0f;
 
         Vector3 toungeDirection = (end - start).normalized;
