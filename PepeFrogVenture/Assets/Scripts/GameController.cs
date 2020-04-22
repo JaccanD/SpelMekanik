@@ -89,6 +89,6 @@ public class GameController : MonoBehaviour
     public void PushPlayerBack(EnemyPushesPlayerBack e)
     {
         Vector3 direction = (e.player.transform.position - e.enemyPosition).normalized;
-        e.player.GetComponent<PlayerKontroller3D>().SetVelocity(direction * e.pushBackStrenght);
+        e.player.GetComponent<PlayerKontroller3D>().SetVelocity(direction * e.pushBackStrenght + (Vector3.up * e.heightPush));
     }
 }

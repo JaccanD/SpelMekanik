@@ -9,6 +9,8 @@ public class EnemyAttackState : EnemyBaseState
     [SerializeField] private float chaseDistance;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float startAttackCooldown;
+    [SerializeField] private float pushAmount;
+    [SerializeField] private float upPushAmount;
     private float currentCool;
 
     public override void Enter()
@@ -36,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
             return;
 
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
-        EventSystem.Current.FireEvent(new EnemyPushesPlayerBack(Enemy.player.gameObject, Enemy.transform.position, 15));
+        EventSystem.Current.FireEvent(new EnemyPushesPlayerBack(Enemy.player.gameObject, Enemy.transform.position, pushAmount, upPushAmount));
         currentCool = attackCooldown;
     }
 }

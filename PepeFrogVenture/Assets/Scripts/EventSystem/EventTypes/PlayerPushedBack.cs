@@ -8,13 +8,15 @@ namespace Callback
     {
         public GameObject player;
         public float pushBackStrenght;
+        public float heightPush;
         public Vector3 enemyPosition;
 
-        public EnemyPushesPlayerBack(GameObject playerObject, Vector3 hittingEnemyPosition, float pushBackValue)
+        public EnemyPushesPlayerBack(GameObject playerObject, Vector3 hittingEnemyPosition, float pushBackValue, float height)
         {
             player = playerObject;
             pushBackStrenght = pushBackValue;
             enemyPosition = hittingEnemyPosition;
+            heightPush = height;
         }
     }
 }
