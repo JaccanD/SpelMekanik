@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener<PickupEvent>(OnPickup);
         EventSystem.Current.RegisterListener<ToungeFlickEvent>(OnFlick);
         EventSystem.Current.RegisterListener<ToungeDoneEvent>(OnToungeDone);
+        EventSystem.Current.RegisterListener<EnemyPushesPlayerBack>(PushPlayerBack);
 
     }
     public bool CheckTounge()
@@ -84,5 +85,10 @@ public class GameController : MonoBehaviour
     public void OnToungeDone(ToungeDoneEvent e)
     {
         Tounge = true;
+    }
+    public void PushPlayerBack(EnemyPushesPlayerBack e)
+    {
+        Vector3 direction = (e.player.transform.position - e.enemyPosition).normalized;
+        e.player.GetComponent<PlayerKontroller3D>().SetVelocity(direction * e.pushBackStrenght);
     }
 }

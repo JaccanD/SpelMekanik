@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class NPC : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class NPC : MonoBehaviour
             currentDialog = 2;
             Unlock();
         }
+        EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
         Debug.Log(dialog[currentDialog]);
     }
 
