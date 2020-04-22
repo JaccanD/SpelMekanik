@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "BossState/AttackingState")]
 public class BossAttackingState : BossBaseState
 {
-    private GameObject projectile;
+    protected GameObject projectile { get { return Boss.getProjectile(); } }
     private float currentCool;
     [SerializeField] private float cooldown;
     [SerializeField] private int shootsLeftBeforeSubmerge = 3;
@@ -14,7 +14,7 @@ public class BossAttackingState : BossBaseState
 
     public override void Run()
     {
-        float rotationSpeed = Boss.speed * Time.deltaTime;
+        //float rotationSpeed = Boss.speed * Time.deltaTime;
         rotateTowardPlayer(Boss.player.transform.position);
         //Boss.transform.rotation = Quaternion.LookRotation(Boss.player.transform.position);
         //Boss.transform.position = Vector3.RotateTowards(Boss.transform.position, Boss.player.transform.position, rotationSpeed,0);
@@ -28,12 +28,11 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
 
-        //Debug.Log("Boss attacking");
-
         //LaunchProjectile();
-        GameObject projectile = Boss.getProjectile();
-        projectile.GetComponent<BossProjectile>().setTarget(Boss.player.transform.position);
-        Instantiate(projectile, Boss.getShootPoint().transform.position, Quaternion.identity);
+        GameObject newProjectile = projectile;
+        //projectile.GetComponent<BossProjectile>().setTarget(Boss.player.transform.position); gammalt
+        Instantiate(newProjectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation/*Boss.transform.rotation*/);
+        newProjectile.transform.rotation = Boss.transform.rotation;
 
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
@@ -43,9 +42,9 @@ public class BossAttackingState : BossBaseState
         }
         currentCool = cooldown;
     }
-    protected void rotateTowardPlayer(Vector3 to)
+    private void rotateTowardPlayer(Vector3 rotateTowards)
     {
-        Quaternion rotation = Quaternion.LookRotation((to - Boss.transform.position).normalized);
+        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
     //private void LaunchProjectile()

@@ -9,6 +9,7 @@ public class BossEmergingState : BossBaseState
     [SerializeField] private float depthOffset = 4f;
     [SerializeField] private float emergingSpeed = 1.5f;
     [SerializeField] private float fullyEmergedThreshold = 1f;
+    [SerializeField] private float rotationSpeed = 4f;
 
     public override void Enter()
     {
@@ -34,7 +35,8 @@ public class BossEmergingState : BossBaseState
 
     public override void Run()
     {
-        if(Boss.transform.position.y < fullyEmergedThreshold)
+        rotateTowardPlayer(Boss.player.transform.position);
+        if (Boss.transform.position.y < fullyEmergedThreshold)
         {
             Emerge();
         }
@@ -52,6 +54,12 @@ public class BossEmergingState : BossBaseState
     //        Boss.transform.position += Vector3.up * emergingSpeed * Time.deltaTime;
     //    }
     //}
+
+    private void rotateTowardPlayer(Vector3 rotateTowards)
+    {
+        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
+        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    }
 
     private void Emerge()
     {
