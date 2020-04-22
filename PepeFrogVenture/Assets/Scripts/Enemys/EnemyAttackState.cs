@@ -36,6 +36,7 @@ public class EnemyAttackState : EnemyBaseState
             return;
 
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
+        EventSystem.Current.FireEvent(new EnemyPushesPlayerBack(Enemy.player.gameObject, Enemy.transform.position, 15));
         currentCool = attackCooldown;
     }
 }
