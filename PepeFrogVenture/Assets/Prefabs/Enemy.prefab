@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4886229842286777597}
   - component: {fileID: 4886229842286777596}
   - component: {fileID: 4886229842286777599}
-  - component: {fileID: 4886229842286777598}
   - component: {fileID: 4886229842286777586}
   - component: {fileID: 4886229842286777587}
   - component: {fileID: 4886229842286777584}
   - component: {fileID: 4886229842286777585}
+  - component: {fileID: 7897553524319836276}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4886229842286777598
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4886229842286777593}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4886229842286777586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +162,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!64 &7897553524319836276
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4886229842286777593}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
