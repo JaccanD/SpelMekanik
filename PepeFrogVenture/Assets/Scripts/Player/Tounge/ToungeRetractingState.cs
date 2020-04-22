@@ -47,9 +47,8 @@ public class ToungeRetractingState : ToungeBaseState
                     EventSystem.Current.FireEvent(new PickupEvent(HitObject));
                     Destroy(HitObject);
                 }
-                Destroy(Tounge.gameObject);
                 Destroy(Cylinder);
-
+                Destroy(Tounge.gameObject);
             }
         }
     }

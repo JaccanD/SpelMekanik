@@ -106,7 +106,8 @@ public abstract class PlayerBaseState : State
         //Spawna tungan i munnen
         //Tungan sträcker ut sig tills den träffar något
         Vector3 start = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
-        bool hookHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength + 5, HookMask);
+        Vector3 forward = Camera.transform.rotation * Vector3.forward;
+        bool hookHit = Physics.SphereCast(Camera.transform.position + forward * 5, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength + 5, HookMask);
         if (!hookHit)
         {
             return;

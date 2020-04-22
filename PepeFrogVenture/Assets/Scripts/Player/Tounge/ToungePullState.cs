@@ -34,13 +34,22 @@ public class ToungePullState : ToungeBaseState
         Destroy(Cylinder);
         drawTounge();
         Collider[] hits = Physics.OverlapSphere(gameObject.transform.position + Coll.center, Coll.radius / 4);
+
+        Vector3 between = Player.gameObject.transform.position - gameObject.transform.position;
+        if(Vector3.Dot(between,move) > 0)
+        {
+            Destroy(Tounge.gameObject);
+            Destroy(Cylinder);
+            EventSystem.Current.FireEvent(new ToungeDoneEvent());
+        }
         for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i].gameObject.tag == "Player")
             {
-                EventSystem.Current.FireEvent(new ToungeDoneEvent());
                 Destroy(Tounge.gameObject);
                 Destroy(Cylinder);
+                EventSystem.Current.FireEvent(new ToungeDoneEvent());
+
 
             }
         }

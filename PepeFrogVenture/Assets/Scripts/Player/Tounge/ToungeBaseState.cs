@@ -20,7 +20,8 @@ public abstract class ToungeBaseState : State
     {
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         Vector3 start = gameObject.transform.position;
-        Vector3 end = Player.transform.position;
+        CapsuleCollider coll = Player.GetComponent<CapsuleCollider>();
+        Vector3 end = Player.transform.position + Vector3.up * (coll.height / 2);
         Vector3 toungePos = (start + end) / 2.0f;
 
         Vector3 toungeDirection = (end - start).normalized;
@@ -31,7 +32,7 @@ public abstract class ToungeBaseState : State
 
         cylinder.transform.position = toungePos;
         cylinder.transform.rotation = rotate;
-        cylinder.transform.localScale = new Vector3(0.3f, (end - start).magnitude / 2, 0.3f);
+        cylinder.transform.localScale = new Vector3(0.1f, (end - start).magnitude / 2, 0.1f);
 
         Cylinder = cylinder;
     }
