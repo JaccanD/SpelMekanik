@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class NPC : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private int RequiredBerries;
     [SerializeField] private GameObject Target;
     int currentDialog = 0;
+
     private void Awake()
     {
         Target.SetActive(true);
@@ -28,6 +30,7 @@ public class NPC : MonoBehaviour
             currentDialog = 2;
             Unlock();
         }
+        EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
         Debug.Log(dialog[currentDialog]);
     }
 

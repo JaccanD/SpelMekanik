@@ -9,10 +9,12 @@ public class DissapearingPlatform : MonoBehaviour
     [SerializeField] float DissapearDelay;
     [SerializeField] float ReapearDelay;
 
+    private MeshCollider CollisionColl;
     private Material StartingMaterial;
     private void Awake()
     {
         StartingMaterial = GetComponent<MeshRenderer>().material;
+        CollisionColl = GetComponent<MeshCollider>();
     }
     void Update()
     {
@@ -34,6 +36,7 @@ public class DissapearingPlatform : MonoBehaviour
         //transform.position += Vector3.up * 100;
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<BoxCollider>().enabled = true;
+        CollisionColl.enabled = true;
         coll.enabled = true;
         GetComponent<MeshRenderer>().material = StartingMaterial;
     }
@@ -41,6 +44,7 @@ public class DissapearingPlatform : MonoBehaviour
     {
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+        CollisionColl.enabled = false;
         //transform.position += Vector3.down * 100;
         Invoke("Reapear", ReapearDelay);
     }
