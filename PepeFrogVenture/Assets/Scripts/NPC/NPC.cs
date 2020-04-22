@@ -11,7 +11,7 @@ public class NPC : MonoBehaviour
     int currentDialog = 0;
     private void Awake()
     {
-        Target.SetActive(false);
+        Target.SetActive(true);
     }
     public void Talk()
     {
@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
 
     private void Unlock()
     {
-        Target.SetActive(true);
+        Target.SetActive(false);
         Controller.RemoveBerries();
     }
 }
