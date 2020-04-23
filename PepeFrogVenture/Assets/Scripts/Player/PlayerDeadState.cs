@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerDeadState : PlayerBaseState
 {
     private GameObject RespawnPoint;
+    private float Timer = 0;
 
     public override void Enter()
     {
@@ -14,7 +15,8 @@ public class PlayerDeadState : PlayerBaseState
     }
     public override void Run()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        Timer += Time.deltaTime;
+        if (Timer >= 1)
         {
             Respawn();
         }
