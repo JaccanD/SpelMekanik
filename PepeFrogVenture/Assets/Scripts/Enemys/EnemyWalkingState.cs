@@ -26,13 +26,24 @@ public class EnemyWalkingState : EnemyBaseState
             currentPatrolPoint = (currentPatrolPoint + 1) % patrulleringspunkter.Length;
     }
 
+    //private void ChooseClosest()
+    //{
+    //    int closest = 0;
+    //    for (int i = 0; i < patrulleringspunkter.Length; i++)
+    //    {
+    //        float distance = Vector3.Distance(Enemy.transform.position, patrolPoints[i]);
+    //        if (distance < Vector3.Distance(Enemy.transform.position, patrolPoints[closest]))
+    //            closest = i;
+    //    }
+    //    currentPatrolPoint = closest;
+    //}
     private void ChooseClosest()
     {
         int closest = 0;
         for (int i = 0; i < patrulleringspunkter.Length; i++)
         {
-            float distance = Vector3.Distance(Enemy.transform.position, patrolPoints[i]);
-            if (distance < Vector3.Distance(Enemy.transform.position, patrolPoints[closest]))
+            float distance = Vector3.Distance(Enemy.transform.position, patrulleringspunkter[i].transform.position);
+            if (distance < Vector3.Distance(Enemy.transform.position, patrulleringspunkter[closest].transform.position))
                 closest = i;
         }
         currentPatrolPoint = closest;
