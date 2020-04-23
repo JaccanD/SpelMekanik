@@ -4163,7 +4163,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266083483}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6188309, y: 3.1735048, z: 3.630042}
@@ -5889,6 +5889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fish_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b4d6702b3eebf184dbec9b15acbbdf79,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 856365191234717131, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}

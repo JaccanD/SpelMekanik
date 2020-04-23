@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8284885657952437126}
   - component: {fileID: 8284885657952437145}
   - component: {fileID: 8284885657952437144}
-  - component: {fileID: 8284885657952437147}
   - component: {fileID: 8284885657952437127}
   - component: {fileID: 8284885657952437125}
   - component: {fileID: 8284885657952437122}
+  - component: {fileID: 640328631691436314}
   m_Layer: 10
   m_Name: Enemy2
   m_TagString: Enemy
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8284885657952437147
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8284885657952437146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8284885657952437127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   states:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f4913ae64f73ac5469878f589a76c989, type: 2}
   - {fileID: 11400000, guid: d2eb0cc0c61744540991d1f071ca7ed9, type: 2}
   - {fileID: 11400000, guid: 780927893dbc6cd40bed67fcb81114d8, type: 2}
   - {fileID: 11400000, guid: 35e3365e49367f345b40acbf40bc4eb5, type: 2}
@@ -121,6 +107,7 @@ MonoBehaviour:
     m_Bits: 256
   player: {fileID: 0}
   patrolPoints: []
+  patrulleringpunkter: []
   controller: {fileID: 0}
   damage: 2
   Health: 4
@@ -148,7 +135,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8284885657952437146}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -158,7 +145,20 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &640328631691436314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8284885657952437146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1.0152111, z: 2.985238}
+  m_Center: {x: 0, y: 0.5117085, z: 0.35711998}

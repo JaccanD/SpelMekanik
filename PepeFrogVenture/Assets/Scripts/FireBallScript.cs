@@ -30,7 +30,8 @@ public class FireBallScript : MonoBehaviour
                 CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(Damage);
                 Debug.Log("boss hit");
             }
-
+            Debug.Log("hit something");
+            Debug.Log(CollCast.transform.gameObject.name);
             Destroy(gameObject);
         }
     }

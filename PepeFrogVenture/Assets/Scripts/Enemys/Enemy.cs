@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     public State[] states;
 
     public float speed = 2;
-    private CapsuleCollider Collider;
+    //private CapsuleCollider Collider;
+    private BoxCollider collider;
     [SerializeField] LayerMask CollisionMask;
     public PlayerKontroller3D player;
     [SerializeField] private Vector3[] patrolPoints;
@@ -22,7 +23,8 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         EventSystem.Current.RegisterListener<EnemyHitEvent>(OnHit);
-        Collider = GetComponent<CapsuleCollider>();
+        collider = GetComponent<BoxCollider>();
+        //Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Start()
@@ -60,10 +62,14 @@ public class Enemy : MonoBehaviour
         return CollisionMask;
 
     }
-    public CapsuleCollider GetCollider()
+    public BoxCollider getCollider()
     {
-        return Collider;
+        return collider;
     }
+    //public CapsuleCollider GetCollider()
+    //{
+    //    return Collider;
+    //}
     public Transform GetTransform()
     {
         return transform;
