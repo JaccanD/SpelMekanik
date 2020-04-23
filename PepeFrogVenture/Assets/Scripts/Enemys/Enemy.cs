@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] LayerMask CollisionMask;
     public PlayerKontroller3D player;
     [SerializeField] private Vector3[] patrolPoints;
+    [SerializeField] private GameObject[] patrulleringpunkter;
     [SerializeField] private GameController controller;
     [SerializeField] private float damage = 2;
     [SerializeField] private float Health = 4;
@@ -33,6 +34,10 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         statemachine.Run();
+    }
+    public GameObject[] getPatrulleringsPunkter()
+    {
+        return patrulleringpunkter;
     }
     public Vector3[] getPatrolPoints()
     {
