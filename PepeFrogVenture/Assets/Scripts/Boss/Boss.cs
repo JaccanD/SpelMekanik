@@ -11,10 +11,7 @@ public class Boss : Enemy
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
 
-    private void Awake()
-    {
-           
-    }
+    
     private void SinkAPad(Lilypads pad)
     {
         pad.setIsSInking(true);
