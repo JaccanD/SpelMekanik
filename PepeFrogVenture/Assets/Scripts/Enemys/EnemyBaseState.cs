@@ -8,7 +8,7 @@ public class EnemyBaseState : State
     protected Enemy Enemy => enemy = enemy ?? (Enemy)owner;
     protected float speed { get { return Enemy.GetSpeed(); } }
     protected LayerMask CollisionMask { get { return Enemy.GetCollisionMask(); } }
-    protected BoxCollider Collider { get { return Enemy.GetCollider(); } }
+    protected CapsuleCollider Collider { get { return Enemy.GetCollider(); } }
     protected float damage { get { return Enemy.getDamage(); } }
     protected Vector3[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
     protected GameObject[] patrulleringspunkter { get { return Enemy.getPatrulleringsPunkter(); } }
