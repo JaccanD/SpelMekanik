@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4886229842286777587}
   - component: {fileID: 4886229842286777584}
   - component: {fileID: 4886229842286777585}
-  - component: {fileID: 8980226377266332010}
+  - component: {fileID: 7897553524319836276}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4886229842286777593}
-  m_Mesh: {fileID: -8963574783121403471, guid: ad6b29d79f9295446b688663b1d24832, type: 3}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &4886229842286777599
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -122,8 +122,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4620846, y: 0.14170408, z: 2.164711}
-  m_Center: {x: -0.008986205, y: 0.89781487, z: 0.31697625}
+  m_Size: {x: 1, y: 0.2344811, z: 1}
+  m_Center: {x: 0, y: 1.2442923, z: 0}
 --- !u!54 &4886229842286777584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4886229842286777593}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -158,12 +158,12 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
+  m_Height: 2
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &8980226377266332010
-BoxCollider:
+--- !u!64 &7897553524319836276
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -172,6 +172,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8, z: 2.985238}
-  m_Center: {x: 0, y: 0.4, z: 0.35391003}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
