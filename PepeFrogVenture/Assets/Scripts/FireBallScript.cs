@@ -17,22 +17,24 @@ public class FireBallScript : MonoBehaviour
     void Update()
     {
         Velocity += Gravity * Vector3.down * Time.deltaTime;
-
         transform.position += Velocity * Time.deltaTime;
-        bool collisionHit = Physics.SphereCast(transform.position, Coll.radius, Velocity.normalized, out RaycastHit CollCast, Velocity.magnitude * Time.deltaTime, HitMask);
-        if (collisionHit)
+        Collider[] colls = Physics.OverlapSphere(transform.position + Coll.center, Coll.radius, HitMask);
+        if (colls.Length > 1)
         {
-            if(CollCast.transform.gameObject.tag == "Enemy")
+            for (int i = 0; i < colls.Length; i++)
             {
-                EventSystem.Current.FireEvent(new EnemyHitEvent(CollCast.transform.gameObject, Damage));
-            }else if(CollCast.transform.gameObject.tag == "Boss")
-            {
-                CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(Damage);
-                Debug.Log("boss hit");
+                if (colls[i].transform.gameObject.tag == "Enemy")
+                {
+                    EventSystem.Current.FireEvent(new EnemyHitEvent(colls[i].transform.gameObject, Damage));
+                }
+                else if (colls[i].transform.gameObject.tag == "Boss")
+                {
+                    //CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(Damage);
+
+                    //Fixa så att bossen kan ta skada igen :: Jacob
+                }
+                Destroy(gameObject);
             }
-            Debug.Log("hit something");
-            Debug.Log(CollCast.transform.gameObject.name);
-            Destroy(gameObject);
         }
     }
     private void Awake()
