@@ -91,6 +91,10 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Defeated();
+        if(other.tag == "Player")
+        {
+            Defeated();
+        }
+
     }
 }
