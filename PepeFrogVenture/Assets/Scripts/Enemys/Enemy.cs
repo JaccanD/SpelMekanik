@@ -11,17 +11,18 @@ public class Enemy : MonoBehaviour
     public State[] states;
 
     public float speed = 2;
-    private BoxCollider Collider;
+    private CapsuleCollider Collider;
     [SerializeField] LayerMask CollisionMask;
     public PlayerKontroller3D player;
     [SerializeField] private Vector3[] patrolPoints;
+    [SerializeField] private GameObject[] patrulleringpunkter;
     [SerializeField] private GameController controller;
     [SerializeField] private float damage = 2;
     [SerializeField] private float Health = 4;
     private void Awake()
     {
         EventSystem.Current.RegisterListener<EnemyHitEvent>(OnHit);
-        Collider = GetComponent<BoxCollider>();
+        Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Start()
@@ -33,6 +34,10 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         statemachine.Run();
+    }
+    public GameObject[] getPatrulleringsPunkter()
+    {
+        return patrulleringpunkter;
     }
     public Vector3[] getPatrolPoints()
     {
@@ -55,7 +60,7 @@ public class Enemy : MonoBehaviour
         return CollisionMask;
 
     }
-    public BoxCollider GetCollider()
+    public CapsuleCollider GetCollider()
     {
         return Collider;
     }
@@ -86,10 +91,6 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
-        {
-            Defeated();
-        }
-        
+        Defeated();
     }
 }
