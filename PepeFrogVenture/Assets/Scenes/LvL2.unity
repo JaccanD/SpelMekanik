@@ -3771,7 +3771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1143747261}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shootpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5830,6 +5830,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8052994932809076077, guid: b4d6702b3eebf184dbec9b15acbbdf79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6855062863988604957, guid: b4d6702b3eebf184dbec9b15acbbdf79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5894,6 +5904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b4d6702b3eebf184dbec9b15acbbdf79,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 856365191234717131, guid: b4d6702b3eebf184dbec9b15acbbdf79,
         type: 3}
