@@ -10,6 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private int RequiredBerries;
     [SerializeField] private GameObject Target;
     int currentDialog = 0;
+    private bool QuestDone = false;
 
     private void Awake()
     {
@@ -30,12 +31,17 @@ public class NPC : MonoBehaviour
             currentDialog = 2;
             Unlock();
         }
+        if (QuestDone)
+        {
+            currentDialog = 3;
+        }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
         Debug.Log(dialog[currentDialog]);
     }
 
     private void Unlock()
     {
+        QuestDone = true;
         Target.SetActive(false);
         Controller.RemoveBerries();
     }
