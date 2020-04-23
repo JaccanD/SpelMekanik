@@ -42,7 +42,7 @@ public class PlayerMovingState : PlayerBaseState
         MovePlayer();
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ToungeFlick();
         }

@@ -151,7 +151,7 @@ public class PlayerKontroller3D : MonoBehaviour
             direction = Vector3.ProjectOnPlane(direction, cast.normal).normalized;
         else
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-        if(Controller.fire && Input.GetKeyDown(KeyCode.Mouse1))
+        if(Controller.fire && Input.GetKeyDown(KeyCode.Q))
         {
             GameObject fireball = Instantiate(Fireball, topPoint, Camera.transform.rotation);
             Controller.fire = false;
