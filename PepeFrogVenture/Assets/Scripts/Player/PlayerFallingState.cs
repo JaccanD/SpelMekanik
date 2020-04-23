@@ -24,7 +24,7 @@ public class PlayerFallingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerStandingState>();
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ToungeFlick();
         }
