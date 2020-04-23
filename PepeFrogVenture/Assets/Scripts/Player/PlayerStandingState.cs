@@ -29,7 +29,7 @@ public class PlayerStandingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerJumpingState>();
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ToungeFlick();
         }
