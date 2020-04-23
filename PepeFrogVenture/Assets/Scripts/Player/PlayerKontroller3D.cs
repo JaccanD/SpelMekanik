@@ -117,8 +117,8 @@ public class PlayerKontroller3D : MonoBehaviour
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
         Cursor.lockState = CursorLockMode.Locked;
-        EventSystem.Current.RegisterListener<PlayerDeathEvent>(Die);
-        EventSystem.Current.RegisterListener<HookHitEvent>(Pull);
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
+        EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
     }
     void Update()
     {
@@ -178,12 +178,14 @@ public class PlayerKontroller3D : MonoBehaviour
         }
         Camera.transform.position = newPosition;
     }
-    public void Die(PlayerDeathEvent e)
+    public void Die(Callback.Event eb)
     {
+        PlayerDeathEvent e = (PlayerDeathEvent)eb;
         stateMachine.TransitionTo<PlayerDeadState>();
     }
-    public void Pull(HookHitEvent e)
+    public void Pull(Callback.Event eb)
     {
+        HookHitEvent e = (HookHitEvent)eb;
         Hook = e.Point;
         stateMachine.TransitionTo<PlayerSwingState>();
     }

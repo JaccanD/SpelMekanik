@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float Health = 4;
     private void Awake()
     {
-        EventSystem.Current.RegisterListener<EnemyHitEvent>(OnHit);
+        EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
         collider = GetComponent<BoxCollider>();
         //Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
@@ -78,14 +78,15 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Kör Defeated");
         statemachine.TransitionTo<EnemyDefeatedState>();
-        EventSystem.Current.UnRegisterListener<EnemyHitEvent>(OnHit);
+        EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
     }
     public GameController getGamecontroller()
     {
         return controller;
     }
-    public void OnHit(EnemyHitEvent e)
+    public void OnHit(Callback.Event eb)
     {
+        EnemyHitEvent e = (EnemyHitEvent)eb;
         if (e.EnemyHit != gameObject)
             return;
         Health -= e.Damage;

@@ -9,13 +9,14 @@ public class DialogListener : MonoBehaviour
     [SerializeField] private GameObject Text;
     void Start()
     {
-        EventSystem.Current.RegisterListener<NPCDialogueEvent>(UpdateText);
+        EventSystem.Current.RegisterListener(typeof(NPCDialogueEvent), UpdateText);
         Text.SetActive(false);
 
     }
 
-    public void UpdateText(NPCDialogueEvent e)
+    public void UpdateText(Callback.Event eb)
     {
+        NPCDialogueEvent e = (NPCDialogueEvent)eb;
         Text.SetActive(true);
         Text.GetComponent<Text>().text = e.Text;
 

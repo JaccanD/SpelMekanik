@@ -15,12 +15,12 @@ public class GameController : MonoBehaviour
 
     public void Awake()
     {
-        EventSystem.Current.RegisterListener<PlayerHitEvent>(TakeDamage);
-        EventSystem.Current.RegisterListener<RespawnPointReachedEvent>(SetRespawnPoint);
-        EventSystem.Current.RegisterListener<PickupEvent>(OnPickup);
-        EventSystem.Current.RegisterListener<ToungeFlickEvent>(OnFlick);
-        EventSystem.Current.RegisterListener<ToungeDoneEvent>(OnToungeDone);
-        EventSystem.Current.RegisterListener<EnemyPushesPlayerBack>(PushPlayerBack);
+        EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
+        EventSystem.Current.RegisterListener(typeof(RespawnPointReachedEvent), SetRespawnPoint);
+        EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
+        EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnFlick);
+        EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
+        EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
 
     }
     public bool CheckTounge()
@@ -31,8 +31,9 @@ public class GameController : MonoBehaviour
     {
         Health += healthIncrease;
     }
-    public void TakeDamage(PlayerHitEvent e)
+    public void TakeDamage(Callback.Event eb)
     {
+        PlayerHitEvent e = (PlayerHitEvent)eb;
         Health -= e.Damage;
         Debug.Log(Health);
         if (Health <= 0)
@@ -59,12 +60,14 @@ public class GameController : MonoBehaviour
         PlayerDeathEvent e = new PlayerDeathEvent(Player);
         EventSystem.Current.FireEvent(e);
      }
-    public void SetRespawnPoint(RespawnPointReachedEvent e)
+    public void SetRespawnPoint(Callback.Event eb)
     {
+        RespawnPointReachedEvent e = (RespawnPointReachedEvent)eb;
         CurrentRespawnPoint = e.RespawnPoint;
     }
-    public void OnPickup(PickupEvent e)
+    public void OnPickup(Callback.Event eb)
     {
+        PickupEvent e = (PickupEvent)eb;
         if (e.Pickup.tag == "Fire")
         {
             fire = true;
@@ -78,16 +81,19 @@ public class GameController : MonoBehaviour
             AddBerry();
         }
     }
-    public void OnFlick(ToungeFlickEvent e)
+    public void OnFlick(Callback.Event eb)
     {
+        ToungeFlickEvent e = (ToungeFlickEvent)eb;
         Tounge = false;
     }
-    public void OnToungeDone(ToungeDoneEvent e)
+    public void OnToungeDone(Callback.Event eb)
     {
+        ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
     }
-    public void PushPlayerBack(EnemyPushesPlayerBack e)
+    public void PushPlayerBack(Callback.Event eb)
     {
+        EnemyPushesPlayerBack e = (EnemyPushesPlayerBack)eb;
         Vector3 direction = (e.player.transform.position - e.enemyPosition).normalized;
         e.player.GetComponent<PlayerKontroller3D>().SetVelocity(direction * e.pushBackStrenght + (Vector3.up * e.heightPush));
     }

@@ -24,7 +24,9 @@ public class SpawnerController : MonoBehaviour
         }
 
         //Registrera Lyssnare för när en EldFluga Äts Upp
-        EventSystem.Current.RegisterListener<FireFlyDeathEvent>(OnEatEvent);
+        System.Type test = typeof(FireFlyDeathEvent);
+
+        EventSystem.Current.RegisterListener(test, OnEatEvent);
     }
     private void Update()
     {
@@ -56,8 +58,9 @@ public class SpawnerController : MonoBehaviour
             }
     }
 
-    public void OnEatEvent(FireFlyDeathEvent e)
+    public void OnEatEvent(Callback.Event eb)
     {
+        FireFlyDeathEvent e = (FireFlyDeathEvent)eb;
         IsOccupied[e.Parent] = false;
         CurrentChildren--;
     }
