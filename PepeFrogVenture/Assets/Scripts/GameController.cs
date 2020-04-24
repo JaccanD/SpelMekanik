@@ -13,8 +13,6 @@ public class GameController : MonoBehaviour
     public bool Tounge = true;
     public bool fire = false;
 
-    public HealthBar healthBar;
-
 
     public void Awake()
     {
@@ -45,7 +43,6 @@ public class GameController : MonoBehaviour
         Debug.Log(Health);
         if (Health <= 0)
             PlayerDead();
-        healthBar.SetHealth((int) Health);
     }
     public void Update()
     {
@@ -83,7 +80,6 @@ public class GameController : MonoBehaviour
         if (e.Pickup.tag == "Flies")
         {
             AddHealth(2);
-            healthBar.SetHealth((int)Health);
         }
         if (e.Pickup.tag == "Berry")
         {
