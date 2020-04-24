@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnFlick);
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
-
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
     }
     public bool CheckTounge()
     {
@@ -93,6 +94,13 @@ public class GameController : MonoBehaviour
     {
         ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
+    }
+    public void IsSceneTwo(Callback.Event eb)
+    {
+        if (SceneManager.GetActiveScene().name == "LvL2")
+            {
+                SceneManager.LoadScene("LvL2");
+            }
     }
     public void PushPlayerBack(Callback.Event eb)
     {
