@@ -13,8 +13,6 @@ public class GameController : MonoBehaviour
     public bool Tounge = true;
     public bool fire = false;
 
-    public HealthBar healthBar;
-
 
     public void Awake()
     {
@@ -33,6 +31,10 @@ public class GameController : MonoBehaviour
     public void AddHealth(float healthIncrease)
     {
         Health += healthIncrease;
+        if(Health > 10)
+        {
+            Health = 10;
+        }
     }
     public void TakeDamage(Callback.Event eb)
     {
@@ -41,7 +43,6 @@ public class GameController : MonoBehaviour
         Debug.Log(Health);
         if (Health <= 0)
             PlayerDead();
-        healthBar.SetHealth((int) Health);
     }
     public void Update()
     {
