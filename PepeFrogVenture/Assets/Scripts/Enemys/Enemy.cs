@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Vector3[] patrolPoints;
     [SerializeField] private GameObject[] patrulleringpunkter;
     [SerializeField] private GameController controller;
-    [SerializeField] private float damage = 2;
-    [SerializeField] private float Health = 4;
+    [SerializeField] protected float damage = 2;
+    [SerializeField] protected float Health = 4;
     private void Awake()
     {
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
     }
     public void OnHit(Callback.Event eb)
     {
+        Debug.Log("ENEMY HIT");
         EnemyHitEvent e = (EnemyHitEvent)eb;
         if (e.EnemyHit != gameObject)
             return;

@@ -9,7 +9,7 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private int MaxChildren;
     private int CurrentChildren;
 
-    [SerializeField] private GameObject[] Spawners;
+    [SerializeField] private List<GameObject> Spawners;
     private Dictionary<GameObject, bool> IsOccupied;
 
     [SerializeField] private float RespawnDelay;
@@ -27,6 +27,7 @@ public class SpawnerController : MonoBehaviour
         System.Type test = typeof(FireFlyDeathEvent);
 
         EventSystem.Current.RegisterListener(test, OnEatEvent);
+        EventSystem.Current.RegisterListener(typeof(LilyPadDestroyedEvent), OnLilyPadDestroyed);
     }
     private void Update()
     {
@@ -39,7 +40,7 @@ public class SpawnerController : MonoBehaviour
         int index = 0;
         do
         {
-            index = Random.Range(0, Spawners.Length);
+            index = Random.Range(0, Spawners.Count);
 
         } while (IsOccupied[Spawners[index]]);
         GameObject spawnTarget = Spawners[index];
@@ -57,7 +58,16 @@ public class SpawnerController : MonoBehaviour
                 Timer = 0;
             }
     }
+    public void OnLilyPadDestroyed(Callback.Event eb)
+    {
+        LilyPadDestroyedEvent e = (LilyPadDestroyedEvent)eb;
 
+        Spawners.Remove(e.Pad);
+        IsOccupied.Remove(e.Pad);
+
+        Debug.Log(Spawners.Count);
+        Debug.Log(IsOccupied.Count);
+    }
     public void OnEatEvent(Callback.Event eb)
     {
         FireFlyDeathEvent e = (FireFlyDeathEvent)eb;
