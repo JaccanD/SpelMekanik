@@ -2027,6 +2027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 6835187852942816337, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 752348823}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed947a825b866c64084d6cfbb604c0a0, type: 3}
 --- !u!1 &531704901
@@ -2650,37 +2655,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 567405054}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &752348821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4577894392361223870, guid: ed947a825b866c64084d6cfbb604c0a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 512474185}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &752348823 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4577894392361223856, guid: ed947a825b866c64084d6cfbb604c0a0,
     type: 3}
   m_PrefabInstance: {fileID: 512474185}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752348821}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &752348824
+--- !u!114 &752348824 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6835187852942816337, guid: ed947a825b866c64084d6cfbb604c0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 512474185}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 752348821}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29730749d0f4f64459bc784b2f1b211b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 752348823}
 --- !u!1001 &792892058
 PrefabInstance:
   m_ObjectHideFlags: 0
