@@ -7,13 +7,11 @@ public class Boss : Enemy
 {
     public List<DestroyableLilypad> lilypads;
     private bool isInvulnarable;
-    private float health = 20;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
-
     private void Awake()
     {
-           
+        EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), TakeDamage);
     }
     private void SinkAPad(Lilypads pad)
     {
@@ -30,22 +28,23 @@ public class Boss : Enemy
     }
     public float getHealth()
     {
-        return health;
+        return Health;
     }
-    public void TakeDamage(float value)
+    public void TakeDamage(Callback.Event eb)
     {
+        EnemyHitEvent e = (EnemyHitEvent)eb;
         Debug.Log("BossDamageTaken");
-        health -= value;
-        Debug.Log(health);
-        if(health <= 0)
+        Health -= e.Damage;
+        Debug.Log(Health);
+        if(Health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    public void OnHit(EnemyHitEvent e)
+    /*public void OnHit(EnemyHitEvent e)
     {
         Debug.Log("BossDamageTaken");
         health -= e.Damage;
         Debug.Log(health);
         if (health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
-    }
+    }*/
 }
