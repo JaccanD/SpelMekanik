@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
         if (e.Pickup.tag == "Flies")
         {
             AddHealth(2);
-            healthBar.SetHealth((int)Health)
+            healthBar.SetHealth((int)Health);
         }
         if (e.Pickup.tag == "Berry")
         {
