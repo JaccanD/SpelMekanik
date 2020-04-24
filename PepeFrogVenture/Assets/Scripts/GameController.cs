@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
+        EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
     }
     public bool CheckTounge()
     {
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
     {
         Berries++;
     }
-    public void RemoveBerries()
+    public void RemoveBerries(Callback.Event eb)
     {
         Berries = 0;
     }
