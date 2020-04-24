@@ -19,9 +19,6 @@ public class PlayerSwingState : PlayerBaseState
     {
         drawTounge();
         Vector3 dir = (Hook - transform.position).normalized;
-        Vector3 resetY = Velocity;
-        resetY.y = 0;
-        Velocity = resetY;
         Velocity += ToungeForce * dir;
 
         stateMachine.TransitionTo<PlayerJumpingState>();

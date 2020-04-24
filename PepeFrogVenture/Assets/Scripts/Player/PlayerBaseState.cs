@@ -125,7 +125,7 @@ public abstract class PlayerBaseState : State
     }
     protected void Talk()
     {
-        bool talkHit = Physics.SphereCast(transform.position, 1.0f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit TalkCast, 5, TalkMask);
+        bool talkHit = Physics.SphereCast(transform.position, 0.2f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit TalkCast, 5, TalkMask);
         if (talkHit)
         {
             TalkCast.transform.gameObject.GetComponent<NPC>().Talk();
