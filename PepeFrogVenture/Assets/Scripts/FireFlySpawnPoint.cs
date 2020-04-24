@@ -23,11 +23,7 @@ public class FireFlySpawnPoint : MonoBehaviour
             currentSpawnTimeLeft += Time.deltaTime;
             if(currentSpawnTimeLeft > spawnTimer)
             {
-                Vector3 randomPos = Random.insideUnitSphere;
-                randomPos *= 2;
-                randomPos.y = 0;
-                randomPos += transform.position;
-                currentFirefly = Instantiate(fireFlyPreFab, randomPos, Quaternion.identity);
+                currentFirefly = Instantiate(fireFlyPreFab, transform.position, Quaternion.identity);
                 currentSpawnTimeLeft = 0;
             }
         }
