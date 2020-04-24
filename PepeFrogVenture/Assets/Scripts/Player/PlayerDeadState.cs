@@ -28,11 +28,7 @@ public class PlayerDeadState : PlayerBaseState
     }
     private void Respawn()
     {
-        //kanske borde ligga någon annastans
-        if(SceneManager.GetActiveScene().name == "LvL2")
-        {
-            SceneManager.LoadScene("LvL2");
-        }
+        
         transform.position = RespawnPoint.transform.position;
         Timer = 0;
         stateMachine.TransitionTo<PlayerStandingState>();
