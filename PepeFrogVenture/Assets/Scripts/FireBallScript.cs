@@ -19,7 +19,7 @@ public class FireBallScript : MonoBehaviour
         Velocity += Gravity * Vector3.down * Time.deltaTime;
         transform.position += Velocity * Time.deltaTime;
         Collider[] colls = Physics.OverlapSphere(transform.position + Coll.center, Coll.radius, HitMask);
-        if (colls.Length > 1)
+        if (colls.Length > 0)
         {
             for (int i = 0; i < colls.Length; i++)
             {
