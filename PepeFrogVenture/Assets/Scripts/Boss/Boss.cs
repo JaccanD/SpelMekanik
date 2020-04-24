@@ -7,6 +7,7 @@ public class Boss : Enemy
 {
     public List<DestroyableLilypad> lilypads;
     private bool isInvulnarable;
+    private bool isEncountered;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
     private void Awake()
@@ -47,4 +48,8 @@ public class Boss : Enemy
         if (health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        isEncountered = true;
+    }
 }

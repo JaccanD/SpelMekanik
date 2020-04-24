@@ -1022,6 +1022,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26128246eaf86be4083a00cd28f39313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &280248865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280248867}
+  - component: {fileID: 280248866}
+  - component: {fileID: 280248868}
+  - component: {fileID: 280248869}
+  m_Layer: 0
+  m_Name: BossEncouterTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &280248866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280248865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 18.32, z: 28.2}
+  m_Center: {x: 0, y: 0, z: 1.57}
+--- !u!4 &280248867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280248865}
+  m_LocalRotation: {x: 0, y: 0.056954157, z: 0, w: 0.9983768}
+  m_LocalPosition: {x: 16.72, y: 12.715586, z: 37.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 6.53, z: 0}
+--- !u!114 &280248868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280248865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ede8326eed7117498125c78689b0974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &280248869
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280248865}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &284403641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4070,10 +4144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   states:
-  - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
+  - {fileID: 11400000, guid: 4714525d62062e443a41329ba4112201, type: 2}
   - {fileID: 11400000, guid: d2ae1e0f317939f4bbf2502b2503d1ee, type: 2}
   - {fileID: 11400000, guid: 91714f185c1036c4eb8dfaf7a2cda00c, type: 2}
   - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
+  - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
   speed: 2
   CollisionMask:
     serializedVersion: 2
@@ -4083,7 +4158,7 @@ MonoBehaviour:
   patrulleringpunkter: []
   controller: {fileID: 531704902}
   damage: 2
-  Health: 4
+  Health: 20
   lilypads:
   - {fileID: 996417105}
   - {fileID: 837464981}
@@ -6608,17 +6683,17 @@ PrefabInstance:
     - target: {fileID: 6689927928712120445, guid: 0a30edf0b63602c4da5162996cb7154a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.11
+      value: 9.434
       objectReference: {fileID: 0}
     - target: {fileID: 6689927928712120445, guid: 0a30edf0b63602c4da5162996cb7154a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.63
+      value: 17.256
       objectReference: {fileID: 0}
     - target: {fileID: 6689927928712120445, guid: 0a30edf0b63602c4da5162996cb7154a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.32
+      value: 39.023
       objectReference: {fileID: 0}
     - target: {fileID: 6689927928712120445, guid: 0a30edf0b63602c4da5162996cb7154a,
         type: 3}
