@@ -10,8 +10,10 @@ public class GameController : MonoBehaviour
     public GameObject CurrentRespawnPoint;
     public GameObject Player;
     public bool Tounge = true;
-
     public bool fire = false;
+
+    public HealthBar healthBar;
+
 
     public void Awake()
     {
@@ -38,6 +40,7 @@ public class GameController : MonoBehaviour
         Debug.Log(Health);
         if (Health <= 0)
             PlayerDead();
+        healthBar.SetHealth((int) Health);
     }
     public void Update()
     {
