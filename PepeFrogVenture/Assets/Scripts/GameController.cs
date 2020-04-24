@@ -33,6 +33,10 @@ public class GameController : MonoBehaviour
     public void AddHealth(float healthIncrease)
     {
         Health += healthIncrease;
+        if(Health > 10)
+        {
+            Health = 10;
+        }
     }
     public void TakeDamage(Callback.Event eb)
     {
