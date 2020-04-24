@@ -43,6 +43,6 @@ public class NPC : MonoBehaviour
     {
         QuestDone = true;
         Target.SetActive(false);
-        Controller.RemoveBerries();
+        EventSystem.Current.FireEvent(new QuestDoneEvent());
     }
 }

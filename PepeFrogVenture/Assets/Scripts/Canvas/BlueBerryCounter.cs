@@ -12,6 +12,7 @@ public class BlueBerryCounter : MonoBehaviour
     private void Start()
     {
         EventSystem.Current.RegisterListener(typeof(PickupEvent), GainBlueBerry);
+        EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), ResetBlueBerry);
     }
 
     public void GainBlueBerry(Callback.Event eb)
@@ -23,5 +24,13 @@ public class BlueBerryCounter : MonoBehaviour
             BlueBerryInt++;
             BlueBerryCount.text = BlueBerryInt.ToString();
         }
+    }
+
+    public void ResetBlueBerry(Callback.Event eb)
+    {
+        QuestDoneEvent e = (QuestDoneEvent)eb;
+
+        BlueBerryInt = 0;
+        BlueBerryCount.text = BlueBerryInt.ToString();
     }
 }
