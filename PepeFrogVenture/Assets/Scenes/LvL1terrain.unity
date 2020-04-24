@@ -3807,6 +3807,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1332214977}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &178180638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2058113650286838150, guid: 33e07ef7da278e74389bd9a30b14b077,
+    type: 3}
+  m_PrefabInstance: {fileID: 643848520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &178180642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178180638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e86f0332b220a48bed488990b45fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueBerryCount: {fileID: 825480651}
 --- !u!1001 &186305078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12952,6 +12971,13 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7939484853469489640, guid: 33e07ef7da278e74389bd9a30b14b077,
+        type: 3}
+      propertyPath: m_Text
+      value: '0
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e07ef7da278e74389bd9a30b14b077, type: 3}
 --- !u!4 &645145549 stripped
@@ -16390,6 +16416,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a89da67d4a639489cb486a5c92db09, type: 3}
+--- !u!114 &825480651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7939484853469489640, guid: 33e07ef7da278e74389bd9a30b14b077,
+    type: 3}
+  m_PrefabInstance: {fileID: 643848520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &829825797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 74ad216e696583b4b92b5dac8fcf0294,
@@ -28125,8 +28163,8 @@ Transform:
   - {fileID: 34453889}
   - {fileID: 1342889875}
   - {fileID: 350500441}
-  - {fileID: 1739820578}
   - {fileID: 1041192890}
+  - {fileID: 1739820578}
   - {fileID: 1703424129}
   - {fileID: 1761851483}
   - {fileID: 1935505310}
