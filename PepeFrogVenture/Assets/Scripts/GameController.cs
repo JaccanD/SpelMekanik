@@ -23,11 +23,9 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
-<<<<<<< HEAD
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
-=======
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
->>>>>>> e68dd4f74c6f64c3c59d259aacc3ae140c02e5d5
+
     }
     public bool CheckTounge()
     {
@@ -110,7 +108,7 @@ public class GameController : MonoBehaviour
     }
     public void BossIsDead(Callback.Event e)
     {
-        SceneManager.LoadScene("Scene3");
+        SceneManager.LoadScene("Lvl3Slut");
     }
     public void PushPlayerBack(Callback.Event eb)
     {
