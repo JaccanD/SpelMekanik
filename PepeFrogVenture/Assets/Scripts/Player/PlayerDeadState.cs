@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "PlayerState/DeadState")]
 public class PlayerDeadState : PlayerBaseState
@@ -27,6 +28,11 @@ public class PlayerDeadState : PlayerBaseState
     }
     private void Respawn()
     {
+        //kanske borde ligga någon annastans
+        if(SceneManager.GetActiveScene().name == "LvL2")
+        {
+            SceneManager.LoadScene("LvL2");
+        }
         transform.position = RespawnPoint.transform.position;
         Timer = 0;
         stateMachine.TransitionTo<PlayerStandingState>();
