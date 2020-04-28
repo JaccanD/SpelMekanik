@@ -18,7 +18,7 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] LayerMask CollisionMask;
     [SerializeField] LayerMask CameraMask;
     private float RotationX = 0;
-    private float RotationY = 0;
+    private float RotationY = 90;
     [SerializeField] private float MouseSensitivity = 1;
     [SerializeField] private float MinRotationX = -60;
     [SerializeField] private float MaxRotationX = 60;

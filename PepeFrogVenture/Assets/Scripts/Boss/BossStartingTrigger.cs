@@ -7,8 +7,14 @@ public class BossStartingTrigger : MonoBehaviour
 {
     new private BoxCollider collider;
 
+
+    // Bara för memes skull. Ta bort efter Speltest. 
+
+    private AudioSource sound;
+
     private void Awake()
     {
+        sound = GetComponentInChildren<AudioSource>();
         collider = GetComponent<BoxCollider>();
     }
 
@@ -17,6 +23,7 @@ public class BossStartingTrigger : MonoBehaviour
         if(other.tag == "Player")
         {
             EventSystem.Current.FireEvent(new BossBattleStartingEvent());
+            sound.Play();
         }
 
     }

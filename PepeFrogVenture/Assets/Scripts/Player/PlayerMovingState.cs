@@ -9,6 +9,7 @@ public class PlayerMovingState : PlayerBaseState
     [SerializeField] private float MaxSpeed = 5f;
     public override void Enter()
     {
+
     }
     public override void Run()
     {
