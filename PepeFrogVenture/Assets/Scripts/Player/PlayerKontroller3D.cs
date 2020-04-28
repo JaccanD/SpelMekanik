@@ -11,28 +11,37 @@ public class PlayerKontroller3D : MonoBehaviour
 {
     private StateMachine stateMachine;
     public State[] states;
-
     private Vector3 Velocity = Vector3.zero; 
     private CapsuleCollider Coll;
-    [SerializeField] private float SkinWidth = 0.1f;
-    [SerializeField] LayerMask CollisionMask;
-    [SerializeField] LayerMask CameraMask;
     private float RotationX = 0;
     private float RotationY = 90;
-    [SerializeField] private float MouseSensitivity = 1;
-    [SerializeField] private float MinRotationX = -60;
-    [SerializeField] private float MaxRotationX = 60;
-    [SerializeField] private GameObject Camera;
-    [SerializeField] Vector3 CameraDistance;
-    [SerializeField] private float GroundCheckDistance;
-    [SerializeField] private LayerMask HookMask;
-    [SerializeField] private float ToungeLength;
-    [SerializeField] private LayerMask PickUpMask;
+
     [SerializeField] private GameController Controller;
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
+
+    [Header ("Movement Settings")]
+    [SerializeField] LayerMask CollisionMask;
+    [SerializeField] private float SkinWidth = 0.1f;
+    [SerializeField] private float GroundCheckDistance;
+
+    [Header ("Tounge Settings")]
+    [SerializeField] private LayerMask HookMask;
+    [SerializeField] private float ToungeLength;
+    [SerializeField] private LayerMask PickUpMask;
     [SerializeField] GameObject ToungePrefab;
+
+    [Header("Camera Settings")]
+    [SerializeField] private GameObject Camera;
+    [SerializeField] Vector3 CameraDistance;
+    [SerializeField] LayerMask CameraMask;
     [SerializeField] float CameraHidePlayerDistance;
+    [SerializeField] private float MouseSensitivity = 1;
+    [SerializeField] private float MinRotationX = -60;
+    [SerializeField] private float MaxRotationX = 60;
+
+
+
     private Vector3 Hook;
 
     private Vector3 Direction = Vector3.zero;
