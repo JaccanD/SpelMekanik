@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3489091853838458016}
   - component: {fileID: 4662518427820680583}
+  - component: {fileID: 5009562349596778134}
   m_Layer: 11
   m_Name: FireFly
   m_TagString: Fire
@@ -47,6 +48,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &5009562349596778134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446110723812552371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbd69c14021b2b4795bac7e87726f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1257957119056375247
 GameObject:
   m_ObjectHideFlags: 0
