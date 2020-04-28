@@ -147,7 +147,6 @@ public class PlayerKontroller3D : MonoBehaviour
         // Ta bort när vi ska animera!
         transform.rotation = Quaternion.Euler(0.0f, RotationY, 0.0f);
 
-  
         //Sätt rörelseriktningen mot hållet kameran tittar
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         
@@ -167,6 +166,7 @@ public class PlayerKontroller3D : MonoBehaviour
         {
 
             GameObject fireball = Instantiate(Fireball, topPoint, CalculateFireballRotation());
+            EventSystem.Current.FireEvent(new FireballshotEvent());
             Controller.fire = false;
         }
         //Flyttar kameran
@@ -195,6 +195,10 @@ public class PlayerKontroller3D : MonoBehaviour
                 GetComponent<MeshRenderer>().enabled = true;
             }
             newPosition = castVector.normalized * cast.distance + transform.position;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = true;
         }
         Camera.transform.position = newPosition;
     }
