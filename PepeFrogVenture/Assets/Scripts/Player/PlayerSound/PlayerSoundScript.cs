@@ -13,6 +13,11 @@ public class PlayerSoundScript : MonoBehaviour
 
     private void Start()
     {
-        
+        EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), OnPlayerHit);
+    }
+
+    public void OnPlayerHit(Callback.Event eb)
+    {
+        PlayerAudioSource.PlayOneShot(PlayerHitSound);
     }
 }
