@@ -19715,7 +19715,7 @@ PrefabInstance:
     - target: {fileID: 782348452665803293, guid: dc7ef20eb42ea9046967fa629e039afa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.033
+      value: 0.034
       objectReference: {fileID: 0}
     - target: {fileID: 782348452665803293, guid: dc7ef20eb42ea9046967fa629e039afa,
         type: 3}
@@ -19725,7 +19725,7 @@ PrefabInstance:
     - target: {fileID: 782348452665803293, guid: dc7ef20eb42ea9046967fa629e039afa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 782348452665803293, guid: dc7ef20eb42ea9046967fa629e039afa,
         type: 3}
@@ -19771,6 +19771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireBellyGlow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549300370472193337, guid: dc7ef20eb42ea9046967fa629e039afa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6912868166269724601, guid: dc7ef20eb42ea9046967fa629e039afa,
         type: 3}
@@ -38590,6 +38595,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2060501411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2063302937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1549300370472193337, guid: dc7ef20eb42ea9046967fa629e039afa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1059294904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2063302940 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6912868166269724601, guid: dc7ef20eb42ea9046967fa629e039afa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1059294904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063302941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063302937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306aea8efb2ee40b1487e195d6c324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BellyGlow: {fileID: 2063302940}
 --- !u!4 &2072224774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 308a871ada247a24c86aba84aefd37af,
