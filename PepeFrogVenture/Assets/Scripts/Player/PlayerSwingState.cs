@@ -12,9 +12,6 @@ public class PlayerSwingState : PlayerBaseState
 
     private float Acceleration = 3;
 
-    public override void Run()
-    {
-    }
     public override void Enter()
     {
         drawTounge();
