@@ -27,7 +27,7 @@ public class FireFlyRoaming : MonoBehaviour
         Vector3 nextFrameMovement = Vector3.MoveTowards(transform.position, moveToPosition, speed * Time.deltaTime);
         Vector3 castDistance = nextFrameMovement - transform.position;
         RaycastHit cast;
-        bool hit = Physics.SphereCast(transform.position, collider.radius, moveToPosition.normalized, out cast, Vector3.Distance(nextFrameMovement, transform.position), collisionMask);
+        bool hit = Physics.SphereCast(transform.position, collider.radius, castDistance.normalized, out cast, castDistance.magnitude, collisionMask);
         if (!hit)
         {
             transform.position = nextFrameMovement;
