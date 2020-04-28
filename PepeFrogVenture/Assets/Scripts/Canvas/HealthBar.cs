@@ -12,6 +12,7 @@ public class HealthBar : MonoBehaviour
     {
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), LoseHealth);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), GainHealth);
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), ResetBar);
     }
 
     public void LoseHealth(Callback.Event eb)
@@ -28,6 +29,10 @@ public class HealthBar : MonoBehaviour
         {
             slider.value += 2;
         }
+    }
+    public void ResetBar(Callback.Event eb)
+    {
+        slider.value = slider.maxValue;
     }
 
 
