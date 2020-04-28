@@ -60,6 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbd69c14021b2b4795bac7e87726f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  radius: 2
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 57088
 --- !u!1 &1257957119056375247
 GameObject:
   m_ObjectHideFlags: 0
