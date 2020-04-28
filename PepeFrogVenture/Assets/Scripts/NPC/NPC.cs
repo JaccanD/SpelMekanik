@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
         {
             currentDialog = 1;
         }
-        if(Controller.Berries == RequiredBerries)
+        if(Controller.Berries == RequiredBerries && !QuestDone)
         {
             currentDialog = 2;
             Unlock();
