@@ -13,6 +13,7 @@ public class FireflyInBelly : MonoBehaviour
         BellyGlow.Stop();
         EventSystem.Current.RegisterListener(typeof(PickupEvent), FireBelly);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), LoseFireBelly);
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), LoseFireBellyonDeath);
     }
 
     public void FireBelly(Callback.Event eb)
@@ -26,6 +27,11 @@ public class FireflyInBelly : MonoBehaviour
     }
 
     public void LoseFireBelly(Callback.Event eb)
+    {
+        BellyGlow.Stop();
+    }
+
+    public void LoseFireBellyonDeath(Callback.Event eb)
     {
         BellyGlow.Stop();
     }
