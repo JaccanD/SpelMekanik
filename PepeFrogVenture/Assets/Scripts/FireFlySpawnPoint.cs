@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireFlySpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject fireFlyPreFab;
+    [SerializeField] private GameObject Prefab;
     private GameObject currentFirefly;
 
     [SerializeField] private float spawnTimer = 5f;
@@ -27,7 +27,7 @@ public class FireFlySpawnPoint : MonoBehaviour
                 randomPos *= 2;
                 randomPos.y = 0;
                 randomPos += transform.position;
-                currentFirefly = Instantiate(fireFlyPreFab, randomPos, Quaternion.identity);
+                currentFirefly = Instantiate(Prefab, randomPos, Quaternion.identity);
                 currentSpawnTimeLeft = 0;
             }
         }

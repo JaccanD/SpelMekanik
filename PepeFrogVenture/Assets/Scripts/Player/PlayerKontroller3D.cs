@@ -196,6 +196,10 @@ public class PlayerKontroller3D : MonoBehaviour
             }
             newPosition = castVector.normalized * cast.distance + transform.position;
         }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
         Camera.transform.position = newPosition;
     }
     public void Die(Callback.Event eb)

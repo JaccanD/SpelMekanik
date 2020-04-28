@@ -10,29 +10,27 @@ public class BossProjectile : MonoBehaviour
     //public Vector3 target;
     //private Vector3 start;
     //[SerializeField] private float projectileHeight;
-    [SerializeField] private float projektileForce = 1000f;
-    [SerializeField] private float damage = 4;
+    private float projectileForce;
+    private float projectileDamage = 3;
 
     private void Start()
     {
+        //gamla sättet att ge projektilerna kraft, nu får de kraft av bossen
         //start = transform.position;
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * projektileForce);
+        //Rigidbody rb = GetComponent<Rigidbody>();
+        //rb.AddForce(transform.forward * projectileForce);
         Destroy(gameObject, 5f);
     }
-
-    //public void setTarget(Vector3 targetVector)
-    //{
-    //    target = targetVector;
-    //}
-
+    public void SetDamage(float damage)
+    {
+        projectileDamage = damage;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            EventSystem.Current.FireEvent(new PlayerHitEvent(collision.gameObject, damage));
+            EventSystem.Current.FireEvent(new PlayerHitEvent(collision.gameObject, projectileDamage));
             //collision.gameObject.GetComponent<PlayerKontroller3D>().GetGameController().TakeDamage(damage);
-            Debug.Log("player toke damage");
         }
         Destroy(gameObject);
     }

@@ -10,14 +10,14 @@ public class BossAttackingState : BossBaseState
     [SerializeField] private float cooldown;
     [SerializeField] private int shootsLeftBeforeSubmerge = 3;
     [SerializeField] private float rotationSpeed = 3;
+    [SerializeField] private float projectileStartingForce = 1000;
+    [SerializeField] private float projectileDamage = 4;
+    [SerializeField] private float projectileDistanceMultiplier = 40;
     
 
     public override void Run()
     {
-        //float rotationSpeed = Boss.speed * Time.deltaTime;
         rotateTowardPlayer(Boss.player.transform.position);
-        //Boss.transform.rotation = Quaternion.LookRotation(Boss.player.transform.position);
-        //Boss.transform.position = Vector3.RotateTowards(Boss.transform.position, Boss.player.transform.position, rotationSpeed,0);
         Attack();
     }
 
@@ -27,12 +27,11 @@ public class BossAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-
+        //gamla sättet att skuta projektiler
         //LaunchProjectile();
-        GameObject newProjectile = projectile;
+        //GameObject projectile = projectile;
         //projectile.GetComponent<BossProjectile>().setTarget(Boss.player.transform.position); gammalt
-        Instantiate(newProjectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation/*Boss.transform.rotation*/);
-        newProjectile.transform.rotation = Boss.transform.rotation;
+        ShootProjectile();
 
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
@@ -46,6 +45,21 @@ public class BossAttackingState : BossBaseState
     {
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    }
+    private void ShootProjectile()
+    {
+        float distance = Vector3.Distance(Boss.transform.position, player.transform.position);
+        float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
+
+        GameObject newProjectile;
+
+        newProjectile = Instantiate(projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
+        newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+
+        Debug.Log(force);
+        
+        newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
+        
     }
     //private void LaunchProjectile()
     //{
