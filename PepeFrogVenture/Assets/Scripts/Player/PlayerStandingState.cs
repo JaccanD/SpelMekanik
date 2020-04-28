@@ -11,7 +11,7 @@ public class PlayerStandingState : PlayerBaseState
     }
     public override void Run()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Talk();
         }
