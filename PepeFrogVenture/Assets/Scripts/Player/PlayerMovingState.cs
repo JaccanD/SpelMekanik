@@ -22,7 +22,7 @@ public class PlayerMovingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerJumpingState>();
             return;
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Talk();
         }
