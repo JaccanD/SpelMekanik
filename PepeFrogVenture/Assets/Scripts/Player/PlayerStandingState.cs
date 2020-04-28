@@ -7,6 +7,7 @@ public class PlayerStandingState : PlayerBaseState
 {
     public override void Enter()
     {
+        Velocity = Vector3.zero;
     }
     public override void Run()
     {
@@ -39,7 +40,7 @@ public class PlayerStandingState : PlayerBaseState
     }
     private void Deccelerate()
     {
-        Velocity *= 0.9f;
+        Velocity *= 0.2f;
         if (Velocity.magnitude < 0.1f)
             Velocity = Vector3.zero;
     }

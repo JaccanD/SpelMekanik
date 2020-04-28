@@ -27,12 +27,14 @@ public class PlayerMovingState : PlayerBaseState
         {
             Talk();
         }
-        if (Direction.magnitude == 0)
+
+        if(Direction.magnitude != 0)
+            Velocity += Direction * Acceleration * Time.deltaTime;
+        else
         {
-            stateMachine.TransitionTo<PlayerStandingState>();
-            return;
+            Velocity += -Velocity.normalized * Acceleration * Time.deltaTime;
         }
-        Velocity += Direction * Acceleration * Time.deltaTime;
+        
         Velocity += Gravity * Vector3.down * Time.deltaTime;
 
         if(Velocity.magnitude > MaxSpeed)
@@ -42,6 +44,13 @@ public class PlayerMovingState : PlayerBaseState
 
         MovePlayer();
 
+        Vector3 velCheck = Velocity;
+        velCheck.y = 0;
+        if (velCheck.magnitude < 0.1f)
+        {
+            stateMachine.TransitionTo<PlayerStandingState>();
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
