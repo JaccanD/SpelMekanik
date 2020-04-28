@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8125961185266973359}
   - component: {fileID: 8125961185266973352}
   m_Layer: 0
-  m_Name: FireFlySpawner 1
+  m_Name: FireFlySpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7c8f67aba2cd848b8d346d4d6a1bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFlyPreFab: {fileID: 4152157604096110617, guid: e053b8939ef04bd4d884fd1ddad31945,
+  fireFlyPreFab: {fileID: 446110723812552371, guid: 6942ee1970306de41b3306fb97ff7181,
     type: 3}
   spawnTimer: 5
