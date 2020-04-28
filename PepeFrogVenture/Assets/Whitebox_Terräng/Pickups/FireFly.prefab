@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3489091853838458016}
-  m_Layer: 0
-  m_Name: FireFly 1
-  m_TagString: Untagged
+  - component: {fileID: 4662518427820680583}
+  m_Layer: 11
+  m_Name: FireFly
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4662518427820680583
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446110723812552371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &1257957119056375247
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +58,7 @@ GameObject:
   - component: {fileID: 4611344081974409047}
   - component: {fileID: 8005744625135099887}
   - component: {fileID: 7419616705456257040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +137,7 @@ GameObject:
   - component: {fileID: 6823881761485686856}
   - component: {fileID: 2852231294567201308}
   - component: {fileID: 8240521384819120389}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,9 +216,9 @@ GameObject:
   - component: {fileID: 5841404349410127324}
   - component: {fileID: 8105568333495490084}
   - component: {fileID: 5266645012845990744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fly_BOdy
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

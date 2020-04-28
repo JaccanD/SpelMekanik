@@ -12,8 +12,28 @@ public class NPC : MonoBehaviour
     int currentDialog = 0;
     private bool QuestDone = false;
 
+    private GameObject TalkMarker;
+
+    private void Update()
+    {
+        TalkMarker.SetActive(false);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            if(colliders[i].gameObject.tag == "Player")
+            {
+                if(TalkMarker != null)
+                {
+                    TalkMarker.SetActive(true);
+                }
+            }
+        }
+    }
     private void Awake()
     {
+        TalkMarker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        TalkMarker.transform.position = transform.position + Vector3.up * 2;
+        TalkMarker.SetActive(false);
         Target.SetActive(true);
     }
     public void Talk()

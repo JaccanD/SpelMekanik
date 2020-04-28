@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2827294512720387648}
   - component: {fileID: 455009092813481400}
   - component: {fileID: 4556137125658730692}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fly_BOdy
-  m_TagString: Untagged
+  m_TagString: Flies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5319470433822573771}
   - component: {fileID: 1816737898627902579}
   - component: {fileID: 1214706612834995084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 2927070794196466644}
   - component: {fileID: 5888859413467433344}
   - component: {fileID: 319880529782008473}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wing_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,9 +246,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5064290778820325180}
-  m_Layer: 0
-  m_Name: Fly 1
-  m_TagString: Untagged
+  - component: {fileID: 5958750492513258751}
+  m_Layer: 11
+  m_Name: Fly
+  m_TagString: Flies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,3 +271,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5958750492513258751
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078508274242673967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.3, z: 0}
