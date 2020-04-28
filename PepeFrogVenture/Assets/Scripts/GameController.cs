@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
     public void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
         EventSystem.Current.RegisterListener(typeof(RespawnPointReachedEvent), SetRespawnPoint);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
