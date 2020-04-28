@@ -14,7 +14,7 @@ public class PlayerFallingState : PlayerBaseState
     }
     public override void Run()
     {
-        if(GroundCheck() && Direction.magnitude != 0)
+        if(GroundCheck() && Velocity.magnitude > 0.1f)
         {
             stateMachine.TransitionTo<PlayerMovingState>();
             return;

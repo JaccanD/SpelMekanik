@@ -10,6 +10,12 @@ public class PlayerJumpingState : PlayerBaseState
     [SerializeField] private float AirResistance;
     public override void Enter()
     {
+        Vector3 velCheck = Velocity;
+        velCheck.y = 0;
+        if(velCheck.magnitude < 2.0f)
+        {
+            Velocity += velCheck.normalized * 2;
+        }
         Velocity += JumpForce * Vector3.up;
     }
     public override void Run()
