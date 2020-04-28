@@ -32,6 +32,7 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
     [SerializeField] GameObject ToungePrefab;
+    [SerializeField] float CameraHidePlayerDistance;
     private Vector3 Hook;
 
     private Vector3 Direction = Vector3.zero;
@@ -148,7 +149,9 @@ public class PlayerKontroller3D : MonoBehaviour
         RaycastHit cast;
         bool hit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, Vector3.down, out cast, SkinWidth + Coll.height, CollisionMask, QueryTriggerInteraction.Ignore);
         if (hit)
+        {
             direction = Vector3.ProjectOnPlane(direction, cast.normal).normalized;
+        }
         else
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
         if(Controller.fire && Input.GetKeyDown(KeyCode.Mouse1))
@@ -174,6 +177,14 @@ public class PlayerKontroller3D : MonoBehaviour
         bool hit = Physics.SphereCast(transform.position, Camera.GetComponent<SphereCollider>().radius, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
         if (hit)
         {
+            if (cast.distance < CameraHidePlayerDistance)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
             newPosition = castVector.normalized * cast.distance + transform.position;
         }
         Camera.transform.position = newPosition;
