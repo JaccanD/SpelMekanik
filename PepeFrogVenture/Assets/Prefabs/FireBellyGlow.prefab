@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6912868166269724601}
   - component: {fileID: 8410713728405554994}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: FireBellyGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 0.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
