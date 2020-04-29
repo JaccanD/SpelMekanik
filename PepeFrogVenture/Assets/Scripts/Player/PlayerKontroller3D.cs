@@ -164,12 +164,19 @@ public class PlayerKontroller3D : MonoBehaviour
         }
         else
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-        if(Controller.fire && Input.GetKeyDown(KeyCode.Mouse1))
+        //if(Controller.fire && Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+
+        //    GameObject fireball = Instantiate(Fireball, topPoint, CalculateFireballRotation());
+        //    EventSystem.Current.FireEvent(new FireballshotEvent());
+        //    Controller.fire = false;
+        //}
+        if (PlayerStats.getFire() && Input.GetKeyDown(KeyCode.Mouse1))
         {
 
             GameObject fireball = Instantiate(Fireball, topPoint, CalculateFireballRotation());
             EventSystem.Current.FireEvent(new FireballshotEvent());
-            Controller.fire = false;
+            PlayerStats.setFire(false);
         }
         //Flyttar kameran
         MoveCamera();
