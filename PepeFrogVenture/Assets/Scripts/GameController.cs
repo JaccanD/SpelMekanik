@@ -16,7 +16,8 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
+        PlayerStats.setFire(false);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
         EventSystem.Current.RegisterListener(typeof(RespawnPointReachedEvent), SetRespawnPoint);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
@@ -128,6 +129,7 @@ public class GameController : MonoBehaviour
     {
         //Health = 10;
         PlayerStats.setHealth(10);
+        PlayerStats.setFire(false);
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
                 SceneManager.LoadScene("LvL2");
