@@ -16,6 +16,7 @@ public class PlayerKontroller3D : MonoBehaviour
     private float RotationX = 0;
     private float RotationY = 90;
     private GameController Controller;
+    private Vector3 Center { get { return GetComponent<CapsuleCollider>().center + transform.position; } }
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
 
@@ -38,6 +39,8 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] private float MouseSensitivity = 1;
     [SerializeField] private float MinRotationX = -60;
     [SerializeField] private float MaxRotationX = 60;
+
+
 
 
 
@@ -121,6 +124,10 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         return ToungePrefab;
     }
+    public Vector3 GetCenter()
+    {
+        return Center;
+    }
     void Start()
     {
         Coll = GetComponent<CapsuleCollider>();
@@ -131,6 +138,8 @@ public class PlayerKontroller3D : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
+
+        
     }
     void Update()
     {
@@ -154,8 +163,8 @@ public class PlayerKontroller3D : MonoBehaviour
         
         direction = Camera.transform.rotation * direction;
         //Projecerar riktningen på planet spelaren står på
-        Vector3 topPoint = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
-        Vector3 botPoint = transform.position + Coll.center + Vector3.down * (Coll.height / 2 - Coll.radius);
+        Vector3 topPoint = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
+        Vector3 botPoint = Center + Vector3.down * (Coll.height / 2 - Coll.radius);
         RaycastHit cast;
         bool hit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, Vector3.down, out cast, SkinWidth + Coll.height, CollisionMask, QueryTriggerInteraction.Ignore);
         if (hit)
@@ -189,25 +198,25 @@ public class PlayerKontroller3D : MonoBehaviour
     }
     private void MoveCamera()
     {
-        Vector3 newPosition = Camera.transform.rotation * CameraDistance + transform.position;
-        Vector3 castVector = newPosition - transform.position;
+        Vector3 newPosition = Camera.transform.rotation * CameraDistance + Center;
+        Vector3 castVector = newPosition - Center;
         RaycastHit cast;
-        bool hit = Physics.SphereCast(transform.position, Camera.GetComponent<SphereCollider>().radius, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
+        bool hit = Physics.SphereCast(Center, Camera.GetComponent<SphereCollider>().radius + 0.2f, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
         if (hit)
         {
             if (cast.distance < CameraHidePlayerDistance)
             {
-                GetComponent<MeshRenderer>().enabled = false;
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
             }
             else
             {
-                GetComponent<MeshRenderer>().enabled = true;
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
             }
-            newPosition = castVector.normalized * cast.distance + transform.position;
+            newPosition = castVector.normalized * cast.distance + Center;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
         }
         Camera.transform.position = newPosition;
     }
@@ -224,7 +233,7 @@ public class PlayerKontroller3D : MonoBehaviour
     }
     public Quaternion CalculateFireballRotation()
     {
-        Vector3 start = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
+        Vector3 start = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
         Vector3 forward = Camera.transform.rotation * Vector3.forward;
         bool hookHit = Physics.Raycast(Camera.transform.position + forward * 5, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit ShootCast, ToungeLength + 5);
         if (!hookHit)
