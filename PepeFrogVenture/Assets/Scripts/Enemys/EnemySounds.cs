@@ -18,6 +18,9 @@ public class EnemySounds : MonoBehaviour
 
     public void OnEnemyHit(Callback.Event eb) 
     {
+        EnemyHitEvent e = (EnemyHitEvent)eb;
+        if (e.EnemyHit != gameObject)
+            return;
 
         //source.volume = 0.2f;
         //source.PlayOneShot(EnemyDead);
