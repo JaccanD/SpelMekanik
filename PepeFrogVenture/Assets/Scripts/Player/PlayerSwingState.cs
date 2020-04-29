@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "PlayerState/SwingState")]
 public class PlayerSwingState : PlayerBaseState

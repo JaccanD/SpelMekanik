@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour
     int currentDialog = 0;
     private bool QuestDone = false;
 
+    [SerializeField] private GameObject TalkPrefab;
     private GameObject TalkMarker;
 
     private void Update()
@@ -31,8 +32,8 @@ public class NPC : MonoBehaviour
     }
     private void Awake()
     {
-        TalkMarker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        TalkMarker.transform.position = transform.position + Vector3.up * 2;
+        TalkMarker = GameObject.Instantiate(TalkPrefab, transform.position, transform.rotation);
+        TalkMarker.transform.position = transform.position + Vector3.up;
         TalkMarker.SetActive(false);
         Target.SetActive(true);
     }
