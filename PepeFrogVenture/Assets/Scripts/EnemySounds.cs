@@ -23,5 +23,6 @@ public class EnemySounds : MonoBehaviour
         //source.PlayOneShot(EnemyDead);
 
         AudioSource.PlayClipAtPoint(EnemyDead, transform.position);
+        EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
     }
 }
