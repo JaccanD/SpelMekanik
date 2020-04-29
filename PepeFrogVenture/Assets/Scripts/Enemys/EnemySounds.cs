@@ -29,6 +29,7 @@ public class EnemySounds : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(EnemyDead, transform.position);
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
+        EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), OnEnemyStomp);
     }
 
     public void OnEnemyStomp(Callback.Event eb)
@@ -38,6 +39,7 @@ public class EnemySounds : MonoBehaviour
             return;
 
         AudioSource.PlayClipAtPoint(FlatRat, transform.position);
+        EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), OnEnemyStomp);
     }
 }
