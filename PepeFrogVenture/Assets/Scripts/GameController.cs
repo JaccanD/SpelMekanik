@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public bool fire = false;
 
 
-    public void Awake()
+    public void Start()
     {
         DontDestroyOnLoad(this.gameObject);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
@@ -102,6 +102,7 @@ public class GameController : MonoBehaviour
     }
     public void IsSceneTwo(Callback.Event eb)
     {
+        Health = 10;
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
                 SceneManager.LoadScene("LvL2");

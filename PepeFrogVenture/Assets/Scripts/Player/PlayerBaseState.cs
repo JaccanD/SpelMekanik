@@ -49,8 +49,15 @@ public abstract class PlayerBaseState : State
         RaycastHit cast;
         float addedDistance = GetAddedDistance(startingVelocity);
         bool hit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, startingVelocity.normalized, out cast, startingVelocity.magnitude + addedDistance, CollisionMask, QueryTriggerInteraction.Ignore);
+        
         if (hit)
         {
+            if (cast.collider.tag == "Berry")
+            {
+                EventSystem.Current.FireEvent(new PickupEvent(cast.collider.gameObject));
+                Destroy(cast.collider.gameObject);
+                return startingVelocity;
+            }
             bool SkinWidthHit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, -cast.normal, out RaycastHit SkinWidthCast, SkinWidth + startingVelocity.magnitude, CollisionMask, QueryTriggerInteraction.Ignore);
             Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
             Velocity += normalForce;

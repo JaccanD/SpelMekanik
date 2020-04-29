@@ -15,8 +15,7 @@ public class PlayerKontroller3D : MonoBehaviour
     private CapsuleCollider Coll;
     private float RotationX = 0;
     private float RotationY = 90;
-
-    [SerializeField] private GameController Controller;
+    private GameController Controller;
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
 
@@ -126,6 +125,9 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
+        GameObject ControllerGo = GameObject.FindGameObjectWithTag("GameController");
+        Debug.Log(ControllerGo.name);
+        Controller = ControllerGo.GetComponent<GameController>();
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);

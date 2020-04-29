@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "PlayerState/MovingState")]
 public class PlayerMovingState : PlayerBaseState
@@ -20,6 +21,7 @@ public class PlayerMovingState : PlayerBaseState
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            EventSystem.Current.FireEvent(new PlayerJumpEvent());
             stateMachine.TransitionTo<PlayerJumpingState>();
             return;
         }
