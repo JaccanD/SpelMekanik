@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class DestroyableLilypad : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class DestroyableLilypad : MonoBehaviour
 
     private void DestroyLilypad()
     {
+        EventSystem.Current.FireEvent(new LilyPadDestroyedEvent(this.gameObject));
         Destroy(gameObject);
     }
 }

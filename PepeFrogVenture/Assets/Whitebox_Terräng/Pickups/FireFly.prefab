@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3489091853838458016}
   - component: {fileID: 4662518427820680583}
   - component: {fileID: 5009562349596778134}
+  - component: {fileID: -1967817203650345222}
   m_Layer: 11
   m_Name: FireFly
   m_TagString: Fire
@@ -65,6 +66,19 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 57088
+--- !u!114 &-1967817203650345222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446110723812552371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a54823bc836704693bb2ef99f45a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
 --- !u!1 &1257957119056375247
 GameObject:
   m_ObjectHideFlags: 0
