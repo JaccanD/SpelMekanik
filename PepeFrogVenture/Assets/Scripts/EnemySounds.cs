@@ -21,5 +21,12 @@ public class EnemySounds : MonoBehaviour
     {
         source.volume = 0.2f;
         source.PlayOneShot(EnemyDead);
+
+        Invoke("RemoveSource", EnemyDead.length * 2);
+    }
+
+    public void RemoveSource()
+    {
+        Destroy(this.gameObject);
     }
 }

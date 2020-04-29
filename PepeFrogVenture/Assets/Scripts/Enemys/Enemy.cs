@@ -80,7 +80,8 @@ public class Enemy : MonoBehaviour
     }
     public void Defeated()
     {
-        Debug.Log("Kör Defeated");
+        GameObject audio = GetComponentInChildren<AudioSource>().transform.gameObject;
+        audio.transform.SetParent(null);
         statemachine.TransitionTo<EnemyDefeatedState>();
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), Stomped);
