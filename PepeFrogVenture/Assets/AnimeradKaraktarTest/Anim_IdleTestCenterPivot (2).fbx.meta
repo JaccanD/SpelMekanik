@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b3194b44443180e4d9029fd78e31dd75
+guid: feddde14f39e8474bb460c8892d466c1
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Idle
+    second: Take 001
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -39,7 +39,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Take 001
       takeName: Take 001
       internalID: 0
       firstFrame: 1
@@ -50,14 +50,14 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
@@ -96,7 +96,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
-    normalSmoothAngle: 180
+    normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
@@ -229,45 +229,45 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Anim_IdleTest(Clone)
+    - name: Anim_IdleTestCenterPivot (2)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Skinning:CharacterMesh
-      parentName: Anim_IdleTest(Clone)
+      parentName: Anim_IdleTestCenterPivot (2)(Clone)
       position: {x: -0.014698991, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Skinning:Root
-      parentName: Anim_IdleTest(Clone)
-      position: {x: -0, y: 0, z: 0}
+      parentName: Anim_IdleTestCenterPivot (2)(Clone)
+      position: {x: 1.4571677e-16, y: 0.6733634, z: -0.008523258}
       rotation: {x: 0.48607355, y: -0.5135489, z: -0.48607355, w: 0.5135489}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Skinning:Pelvis
       parentName: Skinning:Root
-      position: {x: -0.6008096, y: -1.5959456e-16, z: 1.3340652e-16}
+      position: {x: 0.072005376, y: -0.028477462, z: 1.3605164e-16}
       rotation: {x: -0.9979217, y: 0.06443915, z: 0.000000029802322, w: 0.000000029802322}
       scale: {x: 1.0000002, y: 0.99999976, z: 0.99999976}
     - name: Skinning:Neck
       parentName: Skinning:Pelvis
-      position: {x: -0.20049259, y: 8.326673e-17, z: -4.1285822e-17}
+      position: {x: -0.20049259, y: 9.7144515e-17, z: -3.8423066e-17}
       rotation: {x: -0.000000023963992, y: 0.000000034671082, z: 0.11587087, w: 0.9932643}
       scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
     - name: Skinning:Head
       parentName: Skinning:Neck
-      position: {x: -0.093390785, y: 5.551115e-17, z: -1.836672e-17}
+      position: {x: -0.093390785, y: 5.551115e-17, z: -1.4702234e-17}
       rotation: {x: 0.41787925, y: -0.5704182, z: 0.41787928, w: 0.5704182}
       scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
     - name: Skinning:L_UpperArm
       parentName: Skinning:Neck
       position: {x: -0.033483863, y: -0.02871556, z: -0.12449067}
-      rotation: {x: 0.38736975, y: -0.5670186, z: 0.45149332, w: 0.56972647}
+      rotation: {x: 0.38736972, y: -0.56701875, z: 0.45149344, w: 0.56972647}
       scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
     - name: Skinning:L_LowerArm
       parentName: Skinning:L_UpperArm
       position: {x: -0.26960886, y: 0, z: -0.02166417}
-      rotation: {x: -0.011340513, y: -0.17823048, z: -0.020871399, w: 0.983702}
+      rotation: {x: -0.01134051, y: -0.1782305, z: -0.020871632, w: 0.98370206}
       scale: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
     - name: Skinning:L_Wrist
       parentName: Skinning:L_LowerArm
@@ -277,12 +277,12 @@ ModelImporter:
     - name: Skinning:R_UpperArm
       parentName: Skinning:Neck
       position: {x: -0.033483937, y: -0.028715517, z: 0.124491}
-      rotation: {x: -0.40890586, y: 0.61484724, z: 0.41236168, w: 0.53358847}
+      rotation: {x: -0.40890598, y: 0.61484724, z: 0.41236162, w: 0.5335886}
       scale: {x: 1.0000006, y: 1.0000005, z: 1.0000007}
     - name: Skinning:R_LowerArm
       parentName: Skinning:R_UpperArm
       position: {x: -0.23600733, y: -0.0005811846, z: -0.024870299}
-      rotation: {x: 0.056579992, y: 0.002093419, z: 0.9977907, w: 0.0347578}
+      rotation: {x: 0.056579974, y: 0.002093538, z: 0.9977907, w: 0.03475778}
       scale: {x: 0.9999997, y: 1.0000002, z: 1}
     - name: Skinning:R_Wrist
       parentName: Skinning:R_LowerArm
@@ -292,7 +292,7 @@ ModelImporter:
     - name: Skinning:L_UpperLeg
       parentName: Skinning:Pelvis
       position: {x: 0.0047414573, y: -0.0003515571, z: -0.08034572}
-      rotation: {x: -0.0060817404, y: 0.7060349, z: 0.7077656, w: 0.023362579}
+      rotation: {x: -0.0060817404, y: 0.7060349, z: 0.7077656, w: 0.023362577}
       scale: {x: 1, y: 1.0000002, z: 1.0000002}
     - name: Skinning:L_LowerLeg
       parentName: Skinning:L_UpperLeg
@@ -302,7 +302,7 @@ ModelImporter:
     - name: Skinning:L_Foot
       parentName: Skinning:L_LowerLeg
       position: {x: -0.24951674, y: -0.0000008188358, z: -0.043394573}
-      rotation: {x: 0.030671807, y: 0.7074865, z: -0.7044594, w: 0.047530927}
+      rotation: {x: 0.030671803, y: 0.7074865, z: -0.7044594, w: 0.047530927}
       scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
     - name: Skinning:R_UpperLeg
       parentName: Skinning:Pelvis
@@ -327,7 +327,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Skinning:Pelvis
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1

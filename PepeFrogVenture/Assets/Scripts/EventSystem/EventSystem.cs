@@ -87,6 +87,7 @@ namespace Callback
                     if (eventListeners[T].Contains(L))
                     {
                         eventListeners[T].Remove(L);
+                        Debug.Log("Listener Removed");
                     }
                 }
             }
