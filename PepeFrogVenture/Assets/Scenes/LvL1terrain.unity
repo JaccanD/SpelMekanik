@@ -11438,7 +11438,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b3194b44443180e4d9029fd78e31dd75,
         type: 3}
       propertyPath: m_Name
-      value: Anim_IdleTest
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: b3194b44443180e4d9029fd78e31dd75,
         type: 3}
@@ -37202,6 +37202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAudioSource: {fileID: 1983334034}
   MusicAudioSource: {fileID: 1983334032}
+  FootstepsSource: {fileID: 0}
   PlayerHitSound: {fileID: 8300000, guid: 1df36b2f8d85dac419e0c7f01724a537, type: 3}
   PlayerPickupSound: {fileID: 8300000, guid: f463fbe7e2a77ca478d131f42996693d, type: 3}
   PlayerJumpSound: {fileID: 8300000, guid: 5e9dd7251dd16d947863947b5d553f2d, type: 3}
