@@ -80,9 +80,9 @@ public class Enemy : MonoBehaviour
     }
     public void Defeated()
     {
-        statemachine.TransitionTo<EnemyDefeatedState>();
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), Stomped);
+        statemachine.TransitionTo<EnemyDefeatedState>();
     }
     public GameController getGamecontroller()
     {
@@ -98,7 +98,6 @@ public class Enemy : MonoBehaviour
     }
     public void OnHit(Callback.Event eb)
     {
-        Debug.Log("ENEMY HIT");
         EnemyHitEvent e = (EnemyHitEvent)eb;
         if (e.EnemyHit != gameObject)
             return;
@@ -113,7 +112,6 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            //Defeated();
             EventSystem.Current.FireEvent(new EnemyStompedEvent(this.gameObject));
         }
 

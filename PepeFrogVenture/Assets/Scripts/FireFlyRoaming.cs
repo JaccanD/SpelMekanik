@@ -39,7 +39,6 @@ public class FireFlyRoaming : MonoBehaviour
         }
         else
         {
-            Debug.Log("Fly hit something");
             moveToPosition = Random.insideUnitSphere * radius + startPosition;
             lastPosition = transform.position;
         }

@@ -6,6 +6,7 @@ public static class PlayerStats
 {
     private static float health = 10;
     private static bool fire;
+    
 
     public static float getHealth()
     {
