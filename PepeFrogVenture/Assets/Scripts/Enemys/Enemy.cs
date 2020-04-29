@@ -103,7 +103,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Defeated();
+            //Defeated();
+            EventSystem.Current.FireEvent(new EnemyHitEvent(this.gameObject, Health));
         }
 
     }
