@@ -2537,7 +2537,7 @@ GameObject:
   - component: {fileID: 531704902}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5615,6 +5615,7 @@ MonoBehaviour:
   controller: {fileID: 531704902}
   damage: 2
   Health: 30
+  stompedScale: {x: 0, y: 0, z: 0}
   lilypads:
   - {fileID: 996417105}
   - {fileID: 837464981}

@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public float Health = 10;
+    //public float Health = 10;
     public int Berries = 0;
     public GameObject CurrentRespawnPoint;
     public GameObject Player;
     public bool Tounge = true;
-    public bool fire = false;
+    //public bool fire = false;
 
 
     public void Start()
@@ -32,28 +32,51 @@ public class GameController : MonoBehaviour
     {
         return Tounge;
     }
+    //public void AddHealth(float healthIncrease)
+    //{
+    //    Health += healthIncrease;
+    //    if(Health > 10)
+    //    {
+    //        Health = 10;
+    //    }
+    //}
+    //public void TakeDamage(Callback.Event eb)
+    //{
+    //    PlayerHitEvent e = (PlayerHitEvent)eb;
+    //    Health -= e.Damage;
+    //    Debug.Log(Health);
+    //    if (Health <= 0)
+    //        PlayerDead();
+    //}
+    //public void Update()
+    //{
+    //    if(Health <= 0)
+    //    {
+    //        PlayerDead();
+    //        Health = 10;
+    //    }
+    //}
     public void AddHealth(float healthIncrease)
     {
-        Health += healthIncrease;
-        if(Health > 10)
+        PlayerStats.changeHealth(healthIncrease);
+        if(PlayerStats.getHealth() > 10)
         {
-            Health = 10;
+            PlayerStats.setHealth(10);
         }
     }
     public void TakeDamage(Callback.Event eb)
     {
         PlayerHitEvent e = (PlayerHitEvent)eb;
-        Health -= e.Damage;
-        Debug.Log(Health);
-        if (Health <= 0)
+        PlayerStats.changeHealth(- e.Damage);
+        if (PlayerStats.getHealth() <= 0)
             PlayerDead();
     }
     public void Update()
     {
-        if(Health <= 0)
+        if(PlayerStats.getHealth() <= 0)
         {
             PlayerDead();
-            Health = 10;
+            PlayerStats.changeHealth(10);
         }
     }
     public void AddBerry()
@@ -79,7 +102,8 @@ public class GameController : MonoBehaviour
         PickupEvent e = (PickupEvent)eb;
         if (e.Pickup.tag == "Fire")
         {
-            fire = true;
+            PlayerStats.setFire(true);
+            //fire = true;
         }
         if (e.Pickup.tag == "Flies")
         {
@@ -102,7 +126,8 @@ public class GameController : MonoBehaviour
     }
     public void IsSceneTwo(Callback.Event eb)
     {
-        Health = 10;
+        //Health = 10;
+        PlayerStats.setHealth(10);
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
                 SceneManager.LoadScene("LvL2");
