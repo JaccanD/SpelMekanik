@@ -20,11 +20,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameController controller;
     [SerializeField] protected float damage = 2;
     [SerializeField] protected float Health = 4;
+    [SerializeField] private Vector3 stompedScale;
     private void Awake()
     {
         GameObject PlayerGo = GameObject.FindGameObjectWithTag("Player");
         player = PlayerGo.GetComponent<PlayerKontroller3D>();
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
+        EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), Stomped);
         collider = GetComponent<BoxCollider>();
         //Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
@@ -81,10 +83,19 @@ public class Enemy : MonoBehaviour
         Debug.Log("Kör Defeated");
         statemachine.TransitionTo<EnemyDefeatedState>();
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
+        EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), Stomped);
     }
     public GameController getGamecontroller()
     {
         return controller;
+    }
+    public void Stomped(Callback.Event eb)
+    {
+        EnemyStompedEvent e = (EnemyStompedEvent)eb;
+        if (e.enemyStomped != gameObject)
+            return;
+        transform.localScale = stompedScale;
+        Defeated();
     }
     public void OnHit(Callback.Event eb)
     {
@@ -104,7 +115,7 @@ public class Enemy : MonoBehaviour
         if(other.tag == "Player")
         {
             //Defeated();
-            EventSystem.Current.FireEvent(new EnemyHitEvent(this.gameObject, Health));
+            EventSystem.Current.FireEvent(new EnemyStompedEvent(this.gameObject));
         }
 
     }
