@@ -7,12 +7,15 @@ public class FireFlyRoaming : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 moveToPosition;
     private Vector3 lastPosition;
+    private new SphereCollider collider;
     [SerializeField] private float speed = 2;
     [SerializeField] private float radius = 2;
+    [SerializeField] LayerMask collisionMask;
     
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<SphereCollider>();
         startPosition = transform.position;
         lastPosition = transform.position;
         moveToPosition = Random.insideUnitSphere * radius + startPosition;
@@ -21,12 +24,25 @@ public class FireFlyRoaming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveToPosition, speed * Time.deltaTime);
-        if(Vector3.Distance(transform.position, moveToPosition) < 0.2f)
+        Vector3 nextFrameMovement = Vector3.MoveTowards(transform.position, moveToPosition, speed * Time.deltaTime);
+        Vector3 castDistance = nextFrameMovement - transform.position;
+        RaycastHit cast;
+        bool hit = Physics.SphereCast(transform.position, collider.radius, castDistance.normalized, out cast, castDistance.magnitude, collisionMask);
+        if (!hit)
         {
-            Debug.Log("changing position");
+            transform.position = nextFrameMovement;
+            if (Vector3.Distance(transform.position, moveToPosition) < 0.2f)
+            {
+                moveToPosition = Random.insideUnitSphere * radius + startPosition;
+                lastPosition = transform.position;
+            }
+        }
+        else
+        {
+            Debug.Log("Fly hit something");
             moveToPosition = Random.insideUnitSphere * radius + startPosition;
             lastPosition = transform.position;
         }
+            
     }
 }

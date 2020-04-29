@@ -10,6 +10,8 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
+        GameObject Controller = GameObject.FindGameObjectWithTag("GameController");
+        slider.value = Controller.GetComponent<GameController>().Health;
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), LoseHealth);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), GainHealth);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), ResetBar);
