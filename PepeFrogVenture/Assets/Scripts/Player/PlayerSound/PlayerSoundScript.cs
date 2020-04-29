@@ -13,24 +13,26 @@ public class PlayerSoundScript : MonoBehaviour
     [SerializeField] private AudioClip PlayerHitSound;
     [SerializeField] private AudioClip PlayerPickupSound;
     [SerializeField] private AudioClip PlayerJumpSound;
-    [SerializeField] private AudioClip MusicSound;
+    [SerializeField] private AudioClip MusicSound; // Jack
+    [SerializeField] private AudioClip ToungeOut; // Jack
 
-    
+
 
     private void Start()
     {
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), OnPlayerHit);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
-        // Eventgrej maybe? hoppljud iaf
+        EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), OnPlayerJump); // Jack
+        EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnToungeOut); // Jack
 
-        playMusic();
+        PlayMusic(); // Jack
     }
 
-    private void Update()
+    private void Update() //Jack
     {
         if (!MusicAudioSource.isPlaying)
         {
-            playMusic();
+            PlayMusic();
         }
     }
 
@@ -43,9 +45,20 @@ public class PlayerSoundScript : MonoBehaviour
         PlayerAudioSource.PlayOneShot(PlayerPickupSound);
     }
 
-    private void playMusic() // Jack
+    private void PlayMusic() // Jack
     {
         MusicAudioSource.PlayOneShot(MusicSound);
         MusicAudioSource.volume = 0.3f;
+    }
+
+    private void OnPlayerJump(Callback.Event eb) // Jack
+    {
+        PlayerAudioSource.pitch = Random.Range(1.2f, 1.6f);
+        PlayerAudioSource.PlayOneShot(PlayerJumpSound);
+    }
+
+    private void OnToungeOut(Callback.Event eb) // Jack
+    {
+        PlayerAudioSource.PlayOneShot(ToungeOut);
     }
 }

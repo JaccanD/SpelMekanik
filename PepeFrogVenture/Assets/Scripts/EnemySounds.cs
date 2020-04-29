@@ -17,9 +17,9 @@ public class EnemySounds : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
     }
 
-    public void OnEnemyHit(Callback.Event eb)
+    public void OnEnemyHit(Callback.Event eb) // Jack
     {
-      //  source.pitch = Random.Range(1f, 3f);
+        source.volume = 0.2f;
         source.PlayOneShot(EnemyDead);
     }
 }

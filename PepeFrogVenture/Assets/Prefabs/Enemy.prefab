@@ -141,7 +141,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -153,7 +153,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 7983105085832077489}
-  EnemyDead: {fileID: 8300000, guid: ceec99fa2470e7c43a8a10b241dcd9ad, type: 3}
+  EnemyDead: {fileID: 8300000, guid: a0889354d0e3e634c8fbbc2ffeaaa245, type: 3}
 --- !u!1 &5627751713825123578
 GameObject:
   m_ObjectHideFlags: 0
