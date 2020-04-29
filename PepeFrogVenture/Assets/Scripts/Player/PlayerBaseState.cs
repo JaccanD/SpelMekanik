@@ -53,8 +53,10 @@ public abstract class PlayerBaseState : State
         
         if (hit)
         {
+            Debug.Log("hit");
             if (cast.collider.tag == "Berry")
             {
+                Debug.Log("hit berry");
                 EventSystem.Current.FireEvent(new PickupEvent(cast.collider.gameObject));
                 Destroy(cast.collider.gameObject);
                 return startingVelocity;
