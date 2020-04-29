@@ -5,7 +5,7 @@ using Callback;
 
 public class EnemySounds : MonoBehaviour
 {
-
+    // hej proggare. Denna klass har Jag(Jack) gjort så om något är tokigt, feel free att göra vad ni vill med koden nedan!
     [SerializeField] private AudioSource source;
 
     [SerializeField] private AudioClip EnemyDead;
@@ -17,7 +17,7 @@ public class EnemySounds : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
     }
 
-    public void OnEnemyHit(Callback.Event eb) // Jack
+    public void OnEnemyHit(Callback.Event eb) 
     {
         source.volume = 0.2f;
         source.PlayOneShot(EnemyDead);
