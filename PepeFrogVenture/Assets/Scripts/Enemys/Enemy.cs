@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float Health = 4;
     private void Awake()
     {
+        GameObject PlayerGo = GameObject.FindGameObjectWithTag("Player");
+        player = PlayerGo.GetComponent<PlayerKontroller3D>();
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
         collider = GetComponent<BoxCollider>();
         //Collider = GetComponent<CapsuleCollider>();
