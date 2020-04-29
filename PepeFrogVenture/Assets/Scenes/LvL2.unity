@@ -6261,7 +6261,7 @@ PrefabInstance:
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
@@ -6303,6 +6303,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireImage
       objectReference: {fileID: 0}
+    - target: {fileID: 8292696619355669193, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: efb778115b37a10429035f0496212e38,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfa2fb42a876d14dbb961710d8a84e0, type: 3}
 --- !u!4 &1344944410 stripped
