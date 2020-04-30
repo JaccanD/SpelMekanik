@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "BossState/AttackingState")]
 public class BossAttackingState : BossBaseState
@@ -59,7 +60,8 @@ public class BossAttackingState : BossBaseState
         Debug.Log(force);
         
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
-        
+
+        EventSystem.Current.FireEvent(new BossShootingEvent());
     }
     //private void LaunchProjectile()
     //{
