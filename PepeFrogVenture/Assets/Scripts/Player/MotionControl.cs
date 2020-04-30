@@ -17,6 +17,11 @@ public class MotionControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("e"))
+        {
+            anim.SetTrigger("Dab");
+        }
+    
         if (CurrentState.GetType() == typeof(PlayerMovingState) || CurrentState.GetType() == typeof(PlayerStandingState))
         {
             speed = Input.GetAxis("Vertical");
