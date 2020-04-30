@@ -64,6 +64,6 @@ public class NPC : MonoBehaviour
     {
         QuestDone = true;
         Target.SetActive(false);
-        EventSystem.Current.FireEvent(new QuestDoneEvent());
+        EventSystem.Current.FireEvent(new QuestDoneEvent(gameObject));
     }
 }
