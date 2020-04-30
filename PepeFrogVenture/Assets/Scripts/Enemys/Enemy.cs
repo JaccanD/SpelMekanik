@@ -9,14 +9,11 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
     protected StateMachine statemachine;
     public State[] states;
-
+    public PlayerKontroller3D player;
     public float speed = 2;
-    //private CapsuleCollider Collider;
     private BoxCollider collider;
     [SerializeField] LayerMask CollisionMask;
-    public PlayerKontroller3D player;
-    [SerializeField] private Vector3[] patrolPoints;
-    [SerializeField] private GameObject[] patrulleringpunkter;
+    [SerializeField] private GameObject[] PatrolPoints;
     [SerializeField] private GameController controller;
     [SerializeField] protected float damage = 2;
     [SerializeField] protected float Health = 4;
@@ -28,7 +25,6 @@ public class Enemy : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), Stomped);
         collider = GetComponent<BoxCollider>();
-        //Collider = GetComponent<CapsuleCollider>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Start()
@@ -41,13 +37,13 @@ public class Enemy : MonoBehaviour
     {
         statemachine.Run();
     }
-    public GameObject[] getPatrulleringsPunkter()
+    public GameObject[] getPatrolPoints()
     {
-        return patrulleringpunkter;
+        return PatrolPoints;
     }
-    public Vector3[] getPatrolPoints()
+    public void setPatrolPoints(GameObject[] newPoints)
     {
-        return patrolPoints;
+        PatrolPoints = newPoints;
     }
     public float getDamage()
     {
@@ -70,10 +66,6 @@ public class Enemy : MonoBehaviour
     {
         return collider;
     }
-    //public CapsuleCollider GetCollider()
-    //{
-    //    return Collider;
-    //}
     public Transform GetTransform()
     {
         return transform;
