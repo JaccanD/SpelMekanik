@@ -5,8 +5,8 @@ using Callback;
 
 public class BossLilyPadOnDestroy : MonoBehaviour
 {
-    private void OnDestroy()
-    {
-        EventSystem.Current.FireEvent(new LilyPadDestroyedEvent(this.gameObject));
-    }
+    //private void OnDestroy()
+    //{
+    //    EventSystem.Current.FireEvent(new LilyPadDestroyedEvent(this.gameObject));
+    //}
 }
