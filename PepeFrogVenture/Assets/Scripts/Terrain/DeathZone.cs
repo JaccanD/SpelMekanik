@@ -21,12 +21,14 @@ public class DeathZone : MonoBehaviour
         {
             if (overLaps[i].transform.gameObject.tag == "Player" && timer <= 0)
             {
-                timer = 1;
-                GameObject.Instantiate(waterSplash, overLaps[i].transform); 
+                timer = 2;
+                ParticleSystem splash = GameObject.Instantiate(waterSplash, overLaps[i].transform);
+                splash.transform.parent = null;
                 EventSystem.Current.FireEvent(new PlayerDeathEvent(overLaps[i].transform.gameObject));
                 break;
             }
-            timer -= Time.deltaTime;
+            if (timer < 0) timer = 0;
         }
+        timer -= Time.deltaTime;
     }
 }
