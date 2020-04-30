@@ -16,7 +16,7 @@ public class PlayerSoundScript : MonoBehaviour
     [SerializeField] private AudioClip PlayerJumpSound;
     [SerializeField] private AudioClip MusicSound; // Jack
     [SerializeField] private AudioClip ToungeOut; // Jack
-
+    [SerializeField] private AudioClip Wee; // Jack
 
 
 
@@ -26,6 +26,7 @@ public class PlayerSoundScript : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), OnPlayerJump); // Jack
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnToungeOut); // Jack
+        EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeEnd); // Jack
 
         PlayMusic(); // Jack
         
@@ -64,4 +65,9 @@ public class PlayerSoundScript : MonoBehaviour
     {
         PlayerAudioSource.PlayOneShot(ToungeOut);
     }  
+
+    public void OnToungeEnd(Callback.Event eb)
+    {
+        PlayerAudioSource.PlayOneShot(Wee);
+    }
 }
