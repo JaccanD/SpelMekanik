@@ -48,10 +48,11 @@ public class PlayerSoundScript : MonoBehaviour
 
     public void OnPlayerHit(Callback.Event eb)
     {
+        PlayerHitEvent e = (PlayerHitEvent)eb;
         PlayerAudioSource.PlayOneShot(PlayerHitSound);
 
         health = PlayerStats.getHealth();
-        if (health <= 4)
+        if (health - e.Damage  <= e.Damage)
         {
             OnLowHealth();
         } 
