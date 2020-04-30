@@ -18,7 +18,7 @@ public class BossSoundScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventSystem.Current.RegisterListener(typeof(HärSkaBossEventetVara), OnBossSpit);
+        EventSystem.Current.RegisterListener(typeof(BossShootingEvent), OnBossSpit);
     }
 
     // Update is called once per frame
