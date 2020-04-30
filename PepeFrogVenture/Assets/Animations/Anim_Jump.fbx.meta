@@ -21,12 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Skinning:Pelvis' has translation animation
-      that will be discarded.\n\t'Skinning:Pelvis' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Skinning:Neck' has translation
-      animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -43,7 +38,7 @@ ModelImporter:
       name: Jump
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
+      firstFrame: 19
       lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
@@ -95,7 +90,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -108,127 +103,7 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human:
-    - boneName: Skinning:Root
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_UpperLeg
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_UpperLeg
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_LowerLeg
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_LowerLeg
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_Foot
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_Foot
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:Neck
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_UpperArm
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_UpperArm
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_LowerArm
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_LowerArm
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:L_Wrist
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Skinning:R_Wrist
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
+    human: []
     skeleton:
     - name: Anim_Jump(Clone)
       parentName: 
@@ -237,7 +112,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Skinning:CharacterMesh
       parentName: Anim_Jump(Clone)
-      position: {x: -0.0001469899, y: 0, z: 0}
+      position: {x: -0.014698991, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Skinning:Root
@@ -247,79 +122,79 @@ ModelImporter:
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Skinning:Pelvis
       parentName: Skinning:Root
-      position: {x: -0.0060080956, y: -2.220446e-18, z: 1.3340652e-18}
-      rotation: {x: -0.9979217, y: 0.06443918, z: 0.000000029802322, w: 0.000000029802322}
-      scale: {x: 1, y: 0.99999976, z: 0.99999976}
+      position: {x: -0.6008096, y: -2.220446e-16, z: 1.3340652e-16}
+      rotation: {x: -0.9979217, y: 0.06443915, z: 0.000000029802322, w: 0.000000029802322}
+      scale: {x: 1.0000002, y: 0.99999976, z: 0.99999976}
     - name: Skinning:Neck
       parentName: Skinning:Pelvis
-      position: {x: -0.0020049259, y: 9.714452e-19, z: -3.8423064e-19}
-      rotation: {x: -0.00000005178394, y: 0.00000006633191, z: 0.11587087, w: 0.9932643}
-      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+      position: {x: -0.20049259, y: 9.7144515e-17, z: -3.8423066e-17}
+      rotation: {x: -0.000000023963992, y: 0.000000034671082, z: 0.11587087, w: 0.9932643}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
     - name: Skinning:Head
       parentName: Skinning:Neck
-      position: {x: -0.0009339078, y: 5.551115e-19, z: -1.3732973e-19}
-      rotation: {x: 0.41787925, y: -0.57041824, z: 0.41787925, w: 0.5704181}
-      scale: {x: 1.0000002, y: 0.9999999, z: 1}
+      position: {x: -0.093390785, y: 5.551115e-17, z: -1.37329725e-17}
+      rotation: {x: 0.41787925, y: -0.5704182, z: 0.41787928, w: 0.5704182}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
     - name: Skinning:L_UpperArm
       parentName: Skinning:Neck
-      position: {x: -0.0003348386, y: -0.0002871556, z: -0.0012449067}
-      rotation: {x: 0.3873699, y: -0.5670186, z: 0.45149332, w: 0.56972647}
-      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999998}
+      position: {x: -0.033483863, y: -0.02871556, z: -0.12449067}
+      rotation: {x: 0.3873698, y: -0.5670187, z: 0.45149332, w: 0.56972647}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
     - name: Skinning:L_LowerArm
       parentName: Skinning:L_UpperArm
-      position: {x: -0.0026960885, y: 0, z: -0.0002166417}
-      rotation: {x: -0.011340302, y: -0.17823015, z: -0.020871634, w: 0.98370206}
-      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000002}
+      position: {x: -0.26960886, y: 0, z: -0.02166417}
+      rotation: {x: -0.011340511, y: -0.17823054, z: -0.020871514, w: 0.98370206}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
     - name: Skinning:L_Wrist
       parentName: Skinning:L_LowerArm
-      position: {x: -0.0023835564, y: 0.000047156987, z: 0.0009171343}
-      rotation: {x: 0.06531701, y: -0.7045283, z: -0.23139063, w: 0.6677066}
-      scale: {x: 1, y: 1, z: 1.0000002}
+      position: {x: -0.23835565, y: 0.004715699, z: 0.09171343}
+      rotation: {x: 0.065317154, y: -0.7045283, z: -0.23139071, w: 0.66770655}
+      scale: {x: 0.9999998, y: 1, z: 1.0000001}
     - name: Skinning:R_UpperArm
       parentName: Skinning:Neck
-      position: {x: -0.00033483937, y: -0.00028715516, z: 0.00124491}
-      rotation: {x: -0.40890592, y: 0.6148472, z: 0.41236174, w: 0.5335886}
-      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000005}
+      position: {x: -0.033483937, y: -0.028715517, z: 0.124491}
+      rotation: {x: -0.40890586, y: 0.61484724, z: 0.41236168, w: 0.53358847}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000006}
     - name: Skinning:R_LowerArm
       parentName: Skinning:R_UpperArm
-      position: {x: -0.0023600734, y: -0.0000058118458, z: -0.00024870297}
-      rotation: {x: 0.056580022, y: 0.0020935382, z: 0.99779063, w: 0.0347578}
-      scale: {x: 0.9999998, y: 1.0000002, z: 1.0000006}
+      position: {x: -0.23600733, y: -0.0005811846, z: -0.024870299}
+      rotation: {x: 0.056580067, y: 0.0020934637, z: 0.9977907, w: 0.03475774}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000008}
     - name: Skinning:R_Wrist
       parentName: Skinning:R_LowerArm
-      position: {x: 0.0023299782, y: 0.000060688453, z: -0.00065264234}
-      rotation: {x: 0.06492253, y: -0.7026886, z: -0.23145974, w: 0.66965693}
-      scale: {x: 1, y: 1.0000001, z: 0.9999998}
+      position: {x: 0.23299782, y: 0.0060688453, z: -0.06526423}
+      rotation: {x: -0.06492253, y: 0.7026886, z: 0.23145957, w: -0.6696569}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
     - name: Skinning:L_UpperLeg
       parentName: Skinning:Pelvis
-      position: {x: 0.00004741457, y: -0.0000035155708, z: -0.00080345717}
-      rotation: {x: -0.006081789, y: 0.7060348, z: 0.7077656, w: 0.023362476}
-      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000005}
+      position: {x: 0.0047414573, y: -0.0003515571, z: -0.08034572}
+      rotation: {x: -0.0060817404, y: 0.7060349, z: 0.7077656, w: 0.023362577}
+      scale: {x: 1, y: 1.0000002, z: 1.0000005}
     - name: Skinning:L_LowerLeg
       parentName: Skinning:L_UpperLeg
-      position: {x: -0.0030851439, y: 8.634492e-19, z: -0.0008858457}
-      rotation: {x: -0.99946123, y: -0.032821156, z: 0.0000000011641531, w: -0.000000029802319}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -0.3085144, y: 8.6344924e-17, z: -0.08858457}
+      rotation: {x: -0.99946123, y: -0.032821156, z: 0.000000003026798, w: -0.000000029802319}
+      scale: {x: 0.9999999, y: 1, z: 1}
     - name: Skinning:L_Foot
       parentName: Skinning:L_LowerLeg
-      position: {x: -0.0024951673, y: -0.0000000081883575, z: -0.0004339457}
-      rotation: {x: 0.030671682, y: 0.7074865, z: -0.7044593, w: 0.047530852}
+      position: {x: -0.24951674, y: -0.0000008188358, z: -0.043394573}
+      rotation: {x: 0.030671803, y: 0.7074865, z: -0.7044594, w: 0.047530927}
       scale: {x: 0.99999964, y: 1, z: 0.99999976}
     - name: Skinning:R_UpperLeg
       parentName: Skinning:Pelvis
-      position: {x: 0.000047414745, y: -0.0000035152812, z: 0.00080345693}
-      rotation: {x: 0.7060372, y: 0.006081535, z: -0.023361996, w: 0.70776314}
-      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999994}
+      position: {x: 0.0047414745, y: -0.0003515281, z: 0.0803457}
+      rotation: {x: 0.7060373, y: 0.0060815914, z: -0.023362007, w: 0.7077632}
+      scale: {x: 1, y: 1.0000001, z: 1}
     - name: Skinning:R_LowerLeg
       parentName: Skinning:R_UpperLeg
-      position: {x: 0.0030851432, y: 3.4753786e-10, z: 0.000885846}
-      rotation: {x: 0.99946123, y: 0.032821286, z: -0.000000005587935, w: 0.000000013547831}
+      position: {x: 0.30851433, y: 0.000000034753786, z: 0.0885846}
+      rotation: {x: 0.99946123, y: 0.03282129, z: -0.000000005587935, w: 0.0000000145446375}
       scale: {x: 1.0000002, y: 1.0000002, z: 1}
     - name: Skinning:R_Foot
       parentName: Skinning:R_LowerLeg
-      position: {x: 0.002495168, y: 0.000000008684892, z: 0.00043394597}
-      rotation: {x: 0.03067275, y: 0.7074868, z: -0.7044591, w: 0.04752975}
-      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+      position: {x: 0.24951681, y: 0.00000086848917, z: 0.0433946}
+      rotation: {x: 0.030672776, y: 0.70748687, z: -0.7044591, w: 0.04752972}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -334,7 +209,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   additionalBone: 0

@@ -195,6 +195,11 @@ public class PlayerKontroller3D : MonoBehaviour
             direction = direction.normalized;
         }
         Direction = direction;
+        
+    }
+    public State InState()
+    {
+        return stateMachine.GetCurrentState();
     }
     private void MoveCamera()
     {
