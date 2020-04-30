@@ -13,7 +13,6 @@ public class Boss : Enemy
     private void Awake()
     {
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), TakeDamage);
-        EventSystem.Current.RegisterListener(typeof(BossShootingEvent), Shooting);
     }
     private void SinkAPad(Lilypads pad)
     {
@@ -49,10 +48,6 @@ public class Boss : Enemy
         if (health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }*/
-    private void Shooting(Callback.Event e)
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         isEncountered = true;
