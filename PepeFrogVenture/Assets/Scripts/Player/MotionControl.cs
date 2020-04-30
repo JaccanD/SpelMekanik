@@ -7,6 +7,7 @@ public class MotionControl : MonoBehaviour
     private Animator anim;
     private float speed;
     private float direction;
+    private State CurrentState { get { return GetComponent<PlayerKontroller3D>().InState(); } }
     // Start is called before the first frame update
     void Start()
     {
