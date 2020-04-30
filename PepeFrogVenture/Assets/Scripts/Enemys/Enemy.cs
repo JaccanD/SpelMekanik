@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public State[] states;
     public PlayerKontroller3D player;
     public float speed = 2;
-    private BoxCollider collider;
+    private new BoxCollider collider;
     [SerializeField] LayerMask CollisionMask;
     [SerializeField] private GameObject[] PatrolPoints;
     [SerializeField] private GameController controller;
