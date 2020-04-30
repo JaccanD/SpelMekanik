@@ -11,8 +11,7 @@ public class EnemyBaseState : State
     //protected CapsuleCollider Collider { get { return Enemy.GetCollider(); } }
     protected BoxCollider collider { get { return Enemy.getCollider(); } }
     protected float damage { get { return Enemy.getDamage(); } }
-    protected Vector3[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
-    protected GameObject[] patrulleringspunkter { get { return Enemy.getPatrulleringsPunkter(); } }
+    protected GameObject[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
     
 
     public override void Enter()

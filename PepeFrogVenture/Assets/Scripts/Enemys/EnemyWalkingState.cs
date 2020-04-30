@@ -16,14 +16,14 @@ public class EnemyWalkingState : EnemyBaseState
 
     public override void Run()
     {
-        Enemy.agent.SetDestination(patrulleringspunkter[currentPatrolPoint].transform.position);
+        Enemy.agent.SetDestination(patrolPoints[currentPatrolPoint].transform.position);
         //Enemy.agent.SetDestination(patrolPoints[currentPatrolPoint]);
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         //if (Vector3.Distance(Enemy.transform.position, patrolPoints[currentPatrolPoint]) < 1)
         //    currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
-        if (Vector3.Distance(Enemy.transform.position, patrulleringspunkter[currentPatrolPoint].transform.position) < 1)
-            currentPatrolPoint = (currentPatrolPoint + 1) % patrulleringspunkter.Length;
+        if (Vector3.Distance(Enemy.transform.position, patrolPoints[currentPatrolPoint].transform.position) < 1)
+            currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
     }
 
     //private void ChooseClosest()
@@ -40,10 +40,10 @@ public class EnemyWalkingState : EnemyBaseState
     private void ChooseClosest()
     {
         int closest = 0;
-        for (int i = 0; i < patrulleringspunkter.Length; i++)
+        for (int i = 0; i < patrolPoints.Length; i++)
         {
-            float distance = Vector3.Distance(Enemy.transform.position, patrulleringspunkter[i].transform.position);
-            if (distance < Vector3.Distance(Enemy.transform.position, patrulleringspunkter[closest].transform.position))
+            float distance = Vector3.Distance(Enemy.transform.position, patrolPoints[i].transform.position);
+            if (distance < Vector3.Distance(Enemy.transform.position, patrolPoints[closest].transform.position))
                 closest = i;
         }
         currentPatrolPoint = closest;
