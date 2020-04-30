@@ -7,7 +7,7 @@ public class PlayerSoundScript : MonoBehaviour
 {
     [SerializeField] private AudioSource PlayerAudioSource;
     [SerializeField] private AudioSource MusicAudioSource; //Jack 
-    [SerializeField] private AudioSource FootstepsSource; //Jack 
+
 
 
     [Header("Sounds")]
@@ -16,17 +16,7 @@ public class PlayerSoundScript : MonoBehaviour
     [SerializeField] private AudioClip PlayerJumpSound;
     [SerializeField] private AudioClip MusicSound; // Jack
     [SerializeField] private AudioClip ToungeOut; // Jack
-   // [SerializeField] private AudioClip Footstep; // Jack
- 
-    //------------------------------------------------------------------------------
-    private double time; // Jack
-    private float filterTime; // Jack
-    private string colliderType; // Jack
-    public AudioClip defaultSound; // Jack                      //Detta är bara betan tills animationerna är klara
-    public AudioClip stockSound; // Jack
-    public AudioClip lilySound; // Jack
-    //------------------------------------------------------------------------------
-    
+
 
 
 
@@ -38,13 +28,7 @@ public class PlayerSoundScript : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnToungeOut); // Jack
 
         PlayMusic(); // Jack
-
-        //------------------------------------------------------------------------------
-        FootstepsSource = GetComponent<AudioSource>();
-        time = AudioSettings.dspTime; // Jack
-        filterTime = 0.2f;                                      // Jack//Detta är bara betan tills animationerna är klara
-       //------------------------------------------------------------------------------
-       
+        
     }
 
     private void Update() //Jack
@@ -54,20 +38,6 @@ public class PlayerSoundScript : MonoBehaviour
             PlayMusic();
         }
     }
-
-    //------------------------------------------------------------------------------
-    private void OnCollisionEnter(Collision col) // Jack
-    {
-        SurfaceColliderType act = col.gameObject.GetComponent<Collider>().gameObject.GetComponent<SurfaceColliderType>();
-
-        if (act)
-        {
-            colliderType = act.GetTerrainType();                            //Detta är bara betan tills animationerna är klara
-        }
-        Debug.Log("marken är av sorten: " + colliderType);
-
-    }
-    //------------------------------------------------------------------------------
 
     public void OnPlayerHit(Callback.Event eb)
     {
@@ -93,30 +63,5 @@ public class PlayerSoundScript : MonoBehaviour
     public void OnToungeOut(Callback.Event eb) // Jack
     {
         PlayerAudioSource.PlayOneShot(ToungeOut);
-    }
-    //------------------------------------------------------------------------------
-    private void PlayDynamicFootstepSound() // Jack
-    {
-        if (AudioSettings.dspTime < time + filterTime) 
-        {
-            return;
-        }
-
-        switch (colliderType)
-        {
-            case "Stock":                                           //Detta funkar inte...
-                FootstepsSource.PlayOneShot(stockSound);
-                break;
-            case "Lily":
-                FootstepsSource.PlayOneShot(lilySound);
-                break;
-            default:
-                FootstepsSource.PlayOneShot(defaultSound);
-                break;
-        }
-
-        time = AudioSettings.dspTime;
-    }
-    //------------------------------------------------------------------------------
-    
+    }  
 }

@@ -29,6 +29,7 @@ public class BossSoundScript : MonoBehaviour
 
     public void OnBossSpit(Callback.Event eb)
     {
+        bossSound.volume = 0.5f;
         bossSound.PlayOneShot(bossSpit);
     }
 }
