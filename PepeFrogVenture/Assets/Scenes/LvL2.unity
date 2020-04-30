@@ -2557,6 +2557,7 @@ MonoBehaviour:
   Berries: 0
   CurrentRespawnPoint: {fileID: 2137942650}
   Player: {fileID: 0}
+  secretDab: {x: 0, y: 0, z: 0}
   Tounge: 1
 --- !u!4 &531704903
 Transform:
@@ -6344,6 +6345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856c020e6e6bfc244a7ef7d3e296870b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterSplash: {fileID: 6025584178970722442, guid: 24be41033cea57e4486677bd07fe4772,
+    type: 3}
 --- !u!65 &1298640330
 BoxCollider:
   m_ObjectHideFlags: 0

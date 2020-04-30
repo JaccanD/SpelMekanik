@@ -133,7 +133,6 @@ public class PlayerKontroller3D : MonoBehaviour
         Coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
         GameObject ControllerGo = GameObject.FindGameObjectWithTag("GameController");
-        Debug.Log(ControllerGo.name);
         Controller = ControllerGo.GetComponent<GameController>();
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);

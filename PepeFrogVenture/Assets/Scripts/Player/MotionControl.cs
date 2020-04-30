@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class MotionControl : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class MotionControl : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
+            EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
             anim.SetTrigger("Dab");
         }
     

@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public int Berries = 0;
     public GameObject CurrentRespawnPoint;
     public GameObject Player;
+    public Vector3 secretDab;
     public bool Tounge = true;
     //public bool fire = false;
 
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnFlick);
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
+        EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
@@ -120,10 +122,23 @@ public class GameController : MonoBehaviour
         ToungeFlickEvent e = (ToungeFlickEvent)eb;
         Tounge = false;
     }
+    public void OnDab(Callback.Event eb)
+    {
+        PlayerDabbing e = (PlayerDabbing)eb;
+        if (secretDab != null && Vector3.Distance(secretDab, e.dabLocation) < 3 && SceneManager.GetActiveScene().name == "LvL1terrain")
+        {
+            StartCoroutine(WaitForDab());
+        }
+    }
     public void OnToungeDone(Callback.Event eb)
     {
         ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
+    }
+    IEnumerator WaitForDab()
+    {
+        yield return new WaitForSeconds(1.3f);
+        SceneManager.LoadScene("ExtraScene");
     }
     public void IsSceneTwo(Callback.Event eb)
     {

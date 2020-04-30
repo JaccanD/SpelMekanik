@@ -21,7 +21,7 @@ public class Kontroller : MonoBehaviour
     [SerializeField] float Gravity = 4.0f;
     [SerializeField] float Acceleration = 8.0f;
     [SerializeField] float MaxSpeed = 24.0f;
-    [SerializeField] float Decceleration = 1.0f;
+    //[SerializeField] float Decceleration = 1.0f;
     [SerializeField] float StaticFriktionKoeficcent = 0.4f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.25f;
     [SerializeField] float AirResistanceKoeficcent = 0.5f;
