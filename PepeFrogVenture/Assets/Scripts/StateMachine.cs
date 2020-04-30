@@ -44,4 +44,9 @@ public class StateMachine
         UpdateState();
         currentState.Run();
     }
+    public State GetCurrentState()
+    {
+        return currentState;
+    }
+
 }
