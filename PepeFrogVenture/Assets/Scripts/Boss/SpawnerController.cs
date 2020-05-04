@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-
+// Author: Jacob Didenbäck
 public class SpawnerController : MonoBehaviour
 {
     [SerializeField] private GameObject FireFlyPrefab;

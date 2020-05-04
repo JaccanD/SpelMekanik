@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "ToungeState/ExtendingState")]
+
+// Author: Jacob Didenbäck
 public class ToungeExtendingState : ToungeBaseState
 {
     [SerializeField] private LayerMask HookMask;
@@ -18,7 +20,6 @@ public class ToungeExtendingState : ToungeBaseState
         HIT_TYPE check = CheckHit();
         if(check == HIT_TYPE.PICKUP_HIT)
         {
-            Debug.Log("tror den träffar en pickup");
             stateMachine.TransitionTo<ToungeRetractingState>();
             return;
         }
@@ -33,7 +34,6 @@ public class ToungeExtendingState : ToungeBaseState
         }
         if((Player.transform.position - gameObject.transform.position).magnitude >= MaxDistance)
         {
-            Debug.Log("Den kommer till Max range");
             stateMachine.TransitionTo<ToungeRetractingState>();
             return;
         }
@@ -47,15 +47,9 @@ public class ToungeExtendingState : ToungeBaseState
     private HIT_TYPE CheckHit()
     {
         Collider[] hits = Physics.OverlapSphere(gameObject.transform.position + Coll.center, Coll.radius / 4, ToungeMask);
-        if (hits.Length > 0)
-        {
-            Debug.Log(hits[0]);
-            Debug.Log(hits[0].gameObject.name);
-        }
         for (int i = 0; i < hits.Length; i++)
         {
             int layerValue =(int) Mathf.Pow(2.0f, (float)(hits[i].gameObject.layer));
-            Debug.Log(layerValue + "::" + HookMask.value);
             if (layerValue == HookMask.value || layerValue == PickUpMask.value)
             {
                 if (layerValue == HookMask)

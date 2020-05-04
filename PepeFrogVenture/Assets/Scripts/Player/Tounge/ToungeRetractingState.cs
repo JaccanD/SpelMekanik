@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "ToungeState/RetractingState")]
+
+// Author: Jacob Didenbäck
 public class ToungeRetractingState : ToungeBaseState
 {
     private GameObject HitObject;

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Callback;
-
+// Main Author: Valter Falsterljung
+// Secondary Author: Jacob Didenbäck
 public class Enemy : MonoBehaviour
 {
     [HideInInspector] public NavMeshAgent agent;

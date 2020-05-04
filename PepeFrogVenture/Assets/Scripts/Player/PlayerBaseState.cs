@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Main Author: Jacob Didenbäck
+// Secondary Author: Valter Falsterljung
 public abstract class PlayerBaseState : State
 {
     protected PlayerKontroller3D player;

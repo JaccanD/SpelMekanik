@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-
+// Author: Jacob Didenbäck
 [CreateAssetMenu(menuName = "PlayerState/JumpingState")]
 public class PlayerJumpingState : PlayerBaseState
 {
@@ -26,17 +26,11 @@ public class PlayerJumpingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerFallingState>();
             return;
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //ToungeFlick();
-        }
         Velocity += Gravity * Vector3.down * Time.deltaTime;
         Velocity += Acceleration * Direction * Time.deltaTime;
         ApplyAirResistance(AirResistance);
 
         MovePlayer();
-        //Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
-        //transform.position += nextMove;
         }
 
     protected new Vector3 CheckCollision(Vector3 startingVelocity)

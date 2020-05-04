@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Main Author: August Brunsätter
+// Secondary Author: Jacob Didenbäck
 public class MotionControl : MonoBehaviour
 {
     private Animator anim;

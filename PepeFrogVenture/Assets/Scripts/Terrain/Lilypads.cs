@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Valter Falsterljung
+// Används inte
 public class Lilypads : MonoBehaviour
 {
     [SerializeField] private GameObject player;

@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "PlayerState/MovingState")]
+
+// Author: Jacob Didenbäck
 public class PlayerMovingState : PlayerBaseState
 {
     [SerializeField] private float Acceleration = 4.0f;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-
+// Author: Jacob Didenbäck
 public class NPC : MonoBehaviour
 {
     [SerializeField] GameController Controller;
@@ -57,7 +57,6 @@ public class NPC : MonoBehaviour
             currentDialog = 3;
         }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
-        Debug.Log(dialog[currentDialog]);
     }
 
     private void Unlock()

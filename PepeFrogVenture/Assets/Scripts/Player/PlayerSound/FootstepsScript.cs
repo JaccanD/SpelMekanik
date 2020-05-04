@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Jack Noaksson
 public class FootstepsScript : MonoBehaviour
 {
 

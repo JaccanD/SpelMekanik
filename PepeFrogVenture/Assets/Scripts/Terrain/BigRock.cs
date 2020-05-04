@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Author: Valter Falsterljung
 public class BigRock : MonoBehaviour
 {
     [SerializeField] private GameObject NPCblocker;

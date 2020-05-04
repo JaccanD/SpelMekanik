@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "PlayerState/StandingState")]
+
+// Author: Jacob Didenbäck
 public class PlayerStandingState : PlayerBaseState
 {
     public override void Enter()

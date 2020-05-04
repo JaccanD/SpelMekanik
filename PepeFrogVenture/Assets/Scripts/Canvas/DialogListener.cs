@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Callback;
-
+// Author: Jacob Didenbäck
 public class DialogListener : MonoBehaviour
 {
     [SerializeField] private GameObject Text;

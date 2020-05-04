@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Callback;
-
+// Author: August Brunnsätter
 public class BlueBerryCounter : MonoBehaviour
 {
     public Text BlueBerryCount;

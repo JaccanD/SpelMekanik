@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Jacob Didenbäck
 public abstract class ToungeBaseState : State
 {
     protected Tounge tounge;

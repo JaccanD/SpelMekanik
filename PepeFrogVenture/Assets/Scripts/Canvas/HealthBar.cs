@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Callback;
 
+// Main Author: August Brunnsätter
+// Secondary Author: Jacob Didenbäck
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;

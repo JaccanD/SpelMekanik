@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Jacob Didenbäck
 public static class PhysicsFunctions
 {
     public static Vector2 NormalForce(Vector2 velocity, Vector2 normal)

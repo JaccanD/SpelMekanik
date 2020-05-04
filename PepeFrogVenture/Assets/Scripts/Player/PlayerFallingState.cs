@@ -1,17 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Jacob Didenbäck
 [CreateAssetMenu(menuName = "PlayerState/FallingState")]
 public class PlayerFallingState : PlayerBaseState
 {
     [SerializeField] private float Acceleration;
     [SerializeField] private float AirResistance;
     [SerializeField] private float FallingGravity;
-    public override void Enter()
-    {
-
-    }
     public override void Run()
     {
         if(GroundCheck() && Velocity.magnitude > 0.1f)
@@ -34,8 +30,6 @@ public class PlayerFallingState : PlayerBaseState
         ApplyAirResistance(AirResistance);
 
         MovePlayer();
-        //Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
-        //transform.position += nextMove;
     }
     protected new Vector3 CheckCollision(Vector3 startingVelocity)
     {
@@ -59,10 +53,6 @@ public class PlayerFallingState : PlayerBaseState
         {
             return startingVelocity;
         }
-    }
-    public override void Exit()
-    {
-
     }
 
 }

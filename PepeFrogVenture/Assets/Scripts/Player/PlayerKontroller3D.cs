@@ -7,6 +7,9 @@ using Callback;
  * -----> 3D Kontroller <--------
  * ******************************
  */
+
+    // Main Author: Jacob Didenbäck
+    // Secondary Author: Valter Falsterljung
 public class PlayerKontroller3D : MonoBehaviour
 {
     private StateMachine stateMachine;
@@ -172,13 +175,6 @@ public class PlayerKontroller3D : MonoBehaviour
         }
         else
             direction = Vector3.ProjectOnPlane(direction, Vector3.up).normalized;
-        //if(Controller.fire && Input.GetKeyDown(KeyCode.Mouse1))
-        //{
-
-        //    GameObject fireball = Instantiate(Fireball, topPoint, CalculateFireballRotation());
-        //    EventSystem.Current.FireEvent(new FireballshotEvent());
-        //    Controller.fire = false;
-        //}
         if (PlayerStats.getFire() && Input.GetKeyDown(KeyCode.Mouse1))
         {
 
@@ -242,10 +238,8 @@ public class PlayerKontroller3D : MonoBehaviour
         bool hookHit = Physics.Raycast(Camera.transform.position + forward * 5, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit ShootCast, ToungeLength + 5);
         if (!hookHit)
         {
-            Debug.Log("träffar inget");
             return Camera.transform.rotation;
         }
-        Debug.Log(ShootCast.transform.gameObject.name);
         Vector3 end = ShootCast.point;
         Vector3 toungeDirection = (end - start).normalized;
         Vector3 rotation = toungeDirection + Vector3.forward;

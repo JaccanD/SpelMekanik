@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Author: Jacob Didenbäck
 public class StateMachine
 {
     private State currentState;

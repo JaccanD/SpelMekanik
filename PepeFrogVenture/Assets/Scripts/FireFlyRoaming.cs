@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Valter Falsterljung
 public class FireFlyRoaming : MonoBehaviour
 {
     private Vector3 startPosition;

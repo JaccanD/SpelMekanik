@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BossState/StartingState")]
+
+// Author: Valter Falsterljung
 public class BossStartingState : BossBaseState
 {
     public override void Enter()

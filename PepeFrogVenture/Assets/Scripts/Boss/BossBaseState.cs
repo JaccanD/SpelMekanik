@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Valter Falsterljung
 public class BossBaseState : State
 {
     protected Boss boss;

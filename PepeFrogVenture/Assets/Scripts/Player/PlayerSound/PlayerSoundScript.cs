@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 using System;
 
+// Main Author: Jack Noaksson
+// Secondary Author: Jacob Didenbäck
 public class PlayerSoundScript : MonoBehaviour
 {
     private float health;

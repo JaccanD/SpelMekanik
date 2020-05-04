@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BossState/DivingState")]
+// Author: Valter Falsterljung
 public class BossDivingState : BossBaseState
 {
     private Lilypads sinkTarget;

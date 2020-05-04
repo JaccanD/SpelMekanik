@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Valter Falsterljung
 public static class PlayerStats
 {
     private static float health = 10;

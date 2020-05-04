@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// Author: Hanna Lindberg Johansson
 public class SceneLoader : MonoBehaviour
 {
     public void StartGame()

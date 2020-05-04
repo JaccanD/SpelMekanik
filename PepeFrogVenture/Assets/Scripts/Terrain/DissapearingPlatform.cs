@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Jacob Didenbäck
 public class DissapearingPlatform : MonoBehaviour
 {
     [SerializeField] BoxCollider coll;

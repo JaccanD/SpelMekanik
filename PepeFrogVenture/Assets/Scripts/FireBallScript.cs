@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-
+// Author: Jacob Didenbäck
 public class FireBallScript : MonoBehaviour
 {
     [SerializeField] private float speed = 6;
@@ -26,12 +26,6 @@ public class FireBallScript : MonoBehaviour
                 if (colls[i].transform.gameObject.tag == "Enemy")
                 {
                     EventSystem.Current.FireEvent(new EnemyHitEvent(colls[i].transform.gameObject, Damage));
-                }
-                else if (colls[i].transform.gameObject.tag == "Boss")
-                {
-                    //CollCast.transform.gameObject.GetComponent<Boss>().TakeDamage(Damage);
-
-                    //Fixa så att bossen kan ta skada igen :: Jacob
                 }
                 Destroy(gameObject);
             }

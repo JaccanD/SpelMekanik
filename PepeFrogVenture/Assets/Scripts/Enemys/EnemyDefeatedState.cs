@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "EnemyState/DefeatedState")]
+// Author: Valter Falsterljung
 public class EnemyDefeatedState : EnemyBaseState
 {
     private float Timer = 0;
     [SerializeField] private float timeToDie = 1;
     public override void Enter()
     {
-        Debug.Log("ÄR i defeatedState");
     }
     public override void Run()
     {

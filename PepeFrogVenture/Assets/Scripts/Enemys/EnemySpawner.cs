@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Author: Valter Falsterljung
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;

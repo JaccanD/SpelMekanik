@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-
+// Main Author: Jack Noaksson
+// Secondary Author: Jacob Didenbäck
 public class EnemySounds : MonoBehaviour
 {
     // hej proggare. Denna klass har Jag(Jack) gjort så om något är tokigt, feel free att göra vad ni vill med koden nedan!
@@ -28,8 +29,7 @@ public class EnemySounds : MonoBehaviour
         //source.PlayOneShot(EnemyDead);
 
         AudioSource.PlayClipAtPoint(EnemyDead, transform.position);
-        EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
-        EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), OnEnemyStomp);
+        UnRegisterListeners();
     }
 
     public void OnEnemyStomp(Callback.Event eb)
@@ -39,6 +39,10 @@ public class EnemySounds : MonoBehaviour
             return;
 
         AudioSource.PlayClipAtPoint(FlatRat, transform.position);
+        UnRegisterListeners();
+    }
+    private void UnRegisterListeners()
+    {
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnEnemyHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), OnEnemyStomp);
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// Author: Jacob Didenbäck
 [CreateAssetMenu(menuName = "PlayerState/DeadState")]
 public class PlayerDeadState : PlayerBaseState
 {

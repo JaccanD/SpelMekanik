@@ -4,6 +4,7 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "PlayerState/SwingState")]
+// Author: Jacob Didenbäck
 public class PlayerSwingState : PlayerBaseState
 {
     private Vector3 Hook { get { return Player.GetHook(); } }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Main Author: Jacob Didenbäck
+// Secondary Author: Valter Falsterljung
 namespace Callback
 {
     public class EventSystem : MonoBehaviour
@@ -53,7 +55,6 @@ namespace Callback
             }
             TypesWithListenersToRemove.Add(eventType);
             ListenersToRemove.Add(listener);
-            //eventListeners[eventType].Remove(listener);
         }
         public void FireEvent(Event eventInfo)
         {
@@ -87,7 +88,6 @@ namespace Callback
                     if (eventListeners[T].Contains(L))
                     {
                         eventListeners[T].Remove(L);
-                        Debug.Log("Listener Removed");
                     }
                 }
             }

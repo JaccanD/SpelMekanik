@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "EnemyState/AttackState")]
+
+// Author: Valter Falsterljung
 public class EnemyAttackState : EnemyBaseState
 {
     [SerializeField] private float chaseDistance;
@@ -16,7 +18,6 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         currentCool = startAttackCooldown;
-        Debug.Log("attackingstate");
         Enemy.agent.isStopped = true;
     }
 

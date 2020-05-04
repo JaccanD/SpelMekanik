@@ -4,6 +4,7 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "BossState/DefeatedState")]
+// Author: Valter Falsterljung
 public class BossDefeatedState : BossBaseState
 {
     public override void Enter()

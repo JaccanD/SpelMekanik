@@ -4,6 +4,7 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "BossState/AttackingState")]
+// Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
     protected GameObject projectile { get { return Boss.getProjectile(); } }

@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 using UnityEngine.SceneManagement;
 
+// Main Author: Jacob Didenbäck
+// Secondary Author: Valter Falsterljung
 public class GameController : MonoBehaviour
 {
     //public float Health = 10;
@@ -17,7 +19,6 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        //DontDestroyOnLoad(this.gameObject);
         PlayerStats.setFire(false);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
         EventSystem.Current.RegisterListener(typeof(RespawnPointReachedEvent), SetRespawnPoint);
@@ -35,30 +36,6 @@ public class GameController : MonoBehaviour
     {
         return Tounge;
     }
-    //public void AddHealth(float healthIncrease)
-    //{
-    //    Health += healthIncrease;
-    //    if(Health > 10)
-    //    {
-    //        Health = 10;
-    //    }
-    //}
-    //public void TakeDamage(Callback.Event eb)
-    //{
-    //    PlayerHitEvent e = (PlayerHitEvent)eb;
-    //    Health -= e.Damage;
-    //    Debug.Log(Health);
-    //    if (Health <= 0)
-    //        PlayerDead();
-    //}
-    //public void Update()
-    //{
-    //    if(Health <= 0)
-    //    {
-    //        PlayerDead();
-    //        Health = 10;
-    //    }
-    //}
     public void AddHealth(float healthIncrease)
     {
         PlayerStats.changeHealth(healthIncrease);

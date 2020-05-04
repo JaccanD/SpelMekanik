@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Author: Jacob Didenbäck
 public class Tounge : MonoBehaviour
 {
 

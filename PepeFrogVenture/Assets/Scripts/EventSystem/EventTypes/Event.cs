@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Jacob Didenbäck
+// Alla Event types är gjora av Jacob
 namespace Callback
 {
     public abstract class Event

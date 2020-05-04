@@ -4,6 +4,8 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "ToungeState/PullState")]
+
+// Author: Jacob Didenbäck
 public class ToungePullState : ToungeBaseState
 {
     public override void Enter()
