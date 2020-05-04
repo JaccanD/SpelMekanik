@@ -8,10 +8,6 @@ using Callback;
 public class BossStartingTrigger : MonoBehaviour
 {
     new private BoxCollider collider;
-
-
-    // Bara för memes skull. Ta bort efter Speltest. 
-
     private AudioSource sound;
 
     private void Awake()
@@ -27,6 +23,5 @@ public class BossStartingTrigger : MonoBehaviour
             EventSystem.Current.FireEvent(new BossBattleStartingEvent());
             sound.Play();
         }
-
     }
 }

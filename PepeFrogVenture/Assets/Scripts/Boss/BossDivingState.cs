@@ -11,11 +11,6 @@ public class BossDivingState : BossBaseState
 
     [SerializeField]private float threshold = 5f;
 
-    public override void Enter()
-    {
-
-    }
-
     public override void Run()
     {
         DiveDown();
@@ -24,7 +19,6 @@ public class BossDivingState : BossBaseState
             stateMachine.TransitionTo<BossEmergingState>();
         }
     }
-
     private void DiveDown()
     {
         

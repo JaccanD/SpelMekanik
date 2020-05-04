@@ -11,12 +11,6 @@ public class FireFlySpawnPoint : MonoBehaviour
     [SerializeField] private float spawnTimer = 5f;
     private float currentSpawnTimeLeft = 0;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if(currentFirefly == null)

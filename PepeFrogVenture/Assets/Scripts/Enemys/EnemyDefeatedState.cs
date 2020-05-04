@@ -8,9 +8,7 @@ public class EnemyDefeatedState : EnemyBaseState
 {
     private float Timer = 0;
     [SerializeField] private float timeToDie = 1;
-    public override void Enter()
-    {
-    }
+
     public override void Run()
     {
 

@@ -19,7 +19,6 @@ public class Boss : Enemy
     {
         pad.setIsSInking(true);
     }
-
     public GameObject getProjectile()
     {
         return projectile;
@@ -41,14 +40,6 @@ public class Boss : Enemy
         if(Health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    /*public void OnHit(EnemyHitEvent e)
-    {
-        Debug.Log("BossDamageTaken");
-        health -= e.Damage;
-        Debug.Log(health);
-        if (health <= 0)
-            statemachine.TransitionTo<BossDefeatedState>();
-    }*/
     private void OnTriggerEnter(Collider other)
     {
         isEncountered = true;
