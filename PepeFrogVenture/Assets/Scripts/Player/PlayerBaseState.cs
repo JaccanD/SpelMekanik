@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
+using System.Linq;
 
 // Main Author: Jacob Didenbäck
 // Secondary Author: Valter Falsterljung
@@ -28,6 +29,7 @@ public abstract class PlayerBaseState : State
     [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
+    [SerializeField] string[] PickupTags = { "Berry", "Flies", "Fire" };
 
     protected void MovePlayer()
     {
@@ -55,7 +57,7 @@ public abstract class PlayerBaseState : State
         
         if (hit)
         {
-            if (cast.collider.tag == "Berry")
+            if (PickupTags.Contains(cast.collider.tag))
             {
                 EventSystem.Current.FireEvent(new PickupEvent(cast.collider.gameObject));
                 Destroy(cast.collider.gameObject);

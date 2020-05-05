@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public Vector3 secretDab;
     public bool Tounge = true;
+    public float SceneTwoRespawnTime = 1.3f;
     //public bool fire = false;
 
 
@@ -104,7 +105,7 @@ public class GameController : MonoBehaviour
         PlayerDabbing e = (PlayerDabbing)eb;
         if (secretDab != null && Vector3.Distance(secretDab, e.dabLocation) < 3 && SceneManager.GetActiveScene().name == "LvL1terrain")
         {
-            StartCoroutine(WaitForDab());
+            StartCoroutine(WaitForSceneLoad("ExtraScene", 1.3f));
         }
     }
     public void OnToungeDone(Callback.Event eb)
@@ -112,10 +113,10 @@ public class GameController : MonoBehaviour
         ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
     }
-    IEnumerator WaitForDab()
+    IEnumerator WaitForSceneLoad(string scene, float time)
     {
         yield return new WaitForSeconds(1.3f);
-        SceneManager.LoadScene("ExtraScene");
+        SceneManager.LoadScene(scene);
     }
     public void IsSceneTwo(Callback.Event eb)
     {
@@ -124,7 +125,7 @@ public class GameController : MonoBehaviour
         PlayerStats.setFire(false);
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
-                SceneManager.LoadScene("LvL2");
+            WaitForSceneLoad("LvL2", SceneTwoRespawnTime);
             }
     }
     public void BossIsDead(Callback.Event e)
