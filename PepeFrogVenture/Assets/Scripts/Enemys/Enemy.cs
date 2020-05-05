@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            EventSystem.Current.FireEvent(new EnemyStompedEvent(this.gameObject));
+            EventSystem.Current.FireEvent(new EnemyStompedEvent(gameObject));
         }
 
     }
