@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public Vector3 secretDab;
     public bool Tounge = true;
     public float SceneTwoRespawnTime = 1.3f;
-
+    [SerializeField] private bool RestartWholeLevelOnDeath;
 
     public void Start()
     {
@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
         EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), RestartScene);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
@@ -117,6 +118,11 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         
         SceneManager.LoadScene(scene);
+    }
+    public void RestartScene(Callback.Event eb)
+    {
+        if(RestartWholeLevelOnDeath)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void IsSceneTwo(Callback.Event eb)
     {
