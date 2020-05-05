@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5465b1bbb2f1d449089f7f73ec4f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projektileForce: 1000
-  damage: 5
+  bossProjectileSplash: {fileID: 6415415615224806426, guid: 801b2b6fbd292dc43ab664acc344562a,
+    type: 3}
 --- !u!54 &-4494846106007385721
 Rigidbody:
   m_ObjectHideFlags: 0
