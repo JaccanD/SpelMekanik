@@ -8,14 +8,12 @@ using UnityEngine.SceneManagement;
 // Secondary Author: Valter Falsterljung
 public class GameController : MonoBehaviour
 {
-    //public float Health = 10;
     public int Berries = 0;
     public GameObject CurrentRespawnPoint;
     public GameObject Player;
     public Vector3 secretDab;
     public bool Tounge = true;
     public float SceneTwoRespawnTime = 1.3f;
-    //public bool fire = false;
 
 
     public void Start()
@@ -84,7 +82,6 @@ public class GameController : MonoBehaviour
         if (e.Pickup.tag == "Fire")
         {
             PlayerStats.setFire(true);
-            //fire = true;
         }
         if (e.Pickup.tag == "Flies")
         {
@@ -116,16 +113,16 @@ public class GameController : MonoBehaviour
     IEnumerator WaitForSceneLoad(string scene, float time)
     {
         yield return new WaitForSeconds(1.3f);
+        
         SceneManager.LoadScene(scene);
     }
     public void IsSceneTwo(Callback.Event eb)
     {
-        //Health = 10;
         PlayerStats.setHealth(10);
         PlayerStats.setFire(false);
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
-            WaitForSceneLoad("LvL2", SceneTwoRespawnTime);
+                StartCoroutine(WaitForSceneLoad("LvL2", SceneTwoRespawnTime));
             }
     }
     public void BossIsDead(Callback.Event e)
