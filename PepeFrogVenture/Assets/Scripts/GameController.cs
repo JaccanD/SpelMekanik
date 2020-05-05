@@ -122,6 +122,7 @@ public class GameController : MonoBehaviour
     public void RestartScene(Callback.Event eb)
     {
         if (RestartWholeLevelOnDeath)
+            Debug.Log("respawning");
             PlayerStats.setHealth(10);
             PlayerStats.setFire(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
