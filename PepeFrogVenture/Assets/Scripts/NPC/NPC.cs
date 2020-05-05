@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-// Author: Jacob Didenbäck
+// Author: Hanna :)
 public class NPC : MonoBehaviour
 {
     [SerializeField] GameController Controller;
     [SerializeField] private string[] dialog;
     [SerializeField] private int RequiredBerries;
     [SerializeField] private GameObject Target;
+    [SerializeField] private float TalkRadius = 2.5f;
+
     int currentDialog = 0;
     private bool QuestDone = false;
 
@@ -18,7 +20,7 @@ public class NPC : MonoBehaviour
     private void Update()
     {
         TalkMarker.SetActive(false);
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, TalkRadius);
         for(int i = 0; i < colliders.Length; i++)
         {
             if(colliders[i].gameObject.tag == "Player")
