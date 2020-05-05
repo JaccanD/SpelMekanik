@@ -62,6 +62,7 @@ public class PlayerMovingState : PlayerBaseState
             ToungeFlick();
         }
     }
+    //Valter
     private void TurnRateAdjustment()
     {
         float currentDirection = Vector3.Dot(Direction.normalized, Velocity.normalized);
