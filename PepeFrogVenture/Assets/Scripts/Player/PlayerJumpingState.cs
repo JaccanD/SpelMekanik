@@ -26,6 +26,10 @@ public class PlayerJumpingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerFallingState>();
             return;
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            ToungeFlick();
+        }
         Velocity += Gravity * Vector3.down * Time.deltaTime;
         Velocity += Acceleration * Direction * Time.deltaTime;
         ApplyAirResistance(AirResistance);
