@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: PlayerMovingState
   m_EditorClassIdentifier: 
   Gravity: 9.82
-  StaticFriktionKoeficcent: 0.9
-  DynamicFriktionKoeficcent: 0.8
+  StaticFriktionKoeficcent: 0.8
+  DynamicFriktionKoeficcent: 0.7
+  PickupTags:
+  - Berry
+  - Flies
+  - Fire
   Acceleration: 20
   MaxSpeed: 6
