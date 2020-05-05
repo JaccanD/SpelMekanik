@@ -9,6 +9,7 @@ public class FireBallScript : MonoBehaviour
     [SerializeField] private float Gravity = 6;
     [SerializeField] private LayerMask HitMask;
     [SerializeField] private float Damage = 20;
+    [SerializeField] private ParticleSystem enemyBurned;
     private Vector3 Velocity = Vector3.zero;
     private SphereCollider Coll;
 
@@ -25,6 +26,7 @@ public class FireBallScript : MonoBehaviour
             {
                 if (colls[i].transform.gameObject.tag == "Enemy")
                 {
+                    GameObject.Instantiate(enemyBurned, transform.position, transform.rotation);
                     EventSystem.Current.FireEvent(new EnemyHitEvent(colls[i].transform.gameObject, Damage));
                 }
                 Destroy(gameObject);

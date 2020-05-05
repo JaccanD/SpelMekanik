@@ -7,7 +7,7 @@ using UnityEngine;
 public class BossDivingState : BossBaseState
 {
     private Lilypads sinkTarget;
-    private float sinkSpeed = 1.5f;
+    [SerializeField] private float sinkSpeed = 1.5f;
 
     [SerializeField]private float threshold = 5f;
 
