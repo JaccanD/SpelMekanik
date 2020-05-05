@@ -387,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireFlyPrefab: {fileID: 446110723812552371, guid: 6942ee1970306de41b3306fb97ff7181,
     type: 3}
-  MaxChildren: 3
+  MaxChildren: 4
   Spawners:
   - {fileID: 996417104}
   - {fileID: 837464980}
@@ -413,7 +413,7 @@ MonoBehaviour:
   - {fileID: 74344260}
   - {fileID: 138914427}
   - {fileID: 1902116525}
-  RespawnDelay: 7
+  RespawnDelay: 3
 --- !u!4 &94340474
 Transform:
   m_ObjectHideFlags: 0
@@ -3358,7 +3358,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c798056f0dd42854f98f72cbfcdbd7d6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
