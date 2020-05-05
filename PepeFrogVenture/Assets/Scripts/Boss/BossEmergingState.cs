@@ -14,14 +14,10 @@ public class BossEmergingState : BossBaseState
 
     public override void Enter()
     {
-        //chosenLilypad = Boss.lilypads[Random.Range(0, Boss.lilypads.Count)];
         LilyPadWithPlayer();
-        //Boss.transform.position = chosenLilypad.transform.position + Vector3.down * depthOffset;
         chosenLilypad.BossTarget();
         Boss.lilypads.Remove(chosenLilypad);
-        
     }
-
     private void LilyPadWithPlayer()
     {
         chosenLilypad = Boss.lilypads[0];
@@ -31,9 +27,7 @@ public class BossEmergingState : BossBaseState
                 chosenLilypad = Boss.lilypads[i];
             }
         }
-        
     }
-
     public override void Run()
     {
         rotateTowardPlayer(Boss.player.transform.position);
@@ -45,23 +39,12 @@ public class BossEmergingState : BossBaseState
         {
             stateMachine.TransitionTo<BossAttackingState>();
         }
-        
     }
-
-    //private IEnumerator Emerge()
-    //{
-    //    while(Boss.transform.position.y < fullyEmergedThreshold)
-    //    {
-    //        Boss.transform.position += Vector3.up * emergingSpeed * Time.deltaTime;
-    //    }
-    //}
-
     private void rotateTowardPlayer(Vector3 rotateTowards)
     {
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
-
     private void Emerge()
     {
         Boss.transform.position += Vector3.up * emergingSpeed * Time.deltaTime;

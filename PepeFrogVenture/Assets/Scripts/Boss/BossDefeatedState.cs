@@ -9,12 +9,10 @@ public class BossDefeatedState : BossBaseState
 {
     public override void Enter()
     {
-        Debug.Log("Bossdead");
         Die();
     }
     private void Die()
     {
-        //dödsanimation och skit
         EventSystem.Current.FireEvent(new BossDeadEvent());
         Destroy(Boss.gameObject);
     }
