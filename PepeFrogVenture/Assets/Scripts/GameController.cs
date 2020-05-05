@@ -125,6 +125,7 @@ public class GameController : MonoBehaviour
         PlayerStats.setFire(false);
         if (SceneManager.GetActiveScene().name == "LvL2")
             {
+            SceneManager.LoadScene("LvL2");
             WaitForSceneLoad("LvL2", SceneTwoRespawnTime);
             }
     }
