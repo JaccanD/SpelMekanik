@@ -102,7 +102,9 @@ public class GameController : MonoBehaviour
         PlayerDabbing e = (PlayerDabbing)eb;
         if (secretDab != null && Vector3.Distance(secretDab, e.dabLocation) < 3 && SceneManager.GetActiveScene().name == "LvL1terrain")
         {
+
             StartCoroutine(WaitForSceneLoad("ExtraScene", 1.3f));
+
         }
     }
     public void OnToungeDone(Callback.Event eb)
