@@ -41,7 +41,8 @@ public class PlayerMovingState : PlayerBaseState
         
         Velocity += Gravity * Vector3.down * Time.deltaTime;
 
-        if(Velocity.magnitude > MaxSpeed)
+        TurnRateAdjustment();
+        if (Velocity.magnitude > MaxSpeed)
         {
             Velocity = Velocity.normalized * MaxSpeed;
         }
@@ -61,5 +62,10 @@ public class PlayerMovingState : PlayerBaseState
             ToungeFlick();
         }
     }
-
+    private void TurnRateAdjustment()
+    {
+        float currentDirection = Vector3.Dot(Direction.normalized, Velocity.normalized);
+        float turnSpeed = Mathf.Lerp(0.3f, 0.6f, currentDirection);
+        Velocity += Direction * (Acceleration + turnSpeed) * Time.deltaTime;
+    }
 }
