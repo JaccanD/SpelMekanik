@@ -13,8 +13,10 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public Vector3 secretDab;
     public bool Tounge = true;
-    public float SceneTwoRespawnTime = 1.3f;
     [SerializeField] private bool RestartWholeLevelOnDeath;
+    [Header("Set only if RestartWholeLevel is checked")]
+    public float SceneReloadTime;
+
 
     public void Start()
     {
@@ -102,9 +104,7 @@ public class GameController : MonoBehaviour
         PlayerDabbing e = (PlayerDabbing)eb;
         if (secretDab != null && Vector3.Distance(secretDab, e.dabLocation) < 3 && SceneManager.GetActiveScene().name == "LvL1terrain")
         {
-
             StartCoroutine(WaitForSceneLoad("ExtraScene", 1.3f));
-
         }
     }
     public void OnToungeDone(Callback.Event eb)
@@ -115,17 +115,15 @@ public class GameController : MonoBehaviour
     IEnumerator WaitForSceneLoad(string scene, float time)
     {
         yield return new WaitForSeconds(1.3f);
-        
+        PlayerStats.setHealth(10);
+        PlayerStats.setFire(false);
         SceneManager.LoadScene(scene);
     }
     public void RestartScene(Callback.Event eb)
     {
         if (RestartWholeLevelOnDeath)
         {
-            Debug.Log("respawning");
-            PlayerStats.setHealth(10);
-            PlayerStats.setFire(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(WaitForSceneLoad(SceneManager.GetActiveScene().name, SceneReloadTime));
         }
     }
     public void BossIsDead(Callback.Event e)
