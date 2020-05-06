@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -40,5 +41,11 @@ public class PauseMenuScript : MonoBehaviour
         AudioListener.pause = false;
         PauseMenuUI.SetActive(false);
         isPaused = false;
+    }
+
+    public void Huvudmeny ()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
