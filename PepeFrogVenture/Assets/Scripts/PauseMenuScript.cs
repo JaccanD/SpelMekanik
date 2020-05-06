@@ -31,14 +31,12 @@ public class PauseMenuScript : MonoBehaviour
     private void ActivateMenu()
     {
         Time.timeScale = 0;
-        AudioListener.pause = true;
         PauseMenuUI.SetActive(true);
     }
 
     public void DeactivateMenu()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false;
         PauseMenuUI.SetActive(false);
         isPaused = false;
     }
