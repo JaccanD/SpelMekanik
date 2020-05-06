@@ -8,6 +8,7 @@ public class BossProjectile : MonoBehaviour
 {
     private float projectileForce;
     private float projectileDamage = 3;
+    [SerializeField] private LayerMask collisionLayers;
     [SerializeField] private ParticleSystem bossProjectileSplash;
 
     private void Start()
@@ -20,6 +21,10 @@ public class BossProjectile : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.collider.gameObject.layer != collisionLayers)
+        {
+            return;
+        }
         if (collision.gameObject.tag == "Player")
         {
             GameObject.Instantiate(bossProjectileSplash, transform.position, transform.rotation);
