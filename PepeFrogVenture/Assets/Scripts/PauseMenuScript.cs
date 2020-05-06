@@ -16,10 +16,14 @@ public class PauseMenuScript : MonoBehaviour
         if (isPaused)
         {
             ActivateMenu();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         } 
         else
         {
             DeactivateMenu();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
