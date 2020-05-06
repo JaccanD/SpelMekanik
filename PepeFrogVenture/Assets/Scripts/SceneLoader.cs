@@ -27,6 +27,7 @@ public class SceneLoader : MonoBehaviour
 
     public void BossTwo()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(6);
     }
 }
