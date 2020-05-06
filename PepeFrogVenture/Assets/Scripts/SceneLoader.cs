@@ -24,4 +24,9 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BossTwo()
+    {
+        SceneManager.LoadScene(6);
+    }
 }

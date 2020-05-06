@@ -10,6 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private int RequiredBerries;
     [SerializeField] private GameObject Target;
     [SerializeField] private float TalkRadius = 2.5f;
+    [SerializeField] private GameObject RespawnPoint;
 
     int currentDialog = 0;
     private bool QuestDone = false;
@@ -49,7 +50,7 @@ public class NPC : MonoBehaviour
         {
             currentDialog = 1;
         }
-        if(Controller.Berries == RequiredBerries && !QuestDone)
+        if(Controller.Berries >= RequiredBerries && !QuestDone)
         {
             currentDialog = 2;
             Unlock();
@@ -65,6 +66,8 @@ public class NPC : MonoBehaviour
     {
         QuestDone = true;
         Target.SetActive(false);
+        if (RespawnPoint != null)
+            EventSystem.Current.FireEvent(new RespawnPointReachedEvent(RespawnPoint));
         EventSystem.Current.FireEvent(new QuestDoneEvent(gameObject));
     }
 }
