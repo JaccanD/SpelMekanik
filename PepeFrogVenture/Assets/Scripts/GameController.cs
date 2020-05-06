@@ -27,7 +27,6 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
         EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), RestartScene);
-        //EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), IsSceneTwo);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
 
@@ -128,17 +127,7 @@ public class GameController : MonoBehaviour
             PlayerStats.setFire(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-            
     }
-    //public void IsSceneTwo(Callback.Event eb)
-    //{
-    //    PlayerStats.setHealth(10);
-    //    PlayerStats.setFire(false);
-    //    if (SceneManager.GetActiveScene().name == "LvL2")
-    //        {
-    //            StartCoroutine(WaitForSceneLoad("LvL2", SceneTwoRespawnTime));
-    //        }
-    //}
     public void BossIsDead(Callback.Event e)
     {
         SceneManager.LoadScene("Lvl3Slut");
