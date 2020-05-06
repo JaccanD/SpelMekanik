@@ -57,12 +57,6 @@ public abstract class PlayerBaseState : State
         
         if (hit)
         {
-            //if (PickupTags.Contains(cast.collider.tag))
-            //{
-            //    EventSystem.Current.FireEvent(new PickupEvent(cast.collider.gameObject));
-            //    Destroy(cast.collider.gameObject);
-            //    return startingVelocity;
-            //}
             bool SkinWidthHit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, -cast.normal, out RaycastHit SkinWidthCast, SkinWidth + startingVelocity.magnitude, CollisionMask, QueryTriggerInteraction.Ignore);
             Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
             Velocity += normalForce;
