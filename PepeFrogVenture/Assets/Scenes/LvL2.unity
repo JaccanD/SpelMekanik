@@ -3965,6 +3965,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5126640878203715604, guid: 1a2fa2719ecedd64abf1c465128808e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fae7f7ae95a1a7940914d7e6f344f0c9, type: 2}
     - target: {fileID: 6337799217895541443, guid: 1a2fa2719ecedd64abf1c465128808e4,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -4700,6 +4705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 261ed62406c725446997bf29b6e57e24, type: 2}
+  MusicSlider: {fileID: 1410443785}
+  SFXSlider: {fileID: 812593096}
 --- !u!114 &812593096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7712,6 +7719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 36132f805c35baa498b5ce11d4aaa6e6, type: 2}
+  MusicSlider: {fileID: 1410443785}
+  SFXSlider: {fileID: 812593096}
 --- !u!114 &1410443785
 MonoBehaviour:
   m_ObjectHideFlags: 0
