@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9159898301385323249}
   - component: {fileID: 8647129628242974390}
   - component: {fileID: -4494846106007385721}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BossProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5465b1bbb2f1d449089f7f73ec4f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 49425
   bossProjectileSplash: {fileID: 6415415615224806426, guid: 801b2b6fbd292dc43ab664acc344562a,
     type: 3}
 --- !u!54 &-4494846106007385721
