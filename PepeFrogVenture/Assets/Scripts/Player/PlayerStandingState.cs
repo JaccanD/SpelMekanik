@@ -38,6 +38,7 @@ public class PlayerStandingState : PlayerBaseState
         {
             ToungeFlick();
         }
+        //gjorde så att fiender inte kunde knuffa tillbaka spelaren när de står still
         //Deccelerate();
 
         MovePlayer();

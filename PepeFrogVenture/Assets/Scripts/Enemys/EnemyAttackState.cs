@@ -9,6 +9,7 @@ using Callback;
 public class EnemyAttackState : EnemyBaseState
 {
     [SerializeField] private float chaseDistance;
+    [SerializeField] private float playerToCloseDistance;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float startAttackCooldown;
     [SerializeField] private float pushAmount;
@@ -28,6 +29,10 @@ public class EnemyAttackState : EnemyBaseState
             stateMachine.TransitionTo<EnemyWalkingState>();
         if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > chaseDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
+        if(Vector3.Distance(position, Enemy.player.transform.position) < playerToCloseDistance)
+        {
+            Attack();
+        }
         Attack();
     }
 
