@@ -12,7 +12,7 @@ public class EnemyBaseState : State
     protected BoxCollider collider { get { return Enemy.getCollider(); } }
     protected float damage { get { return Enemy.getDamage(); } }
     protected GameObject[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
-    
+    protected Vector3 position { get { return Enemy.transform.position; } }
 
     public override void Enter()
     {
