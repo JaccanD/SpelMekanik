@@ -20,6 +20,7 @@ public class PlayerKontroller3D : MonoBehaviour
     private float RotationY = 90;
     private GameController Controller;
     private Vector3 Center { get { return GetComponent<CapsuleCollider>().center + transform.position; } }
+    private bool IsStunned;
     [SerializeField] private GameObject Fireball;
     [SerializeField] LayerMask TalkMask;
 
@@ -27,6 +28,7 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] LayerMask CollisionMask;
     [SerializeField] private float SkinWidth = 0.1f;
     [SerializeField] private float GroundCheckDistance;
+    [SerializeField] private float StunnedTime = 1f;
 
     [Header ("Tounge Settings")]
     [SerializeField] private LayerMask HookMask;
@@ -138,7 +140,7 @@ public class PlayerKontroller3D : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
-        
+        EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), IsPushed);
     }
     void Update()
     {
@@ -147,6 +149,10 @@ public class PlayerKontroller3D : MonoBehaviour
     }
     public void GetInput()
     {
+        if (IsStunned)
+        {
+            return;
+        }
         //Rotera kameran mot musen
         Vector2 mouse = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         RotationX -= mouse.y * MouseSensitivity;
@@ -192,6 +198,18 @@ public class PlayerKontroller3D : MonoBehaviour
     public State InState()
     {
         return stateMachine.GetCurrentState();
+    }
+    private void IsPushed(Callback.Event eb)
+    {
+        IsStunned = true;
+        Direction = Vector3.zero;
+        StartCoroutine(StunCountDOwn());
+    }
+    IEnumerator StunCountDOwn()
+    {
+        yield return new WaitForSeconds(StunnedTime);
+
+        IsStunned = false;
     }
     private void MoveCamera()
     {

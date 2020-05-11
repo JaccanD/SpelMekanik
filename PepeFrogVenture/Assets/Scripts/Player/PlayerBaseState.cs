@@ -29,7 +29,7 @@ public abstract class PlayerBaseState : State
     [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
-    [SerializeField] string[] PickupTags = { "Berry", "Flies", "Fire" };
+    //[SerializeField] string[] PickupTags = { "Berry", "Flies", "Fire" };
 
     protected void MovePlayer()
     {
