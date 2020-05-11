@@ -8,6 +8,7 @@ public class CrossHairScript : MonoBehaviour
     // Cameran
     // Tungländ
 
+    [Header ("Required")]
     [SerializeField] Transform cameraTransform;
     [SerializeField] float toungeLength;
     [SerializeField] LayerMask hookMask;
