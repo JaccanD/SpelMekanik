@@ -113,8 +113,8 @@ public abstract class PlayerBaseState : State
         //Tungan sträcker ut sig tills den träffar något
         Vector3 start = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
         Vector3 forward = Camera.transform.rotation * Vector3.forward;
-        bool hookHit = Physics.SphereCast(Camera.transform.position + forward * 5, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength + 5, HookMask);
-        if (!hookHit)
+        bool hookHit = Physics.SphereCast(Camera.transform.position, 0.3f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit HookCast, ToungeLength, HookMask);
+        if (!hookHit || HookCast.distance < (Camera.transform.position - Center).magnitude)
         {
             return;
         }
