@@ -38,7 +38,7 @@ public class PlayerStandingState : PlayerBaseState
         {
             ToungeFlick();
         }
-        Deccelerate();
+        //Deccelerate();
 
         MovePlayer();
     }
