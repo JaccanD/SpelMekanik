@@ -44,8 +44,8 @@ public class PlayerKontroller3D : MonoBehaviour
     [SerializeField] private float MaxRotationX = 60;
 
 
-
-
+    private bool temp;
+    private int tempcounter = 0;
 
     private Vector3 Hook;
 
@@ -140,13 +140,31 @@ public class PlayerKontroller3D : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
-
+        EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), TempDebug);
         
+    }
+    private void TempDebug(Callback.Event eb)
+    {
+        temp = true;
+    }
+    private void LateUpdate()
+    {
+        if (temp)
+        {
+            Debug.Log(Velocity);
+            
+            tempcounter++;
+            if(tempcounter > 10)
+            {
+                tempcounter = 0;
+                temp = false;
+            }
+        }
     }
     void Update()
     {
         GetInput();
-        stateMachine.Run();    
+        stateMachine.Run();
     }
     public void GetInput()
     {
