@@ -20895,6 +20895,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f7882e905e103a48bc3fff03bb93216, type: 3}
+--- !u!1 &1071058948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8975671255921840676, guid: 5d7beee1f3993ab459974b780a0aaa73,
+    type: 3}
+  m_PrefabInstance: {fileID: 1627727682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071058952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071058948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fae5e22a2432840a67dee0932a0201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 597652716}
+  toungeLength: 18
+  hookMask:
+    serializedVersion: 2
+    m_Bits: 2560
+  missColor: {r: 0.7264151, g: 0.030838363, b: 0.030838363, a: 0.62352943}
+  hitColor: {r: 0.2378124, g: 0.8490566, b: 0.15619439, a: 0.6392157}
 --- !u!1 &1072883737
 GameObject:
   m_ObjectHideFlags: 1
@@ -32264,6 +32289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975671255921840676, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Name
+      value: CrossHair
       objectReference: {fileID: 0}
     - target: {fileID: 8975671255921840677, guid: 5d7beee1f3993ab459974b780a0aaa73,
         type: 3}
