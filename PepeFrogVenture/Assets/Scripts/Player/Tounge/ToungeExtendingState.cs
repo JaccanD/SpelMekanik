@@ -37,7 +37,10 @@ public class ToungeExtendingState : ToungeBaseState
             stateMachine.TransitionTo<ToungeRetractingState>();
             return;
         }
-        Vector3 move = gameObject.transform.localRotation * (Speed * Vector3.up) * Time.deltaTime;
+        Vector3 directionToHook = Tounge.GetPoint() - gameObject.transform.position;
+        directionToHook = directionToHook.normalized;
+
+        Vector3 move = (Speed * directionToHook) * Time.deltaTime;
         gameObject.transform.position += move;
 
         Destroy(Cylinder);
