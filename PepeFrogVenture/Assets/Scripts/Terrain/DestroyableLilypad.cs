@@ -27,7 +27,10 @@ public class DestroyableLilypad : MonoBehaviour
         yield return new WaitForSeconds(destructionTimer);
         DestroyLilypad();
     }
-
+    public void DestroyLilypadNow()
+    {
+        DestroyLilypad();
+    }
     private void DestroyLilypad()
     {
         EventSystem.Current.FireEvent(new LilyPadDestroyedEvent(this.gameObject));

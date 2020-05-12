@@ -8893,11 +8893,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
   - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
   - {fileID: 11400000, guid: 1f7b72c32f96b6b4090c140bd34a2f9a, type: 2}
+  - {fileID: 11400000, guid: df035a4323254f14ba3c70bbf0fe558c, type: 2}
   player: {fileID: 231205288}
   speed: 2
   CollisionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 49409
   PatrolPoints: []
   controller: {fileID: 531704902}
   damage: 2
@@ -8942,8 +8943,37 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6188309, y: 3.1735048, z: 3.630042}
-  m_Center: {x: -0.032649897, y: 1.0867524, z: -1.5593152}
+  m_Size: {x: 1.6188309, y: 4.04525, z: 3.630042}
+  m_Center: {x: -0.032649867, y: 0.65087986, z: -1.5593152}
+--- !u!54 &1266083487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266083483}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1266083488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266083483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.412593, z: 6.8175507}
+  m_Center: {x: 0.0000025356467, y: 0.06805372, z: -2.9087868}
 --- !u!1001 &1293136397
 PrefabInstance:
   m_ObjectHideFlags: 0
