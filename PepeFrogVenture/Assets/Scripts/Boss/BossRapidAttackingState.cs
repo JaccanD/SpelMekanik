@@ -52,8 +52,10 @@ public class BossRapidAttackingState : BossBaseState
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
         GameObject newProjectile;
-
-        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
+        float xRotation = Random.Range(-5, 5);
+        float yRotation = Random.Range(-5, 5);
+        float zRotation = Random.Range(-5, 5);
+        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * Quaternion.Euler(xRotation, yRotation, zRotation));
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);

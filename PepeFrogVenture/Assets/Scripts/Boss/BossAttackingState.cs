@@ -38,7 +38,7 @@ public class BossAttackingState : BossBaseState
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
         {
-            if(Boss.getHealth() < 15 && Random.Range(0,10) < 6)
+            if(Boss.getHealth() < 15 && Random.Range(0,10) <= 9)
             {
                 stateMachine.TransitionTo<BossRapidAttackingState>();
                 return;
@@ -58,7 +58,7 @@ public class BossAttackingState : BossBaseState
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
         GameObject newProjectile;
-
+        
         newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
