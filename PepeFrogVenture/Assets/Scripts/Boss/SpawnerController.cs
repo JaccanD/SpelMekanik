@@ -64,8 +64,8 @@ public class SpawnerController : MonoBehaviour
         spawners.Remove(e.Pad);
         IsOccupied.Remove(e.Pad);
 
-        Debug.Log(spawners.Count);
-        Debug.Log(IsOccupied.Count);
+        //Debug.Log(spawners.Count);
+        //Debug.Log(IsOccupied.Count);
     }
     public void OnEatEvent(Callback.Event eb)
     {

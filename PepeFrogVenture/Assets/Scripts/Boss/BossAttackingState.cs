@@ -54,8 +54,6 @@ public class BossAttackingState : BossBaseState
         newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
-        Debug.Log(force);
-        
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
         EventSystem.Current.FireEvent(new BossShootingEvent());

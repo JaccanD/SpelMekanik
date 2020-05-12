@@ -34,9 +34,12 @@ public class FireFlyRoaming : MonoBehaviour
         if (CollisionDetection(nextFrameMovement) || Vector3.Distance(transform.position, moveToPosition) < skinWidth)
         {
             NewMoveToPosition();
-            nextFrameMovement = Vector3.MoveTowards(transform.position, moveToPosition, speed * Time.deltaTime);
         }
-        transform.position = nextFrameMovement;
+        else
+        {
+            transform.position = nextFrameMovement;
+        }
+
     }
     private bool CollisionDetection(Vector3 movement)
     {

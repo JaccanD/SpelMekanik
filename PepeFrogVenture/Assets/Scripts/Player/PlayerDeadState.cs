@@ -16,11 +16,11 @@ public class PlayerDeadState : PlayerBaseState
     }
     public override void Run()
     {
-        Timer += Time.deltaTime;
-        if (Timer >= 1)
-        {
-            Respawn();
-        }
+        //Timer += Time.deltaTime;
+        //if (Timer >= 1)
+        //{
+        //    Respawn();
+        //}
     }
 
     public override void Exit()
