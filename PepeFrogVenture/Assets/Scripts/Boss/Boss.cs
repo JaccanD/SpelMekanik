@@ -40,8 +40,24 @@ public class Boss : Enemy
         if(Health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    isEncountered = true;
+    //}
     private void OnTriggerEnter(Collider other)
     {
-        isEncountered = true;
+        if (other.GetComponent<DestroyableLilypad>())
+        {
+            other.GetComponent<DestroyableLilypad>().DestroyLilypadNow();
+        }
+        else if(other.tag == "Player")
+        {
+            EventSystem.Current.FireEvent(new PlayerHitEvent(other.gameObject, 10));
+        }
+        else
+        {
+            statemachine.TransitionTo<BossReturnToStartPositionState>();
+            //skapa ett state för att åka tillbaka till vattnet
+        }
     }
 }
