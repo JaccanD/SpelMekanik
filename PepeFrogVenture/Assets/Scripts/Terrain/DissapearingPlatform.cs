@@ -17,21 +17,15 @@ public class DissapearingPlatform : MonoBehaviour
         StartingMaterial = GetComponent<MeshRenderer>().material;
         CollisionColl = GetComponent<MeshCollider>();
     }
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        Collider[] overLaps = Physics.OverlapBox(transform.position + coll.center, coll.bounds.extents, transform.rotation);
-        for (int i = 0; i < overLaps.Length; i++)
+        if (other.gameObject.tag == "Player")
         {
-            if (overLaps[i].transform.gameObject.tag == "Player")
-            {
-                GetComponent<MeshRenderer>().material = color;
-                Invoke("Dissapear", DissapearDelay);
-                coll.enabled = false;
-                break;
-            }
+            GetComponent<MeshRenderer>().material = color;
+            Invoke("Dissapear", DissapearDelay);
+            coll.enabled = false;
         }
     }
-
     void Reapear()
     {
         //transform.position += Vector3.up * 100;

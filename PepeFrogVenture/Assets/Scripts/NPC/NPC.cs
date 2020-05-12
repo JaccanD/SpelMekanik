@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject TalkPrefab;
     private GameObject TalkMarker;
 
-    private void Update()
+    /*private void Update()
     {
         TalkMarker.SetActive(false);
         Collider[] colliders = Physics.OverlapSphere(transform.position, TalkRadius);
@@ -32,7 +32,7 @@ public class NPC : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     private void Awake()
     {
         TalkMarker = GameObject.Instantiate(TalkPrefab, transform.position, transform.rotation);
@@ -61,7 +61,26 @@ public class NPC : MonoBehaviour
         }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            if (TalkMarker != null)
+            {
+                TalkMarker.SetActive(true);
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (TalkMarker != null)
+            {
+                TalkMarker.SetActive(false);
+            }
+        }
+    }
     private void Unlock()
     {
         QuestDone = true;

@@ -133,8 +133,7 @@ public abstract class PlayerBaseState : State
     }
     protected void Talk()
     {
-        //bool talkHit = Physics.SphereCast(transform.position, 1.0f, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit TalkCast, 5, TalkMask);
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2.5f, TalkMask);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, TalkMask);
         foreach(Collider coll in colliders)
         {
             coll.gameObject.GetComponent<NPC>().Talk();
