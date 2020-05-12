@@ -15,6 +15,8 @@ public class BossAttackingState : BossBaseState
     [SerializeField] private float projectileStartingForce = 1000;
     [SerializeField] private float projectileDamage = 4;
     [SerializeField] private float projectileDistanceMultiplier = 40;
+    [Header("between 0 - 10")]
+    [SerializeField] private float superAttackChance = 4f;
     private int shootsLeftBeforeSubmerge;
 
     public override void Enter()
@@ -38,7 +40,7 @@ public class BossAttackingState : BossBaseState
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
         {
-            if(Boss.getHealth() < 15 && Random.Range(0,10) <= 9)
+            if(Boss.getHealth() < 15 && Random.Range(0,10) <= superAttackChance)
             {
                 stateMachine.TransitionTo<BossRapidAttackingState>();
                 return;
