@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3455126888340439875}
   - component: {fileID: 3455126888340439874}
   - component: {fileID: 3455126888340439902}
+  - component: {fileID: 3050682235284442225}
+  - component: {fileID: 6475065258473434790}
   m_Layer: 12
   m_Name: NPC
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3455126888340439873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.827755, y: 0.94, z: 4.6217833}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,5 +117,36 @@ MonoBehaviour:
   RequiredBerries: 2
   Target: {fileID: 0}
   TalkRadius: 2.5
+  RespawnPoint: {fileID: 0}
   TalkPrefab: {fileID: 2897045988587743952, guid: f3c2ecd2023549d4793c5459e4509ed6,
     type: 3}
+--- !u!136 &3050682235284442225
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455126888340439873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 9
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6475065258473434790
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455126888340439873}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
