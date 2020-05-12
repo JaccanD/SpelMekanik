@@ -1115,7 +1115,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 725461355}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 391620670}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e013970d98d4d744ea54668926979a05, type: 3}
@@ -1623,6 +1623,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6606501483488557099, guid: d388956fcececd348948a8d4c3dd1aed, type: 3}
+--- !u!1 &391620670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626959545601022608, guid: 1a2fa2719ecedd64abf1c465128808e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725461355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &407414888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2763,11 +2769,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Berries: 0
   CurrentRespawnPoint: {fileID: 2137942650}
-  Player: {fileID: 0}
+  Player: {fileID: 391620670}
   secretDab: {x: 0, y: 0, z: 0}
   Tounge: 1
-  RestartWholeLevelOnDeath: 1
-  SceneReloadTime: 1
+  HasFire: 0
+  restartWholeLevelOnDeath: 1
+  respawnTime: 0
 --- !u!4 &531704903
 Transform:
   m_ObjectHideFlags: 0
@@ -6664,6 +6671,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 91714f185c1036c4eb8dfaf7a2cda00c, type: 2}
   - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
   - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
+  - {fileID: 11400000, guid: 1f7b72c32f96b6b4090c140bd34a2f9a, type: 2}
   player: {fileID: 231205288}
   speed: 2
   CollisionMask:

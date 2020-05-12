@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
-[CreateAssetMenu(menuName = "BossState/AttackingState")]
-// Author: Valter Falsterljung
-public class BossAttackingState : BossBaseState
+[CreateAssetMenu(menuName = "BossState/RapidAttackingState")]
+public class BossRapidAttackingState : BossBaseState
 {
     protected GameObject Projectile { get { return Boss.getProjectile(); } }
     private float currentCool;
-    [SerializeField] private float cooldown;
-    [SerializeField] private int shoots = 3;
+    [SerializeField] private float cooldown = 0.3f;
+    [SerializeField] private int shoots = 15;
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float projectileStartingForce = 1000;
     [SerializeField] private float projectileDamage = 4;
@@ -23,26 +22,21 @@ public class BossAttackingState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Boss.player.transform.position);
-        Attack();
+        RotateTowardPlayer(Player.transform.position);
+        attack();
     }
-
-    private void Attack()
+    private void attack()
     {
         currentCool -= Time.deltaTime;
 
         if (currentCool > 0)
             return;
-        ShootProjectile();
+        Shoot();
 
         shootsLeftBeforeSubmerge -= 1;
-        if(shootsLeftBeforeSubmerge < 1)
+        if (shootsLeftBeforeSubmerge < 1)
         {
-            if(Boss.getHealth() < 15 && Random.Range(0,10) < 6)
-            {
-                stateMachine.TransitionTo<BossRapidAttackingState>();
-                return;
-            }
+            shootsLeftBeforeSubmerge = 5;
             stateMachine.TransitionTo<BossDivingState>();
         }
         currentCool = cooldown;
@@ -52,7 +46,7 @@ public class BossAttackingState : BossBaseState
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
-    private void ShootProjectile()
+    private void Shoot()
     {
         float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);

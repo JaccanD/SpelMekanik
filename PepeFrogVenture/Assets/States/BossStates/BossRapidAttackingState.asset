@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d955a5d68211d5a43828fcf5d9c5d4f2, type: 3}
-  m_Name: BossAttackingState
+  m_Script: {fileID: 11500000, guid: 4d76f2b0c38f9f043bfa30890d9190a9, type: 3}
+  m_Name: BossRapidAttackingState
   m_EditorClassIdentifier: 
-  cooldown: 1.5
-  shoots: 4
+  cooldown: 0.3
+  shootsLeftBeforeSubmerge: 15
   rotationSpeed: 3
   projectileStartingForce: 1000
-  projectileDamage: 3
+  projectileDamage: 4
   projectileDistanceMultiplier: 30
