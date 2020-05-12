@@ -141,6 +141,7 @@ public class PlayerKontroller3D : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
         EventSystem.Current.RegisterListener(typeof(Pushed), IsPushed);
+        EventSystem.Current.RegisterListener(typeof(PlayerRespawnEvent), PlayerRespawned);
     }
     void Update()
     {
@@ -213,6 +214,10 @@ public class PlayerKontroller3D : MonoBehaviour
         Direction = Vector3.zero;
         StartCoroutine(StunCountDOwn());
 
+    }
+    private void PlayerRespawned(Callback.Event eb)
+    {
+        stateMachine.TransitionTo<PlayerStandingState>();
     }
     IEnumerator StunCountDOwn()
     {

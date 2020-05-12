@@ -13,10 +13,10 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public Vector3 secretDab;
     public bool Tounge = true;
-    [SerializeField] private bool RestartWholeLevelOnDeath;
-    [Header("Set only if RestartWholeLevel is checked")]
-    public float SceneReloadTime;
     public bool HasFire;
+    [SerializeField] private bool restartWholeLevelOnDeath;
+    [SerializeField] private float respawnTime;
+    
 
 
     public void Start()
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnFlick);
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
         EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
-        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), RestartScene);
+        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Respawn);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
 
@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
         PlayerDabbing e = (PlayerDabbing)eb;
         if (secretDab != null && Vector3.Distance(secretDab, e.dabLocation) < 3 && SceneManager.GetActiveScene().name == "LvL1terrain")
         {
-            StartCoroutine(WaitForSceneLoad("ExtraScene", 1.3f));
+            StartCoroutine(WaitForSceneLoad("ExtraScene"));
         }
     }
     public void OnToungeDone(Callback.Event eb)
@@ -111,17 +111,28 @@ public class GameController : MonoBehaviour
         ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
     }
-    IEnumerator WaitForSceneLoad(string scene, float time)
+    IEnumerator WaitForSceneLoad(string scene)
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(respawnTime);
         PlayerStats.setHealth(10);
         SceneManager.LoadScene(scene);
     }
-    public void RestartScene(Callback.Event eb)
+    IEnumerator WaitForPlayerRespawn()
     {
-        if (RestartWholeLevelOnDeath)
+        yield return new WaitForSeconds(respawnTime);
+        PlayerStats.ResetHealth();
+        Player.transform.position = CurrentRespawnPoint.transform.position;
+        EventSystem.Current.FireEvent(new PlayerRespawnEvent());
+    }
+    public void Respawn(Callback.Event eb)
+    {
+        if (restartWholeLevelOnDeath)
         {
-            StartCoroutine(WaitForSceneLoad(SceneManager.GetActiveScene().name, SceneReloadTime));
+            StartCoroutine(WaitForSceneLoad(SceneManager.GetActiveScene().name));
+        }
+        else
+        {
+            StartCoroutine(WaitForPlayerRespawn());
         }
     }
     public void BossIsDead(Callback.Event e)
