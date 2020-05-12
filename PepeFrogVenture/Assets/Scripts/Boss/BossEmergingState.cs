@@ -30,7 +30,7 @@ public class BossEmergingState : BossBaseState
     }
     public override void Run()
     {
-        rotateTowardPlayer(Boss.player.transform.position);
+        RotateTowardPlayer(Boss.player.transform.position);
         if (Boss.transform.position.y < fullyEmergedThreshold)
         {
             Emerge();
@@ -40,7 +40,7 @@ public class BossEmergingState : BossBaseState
             stateMachine.TransitionTo<BossAttackingState>();
         }
     }
-    private void rotateTowardPlayer(Vector3 rotateTowards)
+    private void RotateTowardPlayer(Vector3 rotateTowards)
     {
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);

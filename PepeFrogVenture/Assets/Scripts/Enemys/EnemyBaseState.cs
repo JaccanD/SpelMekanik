@@ -7,16 +7,16 @@ public class EnemyBaseState : State
 {
     protected Enemy enemy;
     protected Enemy Enemy => enemy = enemy ?? (Enemy)owner;
-    protected float speed { get { return Enemy.GetSpeed(); } }
+    protected float Speed { get { return Enemy.GetSpeed(); } }
     protected LayerMask CollisionMask { get { return Enemy.GetCollisionMask(); } }
-    protected BoxCollider collider { get { return Enemy.getCollider(); } }
-    protected float damage { get { return Enemy.getDamage(); } }
-    protected GameObject[] patrolPoints { get { return Enemy.getPatrolPoints(); } }
-    protected Vector3 position { get { return Enemy.transform.position; } }
+    protected BoxCollider Collider { get { return Enemy.getCollider(); } }
+    protected float Damage { get { return Enemy.getDamage(); } }
+    protected GameObject[] PatrolPoints { get { return Enemy.getPatrolPoints(); } }
+    protected Vector3 Position { get { return Enemy.transform.position; } }
 
     public override void Enter()
     {
-        Enemy.agent.speed = speed;
+        Enemy.agent.speed = Speed;
     }
 
     protected bool CanSeePlayer()
