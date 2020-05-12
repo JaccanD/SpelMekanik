@@ -457,10 +457,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b4f107ba0196f4cb97bdce904d9d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFlyPrefab: {fileID: 0}
-  maxChildren: 0
-  respawnDelay: 0
-  spawners: []
+  fireFlyPrefab: {fileID: 1310050147297010433, guid: 9a9d38821fd67074d850600acb00764e,
+    type: 3}
+  maxChildren: 7
+  respawnDelay: 4
+  spawners:
+  - {fileID: 996417104}
+  - {fileID: 837464980}
+  - {fileID: 1376692109}
+  - {fileID: 1852784055}
+  - {fileID: 279040783}
+  - {fileID: 362601528}
+  - {fileID: 1662416971}
+  - {fileID: 1845764170}
+  - {fileID: 1525597074}
+  - {fileID: 1323305010}
+  - {fileID: 137825741}
+  - {fileID: 122074465}
+  - {fileID: 917567775}
+  - {fileID: 505389860}
+  - {fileID: 1089679543}
+  - {fileID: 460179702}
+  - {fileID: 821657814}
+  - {fileID: 486840611}
+  - {fileID: 1096743983}
+  - {fileID: 1684101075}
+  - {fileID: 194306776}
+  - {fileID: 74344260}
+  - {fileID: 138914427}
+  - {fileID: 1902116525}
 --- !u!4 &94340474
 Transform:
   m_ObjectHideFlags: 0
