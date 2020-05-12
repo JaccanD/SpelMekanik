@@ -16,11 +16,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private bool RestartWholeLevelOnDeath;
     [Header("Set only if RestartWholeLevel is checked")]
     public float SceneReloadTime;
+    public bool HasFire;
 
 
     public void Start()
     {
-        PlayerStats.setFire(false);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), TakeDamage);
         EventSystem.Current.RegisterListener(typeof(RespawnPointReachedEvent), SetRespawnPoint);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour
         PickupEvent e = (PickupEvent)eb;
         if (e.Pickup.tag == "Fire")
         {
-            PlayerStats.setFire(true);
+            HasFire = true;
         }
         if (e.Pickup.tag == "Flies")
         {
@@ -115,7 +115,6 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.3f);
         PlayerStats.setHealth(10);
-        PlayerStats.setFire(false);
         SceneManager.LoadScene(scene);
     }
     public void RestartScene(Callback.Event eb)

@@ -4,9 +4,8 @@ using UnityEngine;
 // Author: Valter Falsterljung
 public static class PlayerStats
 {
+    private static float maxHealth = 10;
     private static float health = 10;
-    private static bool fire;
-    
 
     public static float getHealth()
     {
@@ -20,12 +19,8 @@ public static class PlayerStats
     {
         health += value;
     }
-    public static bool getFire()
+    public static void ResetHealth()
     {
-        return fire;
-    }
-    public static void setFire(bool value)
-    {
-        fire = value;
+        health = maxHealth;
     }
 }
