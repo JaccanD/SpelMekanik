@@ -10,11 +10,17 @@ public class ToungeExtendingState : ToungeBaseState
 {
     [SerializeField] private LayerMask HookMask;
     [SerializeField] private LayerMask PickUpMask;
+
+    private Vector3 target;
     public enum HIT_TYPE {
         PICKUP_HIT,
         HOOK_HIT,
         NO_HIT
    };
+    public override void Enter()
+    {
+        target = Tounge.GetPoint();
+    }
     public override void Run()
     {
         HIT_TYPE check = CheckHit();
@@ -37,12 +43,20 @@ public class ToungeExtendingState : ToungeBaseState
             stateMachine.TransitionTo<ToungeRetractingState>();
             return;
         }
-        if (Tounge.GetPoint() == gameObject.transform.position)
+        if (target == gameObject.transform.position)
         {
-            stateMachine.TransitionTo<ToungeRetractingState>();
-            return;
+            Collider[] hits = Physics.OverlapSphere(gameObject.transform.position + Coll.center, Coll.radius, ToungeMask);
+            if (hits.Length > 0)
+            {
+                target = hits[0].gameObject.transform.position;
+            }
+            else
+            {
+                stateMachine.TransitionTo<ToungeRetractingState>();
+                return;
+            }
         }
-        Vector3 directionToHook = Tounge.GetPoint() - gameObject.transform.position;
+        Vector3 directionToHook = target - gameObject.transform.position;
         float distance = directionToHook.magnitude;
         directionToHook = directionToHook.normalized;
 
@@ -50,14 +64,13 @@ public class ToungeExtendingState : ToungeBaseState
         if (move.magnitude < distance)
             gameObject.transform.position += move;
         else
-            gameObject.transform.position = Tounge.GetPoint();
+            gameObject.transform.position = target;
 
         Destroy(Cylinder);
         drawTounge();
 
 
     }
-
     private HIT_TYPE CheckHit()
     {
         Collider[] hits = Physics.OverlapSphere(gameObject.transform.position + Coll.center, Coll.radius / 4, ToungeMask);
