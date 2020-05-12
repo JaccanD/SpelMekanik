@@ -56,7 +56,7 @@ public class Boss : Enemy
         }
         else
         {
-            statemachine.TransitionTo<BossReturnToStartPositionState>();
+            //statemachine.TransitionTo<BossReturnToStartPositionState>();
             //skapa ett state för att åka tillbaka till vattnet
         }
     }
