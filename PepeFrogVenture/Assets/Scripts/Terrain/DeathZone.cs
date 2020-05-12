@@ -7,6 +7,7 @@ using Callback;
 public class DeathZone : MonoBehaviour
 {
     BoxCollider coll;
+    new private BoxCollider collider;
     [SerializeField]private ParticleSystem waterSplash;
     private float timer = 0;
     [SerializeField] private AudioClip WaterSound;
@@ -17,30 +18,22 @@ public class DeathZone : MonoBehaviour
 
     public void Awake()
     {
-        coll = GetComponent<BoxCollider>();
+        collider = GetComponent<BoxCollider>();
         source = GetComponent<AudioSource>();
         
     }
-    public void Update()
+    public void OnTriggerEnter(Collider other)
     {
-
-        Collider[] overLaps = Physics.OverlapBox(transform.position + coll.center, coll.bounds.extents, transform.rotation);
-        for (int i = 0; i < overLaps.Length; i++)
+        if(other.gameObject.tag != "Player")
         {
-            if (overLaps[i].transform.gameObject.tag == "Player" && timer <= 0)
-            {
-                GameObject player = overLaps[i].transform.gameObject;
-                timer = 2;
-                ParticleSystem splash = GameObject.Instantiate(waterSplash, overLaps[i].transform);
-                splash.transform.parent = null;
-                EventSystem.Current.FireEvent(new PlayerHitEvent(overLaps[i].transform.gameObject, damage));
-                EventSystem.Current.FireEvent(new Pushed(player, player.transform.position, pushbackForce, pushbackHeight));
-                source.volume = 0.5f;
-                source.PlayOneShot(WaterSound);
-                break;
-            }
-            if (timer < 0) timer = 0;
+            return;
         }
-        timer -= Time.deltaTime;
+        GameObject player = other.gameObject;
+        ParticleSystem splash = GameObject.Instantiate(waterSplash, player.transform);
+        splash.transform.parent = null;
+        EventSystem.Current.FireEvent(new PlayerHitEvent(player, damage));
+        EventSystem.Current.FireEvent(new Pushed(player, player.transform.position, pushbackForce, pushbackHeight));
+        source.volume = 0.5f;
+        source.PlayOneShot(WaterSound);
     }
 }
