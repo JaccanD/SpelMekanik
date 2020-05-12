@@ -10,6 +10,9 @@ public class DeathZone : MonoBehaviour
     [SerializeField]private ParticleSystem waterSplash;
     private float timer = 0;
     [SerializeField] private AudioClip WaterSound;
+    [SerializeField] private float damage = 5;
+    [SerializeField] private float pushbackForce = 5;
+    [SerializeField] private float pushbackHeight = 5;
     private AudioSource source;
 
     public void Awake()
@@ -26,10 +29,12 @@ public class DeathZone : MonoBehaviour
         {
             if (overLaps[i].transform.gameObject.tag == "Player" && timer <= 0)
             {
+                GameObject player = overLaps[i].transform.gameObject;
                 timer = 2;
                 ParticleSystem splash = GameObject.Instantiate(waterSplash, overLaps[i].transform);
                 splash.transform.parent = null;
-                EventSystem.Current.FireEvent(new PlayerDeathEvent(overLaps[i].transform.gameObject));
+                EventSystem.Current.FireEvent(new PlayerHitEvent(overLaps[i].transform.gameObject, damage));
+                EventSystem.Current.FireEvent(new Pushed(player, player.transform.position, pushbackForce, pushbackHeight));
                 source.volume = 0.5f;
                 source.PlayOneShot(WaterSound);
                 break;

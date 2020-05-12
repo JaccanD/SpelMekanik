@@ -140,7 +140,7 @@ public class PlayerKontroller3D : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
-        EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), IsPushed);
+        EventSystem.Current.RegisterListener(typeof(Pushed), IsPushed);
     }
     void Update()
     {
@@ -201,9 +201,18 @@ public class PlayerKontroller3D : MonoBehaviour
     }
     private void IsPushed(Callback.Event eb)
     {
+        Pushed e = (Pushed) eb;
+        Vector3 direction = (e.Player.transform.position - e.Origin).normalized;
+        Velocity = direction * e.PushBackStrenght + (Vector3.up * e.Height);
+        Stun(e.StunDuration);
+    }
+    private void Stun(float duration)
+    {
+        StunnedTime = duration;
         IsStunned = true;
         Direction = Vector3.zero;
         StartCoroutine(StunCountDOwn());
+
     }
     IEnumerator StunCountDOwn()
     {

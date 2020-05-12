@@ -37,14 +37,25 @@ public class ToungeExtendingState : ToungeBaseState
             stateMachine.TransitionTo<ToungeRetractingState>();
             return;
         }
+        if (Tounge.GetPoint() == gameObject.transform.position)
+        {
+            stateMachine.TransitionTo<ToungeRetractingState>();
+            return;
+        }
         Vector3 directionToHook = Tounge.GetPoint() - gameObject.transform.position;
+        float distance = directionToHook.magnitude;
         directionToHook = directionToHook.normalized;
 
         Vector3 move = (Speed * directionToHook) * Time.deltaTime;
-        gameObject.transform.position += move;
+        if (move.magnitude < distance)
+            gameObject.transform.position += move;
+        else
+            gameObject.transform.position = Tounge.GetPoint();
 
         Destroy(Cylinder);
         drawTounge();
+
+
     }
 
     private HIT_TYPE CheckHit()

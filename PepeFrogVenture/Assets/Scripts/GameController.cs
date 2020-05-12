@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PickupEvent), OnPickup);
         EventSystem.Current.RegisterListener(typeof(ToungeFlickEvent), OnFlick);
         EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
-        EventSystem.Current.RegisterListener(typeof(EnemyPushesPlayerBack), PushPlayerBack);
         EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), RestartScene);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
@@ -129,12 +128,5 @@ public class GameController : MonoBehaviour
     public void BossIsDead(Callback.Event e)
     {
         SceneManager.LoadScene("Lvl3Slut");
-    }
-    public void PushPlayerBack(Callback.Event eb)
-    {
-        EnemyPushesPlayerBack e = (EnemyPushesPlayerBack)eb;
-        Vector3 direction = (e.player.transform.position - e.enemyPosition).normalized;
-        e.player.GetComponent<PlayerKontroller3D>().SetVelocity(direction * e.pushBackStrenght + (Vector3.up * e.heightPush));
-        Debug.Log(Player.GetComponent<PlayerKontroller3D>().GetVelocity());
     }
 }
