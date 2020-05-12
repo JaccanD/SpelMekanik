@@ -5,20 +5,19 @@ using Callback;
 // Author: Jacob Didenbäck
 public class SpawnerController : MonoBehaviour
 {
-    [SerializeField] private GameObject FireFlyPrefab;
-    [SerializeField] private int MaxChildren;
-    private int CurrentChildren;
+    [SerializeField] private GameObject fireFlyPrefab;
+    [SerializeField] private int maxChildren;
+    [SerializeField] private float respawnDelay;
+    [SerializeField] private List<GameObject> spawners;
 
-    [SerializeField] private List<GameObject> Spawners;
+    private int currentChildren;
     private Dictionary<GameObject, bool> IsOccupied;
-
-    [SerializeField] private float RespawnDelay;
-    private float Timer = 0;
+    private float timer = 0;
 
     private void Start()
     {
         IsOccupied = new Dictionary<GameObject, bool>();
-        foreach(GameObject s in Spawners)
+        foreach(GameObject s in spawners)
         {
             IsOccupied[s] = false;
         }
@@ -31,19 +30,19 @@ public class SpawnerController : MonoBehaviour
     }
     private void Update()
     {
-        if (MaxChildren == CurrentChildren)
+        if (maxChildren == currentChildren)
             return;
 
-        Timer += Time.deltaTime;
-        if (Timer < RespawnDelay)
+        timer += Time.deltaTime;
+        if (timer < respawnDelay)
             return;
         int index = 0;
         do
         {
-            index = Random.Range(0, Spawners.Count);
+            index = Random.Range(0, spawners.Count);
 
-        } while (IsOccupied[Spawners[index]]);
-        GameObject spawnTarget = Spawners[index];
+        } while (IsOccupied[spawners[index]]);
+        GameObject spawnTarget = spawners[index];
             if (!IsOccupied[spawnTarget])
             {
                 Vector3 spawnPoint = spawnTarget.transform.position + Vector3.up * 2;
@@ -51,27 +50,27 @@ public class SpawnerController : MonoBehaviour
                 offset.x *= 3;
                 offset.z *= 3;
                 spawnPoint += offset;
-                GameObject newFlies = Instantiate(FireFlyPrefab, spawnPoint, transform.rotation);
+                GameObject newFlies = Instantiate(fireFlyPrefab, spawnPoint, transform.rotation);
                 newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
                 IsOccupied[spawnTarget] = true;
-                CurrentChildren++;
-                Timer = 0;
+                currentChildren++;
+                timer = 0;
             }
     }
     public void OnLilyPadDestroyed(Callback.Event eb)
     {
         LilyPadDestroyedEvent e = (LilyPadDestroyedEvent)eb;
 
-        Spawners.Remove(e.Pad);
+        spawners.Remove(e.Pad);
         IsOccupied.Remove(e.Pad);
 
-        Debug.Log(Spawners.Count);
+        Debug.Log(spawners.Count);
         Debug.Log(IsOccupied.Count);
     }
     public void OnEatEvent(Callback.Event eb)
     {
         FireFlyDeathEvent e = (FireFlyDeathEvent)eb;
         IsOccupied[e.Parent] = false;
-        CurrentChildren--;
+        currentChildren--;
     }
 }

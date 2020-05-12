@@ -30,7 +30,7 @@ public class EnemyAttackState : EnemyBaseState
             stateMachine.TransitionTo<EnemyWalkingState>();
         if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > chaseDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
-        if(Vector3.Distance(position, Enemy.player.transform.position) < playerToCloseDistance)
+        if(Vector3.Distance(Position, Enemy.player.transform.position) < playerToCloseDistance)
         {
             Attack();
         }

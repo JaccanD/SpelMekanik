@@ -10,7 +10,7 @@ public class BossBaseState : State
     protected LayerMask CollisionMask { get { return Boss.GetCollisionMask(); } }
     //protected CapsuleCollider Collider { get { return Boss.GetCollider(); } }
     protected BoxCollider Collider { get { return Boss.getCollider(); } }
-    protected PlayerKontroller3D player { get { return Boss.player; } }
+    protected PlayerKontroller3D Player { get { return Boss.player; } }
 
     
 }

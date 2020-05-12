@@ -6,15 +6,15 @@ using UnityEngine;
 // Author: Valter Falsterljung
 public class EnemyDefeatedState : EnemyBaseState
 {
-    private float Timer = 0;
+    private float timer = 0;
     [SerializeField] private float timeToDie = 1;
 
     public override void Run()
     {
 
-        Timer += 1 * Time.deltaTime;
+        timer += 1 * Time.deltaTime;
         
-        if(Timer > timeToDie)
+        if(timer > timeToDie)
         {
             Despawn();
         }

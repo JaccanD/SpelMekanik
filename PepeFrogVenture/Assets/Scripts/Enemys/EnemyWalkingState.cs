@@ -16,23 +16,23 @@ public class EnemyWalkingState : EnemyBaseState
 
     public override void Run()
     {
-        Enemy.agent.SetDestination(patrolPoints[currentPatrolPoint].transform.position);
+        Enemy.agent.SetDestination(PatrolPoints[currentPatrolPoint].transform.position);
 
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
 
-        if (Vector3.Distance(Enemy.transform.position, patrolPoints[currentPatrolPoint].transform.position) < 1)
-            currentPatrolPoint = (currentPatrolPoint + 1) % patrolPoints.Length;
+        if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
+            currentPatrolPoint = (currentPatrolPoint + 1) % PatrolPoints.Length;
     }
 
 
     private void ChooseClosest()
     {
         int closest = 0;
-        for (int i = 0; i < patrolPoints.Length; i++)
+        for (int i = 0; i < PatrolPoints.Length; i++)
         {
-            float distance = Vector3.Distance(Enemy.transform.position, patrolPoints[i].transform.position);
-            if (distance < Vector3.Distance(Enemy.transform.position, patrolPoints[closest].transform.position))
+            float distance = Vector3.Distance(Enemy.transform.position, PatrolPoints[i].transform.position);
+            if (distance < Vector3.Distance(Enemy.transform.position, PatrolPoints[closest].transform.position))
                 closest = i;
         }
         currentPatrolPoint = closest;

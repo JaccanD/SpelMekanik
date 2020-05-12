@@ -9,7 +9,7 @@ public class BossDivingState : BossBaseState
     private Lilypads sinkTarget;
     [SerializeField] private float sinkSpeed = 1.5f;
 
-    [SerializeField]private float threshold = 5f;
+    [SerializeField] private float threshold = 5f;
 
     public override void Run()
     {

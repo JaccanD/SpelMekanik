@@ -7,7 +7,7 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
-    protected GameObject projectile { get { return Boss.getProjectile(); } }
+    protected GameObject Projectile { get { return Boss.getProjectile(); } }
     private float currentCool;
     [SerializeField] private float cooldown;
     [SerializeField] private int shootsLeftBeforeSubmerge = 3;
@@ -19,7 +19,7 @@ public class BossAttackingState : BossBaseState
 
     public override void Run()
     {
-        rotateTowardPlayer(Boss.player.transform.position);
+        RotateTowardPlayer(Boss.player.transform.position);
         Attack();
     }
 
@@ -39,19 +39,19 @@ public class BossAttackingState : BossBaseState
         }
         currentCool = cooldown;
     }
-    private void rotateTowardPlayer(Vector3 rotateTowards)
+    private void RotateTowardPlayer(Vector3 rotateTowards)
     {
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
     private void ShootProjectile()
     {
-        float distance = Vector3.Distance(Boss.transform.position, player.transform.position);
+        float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
         GameObject newProjectile;
 
-        newProjectile = Instantiate(projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
+        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
         Debug.Log(force);
