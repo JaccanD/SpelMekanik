@@ -259,7 +259,7 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         Vector3 start = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
         Vector3 forward = Camera.transform.rotation * Vector3.forward;
-        bool hookHit = Physics.Raycast(Camera.transform.position + forward * 5, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit ShootCast, ToungeLength + 5);
+        bool hookHit = Physics.Raycast(Camera.transform.position, Camera.transform.rotation * new Vector3(0, 0, 1), out RaycastHit ShootCast);
         if (!hookHit)
         {
             return Camera.transform.rotation;
