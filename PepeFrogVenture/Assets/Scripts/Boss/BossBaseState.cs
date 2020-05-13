@@ -9,8 +9,9 @@ public class BossBaseState : State
     protected Boss Boss => boss = boss ?? (Boss)owner;
     protected LayerMask CollisionMask { get { return Boss.GetCollisionMask(); } }
     //protected CapsuleCollider Collider { get { return Boss.GetCollider(); } }
-    protected BoxCollider Collider { get { return Boss.getCollider(); } }
-    protected PlayerKontroller3D Player { get { return Boss.player; } }
+    //protected BoxCollider Collider { get { return Boss.getCollider(); } }
+    protected PlayerKontroller3D Player { get { return Boss.GetPlayer(); } }
+    protected Vector3 Position { get { return Boss.transform.position; } set { Boss.transform.position = value; } }
 
     
 }

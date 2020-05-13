@@ -25,7 +25,7 @@ public class BossAttackingState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Boss.player.transform.position);
+        RotateTowardPlayer(Player.transform.position);
         Attack();
     }
 
@@ -36,7 +36,7 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
         ShootProjectile();
-        stateMachine.TransitionTo<BossDiveBombingState>();
+        //stateMachine.TransitionTo<BossDiveBombingState>();
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
         {

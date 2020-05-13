@@ -19,7 +19,6 @@ public class BossDiveBombingState : BossBaseState
     public override void Run()
     {
         RotateTowardPlayer(Player.transform.position);
-        Debug.Log(Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized));
         if (Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized) > 0.95 && !hasLaunched)
         {
             LaunchSelfAtPlayer();
