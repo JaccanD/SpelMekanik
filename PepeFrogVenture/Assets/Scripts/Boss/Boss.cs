@@ -84,7 +84,7 @@ public class Boss : MonoBehaviour
     //    else /*if (other.tag != "Boundary")*/
     //    {
     //        Debug.Log(other.gameObject.layer.ToString());
-    //        //statemachine.TransitionTo<BossReturnToStartPositionState>();
+    //        statemachine.TransitionTo<BossReturnToStartPositionState>();
     //    }
     //}
 }

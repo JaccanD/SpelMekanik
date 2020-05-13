@@ -36,13 +36,18 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
         ShootProjectile();
-        //stateMachine.TransitionTo<BossDiveBombingState>();
+        
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
         {
             if(Boss.getHealth() < 15 && Random.Range(0,10) <= superAttackChance)
             {
                 stateMachine.TransitionTo<BossRapidAttackingState>();
+                return;
+            }
+            if(Boss.getHealth() < 10 && Random.Range(0,10) <= superAttackChance)
+            {
+                stateMachine.TransitionTo<BossDiveBombingState>();
                 return;
             }
             stateMachine.TransitionTo<BossDivingState>();

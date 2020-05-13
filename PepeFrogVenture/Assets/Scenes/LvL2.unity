@@ -6664,7 +6664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff28fc4c07c952419fd612b455ff90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
   states:
   - {fileID: 11400000, guid: 4714525d62062e443a41329ba4112201, type: 2}
   - {fileID: 11400000, guid: d2ae1e0f317939f4bbf2502b2503d1ee, type: 2}
@@ -6672,16 +6671,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
   - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
   - {fileID: 11400000, guid: 1f7b72c32f96b6b4090c140bd34a2f9a, type: 2}
-  player: {fileID: 231205288}
-  speed: 2
-  CollisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  PatrolPoints: []
-  controller: {fileID: 531704902}
-  damage: 2
-  Health: 30
-  stompedScale: {x: 0, y: 0, z: 0}
+  - {fileID: 11400000, guid: df035a4323254f14ba3c70bbf0fe558c, type: 2}
+  - {fileID: 11400000, guid: cfa3ce49dee38dd4d87cf2e66c6b9110, type: 2}
   lilypads:
   - {fileID: 996417105}
   - {fileID: 837464981}
@@ -6707,6 +6698,11 @@ MonoBehaviour:
   - {fileID: 325171104}
   - {fileID: 138914428}
   - {fileID: 1902116526}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 49409
+  player: {fileID: 231205288}
+  health: 30
   projectile: {fileID: 8510903942340083073, guid: 13da8831c602e0c44af640414bbf4f91,
     type: 3}
   shootPoint: {fileID: 1143747260}
