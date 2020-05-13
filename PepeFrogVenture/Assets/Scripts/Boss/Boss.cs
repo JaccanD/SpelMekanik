@@ -70,10 +70,6 @@ public class Boss : MonoBehaviour
         if(health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    isEncountered = true;
-    //}
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Lilypad")
