@@ -11,10 +11,6 @@ public class BossDivingState : BossBaseState
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float threshold = 5f;
 
-    public override void Enter()
-    {
-        Debug.Log("divingstate");
-    }
     public override void Run()
     {
         RotateTowardPlayer(Player.transform.position);
@@ -31,7 +27,6 @@ public class BossDivingState : BossBaseState
     }
     private void DiveDown()
     {
-        
         Boss.transform.position += Vector3.down * sinkSpeed * Time.deltaTime;
     }
 }

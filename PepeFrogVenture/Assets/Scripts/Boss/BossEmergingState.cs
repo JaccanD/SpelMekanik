@@ -16,8 +16,6 @@ public class BossEmergingState : BossBaseState
     {
         LilyPadWithPlayer();
         chosenLilypad.BossTarget();
-        //Boss.lilypads.Remove(chosenLilypad);
-        Debug.Log("emerging");
     }
     private void LilyPadWithPlayer()
     {

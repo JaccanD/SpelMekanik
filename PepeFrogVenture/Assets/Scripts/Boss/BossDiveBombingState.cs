@@ -8,9 +8,11 @@ public class BossDiveBombingState : BossBaseState
 {
     private Rigidbody rb;
     private BoxCollider collider;
+    private bool hasLaunched;
+
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float chargeForce = 40;
-    private bool hasLaunched;
+
 
     public override void Enter()
     {
@@ -38,7 +40,6 @@ public class BossDiveBombingState : BossBaseState
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce(Boss.transform.forward * chargeForce, ForceMode.Impulse);
-        Debug.Log("launching");
         hasLaunched = true;
     }
     private void CollisionDetection()
@@ -48,8 +49,6 @@ public class BossDiveBombingState : BossBaseState
         {
             for(int i = 0; i < hitColliders.Length; i++)
             {
-                Debug.Log(hitColliders[i].gameObject.layer);
-                Debug.Log(hitColliders[i].gameObject.tag);
                 if (hitColliders[i].tag == "Lilypad")
                 {
                     Debug.Log("lilypadcoll");
@@ -67,6 +66,4 @@ public class BossDiveBombingState : BossBaseState
             }
         }
     }
-    
-    
 }

@@ -38,21 +38,26 @@ public class BossAttackingState : BossBaseState
         ShootProjectile();
         
         shootsLeftBeforeSubmerge -= 1;
-        if(shootsLeftBeforeSubmerge < 1)
-        {
-            if(Boss.getHealth() < 15 && Random.Range(0,10) <= superAttackChance)
-            {
-                stateMachine.TransitionTo<BossRapidAttackingState>();
-                return;
-            }
-            if(Boss.getHealth() < 10 && Random.Range(0,10) <= superAttackChance)
-            {
-                stateMachine.TransitionTo<BossDiveBombingState>();
-                return;
-            }
-            stateMachine.TransitionTo<BossDivingState>();
-        }
         currentCool = cooldown;
+        if (shootsLeftBeforeSubmerge < 1)
+        {
+            ChooseSuperAttack();
+        }
+
+    }
+    private void ChooseSuperAttack()
+    {
+        if (Boss.getHealth() < 15 && Random.Range(0, 10) <= superAttackChance)
+        {
+            stateMachine.TransitionTo<BossRapidAttackingState>();
+            return;
+        }
+        if (Boss.getHealth() < 10 && Random.Range(0, 10) <= 6)
+        {
+            stateMachine.TransitionTo<BossDiveBombingState>();
+            return;
+        }
+        stateMachine.TransitionTo<BossDivingState>();
     }
     private void RotateTowardPlayer(Vector3 rotateTowards)
     {

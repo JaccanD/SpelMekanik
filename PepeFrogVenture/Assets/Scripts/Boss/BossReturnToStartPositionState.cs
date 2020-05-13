@@ -25,9 +25,9 @@ public class BossReturnToStartPositionState : BossBaseState
     public override void Run()
     {
         
-        if(Position.y < 5)
+        if(Position.y < startPosition.y -5)
         {
-            Position = Boss.GetStartPosition() + Vector3.up * -5;
+            Position = Boss.GetStartPosition() + Vector3.down * 5;
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
             rb.useGravity = false;
