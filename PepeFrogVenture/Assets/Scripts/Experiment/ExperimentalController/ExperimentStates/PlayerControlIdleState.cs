@@ -7,7 +7,17 @@ public class PlayerControlIdleState : PlayerControlBaseState
 {
     public override void Run()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
+        {
+            stateMachine.TransitionTo<PlayerControlJumpState>();
+            return;
+        }
+        if (!GroundCheck())
+        {
+            stateMachine.TransitionTo<PlayerControlFallingState>();
+            return;
+        }
+        if(Direction.magnitude != 0)
         {
             stateMachine.TransitionTo<PlayerControlMovementState>();
             return;
