@@ -70,21 +70,21 @@ public class Boss : MonoBehaviour
         if(health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Lilypad")
-        {
-            Debug.Log("lilypadcoll");
-            other.GetComponentInParent<DestroyableLilypad>().DestroyLilypadNow();
-        }
-        else if (other.tag == "Player")
-        {
-            EventSystem.Current.FireEvent(new PlayerHitEvent(other.gameObject, 10));
-        }
-        else /*if (other.tag != "Boundary")*/
-        {
-            Debug.Log(other.gameObject.layer.ToString());
-            statemachine.TransitionTo<BossReturnToStartPositionState>();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Lilypad")
+    //    {
+    //        Debug.Log("lilypadcoll");
+    //        other.GetComponentInParent<DestroyableLilypad>().DestroyLilypadNow();
+    //    }
+    //    else if (other.tag == "Player")
+    //    {
+    //        EventSystem.Current.FireEvent(new PlayerHitEvent(other.gameObject, 10));
+    //    }
+    //    else /*if (other.tag != "Boundary")*/
+    //    {
+    //        Debug.Log(other.gameObject.layer.ToString());
+    //        //statemachine.TransitionTo<BossReturnToStartPositionState>();
+    //    }
+    //}
 }

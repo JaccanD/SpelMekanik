@@ -9,25 +9,32 @@ public class BossReturnToStartPositionState : BossBaseState
     private float parabolaAnimation;
     private Vector3 parabolaStartPosition;
     private Vector3 parabolaEndPosition;
+    private bool IsDone;
     //parabola saken från förut
     public override void Enter()
     {
         parabolaStartPosition = Position;
         parabolaEndPosition = Boss.GetStartPosition();
         Debug.Log("divover");
+        IsDone = false;
     }
     public override void Run()
     {
-        parabolaAnimation += Time.deltaTime;
+        if (!IsDone)
+        {
+            parabolaAnimation += Time.deltaTime;
 
-        parabolaAnimation = parabolaAnimation %= 5f;
+            parabolaAnimation = parabolaAnimation %= 5f;
 
-        Position = Parabola(parabolaStartPosition, parabolaEndPosition, 5, parabolaAnimation/ 5);
+            Position = Parabola(parabolaStartPosition, parabolaEndPosition, 5, parabolaAnimation/ 5);
+        }
+        
 
         if(Vector3.Distance(Position, parabolaEndPosition) < 0.5f)
         {
             Position = parabolaEndPosition;
             Debug.Log("IIII");
+            IsDone = true;
             stateMachine.TransitionTo<BossDivingState>();
         }
     }

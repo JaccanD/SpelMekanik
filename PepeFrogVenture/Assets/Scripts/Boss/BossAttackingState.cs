@@ -36,7 +36,7 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
         ShootProjectile();
-        stateMachine.TransitionTo<BossDiveBombingState>();
+        //stateMachine.TransitionTo<BossDiveBombingState>();
         shootsLeftBeforeSubmerge -= 1;
         if(shootsLeftBeforeSubmerge < 1)
         {
