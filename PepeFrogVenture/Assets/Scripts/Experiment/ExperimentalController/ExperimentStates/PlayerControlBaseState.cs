@@ -45,24 +45,33 @@ public abstract class PlayerControlBaseState : State
         int counter = 0;
         while(Physics.CapsuleCast(topPoint, botPoint, Collider.radius, Velocity.normalized, out RaycastHit collHit, Mathf.Infinity, Player.CollisionMask))
         {
+            if(counter == 0)
+                Debug.DrawLine(botPoint, collHit.point, Color.red);
+            else
+                Debug.DrawLine(botPoint, collHit.point, Color.green);
             possibleMoveDistance = SkinWidth / Vector3.Dot(Velocity.normalized, collHit.normal);
             possibleMoveDistance += collHit.distance;
 
             if (possibleMoveDistance > Velocity.magnitude * Time.deltaTime)
+            {
+                Debug.Log("rör som vanligt");
                 break; // Rör som vanligt
+            }
 
-            else if( possibleMoveDistance > 0)
+            else if (possibleMoveDistance > 0)
             {
                 PlayerGameObject.transform.position += Velocity.normalized * possibleMoveDistance;
             }
             if(collHit.distance <= Velocity.magnitude * Time.deltaTime + SkinWidth)
             {
+                if(Direction.magnitude != 0)
+                    Debug.Log("NormalKraft");
                 // NormalKraft
                 Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, collHit.normal);
                 Velocity += normalForce;
 
                 //Friktion
-                Velocity = Friktion(Velocity, normalForce);
+                //Velocity = Friktion(Velocity, normalForce);
             }
 
             counter++;
@@ -79,6 +88,7 @@ public abstract class PlayerControlBaseState : State
         // Om statiska friktionen är för stor
         if(velocity.magnitude <= normalForce.magnitude * StaticFriktion)
         {
+            Debug.Log("Statisk för stor");
             // Hastighet till noll
             velocity.x = 0;
             velocity.z = 0;
