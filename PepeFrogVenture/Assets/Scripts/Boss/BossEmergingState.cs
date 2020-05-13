@@ -23,14 +23,14 @@ public class BossEmergingState : BossBaseState
         chosenLilypad = Boss.lilypads[0];
         for (int i = 1; i < Boss.lilypads.Count; i++)
         {
-            if(Vector3.Distance(Boss.lilypads[i].transform.position, Boss.player.transform.position) < Vector3.Distance(chosenLilypad.transform.position, Boss.player.transform.position)){
+            if(Vector3.Distance(Boss.lilypads[i].transform.position, Player.transform.position) < Vector3.Distance(chosenLilypad.transform.position, Player.transform.position)){
                 chosenLilypad = Boss.lilypads[i];
             }
         }
     }
     public override void Run()
     {
-        RotateTowardPlayer(Boss.player.transform.position);
+        RotateTowardPlayer(Player.transform.position);
         if (Boss.transform.position.y < fullyEmergedThreshold)
         {
             Emerge();

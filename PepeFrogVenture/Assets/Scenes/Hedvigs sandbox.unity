@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 186481114}
   m_Layer: 8
   m_Name: Terrain_0_0_10b7e79f-31da-4705-9b16-165bdd4a0002
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2003,6 +2003,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2012,6 +2017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -3186,6 +3196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3195,6 +3210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -6082,6 +6102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6091,6 +6116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -6786,6 +6816,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1001 &938846771
@@ -7332,6 +7372,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1001 &999451778
@@ -7585,6 +7635,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1 &1026063209
@@ -7780,6 +7840,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7789,6 +7854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -8210,6 +8280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8219,6 +8294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -8885,25 +8965,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff28fc4c07c952419fd612b455ff90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
   states:
   - {fileID: 11400000, guid: 4714525d62062e443a41329ba4112201, type: 2}
   - {fileID: 11400000, guid: d2ae1e0f317939f4bbf2502b2503d1ee, type: 2}
-  - {fileID: 11400000, guid: 91714f185c1036c4eb8dfaf7a2cda00c, type: 2}
-  - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
-  - {fileID: 11400000, guid: c01d6c9afd253f24da5537f6cb78db8b, type: 2}
-  - {fileID: 11400000, guid: 1f7b72c32f96b6b4090c140bd34a2f9a, type: 2}
   - {fileID: 11400000, guid: df035a4323254f14ba3c70bbf0fe558c, type: 2}
-  player: {fileID: 231205288}
-  speed: 2
-  CollisionMask:
-    serializedVersion: 2
-    m_Bits: 49409
-  PatrolPoints: []
-  controller: {fileID: 531704902}
-  damage: 2
-  Health: 30
-  stompedScale: {x: 0, y: 0, z: 0}
+  - {fileID: 11400000, guid: 6f283564e030b224e902cad6f3ef71a3, type: 2}
+  - {fileID: 11400000, guid: b955dd5cd81811940b7d006ff60755f5, type: 2}
+  - {fileID: 11400000, guid: 91714f185c1036c4eb8dfaf7a2cda00c, type: 2}
+  - {fileID: 11400000, guid: 1f7b72c32f96b6b4090c140bd34a2f9a, type: 2}
+  - {fileID: 11400000, guid: cfa3ce49dee38dd4d87cf2e66c6b9110, type: 2}
   lilypads:
   - {fileID: 837464981}
   - {fileID: 279040784}
@@ -8923,6 +8993,11 @@ MonoBehaviour:
   - {fileID: 138914428}
   - {fileID: 1902116526}
   - {fileID: 487566603}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 49409
+  player: {fileID: 231205288}
+  health: 30
   projectile: {fileID: 8510903942340083073, guid: 13da8831c602e0c44af640414bbf4f91,
     type: 3}
   shootPoint: {fileID: 1143747260}
@@ -8961,19 +9036,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1266083488
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266083483}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.412593, z: 6.8175507}
-  m_Center: {x: 0.0000025356467, y: 0.06805372, z: -2.9087868}
 --- !u!1001 &1293136397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9198,7 +9260,7 @@ GameObject:
   - component: {fileID: 1298640330}
   - component: {fileID: 1298640329}
   - component: {fileID: 1298640331}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9563,6 +9625,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -10514,6 +10586,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1 &1474541323
@@ -11072,6 +11154,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1001 &1587651386
@@ -11239,6 +11331,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -11556,6 +11658,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -11905,6 +12017,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -13462,6 +13584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     - target: {fileID: 8459936366964725379, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13471,6 +13598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -13688,6 +13820,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1001 &2085552080
@@ -13771,6 +13913,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
@@ -14239,6 +14391,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossLily
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889674605715460661, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}

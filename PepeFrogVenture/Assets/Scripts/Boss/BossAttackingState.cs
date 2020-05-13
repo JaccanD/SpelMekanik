@@ -25,7 +25,7 @@ public class BossAttackingState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Boss.player.transform.position);
+        RotateTowardPlayer(Player.transform.position);
         Attack();
     }
 
