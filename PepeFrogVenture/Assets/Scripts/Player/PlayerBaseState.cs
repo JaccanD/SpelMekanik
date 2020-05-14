@@ -128,8 +128,6 @@ public abstract class PlayerBaseState : State
         GameObject go = Instantiate(ToungePrefab, Center + Vector3.up * (Coll.height / 2 - Coll.radius), rotate);
         go.GetComponent<Tounge>().SetPoint(end);
 
-
-
     }
     protected void Talk()
     {

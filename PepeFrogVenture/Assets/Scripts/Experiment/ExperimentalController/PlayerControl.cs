@@ -24,6 +24,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float gravity = 9.82f;
     [SerializeField] private float acceleration;
     [Range (0.01f, 0.99f)][SerializeField] private float airResistance;
+    [SerializeField] private float maxSpeed;
     
     public Vector3 Velocity { get; set; }
     public GameObject GameObject { get { return gameObject; } }
@@ -37,6 +38,7 @@ public class PlayerControl : MonoBehaviour
     public float Acceleration { get { return acceleration; } }
     public float GroundCheckDistance { get { return groundCheckDistance; } }
     public float AirResistance { get { return airResistance; } }
+    public float MaxSpeed { get { return maxSpeed; } }
 
     private void Awake()
     {

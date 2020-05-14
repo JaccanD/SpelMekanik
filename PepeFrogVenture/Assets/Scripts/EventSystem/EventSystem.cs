@@ -59,7 +59,7 @@ namespace Callback
         public void FireEvent(Event eventInfo)
         {
             System.Type trueEventInfoClass = eventInfo.GetType();
-            if (!eventListeners.ContainsKey(trueEventInfoClass))
+            if (!(eventListeners.ContainsKey(trueEventInfoClass)))
             {
                 return;
             }

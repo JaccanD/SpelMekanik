@@ -123,6 +123,7 @@ public abstract class PlayerControlBaseState : State
                 PlayerGameObject.transform.position += -overlapDirection.normalized * ((Collider.radius + SkinWidth) - overlapDirection.magnitude);
                 Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, -overlapDirection.normalized);
                 Velocity += normalForce;
+                Velocity = Friktion(Velocity, normalForce);
 
                 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
                 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
