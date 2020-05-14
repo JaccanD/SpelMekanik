@@ -8,7 +8,7 @@ public abstract class PlayerControlBaseState : State
     protected PlayerControl Player => player = player ?? (PlayerControl)owner;
 
     protected Vector3 Velocity { get { return Player.Velocity; } set { Player.Velocity = value; } }
-    protected Vector3 Direction { get { return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized; } }
+    protected Vector3 Direction { get { return Player.GameObject.transform.rotation * new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized; } }
 
     protected GameObject PlayerGameObject { get { return Player.GameObject; } }
     protected CapsuleCollider Collider { get { return Player.Collider; } }
@@ -19,8 +19,8 @@ public abstract class PlayerControlBaseState : State
     protected float Gravity { get { return Player.Gravity; } }
     protected float Acceleration { get { return Player.Acceleration; } }
     protected float GroundCheckDistance { get { return Player.GroundCheckDistance; } }
-    
-    
+
+    private float tolerance = 0.3f;
     protected void MovePlayer()
     {
         CheckCollision();
@@ -54,7 +54,6 @@ public abstract class PlayerControlBaseState : State
 
             if (possibleMoveDistance > Velocity.magnitude * Time.deltaTime)
             {
-                Debug.Log("rör som vanligt");
                 break; // Rör som vanligt
             }
 
@@ -64,16 +63,16 @@ public abstract class PlayerControlBaseState : State
             }
             if(collHit.distance <= Velocity.magnitude * Time.deltaTime + SkinWidth)
             {
-                if(Direction.magnitude != 0)
-                    Debug.Log("NormalKraft");
                 // NormalKraft
                 Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, collHit.normal);
                 Velocity += normalForce;
-
+                
+                
                 //Friktion
-                //Velocity = Friktion(Velocity, normalForce);
+                Velocity = Friktion(Velocity, normalForce);
             }
-
+            CollisionOverlap();
+            
             counter++;
             if (counter > 10)
                 break;
@@ -81,6 +80,9 @@ public abstract class PlayerControlBaseState : State
             topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius);
             botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius;
         }
+
+        if (counter > 0)
+            CollisionOverlap();
     }
     // velocity som en parameter så att det går att köra velocity.x & velocity.z
     private Vector3 Friktion(Vector3 velocity, Vector3 normalForce)
@@ -88,7 +90,6 @@ public abstract class PlayerControlBaseState : State
         // Om statiska friktionen är för stor
         if(velocity.magnitude <= normalForce.magnitude * StaticFriktion)
         {
-            Debug.Log("Statisk för stor");
             // Hastighet till noll
             velocity.x = 0;
             velocity.z = 0;
@@ -97,6 +98,60 @@ public abstract class PlayerControlBaseState : State
         velocity += -velocity.normalized * (normalForce.magnitude * DynamicFriktion);
         return velocity;
         
+    }
+
+    private void CollisionOverlap()
+    {
+        Vector3 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
+        Vector3 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
+
+        // Kollar om någon av punkterna är närmare än skinwidth från någon collider
+        bool checkTopPoint = Physics.CheckSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+        bool checkBotPoint = Physics.CheckSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+
+        int counter = 0;
+        while (checkTopPoint || checkBotPoint)
+        {
+            // Kolla bot
+            Collider[] botOverlaps = Physics.OverlapSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+            for(int i = 0; i < botOverlaps.Length; i++)
+            {
+                Vector3 closest = botOverlaps[i].ClosestPoint(botPoint);
+                Vector3 overlapDirection = closest - botPoint;
+
+                //flytta bort från träffen
+                PlayerGameObject.transform.position += -overlapDirection.normalized * ((Collider.radius + SkinWidth) - overlapDirection.magnitude);
+                Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, -overlapDirection.normalized);
+                Velocity += normalForce;
+
+                topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
+                botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
+            }
+            // Kolla Top
+            Collider[] topOverlaps = Physics.OverlapSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+            for (int i = 0; i < topOverlaps.Length; i++)
+            {
+                Vector3 closest = topOverlaps[i].ClosestPoint(topPoint);
+                Vector3 overlapDirection = closest - topPoint;
+
+                //flytta bort från träffen
+                PlayerGameObject.transform.position += -overlapDirection.normalized * ((Collider.radius + SkinWidth) - overlapDirection.magnitude);
+                Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, -overlapDirection.normalized);
+                Velocity += normalForce;
+
+                topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
+                botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
+            }
+
+            // Kolla igen 
+            checkTopPoint = Physics.CheckSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+            checkBotPoint = Physics.CheckSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
+
+            if (counter > 50)
+                break;
+
+            counter++;
+        }
     }
 
     //Collision

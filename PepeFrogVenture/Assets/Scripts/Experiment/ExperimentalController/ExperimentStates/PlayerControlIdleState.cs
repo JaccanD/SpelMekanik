@@ -22,5 +22,9 @@ public class PlayerControlIdleState : PlayerControlBaseState
             stateMachine.TransitionTo<PlayerControlMovementState>();
             return;
         }
+
+        Velocity += Vector3.down * Gravity * Time.deltaTime;
+
+        MovePlayer();
     }
 }
