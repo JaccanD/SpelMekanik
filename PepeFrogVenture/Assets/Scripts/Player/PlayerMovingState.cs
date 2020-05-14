@@ -10,9 +10,10 @@ public class PlayerMovingState : PlayerBaseState
 {
     [SerializeField] private float Acceleration = 4.0f;
     [SerializeField] private float MaxSpeed = 5f;
+
     public override void Enter()
     {
-
+        MovePlayer();
     }
     public override void Run()
     {

@@ -10,16 +10,21 @@ public class PlayerFallingState : PlayerBaseState
     [SerializeField] private float FallingGravity;
     public override void Run()
     {
-        if(GroundCheck() && Velocity.magnitude > 0.1f)
+        if (GroundCheck())
         {
-            stateMachine.TransitionTo<PlayerMovingState>();
-            return;
+            SwitchToGroundedState();
         }
-        if (GroundCheck() && Velocity.magnitude == 0)
-        {
-            stateMachine.TransitionTo<PlayerStandingState>();
-            return;
-        }
+        //if(GroundCheck() && Velocity.magnitude > 0.1f)
+        //{
+            
+        //    stateMachine.TransitionTo<PlayerMovingState>();
+        //    return;
+        //}
+        //if (GroundCheck() && Velocity.magnitude == 0)
+        //{
+        //    stateMachine.TransitionTo<PlayerStandingState>();
+        //    return;
+        //}
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ToungeFlick();
@@ -31,14 +36,25 @@ public class PlayerFallingState : PlayerBaseState
 
         MovePlayer();
     }
+    private void SwitchToGroundedState()
+    {
+        //setting y velocity to 0 incase the player jumps right after landing
+        //Velocity = new Vector3(Velocity.x, 0, Velocity.z);
+        if(Velocity.magnitude > 0.1f)
+        {
+            stateMachine.TransitionTo<PlayerMovingState>();
+            return;
+        }
+        stateMachine.TransitionTo<PlayerStandingState>();
+    }
     protected new Vector3 CheckCollision(Vector3 startingVelocity)
     {
         if (startingVelocity.magnitude < 0.001f)
         {
             return Vector3.zero;
         }
-        Vector3 topPoint = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
-        Vector3 botPoint = transform.position + Coll.center + Vector3.down * (Coll.height / 2 - Coll.radius);
+        Vector3 topPoint = Transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
+        Vector3 botPoint = Transform.position + Coll.center + Vector3.down * (Coll.height / 2 - Coll.radius);
         RaycastHit cast;
         bool hit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, startingVelocity.normalized, out cast, startingVelocity.magnitude + SkinWidth, CollisionMask);
         if (hit)
@@ -46,7 +62,7 @@ public class PlayerFallingState : PlayerBaseState
             bool SkinWidthHit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, -cast.normal, out RaycastHit SkinWidthCast, SkinWidth + startingVelocity.magnitude, CollisionMask);
             Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
             Velocity += normalForce;
-            if (SkinWidthHit) transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
+            if (SkinWidthHit) Transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
             return CheckCollision(Velocity * Time.deltaTime);
         }
         else

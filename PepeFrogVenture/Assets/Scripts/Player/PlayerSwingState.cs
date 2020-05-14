@@ -16,8 +16,8 @@ public class PlayerSwingState : PlayerBaseState
 
     public override void Enter()
     {
-        drawTounge();
-        Vector3 dir = (Hook - transform.position).normalized;
+        DrawTounge();
+        Vector3 dir = (Hook - Transform.position).normalized;
         Vector3 reset = Velocity;
         reset *= 0;
         Velocity = reset;
@@ -29,10 +29,10 @@ public class PlayerSwingState : PlayerBaseState
     {
         Destroy(Tounge);
     }
-    private void drawTounge()
+    private void DrawTounge()
     {
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-        Vector3 start = transform.position;
+        Vector3 start = Transform.position;
         Vector3 end = Hook;
         Vector3 toungePos = (start + end) / 2.0f;
 

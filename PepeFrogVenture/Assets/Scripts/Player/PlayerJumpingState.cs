@@ -13,6 +13,8 @@ public class PlayerJumpingState : PlayerBaseState
     {
         Vector3 velCheck = Velocity;
         velCheck.y = 0;
+        //Velocity = velCheck;
+        Debug.Log("jumpingstate");
         if(velCheck.magnitude < 2.0f)
         {
             Velocity += velCheck.normalized * 2;
@@ -43,8 +45,8 @@ public class PlayerJumpingState : PlayerBaseState
         {
             return Vector3.zero;
         }
-        Vector3 topPoint = transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
-        Vector3 botPoint = transform.position + Coll.center + Vector3.down * (Coll.height / 2 - Coll.radius);
+        Vector3 topPoint = Transform.position + Coll.center + Vector3.up * (Coll.height / 2 - Coll.radius);
+        Vector3 botPoint = Transform.position + Coll.center + Vector3.down * (Coll.height / 2 - Coll.radius);
         RaycastHit cast;
         bool hit = Physics.CapsuleCast(topPoint, botPoint, Coll.radius, startingVelocity.normalized, out cast, startingVelocity.magnitude + SkinWidth, CollisionMask);
         if (hit)
@@ -53,7 +55,7 @@ public class PlayerJumpingState : PlayerBaseState
 
             Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
             Velocity += normalForce;
-            if (SkinWidthHit) transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
+            if (SkinWidthHit) Transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
             return CheckCollision(Velocity * Time.deltaTime);
         }
         else

@@ -147,6 +147,7 @@ public class PlayerKontroller3D : MonoBehaviour
     {
         GetInput();
         stateMachine.Run();
+        //Debug.Log(Velocity);
     }
     public void GetInput()
     {
