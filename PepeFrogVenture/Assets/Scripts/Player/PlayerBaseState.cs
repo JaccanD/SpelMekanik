@@ -15,7 +15,7 @@ public abstract class PlayerBaseState : State
     protected LayerMask CollisionMask { get { return Player.GetCollisionMask(); } }
     protected LayerMask HookMask { get { return Player.GetHookMask(); } }
     protected CapsuleCollider Coll { get { return Player.GetCollider(); } }
-    protected Transform transform { get { return Player.GetTransform(); } }
+    protected Transform Transform { get { return Player.GetTransform(); } }
     protected float GroundCheckDistance { get { return Player.GetGroundCheckDistance(); } }
     protected Vector3 Direction { get { return Player.GetDirection(); } }
     protected GameObject Camera { get { return Player.GetCamera(); } }
@@ -25,7 +25,7 @@ public abstract class PlayerBaseState : State
     protected GameObject Fireball { get { return Player.GetFireball(); } }
     protected LayerMask TalkMask {  get { return Player.GetTalkMask(); } }
     protected GameObject ToungePrefab { get { return Player.GetToungePrefab(); } }
-    protected Vector3 Center { get { return Coll.center + transform.position; } }
+    protected Vector3 Center { get { return Coll.center + Transform.position; } }
     [SerializeField] protected float Gravity = 9.82f;
     [SerializeField] float StaticFriktionKoeficcent = 0.3f;
     [SerializeField] float DynamicFriktionKoeficcent = 0.15f;
@@ -36,7 +36,7 @@ public abstract class PlayerBaseState : State
     protected void MovePlayer()
     {
         Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
-        transform.position += nextMove;
+        Transform.position += nextMove;
     }
     protected bool GroundCheck()
     {
@@ -63,7 +63,7 @@ public abstract class PlayerBaseState : State
             Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
             Velocity += normalForce;
             ApplyFriktion(normalForce);
-            if (SkinWidthHit) transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
+            if (SkinWidthHit) Transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
             return CheckCollision(Velocity * Time.deltaTime);
         }
         else
@@ -133,7 +133,7 @@ public abstract class PlayerBaseState : State
     }
     protected void Talk()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, TalkMask);
+        Collider[] colliders = Physics.OverlapSphere(Transform.position, 2f, TalkMask);
         foreach(Collider coll in colliders)
         {
             coll.gameObject.GetComponent<NPC>().Talk();

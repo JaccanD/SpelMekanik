@@ -29,7 +29,7 @@ public class PlayerDeadState : PlayerBaseState
     private void Respawn()
     {
         
-        transform.position = RespawnPoint.transform.position;
+        Transform.position = RespawnPoint.transform.position;
         Timer = 0;
         stateMachine.TransitionTo<PlayerStandingState>();
         
