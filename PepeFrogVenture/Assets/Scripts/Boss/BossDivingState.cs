@@ -13,18 +13,18 @@ public class BossDivingState : BossBaseState
 
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position);
+        RotateTowardPlayer(Player.transform.position, rotationSpeed);
         DiveDown();
         if(Boss.transform.position.y < threshold)
         {
             stateMachine.TransitionTo<BossEmergingState>();
         }
     }
-    private void RotateTowardPlayer(Vector3 rotateTowards)
-    {
-        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    }
+    //private void RotateTowardPlayer(Vector3 rotateTowards)
+    //{
+    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
+    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    //}
     private void DiveDown()
     {
         Boss.transform.position += Vector3.down * sinkSpeed * Time.deltaTime;

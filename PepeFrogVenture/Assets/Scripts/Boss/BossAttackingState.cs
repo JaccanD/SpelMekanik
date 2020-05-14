@@ -7,7 +7,6 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
-    protected GameObject Projectile { get { return Boss.getProjectile(); } }
     private float currentCool;
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
@@ -25,7 +24,7 @@ public class BossAttackingState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position);
+        RotateTowardPlayer(Player.transform.position, rotationSpeed);
         Attack();
     }
 
@@ -35,8 +34,8 @@ public class BossAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-        ShootProjectile();
-        
+        //ShootProjectile();
+        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
         if (shootsLeftBeforeSubmerge < 1)
@@ -59,23 +58,23 @@ public class BossAttackingState : BossBaseState
         //}
         stateMachine.TransitionTo<BossDivingState>();
     }
-    private void RotateTowardPlayer(Vector3 rotateTowards)
-    {
-        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    }
-    private void ShootProjectile()
-    {
-        float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-        float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
+    //private void RotateTowardPlayer(Vector3 rotateTowards)
+    //{
+    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
+    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    //}
+    //private void ShootProjectile()
+    //{
+    //    float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
+    //    float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
-        GameObject newProjectile;
+    //    GameObject newProjectile;
         
-        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
-        newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+    //    newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
+    //    newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
-        newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
+    //    newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
-        EventSystem.Current.FireEvent(new BossShootingEvent());
-    }
+    //    EventSystem.Current.FireEvent(new BossShootingEvent());
+    //}
 }

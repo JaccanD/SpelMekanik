@@ -14,7 +14,6 @@ public class BossSuperAttackState : BossBaseState
     [SerializeField] private float nextJumpThreshold = -4f;
     [SerializeField] private float shootingThreshold = 4f;
 
-    protected GameObject Projectile { get { return Boss.getProjectile(); } }
     private float currentCool;
     [SerializeField] private float cooldown = 0.3f;
     [SerializeField] private int shoots = 15;
@@ -32,14 +31,14 @@ public class BossSuperAttackState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position);
+        RotateTowardPlayer(Player.transform.position, rotationSpeed);
         if(Position.y > shootingThreshold)
         {
             attack();
         }
         if (isNextJumpReady)
         {
-            Position = superJumpPoints[currentJumpPoint].transform.position;
+            Position = SuperJumpPoints[currentJumpPoint].transform.position;
             rb.AddForce(Vector3.up * 15, ForceMode.Impulse);
             isNextJumpReady = false;
             currentJumpPoint++;
@@ -56,20 +55,20 @@ public class BossSuperAttackState : BossBaseState
 
         if (currentCool > 0)
             return;
-        Shoot();
-
+        //Shoot();
+        SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         currentCool = cooldown;
     }
-    private void RotateTowardPlayer(Vector3 rotateTowards)
-    {
-        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    }
+    //private void RotateTowardPlayer(Vector3 rotateTowards)
+    //{
+    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
+    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    //}
     private void CheckIfBelowWater()
     {
         if (Position.y < nextJumpThreshold)
         {
-            if (currentJumpPoint >= superJumpPoints.Length)
+            if (currentJumpPoint >= SuperJumpPoints.Length)
             {
                 rb.isKinematic = true;
                 rb.useGravity = false;
@@ -80,20 +79,20 @@ public class BossSuperAttackState : BossBaseState
             isNextJumpReady = true;
         }
     }
-    private void Shoot()
-    {
-        float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-        float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
+    //private void Shoot()
+    //{
+    //    float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
+    //    float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
-        GameObject newProjectile;
-        float xRotation = Random.Range(-shootSpread, shootSpread);
-        float yRotation = Random.Range(-shootSpread, shootSpread);
-        float zRotation = Random.Range(-shootSpread, shootSpread);
-        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * Quaternion.Euler(xRotation, yRotation, zRotation));
-        newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+    //    GameObject newProjectile;
+    //    float xRotation = Random.Range(-shootSpread, shootSpread);
+    //    float yRotation = Random.Range(-shootSpread, shootSpread);
+    //    float zRotation = Random.Range(-shootSpread, shootSpread);
+    //    newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * Quaternion.Euler(xRotation, yRotation, zRotation));
+    //    newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
-        newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
+    //    newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
-        EventSystem.Current.FireEvent(new BossShootingEvent());
-    }
+    //    EventSystem.Current.FireEvent(new BossShootingEvent());
+    //}
 }
