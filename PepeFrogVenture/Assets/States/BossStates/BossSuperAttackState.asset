@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e022595f5f765ca458736ba44a4c3c6d, type: 3}
+  m_Name: BossSuperAttackState
+  m_EditorClassIdentifier: 
+  rotationSpeed: 4
+  nextJumpThreshold: -4
+  shootingThreshold: 17
+  cooldown: 0.2
+  shoots: 100
+  projectileStartingForce: 1000
+  projectileDamage: 4
+  projectileDistanceMultiplier: 40
+  shootSpread: 8

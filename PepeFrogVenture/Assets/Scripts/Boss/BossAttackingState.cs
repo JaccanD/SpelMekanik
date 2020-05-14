@@ -52,11 +52,11 @@ public class BossAttackingState : BossBaseState
             stateMachine.TransitionTo<BossRapidAttackingState>();
             return;
         }
-        if (Boss.getHealth() < 10 && Random.Range(0, 10) <= 6)
-        {
-            stateMachine.TransitionTo<BossDiveBombingState>();
-            return;
-        }
+        //if (Boss.getHealth() < 11 && Random.Range(0, 10) <= 6)
+        //{
+        //    stateMachine.TransitionTo<BossChargeState>();
+        //    return;
+        //}
         stateMachine.TransitionTo<BossDivingState>();
     }
     private void RotateTowardPlayer(Vector3 rotateTowards)

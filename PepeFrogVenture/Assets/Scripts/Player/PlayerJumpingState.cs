@@ -13,8 +13,6 @@ public class PlayerJumpingState : PlayerBaseState
     {
         Vector3 velCheck = Velocity;
         velCheck.y = 0;
-        //Velocity = velCheck;
-        Debug.Log("jumpingstate");
         if(velCheck.magnitude < 2.0f)
         {
             Velocity += velCheck.normalized * 2;
