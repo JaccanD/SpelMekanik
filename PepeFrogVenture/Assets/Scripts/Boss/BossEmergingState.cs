@@ -11,7 +11,7 @@ public class BossEmergingState : BossBaseState
     [SerializeField] private float emergingSpeed = 1.5f;
     [SerializeField] private float fullyEmergedThreshold = 1f;
     [SerializeField] private float rotationSpeed = 4f;
-
+    private bool hasSuperAttacked;
     public override void Enter()
     {
         LilyPadWithPlayer();
@@ -29,6 +29,12 @@ public class BossEmergingState : BossBaseState
     }
     public override void Run()
     {
+        if (Boss.getHealth() <= 6 && Random.Range(0, 10) < 6 && hasSuperAttacked == false)
+        {
+            hasSuperAttacked = true;
+            stateMachine.TransitionTo<BossSuperAttackState>();
+        }
+
         RotateTowardPlayer(Player.transform.position);
         if (Boss.transform.position.y < fullyEmergedThreshold)
         {

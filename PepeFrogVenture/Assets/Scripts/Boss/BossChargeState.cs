@@ -4,7 +4,7 @@ using UnityEngine;
 using Callback;
 
 [CreateAssetMenu(menuName = "BossState/BossDiveBombingState")]
-public class BossDiveBombingState : BossBaseState
+public class BossChargeState : BossBaseState
 {
     private Rigidbody rb;
     private BoxCollider collider;
@@ -12,18 +12,20 @@ public class BossDiveBombingState : BossBaseState
 
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float chargeForce = 40;
+    [SerializeField] private float heightOffset = 10f;
 
 
     public override void Enter()
     {
+
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
 
     }
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position);
-        if (!hasLaunched && Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized) > 0.95)
+        RotateTowardPlayer(Player.transform.position + Vector3.up * heightOffset);
+        if (!hasLaunched && Vector3.Dot(boss.transform.forward, (Player.transform.position + Vector3.up * heightOffset - Boss.transform.position).normalized) > 0.95)
         {
             LaunchSelfAtPlayer();
         }
