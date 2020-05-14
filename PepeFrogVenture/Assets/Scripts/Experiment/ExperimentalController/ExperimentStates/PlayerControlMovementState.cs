@@ -12,7 +12,11 @@ public class PlayerControlMovementState : PlayerControlBaseState
             stateMachine.TransitionTo<PlayerControlJumpState>();
             return;
         }
-        
+        if (!GroundCheck())
+        {
+            stateMachine.TransitionTo<PlayerControlFallingState>();
+            return;
+        }
 
         Velocity += Direction * Acceleration * Time.deltaTime;
         Velocity += Vector3.down * Gravity * Time.deltaTime;

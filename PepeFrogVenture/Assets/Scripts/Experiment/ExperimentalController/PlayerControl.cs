@@ -18,12 +18,12 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private float skinWidth;
     [SerializeField] private float groundCheckDistance;
-    // TODO
-    // Skriv bra tooltips idiot
-    [SerializeField] [Tooltip ("")] private float staticFriction;
-    [SerializeField] [Tooltip ("")] private float dynamicFriction;
+
+    [Range(0.01f, 0.99f)] [SerializeField] private float staticFriction;
+    [Range(0.01f, 0.99f)] [SerializeField] private float dynamicFriction;
     [SerializeField] private float gravity = 9.82f;
     [SerializeField] private float acceleration;
+    [Range (0.01f, 0.99f)][SerializeField] private float airResistance;
     
     public Vector3 Velocity { get; set; }
     public GameObject GameObject { get { return gameObject; } }
@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
     public float Gravity { get { return gravity; } }
     public float Acceleration { get { return acceleration; } }
     public float GroundCheckDistance { get { return groundCheckDistance; } }
+    public float AirResistance { get { return airResistance; } }
 
     private void Awake()
     {

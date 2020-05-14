@@ -21,7 +21,7 @@ public class PlayerControlJumpState : PlayerControlInAirState
 
         Velocity += Direction * Acceleration * Time.deltaTime;
         Velocity += Vector3.down * Gravity * Time.deltaTime;
-
+        ApplyAirResistance();
         MovePlayer();
     }
 }

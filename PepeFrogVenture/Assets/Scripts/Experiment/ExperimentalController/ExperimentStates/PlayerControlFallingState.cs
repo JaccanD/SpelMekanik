@@ -8,6 +8,11 @@ public class PlayerControlFallingState : PlayerControlInAirState
 
     public override void Run()
     {
+        Velocity += Direction * Acceleration * Time.deltaTime;
+        Velocity += Vector3.down * fallingGravity * Time.deltaTime;
+        ApplyAirResistance();
+        MovePlayer();
+
         if (GroundCheck())
         {
             if(Direction.magnitude == 0)
@@ -17,11 +22,6 @@ public class PlayerControlFallingState : PlayerControlInAirState
             }
             stateMachine.TransitionTo<PlayerControlMovementState>();
             return;
-        }
-
-        Velocity += Direction * Acceleration * Time.deltaTime;
-        Velocity += Vector3.down * fallingGravity * Time.deltaTime;
-
-        MovePlayer();
+        }   
     }
 }

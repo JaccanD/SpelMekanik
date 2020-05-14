@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 807665566}
   - component: {fileID: 807665565}
   - component: {fileID: 807665564}
+  - component: {fileID: 807665567}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -297,6 +298,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 33.779003, y: 0, z: 0}
+--- !u!114 &807665567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807665563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2a0b371148f91499d5254dc55de7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  cameraOffset: {x: 0, y: 0, z: 0}
+  mouseSensitivity: 1
+  maxRotationX: 60
+  minRotationX: -60
+  hidePlayerDistance: 1
 --- !u!1001 &1005146156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,8 +427,8 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
-  skinWidth: 1
-  groundCheckDistance: 0.2
+  skinWidth: 0.01
+  groundCheckDistance: 0.1
   staticFriction: 0.5
   dynamicFriction: 0.3
   gravity: 9.82
