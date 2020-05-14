@@ -10,16 +10,21 @@ public class PlayerFallingState : PlayerBaseState
     [SerializeField] private float FallingGravity;
     public override void Run()
     {
-        if(GroundCheck() && Velocity.magnitude > 0.1f)
+        if (GroundCheck())
         {
-            stateMachine.TransitionTo<PlayerMovingState>();
-            return;
+            SwitchToGroundedState();
         }
-        if (GroundCheck() && Velocity.magnitude == 0)
-        {
-            stateMachine.TransitionTo<PlayerStandingState>();
-            return;
-        }
+        //if(GroundCheck() && Velocity.magnitude > 0.1f)
+        //{
+            
+        //    stateMachine.TransitionTo<PlayerMovingState>();
+        //    return;
+        //}
+        //if (GroundCheck() && Velocity.magnitude == 0)
+        //{
+        //    stateMachine.TransitionTo<PlayerStandingState>();
+        //    return;
+        //}
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ToungeFlick();
@@ -30,6 +35,17 @@ public class PlayerFallingState : PlayerBaseState
         ApplyAirResistance(AirResistance);
 
         MovePlayer();
+    }
+    private void SwitchToGroundedState()
+    {
+        //setting y velocity to 0 incase the player jumps right after landing
+        //Velocity = new Vector3(Velocity.x, 0, Velocity.z);
+        if(Velocity.magnitude > 0.1f)
+        {
+            stateMachine.TransitionTo<PlayerMovingState>();
+            return;
+        }
+        stateMachine.TransitionTo<PlayerStandingState>();
     }
     protected new Vector3 CheckCollision(Vector3 startingVelocity)
     {

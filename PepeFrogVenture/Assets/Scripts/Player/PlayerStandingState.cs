@@ -10,6 +10,7 @@ public class PlayerStandingState : PlayerBaseState
 {
     public override void Enter()
     {
+        MovePlayer();
         Velocity = Vector3.zero;
     }
     public override void Run()
