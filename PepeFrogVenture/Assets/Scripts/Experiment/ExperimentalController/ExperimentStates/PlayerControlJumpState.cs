@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerControlJumpState : PlayerControlInAirState
 {
     [SerializeField] private float jumpForce;
-    
-    
 
     public override void Enter()
     {

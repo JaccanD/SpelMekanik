@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        rotationY = transform.parent.rotation.eulerAngles.y;
     }
     void LateUpdate()
     {
@@ -62,4 +64,6 @@ public class CameraController : MonoBehaviour
 
         transform.position = newPosition;
     }
+    // TODO 
+    // Något sätt att rikta spelaren när den respawnar
 }

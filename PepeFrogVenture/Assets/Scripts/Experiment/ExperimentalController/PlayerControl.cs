@@ -12,7 +12,8 @@ public class PlayerControl : MonoBehaviour
     //Movement
     // SkinWidth, CollisionMask, GroundCheckDistance
     private Vector3 velocity = Vector3.zero;
-    private CapsuleCollider coll;
+    private Vector3 point;
+    private CapsuleCollider coll; 
 
     [Header("Movement Settings")]
     [SerializeField] private LayerMask collisionMask;
@@ -27,6 +28,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float maxSpeed;
     
     public Vector3 Velocity { get; set; }
+    public Vector3 Point { get { return point; } }
     public GameObject GameObject { get { return gameObject; } }
     public CapsuleCollider Collider { get { return coll; } }
     public LayerMask CollisionMask { get { return collisionMask; } }
@@ -44,12 +46,19 @@ public class PlayerControl : MonoBehaviour
     {
         coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
+
+        EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
     }
     private void Update()
     {
         stateMachine.Run();
     }
 
-    // Get input för movement
-    // 
+    public void Pull(Callback.Event eb)
+    {
+        HookHitEvent e = (HookHitEvent)eb;
+        point = e.Point;
+        stateMachine.TransitionTo<PlayerControlSwingState>();
+    }
+
 }
