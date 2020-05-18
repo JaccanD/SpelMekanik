@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BossState/DivingState")]
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 public class BossDivingState : BossBaseState
 {
     private Lilypads sinkTarget;
@@ -20,11 +20,6 @@ public class BossDivingState : BossBaseState
             stateMachine.TransitionTo<BossEmergingState>();
         }
     }
-    //private void RotateTowardPlayer(Vector3 rotateTowards)
-    //{
-    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    //}
     private void DiveDown()
     {
         Boss.transform.position += Vector3.down * sinkSpeed * Time.deltaTime;

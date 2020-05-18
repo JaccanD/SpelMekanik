@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Author Valter Fallsterljung
 [CreateAssetMenu(menuName = "BossState/RapidAttackingState")]
 public class BossRapidAttackingState : BossBaseState
 {
@@ -31,7 +32,7 @@ public class BossRapidAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-        //Shoot();
+
         SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         shootsLeftBeforeSubmerge -= 1;
         if (shootsLeftBeforeSubmerge < 1)
@@ -41,25 +42,4 @@ public class BossRapidAttackingState : BossBaseState
         }
         currentCool = cooldown;
     }
-    //private void RotateTowardPlayer(Vector3 rotateTowards)
-    //{
-    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    //}
-    //private void Shoot()
-    //{
-    //    float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-    //    float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
-
-    //    GameObject newProjectile;
-    //    float xRotation = Random.Range(-5, 5);
-    //    float yRotation = Random.Range(-5, 5);
-    //    float zRotation = Random.Range(-5, 5);
-    //    newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * Quaternion.Euler(xRotation, yRotation, zRotation));
-    //    newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
-
-    //    newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
-
-    //    EventSystem.Current.FireEvent(new BossShootingEvent());
-    //}
 }
