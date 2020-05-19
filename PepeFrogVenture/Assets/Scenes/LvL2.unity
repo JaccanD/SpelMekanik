@@ -6686,6 +6686,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossLily (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 3121624956702816168, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lilypad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6, type: 3}
 --- !u!1 &1256406643 stripped
@@ -7093,7 +7098,7 @@ GameObject:
   - component: {fileID: 1298640329}
   - component: {fileID: 1298640331}
   - component: {fileID: 1298640332}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

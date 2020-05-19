@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Author: Valter Falsterljung
 [CreateAssetMenu(menuName = "BossState/BossDiveBombingState")]
 public class BossChargeState : BossBaseState
 {
@@ -12,48 +13,41 @@ public class BossChargeState : BossBaseState
 
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float chargeForce = 40;
-    [SerializeField] private float heightOffset = 10f;
+    [SerializeField] private float heightOffset = 0.1f;
 
 
     public override void Enter()
     {
-
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
 
     }
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position + Vector3.up * heightOffset);
-        if (!hasLaunched && Vector3.Dot(boss.transform.forward, (Player.transform.position + Vector3.up * heightOffset - Boss.transform.position).normalized) > 0.95)
+        RotateTowardPlayer(Player.transform.position, rotationSpeed);
+        if (!hasLaunched && Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized) > 0.95)
         {
             LaunchSelfAtPlayer();
         }
         CollisionDetection();
     }
 
-    private void RotateTowardPlayer(Vector3 rotateTowards)
-    {
-        Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-        Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    }
     private void LaunchSelfAtPlayer()
     {
         rb.isKinematic = false;
         rb.useGravity = true;
-        rb.AddForce(Boss.transform.forward * chargeForce, ForceMode.Impulse);
+        rb.AddForce((Boss.transform.forward + (Boss.transform.up * heightOffset)) * chargeForce, ForceMode.Impulse);
         hasLaunched = true;
     }
     private void CollisionDetection()
     {
-        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size/2, Quaternion.identity, CollisionMask);
+        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size/3, Quaternion.identity, CollisionMask);
         if(hitColliders.Length > 0)
         {
             for(int i = 0; i < hitColliders.Length; i++)
             {
                 if (hitColliders[i].tag == "Lilypad")
                 {
-                    Debug.Log("lilypadcoll");
                     hitColliders[i].GetComponentInParent<DestroyableLilypad>().DestroyLilypadNow();
                 }
                 else if (hitColliders[i].tag == "Player")

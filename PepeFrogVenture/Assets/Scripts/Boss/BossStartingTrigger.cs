@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 
 public class BossStartingTrigger : MonoBehaviour
 {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "BossState/StartingState")]
 
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 public class BossStartingState : BossBaseState
 {
     public override void Enter()

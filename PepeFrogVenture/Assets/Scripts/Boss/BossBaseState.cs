@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 public class BossBaseState : State
 {
     protected Boss boss;
     protected Boss Boss => boss = boss ?? (Boss)owner;
     protected LayerMask CollisionMask { get { return Boss.GetCollisionMask(); } }
-    //protected CapsuleCollider Collider { get { return Boss.GetCollider(); } }
-    //protected BoxCollider Collider { get { return Boss.getCollider(); } }
     protected PlayerKontroller3D Player { get { return Boss.GetPlayer(); } }
     protected Vector3 Position { get { return Boss.transform.position; } set { Boss.transform.position = value; } }
     protected GameObject[] SuperJumpPoints { get { return Boss.GetSuperJumpPoints(); } }

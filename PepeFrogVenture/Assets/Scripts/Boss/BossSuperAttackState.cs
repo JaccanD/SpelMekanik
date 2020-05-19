@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
+// Author: Valter Fallsterljung
 [CreateAssetMenu(menuName ="BossState/SuperAttack")]
 public class BossSuperAttackState : BossBaseState
 {
@@ -55,15 +56,10 @@ public class BossSuperAttackState : BossBaseState
 
         if (currentCool > 0)
             return;
-        //Shoot();
+
         SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         currentCool = cooldown;
     }
-    //private void RotateTowardPlayer(Vector3 rotateTowards)
-    //{
-    //    Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
-    //    Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-    //}
     private void CheckIfBelowWater()
     {
         if (Position.y < nextJumpThreshold)
@@ -79,20 +75,4 @@ public class BossSuperAttackState : BossBaseState
             isNextJumpReady = true;
         }
     }
-    //private void Shoot()
-    //{
-    //    float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-    //    float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
-
-    //    GameObject newProjectile;
-    //    float xRotation = Random.Range(-shootSpread, shootSpread);
-    //    float yRotation = Random.Range(-shootSpread, shootSpread);
-    //    float zRotation = Random.Range(-shootSpread, shootSpread);
-    //    newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * Quaternion.Euler(xRotation, yRotation, zRotation));
-    //    newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
-
-    //    newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
-
-    //    EventSystem.Current.FireEvent(new BossShootingEvent());
-    //}
 }
