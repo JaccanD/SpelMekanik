@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private GameObject model;
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private Vector3 cameraOffset;
 
@@ -18,11 +19,12 @@ public class CameraController : MonoBehaviour
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
     private float rotationY = 0;
-    // Update is called once per frame
+    private MeshRenderer rend;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
+        rend = model.GetComponent<MeshRenderer>();
         rotationY = transform.parent.rotation.eulerAngles.y;
     }
     void LateUpdate()
@@ -48,18 +50,22 @@ public class CameraController : MonoBehaviour
         bool hit = Physics.SphereCast(anchor, collisionRadius + skinWidth, castVector.normalized, out cast, castVector.magnitude, collisionMask);
         
         // TODO
-        // Ta bort spelaren om den är för nära kameran
+        // Göm spelaren om den är för nära kameran
         if (hit)
         {
             if (cast.distance < hidePlayerDistance)
             {
-                
+                rend.enabled = false;
             }
             else
             {
-                
+                rend.enabled = true;
             }
             newPosition = castVector.normalized * cast.distance + anchor;
+        }
+        else
+        {
+            rend.enabled = true;
         }
 
         transform.position = newPosition;

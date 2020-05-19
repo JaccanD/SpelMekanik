@@ -19,14 +19,13 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private float skinWidth;
     [SerializeField] private float groundCheckDistance;
-
-    [Range(0.01f, 0.99f)] [SerializeField] private float staticFriction;
-    [Range(0.01f, 0.99f)] [SerializeField] private float dynamicFriction;
     [SerializeField] private float gravity = 9.82f;
     [SerializeField] private float acceleration;
-    [Range (0.01f, 0.99f)][SerializeField] private float airResistance;
     [SerializeField] private float maxSpeed;
-    
+    [Range(0.01f, 0.99f)] [SerializeField] private float staticFriction;
+    [Range(0.01f, 0.99f)] [SerializeField] private float dynamicFriction;
+    [Range (0.01f, 0.99f)][SerializeField] private float airResistance;
+
     public Vector3 Velocity { get; set; }
     public Vector3 Point { get { return point; } }
     public GameObject GameObject { get { return gameObject; } }
@@ -46,7 +45,7 @@ public class PlayerControl : MonoBehaviour
     {
         coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
-
+        int a = 0;
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
     }
     private void Update()

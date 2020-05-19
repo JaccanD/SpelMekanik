@@ -143,7 +143,6 @@ public abstract class PlayerControlBaseState : State
                 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
                 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
             }
-
             // Kolla igen 
             checkTopPoint = Physics.CheckSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
             checkBotPoint = Physics.CheckSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);

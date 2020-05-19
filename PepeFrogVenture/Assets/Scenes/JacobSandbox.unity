@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2a0b371148f91499d5254dc55de7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 2030422591}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
@@ -360,7 +361,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   maxRotationX: 60
   minRotationX: -60
-  hidePlayerDistance: 1
+  hidePlayerDistance: 1.5
   collisionRadius: 0.3
   skinWidth: 0.1
   heigthOffset: 0.7
@@ -481,12 +482,12 @@ MonoBehaviour:
     m_Bits: 256
   skinWidth: 0.01
   groundCheckDistance: 0.02
-  staticFriction: 0.4
-  dynamicFriction: 0.3
   gravity: 9.82
   acceleration: 10
-  airResistance: 0.206
   maxSpeed: 5
+  staticFriction: 0.4
+  dynamicFriction: 0.3
+  airResistance: 0.206
 --- !u!4 &1005146160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f4f7f8bc0a57a3344a4af1e5267452a5,
@@ -874,3 +875,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2030422591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1071662784962154363, guid: f4f7f8bc0a57a3344a4af1e5267452a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1005146156}
+  m_PrefabAsset: {fileID: 0}
