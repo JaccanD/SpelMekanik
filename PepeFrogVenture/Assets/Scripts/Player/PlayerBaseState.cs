@@ -80,10 +80,7 @@ public abstract class PlayerBaseState : State
             Velocity += normalForce.magnitude * DynamicFriktionKoeficcent * -Velocity.normalized;
         }
     }
-    protected void ApplyAirResistance(float AR)
-    {
-        Velocity *= Mathf.Pow(AR, Time.deltaTime);
-    }
+
     protected float GetAddedDistance(Vector3 startingVelocity)
     {
         Vector3 topPoint = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
@@ -103,6 +100,10 @@ public abstract class PlayerBaseState : State
             addedDistance = SkinWidth / dot;
         }
         return addedDistance;
+    }
+    protected void ApplyAirResistance(float AR)
+    {
+        Velocity *= Mathf.Pow(AR, Time.deltaTime);
     }
     protected void ToungeFlick()
     {

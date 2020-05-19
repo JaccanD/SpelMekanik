@@ -19,12 +19,12 @@ public class CameraController : MonoBehaviour
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
     private float rotationY = 0;
-    private MeshRenderer rend;
+    private SkinnedMeshRenderer rend;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        rend = model.GetComponent<MeshRenderer>();
+        rend = model.GetComponent<SkinnedMeshRenderer>();
         rotationY = transform.parent.rotation.eulerAngles.y;
     }
     void LateUpdate()

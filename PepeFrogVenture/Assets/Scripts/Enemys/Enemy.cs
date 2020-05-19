@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
     protected StateMachine statemachine;
     public State[] states;
-    public PlayerKontroller3D player;
+    public PlayerControl player;
     public float speed = 2;
     private new BoxCollider collider;
     [SerializeField] LayerMask CollisionMask;
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         GameObject PlayerGo = GameObject.FindGameObjectWithTag("Player");
-        player = PlayerGo.GetComponent<PlayerKontroller3D>();
+        player = PlayerGo.GetComponent<PlayerControl>();
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), Stomped);
         collider = GetComponent<BoxCollider>();

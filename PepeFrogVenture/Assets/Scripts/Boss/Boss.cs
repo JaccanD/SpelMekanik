@@ -14,7 +14,7 @@ public class Boss : MonoBehaviour
     private Vector3 startPosition;
 
     [SerializeField] private LayerMask collisionMask;
-    [SerializeField] private PlayerKontroller3D player;
+    [SerializeField] private PlayerControl player;
     [SerializeField] private float health;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
@@ -52,7 +52,7 @@ public class Boss : MonoBehaviour
     {
         return collisionMask;
     }
-    public PlayerKontroller3D GetPlayer()
+    public PlayerControl GetPlayer()
     {
         return player;
     }

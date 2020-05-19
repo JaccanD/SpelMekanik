@@ -10,10 +10,13 @@ public class MotionControl : MonoBehaviour
     private Animator anim;
     private float speed;
     private float direction;
-    private State CurrentState { get { return GetComponent<PlayerKontroller3D>().InState(); } }
+    private State CurrentState { get { return controller.InState; } }
+
+    private PlayerControl controller;
     // Start is called before the first frame update
     void Start()
     {
+        controller = GetComponent<PlayerControl>();
         anim = GetComponent<Animator>();
     }
 
@@ -26,7 +29,7 @@ public class MotionControl : MonoBehaviour
             anim.SetTrigger("Dab");
         }
     
-        if (CurrentState.GetType() == typeof(PlayerMovingState) || CurrentState.GetType() == typeof(PlayerStandingState))
+        if (CurrentState.GetType() == typeof(PlayerControlMovementState) || CurrentState.GetType() == typeof(PlayerControlIdleState))
         {
             speed = Input.GetAxis("Vertical");
             direction = Input.GetAxis("Horizontal");

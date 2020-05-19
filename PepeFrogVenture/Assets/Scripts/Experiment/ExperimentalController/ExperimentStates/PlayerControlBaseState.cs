@@ -23,8 +23,8 @@ public abstract class PlayerControlBaseState : State
     private float tolerance = 0.3f;
     protected void MovePlayer()
     {
-        CheckCollision();
-        PlayerGameObject.transform.position += Velocity * Time.deltaTime;
+        Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
+        PlayerGameObject.transform.position += nextMove;
         
     }
     protected bool GroundCheck()
@@ -34,126 +34,62 @@ public abstract class PlayerControlBaseState : State
 
         return Physics.CapsuleCast(topPoint, botPoint, Collider.radius, Vector3.down, out RaycastHit collHit, GroundCheckDistance, Player.CollisionMask);
     }
+    protected Vector3 CheckCollision(Vector3 startingVelocity)
+    {
+        if (startingVelocity.magnitude < 0.001f)
+        {
+            return Vector3.zero;
+        }
+        Vector3 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
+        Vector3 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
+        RaycastHit cast;
+        float addedDistance = GetAddedDistance(startingVelocity);
+        bool hit = Physics.CapsuleCast(topPoint, botPoint, Collider.radius, startingVelocity.normalized, out cast, startingVelocity.magnitude + addedDistance, Player.CollisionMask, QueryTriggerInteraction.Ignore);
 
-    protected void CheckCollision()
+        if (hit)
+        {
+            bool SkinWidthHit = Physics.CapsuleCast(topPoint, botPoint, Collider.radius, -cast.normal, out RaycastHit SkinWidthCast, SkinWidth + startingVelocity.magnitude, Player.CollisionMask, QueryTriggerInteraction.Ignore);
+            Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, cast.normal);
+            Velocity += normalForce;
+            ApplyFriktion(normalForce);
+            if (SkinWidthHit) PlayerGameObject.transform.position += (Vector3)(-SkinWidthCast.normal) * (SkinWidthCast.distance - SkinWidth);
+            return CheckCollision(Velocity * Time.deltaTime);
+        }
+        else
+        {
+            return startingVelocity;
+        }
+    }
+    protected void ApplyFriktion(Vector3 normalForce)
+    {
+        if (normalForce.magnitude * StaticFriktion > Velocity.magnitude)
+            Velocity = Vector3.zero;
+        else
+        {
+            Velocity += normalForce.magnitude * DynamicFriktion * -Velocity.normalized;
+        }
+    }
+
+    protected float GetAddedDistance(Vector3 startingVelocity)
     {
         Vector3 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
         Vector3 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
+        bool addedDistanceCastHit = Physics.CapsuleCast(topPoint, botPoint, Collider.radius, startingVelocity.normalized, out RaycastHit addedDistanceCast, float.MaxValue, Player.CollisionMask);
+        bool groundCastHit = Physics.CapsuleCast(topPoint, botPoint, Collider.radius, Vector3.down, out RaycastHit groundCast, float.MaxValue, Player.CollisionMask);
+        float dot = 0;
+        float addedDistance = SkinWidth;
 
-        float possibleMoveDistance;
-
-        int counter = 0;
-        while(Physics.CapsuleCast(topPoint, botPoint, Collider.radius, Velocity.normalized, out RaycastHit collHit, Mathf.Infinity, Player.CollisionMask))
+        if (addedDistanceCastHit)
         {
-            if(counter == 0)
-                Debug.DrawLine(botPoint, collHit.point, Color.red);
-            else
-                Debug.DrawLine(botPoint, collHit.point, Color.green);
-            possibleMoveDistance = SkinWidth / Vector3.Dot(Velocity.normalized, collHit.normal);
-            possibleMoveDistance += collHit.distance;
-
-            if (possibleMoveDistance > Velocity.magnitude * Time.deltaTime)
-            {
-                break; // Rör som vanligt
-            }
-
-            else if (possibleMoveDistance > 0)
-            {
-                PlayerGameObject.transform.position += Velocity.normalized * possibleMoveDistance;
-            }
-            if(collHit.distance <= Velocity.magnitude * Time.deltaTime + SkinWidth)
-            {
-                // NormalKraft
-                Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, collHit.normal);
-                Velocity += normalForce;
-                
-                
-                //Friktion
-                Velocity = Friktion(Velocity, normalForce);
-            }
-            CollisionOverlap();
-            
-            counter++;
-            if (counter > 10)
-                break;
-
-            topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius);
-            botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius;
+            dot = Vector3.Dot(startingVelocity.normalized, -addedDistanceCast.normal);
         }
 
-        if (counter > 0)
-            CollisionOverlap();
-    }
-    // velocity som en parameter så att det går att köra velocity.x & velocity.z
-    private Vector3 Friktion(Vector3 velocity, Vector3 normalForce)
-    {
-        // Om statiska friktionen är för stor
-        if(velocity.magnitude <= normalForce.magnitude * StaticFriktion)
+        if (dot != 0)
         {
-            // Hastighet till noll
-            velocity.x = 0;
-            velocity.z = 0;
-            return velocity;
+            addedDistance = SkinWidth / dot;
         }
-        velocity += -velocity.normalized * (normalForce.magnitude * DynamicFriktion);
-        return velocity;
-        
+        return addedDistance;
     }
-
-    private void CollisionOverlap()
-    {
-        Vector3 topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
-        Vector3 botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
-
-        // Kollar om någon av punkterna är närmare än skinwidth från någon collider
-        bool checkTopPoint = Physics.CheckSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-        bool checkBotPoint = Physics.CheckSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-
-        int counter = 0;
-        while (checkTopPoint || checkBotPoint)
-        {
-            // Kolla bot
-            Collider[] botOverlaps = Physics.OverlapSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-            for(int i = 0; i < botOverlaps.Length; i++)
-            {
-                Vector3 closest = botOverlaps[i].ClosestPoint(botPoint);
-                Vector3 overlapDirection = closest - botPoint;
-
-                //flytta bort från träffen
-                PlayerGameObject.transform.position += -overlapDirection.normalized * ((Collider.radius + SkinWidth) - overlapDirection.magnitude);
-                Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, -overlapDirection.normalized);
-                Velocity += normalForce;
-                Velocity = Friktion(Velocity, normalForce);
-
-                topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
-                botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
-            }
-            // Kolla Top
-            Collider[] topOverlaps = Physics.OverlapSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-            for (int i = 0; i < topOverlaps.Length; i++)
-            {
-                Vector3 closest = topOverlaps[i].ClosestPoint(topPoint);
-                Vector3 overlapDirection = closest - topPoint;
-
-                //flytta bort från träffen
-                PlayerGameObject.transform.position += -overlapDirection.normalized * ((Collider.radius + SkinWidth) - overlapDirection.magnitude);
-                Vector3 normalForce = PhysicsFunctions.NormalForce(Velocity, -overlapDirection.normalized);
-                Velocity += normalForce;
-
-                topPoint = PlayerGameObject.transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
-                botPoint = PlayerGameObject.transform.position + Vector3.up * Collider.radius; // + radius
-            }
-            // Kolla igen 
-            checkTopPoint = Physics.CheckSphere(topPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-            checkBotPoint = Physics.CheckSphere(botPoint, Collider.radius + SkinWidth, Player.CollisionMask);
-
-            if (counter > 50)
-                break;
-
-            counter++;
-        }
-    }
-
     //Collision
     //Friktion
     //Air resistance?

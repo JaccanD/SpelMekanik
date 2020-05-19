@@ -226,30 +226,7 @@ public class PlayerKontroller3D : MonoBehaviour
 
         IsStunned = false;
     }
-    private void MoveCamera()
-    {
-        Vector3 newPosition = Camera.transform.rotation * CameraDistance + Center;
-        Vector3 castVector = newPosition - Center;
-        RaycastHit cast;
-        bool hit = Physics.SphereCast(Center, Camera.GetComponent<SphereCollider>().radius + 0.2f, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
-        if (hit)
-        {
-            if (cast.distance < CameraHidePlayerDistance)
-            {
-                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
-            }
-            else
-            {
-                GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
-            }
-            newPosition = castVector.normalized * cast.distance + Center;
-        }
-        else
-        {
-            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
-        }
-        Camera.transform.position = newPosition;
-    }
+
     public void Die(Callback.Event eb)
     {
         PlayerDeathEvent e = (PlayerDeathEvent)eb;
@@ -275,5 +252,28 @@ public class PlayerKontroller3D : MonoBehaviour
         Vector3 rotation = toungeDirection + Vector3.forward;
         return new Quaternion(rotation.x, rotation.y, rotation.z, 0);
     }
-
+    private void MoveCamera()
+    {
+        Vector3 newPosition = Camera.transform.rotation * CameraDistance + Center;
+        Vector3 castVector = newPosition - Center;
+        RaycastHit cast;
+        bool hit = Physics.SphereCast(Center, Camera.GetComponent<SphereCollider>().radius + 0.2f, castVector.normalized, out cast, castVector.magnitude, CameraMask/*CollisionMask*/);
+        if (hit)
+        {
+            if (cast.distance < CameraHidePlayerDistance)
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+            }
+            newPosition = castVector.normalized * cast.distance + Center;
+        }
+        else
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+        }
+        Camera.transform.position = newPosition;
+    }
 }

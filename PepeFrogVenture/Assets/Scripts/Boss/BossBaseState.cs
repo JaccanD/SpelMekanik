@@ -9,7 +9,7 @@ public class BossBaseState : State
     protected Boss boss;
     protected Boss Boss => boss = boss ?? (Boss)owner;
     protected LayerMask CollisionMask { get { return Boss.GetCollisionMask(); } }
-    protected PlayerKontroller3D Player { get { return Boss.GetPlayer(); } }
+    protected PlayerControl Player { get { return Boss.GetPlayer(); } }
     protected Vector3 Position { get { return Boss.transform.position; } set { Boss.transform.position = value; } }
     protected GameObject[] SuperJumpPoints { get { return Boss.GetSuperJumpPoints(); } }
     protected GameObject Projectile { get { return Boss.getProjectile(); } }
