@@ -41,7 +41,7 @@ public class BossChargeState : BossBaseState
     }
     private void CollisionDetection()
     {
-        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size/3, Quaternion.identity, CollisionMask);
+        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size/2, Quaternion.identity, CollisionMask);
         if(hitColliders.Length > 0)
         {
             for(int i = 0; i < hitColliders.Length; i++)

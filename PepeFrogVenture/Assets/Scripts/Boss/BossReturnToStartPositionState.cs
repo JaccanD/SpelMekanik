@@ -16,11 +16,11 @@ public class BossReturnToStartPositionState : BossBaseState
     {
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
-        Boss.GetComponent<Rigidbody>().AddForce(Boss.transform.forward *-50, ForceMode.Impulse);
+        //Boss.GetComponent<Rigidbody>().AddForce(Boss.transform.forward *-50, ForceMode.Impulse);
     }
     public override void Run()
     {
-        
+        CollisionDetection();
         if(Position.y < startPosition.y -5)
         {
             Position = Boss.GetStartPosition() + Vector3.down * 5;
@@ -32,7 +32,7 @@ public class BossReturnToStartPositionState : BossBaseState
     }
     private void CollisionDetection()
     {
-        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size / 3, Quaternion.identity, CollisionMask);
+        Collider[] hitColliders = Physics.OverlapBox(Position - Boss.transform.forward * 2, collider.bounds.size / 2, Quaternion.identity, CollisionMask);
         if (hitColliders.Length > 0)
         {
             for (int i = 0; i < hitColliders.Length; i++)
