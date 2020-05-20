@@ -10,6 +10,7 @@ public class ToungeController : MonoBehaviour
     [SerializeField] private float toungeLength;
     [SerializeField] private LayerMask hookMask;
     [SerializeField] new private GameObject camera;
+    [SerializeField] private float cooldown;
 
     private bool toungeReady = true;
     private Vector3 topPoint { get { return transform.position + Vector3.up * (parent.Collider.height - parent.Collider.height); } }
@@ -22,6 +23,10 @@ public class ToungeController : MonoBehaviour
             this.enabled = false;
         }
 
+    }
+    private void Awake()
+    {
+        EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), OnToungeDone);
     }
     private void Update()
     {
@@ -46,7 +51,8 @@ public class ToungeController : MonoBehaviour
         {
             return;
         }
-        //EventSystem.Current.FireEvent(new ToungeFlickEvent());
+        toungeReady = false;
+        EventSystem.Current.FireEvent(new ToungeFlickEvent());
         Vector3 end = HookCast.point;
         Vector3 toungeDirection = (end - topPoint).normalized;
         Vector3 rotation = toungeDirection + Vector3.up;
@@ -54,5 +60,14 @@ public class ToungeController : MonoBehaviour
         GameObject go = Instantiate(prefab, topPoint, rotate);
         go.GetComponent<Tounge>().SetPoint(end);
 
+    }
+
+    public void OnToungeDone(Callback.Event eb)
+    {
+        Invoke("SetToungeReady", cooldown);
+    }
+    private void SetToungeReady()
+    {
+        toungeReady = true;
     }
 }

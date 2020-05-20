@@ -284,6 +284,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2560
   camera: {fileID: 9118017018973374733}
+  cooldown: 0.5
 --- !u!114 &9118017018626361814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +814,19 @@ Transform:
   m_Father: {fileID: 8228951185029248985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9118017018287066138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712850116719620846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306aea8efb2ee40b1487e195d6c324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BellyGlow: {fileID: 2406827464767281262}
 --- !u!1 &8535212038940575268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,19 +1235,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9118017018287066138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7712850116719620846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59306aea8efb2ee40b1487e195d6c324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BellyGlow: {fileID: 2406827464767281262}
 --- !u!1 &9118017018973374733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,13 +1429,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   cameraOffset: {x: 0, y: 2, z: -5}
-  mouseSensitivity: 1
   maxRotationX: 60
   minRotationX: -60
   hidePlayerDistance: 1
   collisionRadius: 0.3
   skinWidth: 0.1
   heigthOffset: 0.7
+  mouseSensitivity: 1
+  horizontalStickSensitivity: 0
+  verticalStickSensitivity: 0
 --- !u!1001 &9118017019185692631
 PrefabInstance:
   m_ObjectHideFlags: 0
