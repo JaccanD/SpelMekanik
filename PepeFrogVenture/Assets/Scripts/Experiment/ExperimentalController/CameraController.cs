@@ -8,13 +8,17 @@ public class CameraController : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private Vector3 cameraOffset;
 
-    [SerializeField] private float mouseSensitivity = 1.0f;
     [SerializeField] private float maxRotationX = 60;
     [SerializeField] private float minRotationX = -60;
     [SerializeField] private float hidePlayerDistance = 1;
     [SerializeField] private float collisionRadius = 0.3f;
     [SerializeField] private float skinWidth = 0.1f;
     [SerializeField] private float heigthOffset;
+    [Header ("Mouse and Keyboard")]
+    [SerializeField] private float mouseSensitivity = 1.0f;
+
+    [Header("Controller")]
+    [SerializeField] private float stickSensitivity = 1;
 
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
@@ -34,9 +38,7 @@ public class CameraController : MonoBehaviour
     }
     void RotateCamera()
     {
-        Vector2 mouse = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        rotationX -= mouse.y * mouseSensitivity;
-        rotationY += mouse.x * mouseSensitivity;
+        GetRotation();
         rotationX = Mathf.Clamp(rotationX, minRotationX, maxRotationX);
         transform.rotation = Quaternion.Euler(rotationX, rotationY, 0.0f);
 
@@ -69,6 +71,21 @@ public class CameraController : MonoBehaviour
         }
 
         transform.position = newPosition;
+    }
+    void GetRotation()
+    {
+        if (Controlls.UsingController)
+        {
+            Vector2 joystick = new Vector2(Input.GetAxisRaw("RightStickHorizontal"), Input.GetAxisRaw("RightStickVertical"));
+            rotationX += joystick.y * stickSensitivity;
+            rotationY += joystick.x * stickSensitivity;
+        }
+        else
+        {
+            Vector2 mouse = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            rotationX -= mouse.y * mouseSensitivity;
+            rotationY += mouse.x * mouseSensitivity;
+        }
     }
     // TODO 
     // Något sätt att rikta spelaren när den respawnar

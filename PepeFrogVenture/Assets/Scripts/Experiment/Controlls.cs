@@ -23,14 +23,26 @@ public static class Controlls
             { Function.OpenMenu, KeyCode.Escape }
         };
 
+    private static Dictionary<Function, KeyCode> controllerBindings = new Dictionary<Function, KeyCode>
+        {
+            { Function.ShootTounge, KeyCode.Joystick1Button4 },
+            { Function.ShootFireball, KeyCode.Joystick1Button5 },
+            { Function.Jump, KeyCode.Joystick1Button0 },
+            { Function.Interact, KeyCode.Joystick1Button2 },
+            { Function.OpenMenu, KeyCode.Joystick1Button7 }
+        };
+
+    public static bool UsingController { get; private set; } = true;
+    public static Dictionary<Function, KeyCode> currentKeyMap { get { return UsingController == true ? controllerBindings : keyBindings; } }
     /// <summary>
     /// Returns the Keycode the function is bound too
     /// </summary>
     /// <param name="function"></param>
     /// <returns></returns>
+    
     public static KeyCode GetKeyBinding(Function function)
     {
-        return keyBindings[function];
+        return currentKeyMap[function];
     }
 
     //TODO
