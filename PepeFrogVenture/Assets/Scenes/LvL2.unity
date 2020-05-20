@@ -1642,6 +1642,71 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 725461355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &391620671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391620670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fa8052336d1b34db09bab73817a8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400000, guid: 34ca805c559549c489a85551dc43e9d7, type: 2}
+  - {fileID: 11400000, guid: 729236b3cebf3784bba167ec63f1ac5d, type: 2}
+  - {fileID: 11400000, guid: 8a3053ccf6afc1e45a6a7eee9b53d1e6, type: 2}
+  - {fileID: 11400000, guid: 00efd6f7c764b574bb14cc166b8e9ecd, type: 2}
+  - {fileID: 11400000, guid: 9a296cb90e0826a489c58e7bbc7f123c, type: 2}
+  - {fileID: 11400000, guid: 0df9db89ef9495548a594a97fd12a1cd, type: 2}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 33024
+  skinWidth: 0.04
+  groundCheckDistance: 0.06
+  gravity: 9.82
+  acceleration: 10
+  maxSpeed: 5
+  staticFriction: 0.7
+  dynamicFriction: 0.6
+  airResistance: 0.4
+--- !u!114 &391620672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391620670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8671fd6b74a054e946fc00d1d7f289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6470285473687580203, guid: 4f6f2de57a1fc2b4d89f23a618392f5f, type: 3}
+  parent: {fileID: 391620671}
+  toungeLength: 15
+  hookMask:
+    serializedVersion: 2
+    m_Bits: 2560
+  camera: {fileID: 725461358}
+  cooldown: 0
+--- !u!114 &391620673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391620670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efffc3ca2be7179439839a8d40cdd1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3896928112521868876, guid: 8913b4d3d44384e448c4f6291c71e8c6, type: 3}
+  camera: {fileID: 725461358}
+  heightOffset: 0.7
 --- !u!1001 &407414888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4057,6 +4122,11 @@ PrefabInstance:
       propertyPath: ToungeLength
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 7329030051661811529, guid: 1a2fa2719ecedd64abf1c465128808e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2fa2719ecedd64abf1c465128808e4, type: 3}
 --- !u!1 &725461356 stripped
@@ -4162,6 +4232,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &725461358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7329030051999518614, guid: 1a2fa2719ecedd64abf1c465128808e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725461355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &725461359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725461358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2a0b371148f91499d5254dc55de7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 725461360}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+  cameraOffset: {x: 0, y: 2, z: -5}
+  maxRotationX: 60
+  minRotationX: -60
+  hidePlayerDistance: 1
+  collisionRadius: 0.3
+  skinWidth: 0.1
+  heigthOffset: 0.7
+  mouseSensitivity: 1
+  horizontalStickSensitivity: 3.03
+  verticalStickSensitivity: 4.56
+--- !u!1 &725461360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4345783145518226062, guid: 1a2fa2719ecedd64abf1c465128808e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725461355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &726481542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,7 +6890,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 49409
-  player: {fileID: 0}
+  player: {fileID: 391620671}
   health: 30
   projectile: {fileID: 8510903942340083073, guid: 13da8831c602e0c44af640414bbf4f91,
     type: 3}

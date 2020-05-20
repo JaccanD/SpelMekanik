@@ -7,7 +7,6 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
-    private float currentCool;
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
     [SerializeField] private float rotationSpeed = 3;
@@ -17,6 +16,8 @@ public class BossAttackingState : BossBaseState
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
     [SerializeField] private float chargeAttackChance = 40f;
+
+    private float currentCool;
     private int shootsLeftBeforeSubmerge;
 
     public override void Enter()
@@ -35,9 +36,9 @@ public class BossAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-        //
-        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
 
+        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
+        stateMachine.TransitionTo<BossChargeState>();
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
         if (shootsLeftBeforeSubmerge < 1)
