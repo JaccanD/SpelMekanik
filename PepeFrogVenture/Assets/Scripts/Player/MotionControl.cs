@@ -23,7 +23,7 @@ public class MotionControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Interact)))
         {
             EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
             anim.SetTrigger("Dab");
@@ -43,7 +43,7 @@ public class MotionControl : MonoBehaviour
             anim.SetFloat("Speed", speed);
             anim.SetFloat("Direction", direction);
         }
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
             anim.SetTrigger("Jump");
     }
 }

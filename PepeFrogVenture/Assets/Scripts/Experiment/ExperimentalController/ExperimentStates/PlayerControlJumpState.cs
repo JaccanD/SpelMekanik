@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 [CreateAssetMenu(menuName = "PlayerControlState/InAir/JumpingState")]
 public class PlayerControlJumpState : PlayerControlInAirState
 {
@@ -8,6 +9,7 @@ public class PlayerControlJumpState : PlayerControlInAirState
 
     public override void Enter()
     {
+        EventSystem.Current.FireEvent(new PlayerJumpEvent());
         Velocity += Vector3.up * jumpForce;
     }
     public override void Run()

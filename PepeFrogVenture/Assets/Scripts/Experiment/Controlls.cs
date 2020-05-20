@@ -25,15 +25,15 @@ public static class Controlls
 
     private static Dictionary<Function, KeyCode> controllerBindings = new Dictionary<Function, KeyCode>
         {
-            { Function.ShootTounge, KeyCode.Joystick1Button4 },
-            { Function.ShootFireball, KeyCode.Joystick1Button5 },
-            { Function.Jump, KeyCode.Joystick1Button0 },
-            { Function.Interact, KeyCode.Joystick1Button2 },
-            { Function.OpenMenu, KeyCode.Joystick1Button7 }
+            { Function.ShootTounge, KeyCode.Joystick1Button4 }, // Left Bumber
+            { Function.ShootFireball, KeyCode.Joystick1Button5 }, // Right Bumber
+            { Function.Jump, KeyCode.Joystick1Button0 }, // A (Xbox)  X (Dualshock)
+            { Function.Interact, KeyCode.Joystick1Button2 }, // X (Xbox) Square (Dualshock)
+            { Function.OpenMenu, KeyCode.Joystick1Button7 } // Start
         };
 
-    public static bool UsingController { get; private set; } = false;
-    public static Dictionary<Function, KeyCode> currentKeyMap { get { return UsingController == true ? controllerBindings : keyBindings; } }
+    public static bool UsingController { get; private set; } = true;
+    public static Dictionary<Function, KeyCode> CurrentKeyMap { get { return UsingController == true ? controllerBindings : keyBindings; } }
     /// <summary>
     /// Returns the Keycode the function is bound too
     /// </summary>
@@ -42,7 +42,7 @@ public static class Controlls
     
     public static KeyCode GetKeyBinding(Function function)
     {
-        return currentKeyMap[function];
+        return CurrentKeyMap[function];
     }
 
     //TODO
