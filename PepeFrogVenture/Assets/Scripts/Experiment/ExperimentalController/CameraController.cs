@@ -18,8 +18,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 1.0f;
 
     [Header("Controller")]
-    [Range (2 , 6)][SerializeField] private float horizontalStickSensitivity;
-    [Range (2 , 6)][SerializeField] private float verticalStickSensitivity;
+    [Range (1 , 6)][SerializeField] private float horizontalStickSensitivity;
+    [Range (1 , 6)][SerializeField] private float verticalStickSensitivity;
 
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
