@@ -32,7 +32,7 @@ public static class Controlls
             { Function.OpenMenu, KeyCode.Joystick1Button7 }
         };
 
-    public static bool UsingController { get; private set; } = true;
+    public static bool UsingController { get; private set; } = false;
     public static Dictionary<Function, KeyCode> currentKeyMap { get { return UsingController == true ? controllerBindings : keyBindings; } }
     /// <summary>
     /// Returns the Keycode the function is bound too

@@ -18,7 +18,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 1.0f;
 
     [Header("Controller")]
-    [SerializeField] private float stickSensitivity = 1;
+    [Range (2 , 6)][SerializeField] private float horizontalStickSensitivity;
+    [Range (2 , 6)][SerializeField] private float verticalStickSensitivity;
 
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
@@ -51,8 +52,6 @@ public class CameraController : MonoBehaviour
         RaycastHit cast;
         bool hit = Physics.SphereCast(anchor, collisionRadius + skinWidth, castVector.normalized, out cast, castVector.magnitude, collisionMask);
         
-        // TODO
-        // Göm spelaren om den är för nära kameran
         if (hit)
         {
             if (cast.distance < hidePlayerDistance)
@@ -77,8 +76,8 @@ public class CameraController : MonoBehaviour
         if (Controlls.UsingController)
         {
             Vector2 joystick = new Vector2(Input.GetAxisRaw("RightStickHorizontal"), Input.GetAxisRaw("RightStickVertical"));
-            rotationX += joystick.y * stickSensitivity;
-            rotationY += joystick.x * stickSensitivity;
+            rotationX += joystick.y * verticalStickSensitivity;
+            rotationY += joystick.x * horizontalStickSensitivity;
         }
         else
         {
@@ -87,6 +86,9 @@ public class CameraController : MonoBehaviour
             rotationY += mouse.x * mouseSensitivity;
         }
     }
+    // TODO
+    // Auto aim om man använder kontroll
+
     // TODO 
     // Något sätt att rikta spelaren när den respawnar
 }
