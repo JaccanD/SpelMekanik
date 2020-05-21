@@ -29,7 +29,6 @@ public class BossEmergingState : BossBaseState
     }
     public override void Run()
     {
-
         CheckIfBossShouldSuperAttack();
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
         CheckBossDepth();

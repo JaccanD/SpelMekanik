@@ -26,7 +26,6 @@ public class Boss : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(LilyPadDestroyedEvent), RemoveDestroyedLilypadFromList);
         statemachine = new StateMachine(this, states);
         startPosition = transform.position;
-        Debug.Log("startposition: " + startPosition);
     }
     private void Update()
     {
