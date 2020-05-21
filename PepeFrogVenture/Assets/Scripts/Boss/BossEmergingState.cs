@@ -15,7 +15,7 @@ public class BossEmergingState : BossBaseState
     public override void Enter()
     {
         LilyPadWithPlayer();
-        chosenLilypad.BossTarget();
+        CheckIfBossShouldSuperAttack();
     }
     private void LilyPadWithPlayer()
     {
@@ -26,16 +26,15 @@ public class BossEmergingState : BossBaseState
                 chosenLilypad = Boss.lilypads[i];
             }
         }
+        chosenLilypad.BossTarget();
     }
     public override void Run()
     {
-        if (Boss.getHealth() <= 6 && Random.Range(0, 10) < 6 && hasSuperAttacked == false)
-        {
-            hasSuperAttacked = true;
-            stateMachine.TransitionTo<BossSuperAttackState>();
-        }
-
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
+        CheckBossDepth();
+    }
+    private void CheckBossDepth()
+    {
         if (Boss.transform.position.y < fullyEmergedThreshold)
         {
             Emerge();
@@ -43,6 +42,14 @@ public class BossEmergingState : BossBaseState
         else
         {
             stateMachine.TransitionTo<BossAttackingState>();
+        }
+    }
+    private void CheckIfBossShouldSuperAttack()
+    {
+        if (Boss.getHealth() <= 6 && hasSuperAttacked == false)
+        {
+            hasSuperAttacked = true;
+            stateMachine.TransitionTo<BossSuperAttackState>();
         }
     }
     private void Emerge()
