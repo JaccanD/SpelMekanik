@@ -22,6 +22,7 @@ public class BossStartingTrigger : MonoBehaviour
         {
             EventSystem.Current.FireEvent(new BossBattleStartingEvent());
             sound.Play();
+            gameObject.SetActive(false);
         }
     }
 }

@@ -11,10 +11,12 @@ public class BossSuperAttackState : BossBaseState
     private bool isNextJumpReady = true;
     private Rigidbody rb;
     private float waterCheckWait = 1f;
+    [Header("Behavior variables")]
     [SerializeField] private float rotationSpeed = 4f;
     [SerializeField] private float nextJumpThreshold = -4f;
     [SerializeField] private float shootingThreshold = 4f;
 
+    [Header("Shooting variables")]
     private float currentCool;
     [SerializeField] private float cooldown = 0.3f;
     [SerializeField] private float projectileStartingForce = 1000;
