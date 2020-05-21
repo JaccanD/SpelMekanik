@@ -14,6 +14,7 @@ public class BossSuperAttackState : BossBaseState
     [SerializeField] private float rotationSpeed = 4f;
     [SerializeField] private float nextJumpThreshold = -4f;
     [SerializeField] private float shootingThreshold = 4f;
+    [SerializeField] private float jumpForce = 20f;
 
     private float currentCool;
     [SerializeField] private float cooldown = 0.3f;
@@ -39,8 +40,9 @@ public class BossSuperAttackState : BossBaseState
         }
         if (isNextJumpReady)
         {
+            Debug.Log("isjumping");
             Position = SuperJumpPoints[currentJumpPoint].transform.position;
-            rb.AddForce(Vector3.up * 15, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isNextJumpReady = false;
             currentJumpPoint++;
         }

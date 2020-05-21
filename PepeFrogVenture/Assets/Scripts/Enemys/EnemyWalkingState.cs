@@ -22,6 +22,7 @@ public class EnemyWalkingState : EnemyBaseState
             stateMachine.TransitionTo<EnemyChasePlayerState>();
 
         if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
+            Debug.Log((currentPatrolPoint + 1) % PatrolPoints.Length);
             currentPatrolPoint = (currentPatrolPoint + 1) % PatrolPoints.Length;
     }
 

@@ -7,16 +7,20 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
-    private float currentCool;
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float projectileStartingForce = 1000;
     [SerializeField] private float projectileDamage = 4;
     [SerializeField] private float projectileDistanceMultiplier = 40;
+    [Header("At what health special attacks happen")]
+    [SerializeField] private float rapidAttackHealthThreshold = 15;
+    [SerializeField] private float chargeAttackThreshold = 11;
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
     [SerializeField] private float chargeAttackChance = 40f;
+
+    private float currentCool;
     private int shootsLeftBeforeSubmerge;
 
     public override void Enter()
@@ -35,9 +39,8 @@ public class BossAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-        //
-        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
 
+        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
         if (shootsLeftBeforeSubmerge < 1)
@@ -48,12 +51,12 @@ public class BossAttackingState : BossBaseState
     }
     private void ChooseSuperAttack()
     {
-        if (Boss.getHealth() < 15 && Random.Range(0, 100) <= rapidAttackChance)
+        if (Boss.getHealth() <= rapidAttackHealthThreshold && Random.Range(0, 100) <= rapidAttackChance)
         {
             stateMachine.TransitionTo<BossRapidAttackingState>();
             return;
         }
-        if (Boss.getHealth() < 11 && Random.Range(0, 100) <= chargeAttackChance)
+        if (Boss.getHealth() <= chargeAttackThreshold && Random.Range(0, 100) <= chargeAttackChance)
         {
             stateMachine.TransitionTo<BossChargeState>();
             return;
