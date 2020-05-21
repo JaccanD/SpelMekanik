@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BossState/EmergingState")]
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 public class BossEmergingState : BossBaseState
 {
     private DestroyableLilypad chosenLilypad;

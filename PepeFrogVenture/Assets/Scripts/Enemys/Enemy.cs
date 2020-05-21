@@ -19,6 +19,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float damage = 2;
     [SerializeField] protected float Health = 4;
     [SerializeField] private Vector3 stompedScale;
+    [SerializeField] private float spotPlayerDistance;
+    [SerializeField] private float lostPlayerDistance;
+
     private void Awake()
     {
         GameObject PlayerGo = GameObject.FindGameObjectWithTag("Player");
@@ -37,6 +40,14 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         statemachine.Run();
+    }
+    public float GetSpotPlayerDistance()
+    {
+        return spotPlayerDistance;
+    }
+    public float GetLostPlayerDistance()
+    {
+        return lostPlayerDistance;
     }
     public GameObject[] getPatrolPoints()
     {

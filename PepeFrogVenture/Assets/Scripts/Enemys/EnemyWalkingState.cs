@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "EnemyState/WalkingState")]
-// Author: Valter Falsterljung
+// Author: Valter Fallsterljung
 public class EnemyWalkingState : EnemyBaseState
 {
-    [SerializeField] private float spotPlayerDistance;
+    //[SerializeField] private float spotPlayerDistance;
     private int currentPatrolPoint = 0;
 
     public override void Enter()
     {
         ChooseClosest();
+        EventSystem.Current.RegisterListener(typeof(PlayerSeenEvent), PlayerSeen);
     }
     public override void Run()
     {
@@ -23,12 +25,22 @@ public class EnemyWalkingState : EnemyBaseState
         }
         if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
         {
-            Debug.Log(currentPatrolPoint);
             currentPatrolPoint = (currentPatrolPoint + 1) % PatrolPoints.Length;
         }
 
         
     }
+    private void PlayerSeen(Callback.Event eb)
+    {
+        PlayerSeenEvent e = (PlayerSeenEvent)eb;
+        if (Vector3.Distance(Position, e.EnemyPosition) < 5)
+        {
+            enemiesWhoSeeThePlayer++;
+            stateMachine.TransitionTo<EnemyChasePlayerState>();
+        }
+
+    }
+
     private void ChooseClosest()
     {
         int closest = 0;

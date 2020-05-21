@@ -54,17 +54,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d2eb0cc0c61744540991d1f071ca7ed9, type: 2}
   - {fileID: 11400000, guid: 780927893dbc6cd40bed67fcb81114d8, type: 2}
   - {fileID: 11400000, guid: 35e3365e49367f345b40acbf40bc4eb5, type: 2}
+  player: {fileID: 0}
   speed: 3.85
   CollisionMask:
     serializedVersion: 2
     m_Bits: 256
-  player: {fileID: 0}
-  patrolPoints: []
-  patrulleringpunkter: []
+  PatrolPoints: []
   controller: {fileID: 0}
   damage: 2
   Health: 4
   stompedScale: {x: 1, y: 1, z: 1}
+  spotPlayerDistance: 5
+  lostPlayerDistance: 7
 --- !u!54 &8284885657952437125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDead: {fileID: 8300000, guid: 030beb1383ea74d4a90f7cbcd68ce806, type: 3}
+  FlatRat: {fileID: 0}
 --- !u!1 &8612069934555283538
 GameObject:
   m_ObjectHideFlags: 0
