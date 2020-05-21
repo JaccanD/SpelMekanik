@@ -29,13 +29,13 @@ public class BossEmergingState : BossBaseState
     }
     public override void Run()
     {
-        if (Boss.getHealth() <= 6 && hasSuperAttacked == false)
-        {
-            hasSuperAttacked = true;
-            stateMachine.TransitionTo<BossSuperAttackState>();
-        }
 
+        CheckIfBossShouldSuperAttack();
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
+        CheckBossDepth();
+    }
+    private void CheckBossDepth()
+    {
         if (Boss.transform.position.y < fullyEmergedThreshold)
         {
             Emerge();
@@ -43,6 +43,14 @@ public class BossEmergingState : BossBaseState
         else
         {
             stateMachine.TransitionTo<BossAttackingState>();
+        }
+    }
+    private void CheckIfBossShouldSuperAttack()
+    {
+        if (Boss.getHealth() <= 6 && hasSuperAttacked == false)
+        {
+            hasSuperAttacked = true;
+            stateMachine.TransitionTo<BossSuperAttackState>();
         }
     }
     private void Emerge()
