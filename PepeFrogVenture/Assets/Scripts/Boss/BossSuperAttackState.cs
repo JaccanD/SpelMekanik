@@ -34,10 +34,18 @@ public class BossSuperAttackState : BossBaseState
     public override void Run()
     {
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
-        if(Position.y > shootingThreshold)
+        CheckIfBossShouldAttack();
+        Jump();
+    }
+    private void CheckIfBossShouldAttack()
+    {
+        if (Position.y > shootingThreshold)
         {
             attack();
         }
+    }
+    private void Jump()
+    {
         if (isNextJumpReady)
         {
             Debug.Log("isjumping");
@@ -50,7 +58,6 @@ public class BossSuperAttackState : BossBaseState
         {
             CheckIfBelowWater();
         }
-
     }
     private void attack()
     {
@@ -70,7 +77,7 @@ public class BossSuperAttackState : BossBaseState
             {
                 rb.isKinematic = true;
                 rb.useGravity = false;
-                Position = Boss.GetStartPosition();
+                Position = Boss.GetStartPosition() + Vector3.down * 3;
                 stateMachine.TransitionTo<BossDivingState>();
             }
             rb.velocity = Vector3.zero;

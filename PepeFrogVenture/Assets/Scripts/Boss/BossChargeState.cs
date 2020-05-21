@@ -9,7 +9,7 @@ public class BossChargeState : BossBaseState
 {
     private Rigidbody rb;
     private BoxCollider collider;
-    private bool hasLaunched;
+    private bool hasCharged;
 
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float chargeForce = 40;
@@ -24,20 +24,26 @@ public class BossChargeState : BossBaseState
     }
     public override void Run()
     {
-        RotateTowardPlayer(Player.transform.position, rotationSpeed);
-        if (!hasLaunched && Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized) > 0.95)
+        if (!hasCharged)
         {
-            LaunchSelfAtPlayer();
+            RotateTowardPlayer(Player.transform.position, rotationSpeed);
         }
+        CheckIfBossShouldCharge();
         CollisionDetection();
     }
-
-    private void LaunchSelfAtPlayer()
+    private void CheckIfBossShouldCharge()
+    {
+        if (!hasCharged && Vector3.Dot(boss.transform.forward, (Player.transform.position - Boss.transform.position).normalized) > 0.95)
+        {
+            ChargeAtPlayer();
+        }
+    }
+    private void ChargeAtPlayer()
     {
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce((Boss.transform.forward + (Boss.transform.up * heightOffset)) * chargeForce, ForceMode.Impulse);
-        hasLaunched = true;
+        hasCharged = true;
     }
     private void CollisionDetection()
     {
@@ -56,7 +62,7 @@ public class BossChargeState : BossBaseState
                 }
                 else
                 {
-                    hasLaunched = false;
+                    hasCharged = false;
                     stateMachine.TransitionTo<BossReturnToStartPositionState>();
                 }
             }

@@ -39,7 +39,7 @@ public class BossAttackingState : BossBaseState
 
         if (currentCool > 0)
             return;
-
+        stateMachine.TransitionTo<BossChargeState>();
         RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
