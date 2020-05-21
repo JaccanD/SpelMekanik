@@ -17,7 +17,6 @@ public class BossSuperAttackState : BossBaseState
 
     private float currentCool;
     [SerializeField] private float cooldown = 0.3f;
-    [SerializeField] private int shoots = 15;
     [SerializeField] private float projectileStartingForce = 1000;
     [SerializeField] private float projectileDamage = 4;
     [SerializeField] private float projectileDistanceMultiplier = 40;

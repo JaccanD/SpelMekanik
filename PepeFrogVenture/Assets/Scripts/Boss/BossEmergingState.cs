@@ -15,7 +15,7 @@ public class BossEmergingState : BossBaseState
     public override void Enter()
     {
         LilyPadWithPlayer();
-        chosenLilypad.BossTarget();
+        CheckIfBossShouldSuperAttack();
     }
     private void LilyPadWithPlayer()
     {
@@ -26,10 +26,10 @@ public class BossEmergingState : BossBaseState
                 chosenLilypad = Boss.lilypads[i];
             }
         }
+        chosenLilypad.BossTarget();
     }
     public override void Run()
     {
-        CheckIfBossShouldSuperAttack();
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
         CheckBossDepth();
     }
