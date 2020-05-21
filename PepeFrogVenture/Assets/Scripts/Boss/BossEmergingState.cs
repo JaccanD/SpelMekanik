@@ -29,7 +29,7 @@ public class BossEmergingState : BossBaseState
     }
     public override void Run()
     {
-        if (Boss.getHealth() <= 6 && hasSuperAttacked == false)
+        if (Boss.getHealth() <= 6 && Random.Range(0, 10) < 6 && hasSuperAttacked == false)
         {
             hasSuperAttacked = true;
             stateMachine.TransitionTo<BossSuperAttackState>();

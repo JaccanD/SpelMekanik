@@ -12,21 +12,16 @@ public class BossReturnToStartPositionState : BossBaseState
     private Rigidbody rb;
     private BoxCollider collider;
 
-    [Header("0 for startposition depth")]
-    [SerializeField] private float returnToStartPositionYDepth;
-
     public override void Enter()
     {
-        startPosition = Boss.GetStartPosition();
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
-        Boss.GetComponent<Rigidbody>().AddForce(rb.velocity * -1.5f, ForceMode.Impulse);
+        //Boss.GetComponent<Rigidbody>().AddForce(Boss.transform.forward *-50, ForceMode.Impulse);
     }
     public override void Run()
     {
         CollisionDetection();
-        Debug.Log(startPosition.y + returnToStartPositionYDepth);
-        if(Position.y < startPosition.y + returnToStartPositionYDepth)
+        if(Position.y < startPosition.y -5)
         {
             Position = Boss.GetStartPosition() + Vector3.down * 5;
             rb.velocity = Vector3.zero;
