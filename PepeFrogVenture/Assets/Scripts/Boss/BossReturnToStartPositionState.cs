@@ -16,19 +16,12 @@ public class BossReturnToStartPositionState : BossBaseState
     {
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
-        //Boss.GetComponent<Rigidbody>().AddForce(Boss.transform.forward *-50, ForceMode.Impulse);
+        rb.AddForce(rb.velocity * -1.5f, ForceMode.Impulse);
     }
     public override void Run()
     {
         CollisionDetection();
-        if(Position.y < startPosition.y -5)
-        {
-            Position = Boss.GetStartPosition() + Vector3.down * 5;
-            rb.velocity = Vector3.zero;
-            rb.isKinematic = true;
-            rb.useGravity = false;
-            stateMachine.TransitionTo<BossDivingState>();
-        }
+        CheckBossDepth();
     }
     private void CollisionDetection()
     {
@@ -46,6 +39,17 @@ public class BossReturnToStartPositionState : BossBaseState
                     EventSystem.Current.FireEvent(new PlayerHitEvent(hitColliders[i].gameObject, 10));
                 }
             }
+        }
+    }
+    private void CheckBossDepth()
+    {
+        if (Position.y < startPosition.y - 5)
+        {
+            Position = Boss.GetStartPosition() + Vector3.down * 5;
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+            rb.useGravity = false;
+            stateMachine.TransitionTo<BossDivingState>();
         }
     }
 }

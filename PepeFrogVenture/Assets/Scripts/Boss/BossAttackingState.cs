@@ -7,12 +7,13 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
+    [Header("Shooting variables")]
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float projectileStartingForce = 1000;
     [SerializeField] private float projectileDamage = 4;
-    [SerializeField] private float projectileDistanceMultiplier = 40;
+    [SerializeField] private float projectileDistanceForceMultiplier = 40;
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
     [SerializeField] private float chargeAttackChance = 40f;
@@ -37,17 +38,17 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
 
-        RegularShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage);
+        RegularShoot(projectileStartingForce, projectileDistanceForceMultiplier, projectileDamage);
 
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
         if (shootsLeftBeforeSubmerge < 1)
         {
-            ChooseSuperAttack();
+            ChooseSpecialAttack();
         }
 
     }
-    private void ChooseSuperAttack()
+    private void ChooseSpecialAttack()
     {
         if (Boss.getHealth() < 15 && Random.Range(0, 100) <= rapidAttackChance)
         {

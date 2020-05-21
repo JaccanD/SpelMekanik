@@ -76,8 +76,4 @@ public class Boss : MonoBehaviour
         if(health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position - transform.forward * 2, GetComponent<BoxCollider>().bounds.size);
-    }
 }
