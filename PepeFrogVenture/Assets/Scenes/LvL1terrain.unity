@@ -9312,6 +9312,7 @@ GameObject:
   - component: {fileID: 537593002}
   - component: {fileID: 537593004}
   - component: {fileID: 537593005}
+  - component: {fileID: 537593006}
   m_Layer: 0
   m_Name: Water (1
   m_TagString: Water
@@ -9538,6 +9539,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &537593006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537592997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc434aab87f2194c985e815884753f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveX: 0.02
+  MoveY: 0.02
 --- !u!1001 &538716572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18179,6 +18194,7 @@ GameObject:
   - component: {fileID: 948666707}
   - component: {fileID: 948666709}
   - component: {fileID: 948666704}
+  - component: {fileID: 948666710}
   m_Layer: 0
   m_Name: Water (2)
   m_TagString: Water
@@ -18391,6 +18407,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &948666710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948666702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc434aab87f2194c985e815884753f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveX: 0.02
+  MoveY: 0.02
 --- !u!1001 &949778937
 PrefabInstance:
   m_ObjectHideFlags: 0
