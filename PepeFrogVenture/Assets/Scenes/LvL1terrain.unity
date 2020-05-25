@@ -41943,6 +41943,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: PlayerDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e831c81b3f97894cb62a44ff51cf091, type: 3}
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: ToungeOut
+      value: 
+      objectReference: {fileID: 8300000, guid: e97d4232b119b5a468d137ae79098d6d, type: 3}
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: PlayerHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a8a9ad29bb9e9ba4fa92fc5935e5be93, type: 3}
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: PlayerPickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e07e0d480d2ef343b6130380c1c714e, type: 3}
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: PlayerJumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9edd8c34abca16947af00be821246bb1, type: 3}
+    - target: {fileID: 159971105735254149, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: Fireball
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e10aa8721ac68b4f8ceda4265b52da4, type: 3}
     - target: {fileID: 5134912890241889767, guid: 97155033d58acba44bb4ba26b5f18692,
         type: 3}
       propertyPath: m_LocalPosition.x
