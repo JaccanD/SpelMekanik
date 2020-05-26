@@ -24,8 +24,6 @@ public class PlayerSoundScript : MonoBehaviour
     [SerializeField] private AudioClip ToungeOut; // Jack
     [SerializeField] private AudioClip Fireball; // Jack
     [SerializeField] private AudioClip LowHealth; // Jack
-    [SerializeField] private AudioClip PlayerDeath; // Jack
-
 
 
     private void Start()
@@ -53,9 +51,7 @@ public class PlayerSoundScript : MonoBehaviour
     public void OnPlayerHit(Callback.Event eb)
     {
         PlayerHitEvent e = (PlayerHitEvent)eb;
-        PlayerAudioSource.PlayOneShot(PlayerHitSound); 
-        PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
-
+        PlayerAudioSource.PlayOneShot(PlayerHitSound);
 
         health = PlayerStats.getHealth();
         if (health - e.Damage  <= e.Damage)
@@ -66,7 +62,7 @@ public class PlayerSoundScript : MonoBehaviour
     public void OnPickup(Callback.Event eb)
     {
         PlayerAudioSource.PlayOneShot(PlayerPickupSound);
-        PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
+
         if(health > 2)
         {
             LowHealthAudioSource.Stop();
@@ -81,7 +77,7 @@ public class PlayerSoundScript : MonoBehaviour
 
     public void OnPlayerJump(Callback.Event eb) // Jack
     {
-        PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
+        PlayerAudioSource.pitch = UnityEngine.Random.Range(1.2f, 1.6f);
         PlayerAudioSource.PlayOneShot(PlayerJumpSound);
     }
 
@@ -98,11 +94,9 @@ public class PlayerSoundScript : MonoBehaviour
     {
         LowHealthAudioSource.volume = 0.3f;
         LowHealthAudioSource.Play();
-        
     }
     
     public void OnDeath(Callback.Event eb){
-        PlayerAudioSource.PlayOneShot(PlayerDeath); // Jack
         LowHealthAudioSource.Stop();
 
     }

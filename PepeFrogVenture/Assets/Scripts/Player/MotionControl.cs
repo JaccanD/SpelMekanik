@@ -10,8 +10,6 @@ public class MotionControl : MonoBehaviour
     private Animator anim;
     private float speed;
     private float direction;
-    private bool falling;
-    private float t;
     private State CurrentState { get { return controller.InState; } }
 
     private PlayerControl controller;
@@ -20,8 +18,6 @@ public class MotionControl : MonoBehaviour
     {
         controller = GetComponent<PlayerControl>();
         anim = GetComponent<Animator>();
-        EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
-        EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
     }
 
     // Update is called once per frame
@@ -32,7 +28,7 @@ public class MotionControl : MonoBehaviour
             EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
             anim.SetTrigger("Dab");
         }
-
+    
         if (CurrentState.GetType() == typeof(PlayerControlMovementState) || CurrentState.GetType() == typeof(PlayerControlIdleState))
         {
             speed = Input.GetAxis("Vertical");
@@ -49,23 +45,5 @@ public class MotionControl : MonoBehaviour
         }
         if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
             anim.SetTrigger("Jump");
-
-        if (falling)
-        {
-            float fallingValue = Mathf.Lerp(1, -1, t);
-            t += Time.deltaTime * 2;
-            anim.SetFloat("Jumping", fallingValue);
-        }
-    }
-
-    public void Jump(Callback.Event eb)
-    {
-        anim.SetFloat("Jumping", 1);
-    }
-
-    public void Fall(Callback.Event eb)
-    {
-        t = 0;
-        falling = true;
     }
 }
