@@ -29,8 +29,6 @@ public class PauseMenuScript : MonoBehaviour
                 Cursor.visible = false;
             }
         }
-
-
     }
 
     private void ActivateMenu()
@@ -41,6 +39,7 @@ public class PauseMenuScript : MonoBehaviour
         // Unity Eventsystem
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstSelected);
+
     }
 
     public void DeactivateMenu()
