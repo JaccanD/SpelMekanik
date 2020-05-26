@@ -42184,6 +42184,11 @@ PrefabInstance:
       propertyPath: Fireball
       value: 
       objectReference: {fileID: 8300000, guid: 3e10aa8721ac68b4f8ceda4265b52da4, type: 3}
+    - target: {fileID: 159971106796212821, guid: 97155033d58acba44bb4ba26b5f18692,
+        type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 34048
+      objectReference: {fileID: 0}
     - target: {fileID: 5134912890241889767, guid: 97155033d58acba44bb4ba26b5f18692,
         type: 3}
       propertyPath: m_LocalPosition.x
