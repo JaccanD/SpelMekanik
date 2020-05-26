@@ -26,14 +26,14 @@ public class Enemy : MonoBehaviour
     {
         GameObject PlayerGo = GameObject.FindGameObjectWithTag("Player");
         player = PlayerGo.GetComponent<PlayerControl>();
-        EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
+        EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), OnHit);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), Stomped);
+        EventSystem.Current.RegisterListener(typeof(PlayerLostEvent), PlayerLost);
         collider = GetComponent<BoxCollider>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Start()
     {
-
         statemachine = new StateMachine(this, states);
     }
 
@@ -82,10 +82,16 @@ public class Enemy : MonoBehaviour
     {
         return transform;
     }
+    private void PlayerLost(Callback.Event eb)
+    {
+        statemachine.TransitionTo<EnemyWalkingState>();
+    }
     public void Defeated()
     {
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), Stomped);
+        EventSystem.Current.UnRegisterListener(typeof(PlayerLostEvent), PlayerLost);
+
         statemachine.TransitionTo<EnemyDefeatedState>();
     }
     public GameController getGamecontroller()
@@ -106,7 +112,7 @@ public class Enemy : MonoBehaviour
         if (e.EnemyHit != gameObject)
             return;
         Health -= e.Damage;
-        if(Health <= 0)
+        if (Health <= 0)
         {
 
             Defeated();
@@ -114,7 +120,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             EventSystem.Current.FireEvent(new EnemyStompedEvent(gameObject));
         }
