@@ -53,7 +53,7 @@ public class MotionControl : MonoBehaviour
         if (falling)
         {
             float fallingValue = Mathf.Lerp(1, -1, t);
-            t += Time.deltaTime * 2;
+            t += Time.deltaTime * 5;
             anim.SetFloat("Jumping", fallingValue);
         }
     }
