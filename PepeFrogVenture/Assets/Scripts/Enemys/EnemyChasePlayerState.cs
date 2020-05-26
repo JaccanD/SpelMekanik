@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Callback;
-using EnemyAI;
 
 [CreateAssetMenu(menuName = "EnemyState/ChaseState")]
 
@@ -16,26 +15,32 @@ public class EnemyChasePlayerState : EnemyBaseState
     public override void Enter()
     {
         Enemy.agent.isStopped = false;
-        EnemyCoordinator.current.AddEnemyInRange(Enemy);
-        Debug.Log("chasestate");
+        EventSystem.Current.RegisterListener(typeof(PlayerLostEvent), EnemyLostPlayer);
     }
 
     public override void Run()
     {
         Enemy.agent.SetDestination(Enemy.player.transform.position);
-
-        if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > LostPlayerDistance)
+        if(!seesPlayer && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > spotPlayerDistance){
+            seesPlayer = true;
+            EventSystem.Current.FireEvent(new PlayerSeenEvent(Position));
+        }
+        if (seesPlayer && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > LostPlayerDistance)
         {
-            stateMachine.TransitionTo<EnemyPlayerNearState>();
+            seesPlayer = false;
+            EventSystem.Current.FireEvent(new PlayerLostEvent());
         }
 
         if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < attackDistance)
         {
             stateMachine.TransitionTo<EnemyAttackState>();
         }
-        //gamla
         //if(Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > lostPlayerDistance){
         //    stateMachine.TransitionTo<EnemyWalkingState>();
         //}
+    }
+    private void EnemyLostPlayer(Callback.Event eb)
+    {
+        enemiesWhoSeeThePlayer--;
     }
 }
