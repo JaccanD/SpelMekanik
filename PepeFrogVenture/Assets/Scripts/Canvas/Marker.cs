@@ -11,6 +11,11 @@ public class Marker : MonoBehaviour
 
     private void Awake()
     {
+        if(Controlls.UsingController == false)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
         selected = firstSelected;
         MoveMarker();
 
