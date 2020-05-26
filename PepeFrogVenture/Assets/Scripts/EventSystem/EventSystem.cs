@@ -72,10 +72,9 @@ namespace Callback
                 el(eventInfo);
             }
         }
-        private void FixedUpdate()
+        //ändrade från fixedupdate till update
+        private void Update()
         {
-            // Kör fixed update för att jag kan inte se någon anledning till att vi behöver
-            // ta bort listeners oftare än fixed update kör.
 
             RemoveListeners();
         }

@@ -65,6 +65,11 @@ public class PlayerSoundScript : MonoBehaviour
     }
     public void OnPickup(Callback.Event eb)
     {
+        PickupEvent e = (PickupEvent)eb;
+        if(e.Pickup.tag != "Berry")
+        {
+            return;
+        }
         PlayerAudioSource.PlayOneShot(PlayerPickupSound);
         PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
         if(health > 2)
