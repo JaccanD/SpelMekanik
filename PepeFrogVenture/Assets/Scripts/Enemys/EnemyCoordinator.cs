@@ -23,7 +23,6 @@ namespace EnemyAI
                 {
                     currentCoordinator = FindObjectOfType<EnemyCoordinator>();
                 }
-
                 return currentCoordinator;
             }
         }
@@ -33,7 +32,6 @@ namespace EnemyAI
             {
                 enemiesEngaged.Add(enemy);
             }
-
         }
         public void AddEnemyInRange(Enemy enemy)
         {
