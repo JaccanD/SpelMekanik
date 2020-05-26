@@ -15,6 +15,8 @@ public class EnemyBaseState : State
     protected Vector3 Position { get { return Enemy.transform.position; } }
     protected float spotPlayerDistance { get { return Enemy.GetSpotPlayerDistance(); } }
     protected float LostPlayerDistance { get { return Enemy.GetLostPlayerDistance(); } }
+    protected int enemiesWhoSeeThePlayer = 0;
+    protected bool seesPlayer;
 
     public override void Enter()
     {
