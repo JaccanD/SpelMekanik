@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b4df7faffdc8428c2726c77d18d73, type: 3}
   m_Name: Enemy1AttackState
   m_EditorClassIdentifier: 
-  chaseDistance: 1.5
+  stopAttackingDistance: 1.5
   playerToCloseDistance: 0
   attackCooldown: 1
   startAttackCooldown: 0.1
