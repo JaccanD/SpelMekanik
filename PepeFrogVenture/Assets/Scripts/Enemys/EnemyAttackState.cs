@@ -8,8 +8,8 @@ using Callback;
 // Author: Valter Falsterljung
 public class EnemyAttackState : EnemyBaseState
 {
-    [SerializeField] private float stopAttackingDistance;
-    //[SerializeField] private float playerToCloseDistance;
+    [SerializeField] private float chaseDistance;
+    [SerializeField] private float playerToCloseDistance;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float startAttackCooldown;
     [SerializeField] private float pushAmount;
@@ -21,32 +21,25 @@ public class EnemyAttackState : EnemyBaseState
     {
         currentCool = startAttackCooldown;
         Enemy.agent.isStopped = true;
-
     }
 
     public override void Run()
     {
-        currentCool -= Time.deltaTime;
-
-        if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > stopAttackingDistance && currentCool <= 0)
-        {
+        
+        if (!CanSeePlayer())
+            stateMachine.TransitionTo<EnemyWalkingState>();
+        if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > chaseDistance)
             stateMachine.TransitionTo<EnemyChasePlayerState>();
-        }
-        else
+        if(Vector3.Distance(Position, Enemy.player.transform.position) < playerToCloseDistance)
         {
             Attack();
         }
-
-        //if(Vector3.Distance(Position, Enemy.player.transform.position) < playerToCloseDistance)
-        //{
-        //    Attack();
-        //}
-
+        Attack();
     }
 
     private void Attack()
     {
-        
+        currentCool -= Time.deltaTime;
 
         if (currentCool > 0)
             return;
@@ -54,9 +47,5 @@ public class EnemyAttackState : EnemyBaseState
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
         EventSystem.Current.FireEvent(new Pushed(Enemy.player.gameObject, Enemy.transform.position, pushAmount, upPushAmount, attackStunDuration));
         currentCool = attackCooldown;
-    }
-    public override void Exit()
-    {
-        Enemy.agent.isStopped = false;
     }
 }
