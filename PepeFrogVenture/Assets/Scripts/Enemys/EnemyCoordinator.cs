@@ -9,7 +9,6 @@ namespace EnemyAI
     {
         static private EnemyCoordinator currentCoordinator;
 
-
         private List<Enemy> enemiesInRange = new List<Enemy>();
         private List<Enemy> enemiesEngaged = new List<Enemy>();
         private void Awake()
@@ -24,18 +23,15 @@ namespace EnemyAI
                 {
                     currentCoordinator = FindObjectOfType<EnemyCoordinator>();
                 }
-
                 return currentCoordinator;
             }
         }
-
         public void AddEngagedEnemy(Enemy enemy)
         {
             if (!enemiesEngaged.Contains(enemy))
             {
                 enemiesEngaged.Add(enemy);
             }
-
         }
         public void AddEnemyInRange(Enemy enemy)
         {
@@ -72,10 +68,6 @@ namespace EnemyAI
                 enemiesEngaged.Clear();
             }
         }
-        private void Update()
-        {
-            Debug.Log(enemiesInRange.Count);
-        }
         private void EnemyDead(Callback.Event eb)
         {
             EnemyDeathEvent e = (EnemyDeathEvent)eb;
@@ -84,4 +76,3 @@ namespace EnemyAI
         }
     }
 }
-
