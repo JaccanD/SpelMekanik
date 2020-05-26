@@ -8,6 +8,8 @@ using Callback;
 public class EnemyWalkingState : EnemyBaseState
 {
     //[SerializeField] private float spotPlayerDistance;
+    [SerializeField] private float NearbyEnemyHeardDistance = 5;
+
     private int currentPatrolPoint = 0;
 
     public override void Enter()
@@ -21,22 +23,20 @@ public class EnemyWalkingState : EnemyBaseState
 
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
         {
+            EventSystem.Current.FireEvent(new PlayerSeenEvent(Position));
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         }
         if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
         {
             currentPatrolPoint = (currentPatrolPoint + 1) % PatrolPoints.Length;
         }
-
-        
     }
     private void PlayerSeen(Callback.Event eb)
     {
         PlayerSeenEvent e = (PlayerSeenEvent)eb;
-        if (Vector3.Distance(Position, e.EnemyPosition) < 5)
+        if (Vector3.Distance(Position, e.EnemyPosition) < NearbyEnemyHeardDistance)
         {
-            enemiesWhoSeeThePlayer++;
-            stateMachine.TransitionTo<EnemyChasePlayerState>();
+            stateMachine.TransitionTo<EnemyPlayerNearState>();
         }
 
     }
@@ -51,5 +51,9 @@ public class EnemyWalkingState : EnemyBaseState
                 closest = i;
         }
         currentPatrolPoint = closest;
+    }
+    public override void Exit()
+    {
+        EventSystem.Current.UnRegisterListener(typeof(PlayerSeenEvent), PlayerSeen);
     }
 }

@@ -28,12 +28,12 @@ public class Enemy : MonoBehaviour
         player = PlayerGo.GetComponent<PlayerControl>();
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent),OnHit);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), Stomped);
+        EventSystem.Current.RegisterListener(typeof(PlayerLostEvent), PlayerLost);
         collider = GetComponent<BoxCollider>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Start()
     {
-
         statemachine = new StateMachine(this, states);
     }
 
@@ -82,10 +82,16 @@ public class Enemy : MonoBehaviour
     {
         return transform;
     }
+    private void PlayerLost(Callback.Event eb)
+    {
+        statemachine.TransitionTo<EnemyWalkingState>();
+    }
     public void Defeated()
     {
         EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), OnHit);
         EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), Stomped);
+        EventSystem.Current.UnRegisterListener(typeof(PlayerLostEvent), PlayerLost);
+
         statemachine.TransitionTo<EnemyDefeatedState>();
     }
     public GameController getGamecontroller()
