@@ -12,10 +12,11 @@ public class SelectedMarker : MonoBehaviour
     private void Awake()
     {
         selected = firstSelected;
+        MoveMarker();
     }
     private void Update()
     {
-        if (selected == EventSystem.current.currentSelectedGameObject)
+        if (selected == EventSystem.current.currentSelectedGameObject && selected.tag != "Slider")
             return;
 
         selected = EventSystem.current.currentSelectedGameObject;
@@ -24,6 +25,12 @@ public class SelectedMarker : MonoBehaviour
 
     private void MoveMarker()
     {
-        transform.position = selected.transform.position + Vector3.left * (2 + selected.GetComponent<RectTransform>().sizeDelta.x);
+        if(selected.tag == "Slider")
+        {
+            GameObject handle = selected.transform.Find("Handle Slide Area").Find("Handle").gameObject;
+            transform.position = handle.transform.position + Vector3.left * (25 + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
+        }
+        else
+            transform.position = selected.transform.position + Vector3.left * (2 + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
     }
 }
