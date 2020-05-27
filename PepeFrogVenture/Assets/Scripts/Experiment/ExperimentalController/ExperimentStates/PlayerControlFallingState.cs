@@ -20,6 +20,7 @@ public class PlayerControlFallingState : PlayerControlInAirState
 
         if (GroundCheck())
         {
+            EventSystem.Current.FireEvent(new PlayerLandingEvent());
             if(Direction.magnitude == 0)
             {
                 stateMachine.TransitionTo<PlayerControlIdleState>();

@@ -45,7 +45,9 @@ public class PauseMenuScript : MonoBehaviour
     public void DeactivateMenu()
     {
         Time.timeScale = 1;
+
         PauseMenuUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
     }
 
