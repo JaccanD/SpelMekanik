@@ -23,9 +23,8 @@ public class MotionControl : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
         EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
-        EventSystem.Current.RegisterListener(typeof(HookHitEvent), Swing);
+        EventSystem.Current.RegisterListener(typeof(PlayerSwingState), Swing);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
-        EventSystem.Current.RegisterListener(typeof(PlayerLandingEvent), Land);
     }
 
     // Update is called once per frame
@@ -51,21 +50,20 @@ public class MotionControl : MonoBehaviour
             anim.SetFloat("Speed", speed);
             anim.SetFloat("Direction", direction);
         }
-            //if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
-            //anim.SetTrigger("Jump");
+        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
+            anim.SetTrigger("Jump");
 
-            // if (falling)
-            //{
-            //    float fallingValue = Mathf.Lerp(1, -1, t);
-            //    t += Time.deltaTime * 5;
-            //    anim.SetFloat("Jumping", fallingValue);
-            //}
+       // if (falling)
+        //{
+        //    float fallingValue = Mathf.Lerp(1, -1, t);
+        //    t += Time.deltaTime * 5;
+        //    anim.SetFloat("Jumping", fallingValue);
+        //}
     }
 
     public void Jump(Callback.Event eb)
     {
-        anim.SetTrigger("Jump");
-        anim.ResetTrigger("Land");
+        anim.SetFloat("Jumping", 1);
     }
 
     public void Fall(Callback.Event eb)
@@ -73,8 +71,6 @@ public class MotionControl : MonoBehaviour
         //t = 0;
         //falling = true;
         anim.SetTrigger("Falling");
-        anim.ResetTrigger("Jump");
-        anim.ResetTrigger("Swing");
     }
 
     public void Spit(Callback.Event eb)
@@ -85,14 +81,6 @@ public class MotionControl : MonoBehaviour
     public void Swing(Callback.Event eb)
     {
         anim.SetTrigger("Swing");
-        anim.ResetTrigger("Land");
-    }
-
-    public void Land(Callback.Event eb)
-    {
-        anim.SetTrigger("Land");
-        anim.ResetTrigger("Jump");
-        anim.ResetTrigger("Swing");
     }
 
     public void WaterBounce(Callback.Event eb)
