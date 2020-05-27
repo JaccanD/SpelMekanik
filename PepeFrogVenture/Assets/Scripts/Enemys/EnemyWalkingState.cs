@@ -22,7 +22,7 @@ public class EnemyWalkingState : EnemyBaseState
 
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
         {
-            EventSystem.Current.FireEvent(new PlayerSeenEvent(Position));
+            EventSystem.Current.FireEvent(new PlayerSeenEvent(Position, Enemy.gameObject));
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         }
         if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
@@ -33,7 +33,7 @@ public class EnemyWalkingState : EnemyBaseState
     private void PlayerSeen(Callback.Event eb)
     {
         PlayerSeenEvent e = (PlayerSeenEvent)eb;
-        if (Vector3.Distance(Position, e.EnemyPosition) < NearbyEnemyHeardDistance)
+        if (Vector3.Distance(Position, e.EnemyPosition) < NearbyEnemyHeardDistance && e.enemy != Enemy)
         {
             stateMachine.TransitionTo<EnemyPlayerNearState>();
         }

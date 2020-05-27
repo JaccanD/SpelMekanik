@@ -51,9 +51,10 @@ namespace EnemyAI
         public void RemoveEnemyInRangeOfPlayer(Enemy enemy)
         {
             enemiesThatSeeThePlayer.Remove(enemy);
-            enemiesEngaged.Add(enemy);
+            AddEngagedEnemy(enemy);
             if(enemiesThatSeeThePlayer.Count == 0)
             {
+                Debug.Log("no enemy sees the player");
                 EventSystem.Current.FireEvent(new PlayerLostEvent());
                 enemiesEngaged.Clear();
             }
