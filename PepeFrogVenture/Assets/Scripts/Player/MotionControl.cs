@@ -12,7 +12,7 @@ public class MotionControl : MonoBehaviour
     private float direction;
     private bool falling;
     private float t;
-    private State CurrentState { get { return controller.InState; } }
+    private State CurrentState { get { return controller.InState; } } 
 
     private PlayerControl controller;
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class MotionControl : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
         EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
+        EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
     }
 
     // Update is called once per frame
@@ -69,8 +70,18 @@ public class MotionControl : MonoBehaviour
         t = 0;
         falling = true;
     }
+
     public void Spit(Callback.Event eb)
     {
         anim.SetTrigger("Spit");
+    }
+
+    public void WaterBounce(Callback.Event eb)
+    {
+        PlayerHitEvent e = (PlayerHitEvent) eb;
+        if (e.enemyHit == true){
+            return;
+        }
+        anim.SetTrigger("WaterBounce");
     }
 }

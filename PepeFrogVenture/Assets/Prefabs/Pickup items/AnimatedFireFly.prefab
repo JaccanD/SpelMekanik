@@ -519,6 +519,11 @@ PrefabInstance:
     - target: {fileID: 1549300370472193337, guid: 5369d864e7ba9b646a9cdebfc14dd271,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912868166269724601, guid: 5369d864e7ba9b646a9cdebfc14dd271,
+        type: 3}
+      propertyPath: LightsModule.enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
