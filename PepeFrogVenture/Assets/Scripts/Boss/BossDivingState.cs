@@ -11,11 +11,14 @@ public class BossDivingState : BossBaseState
     [SerializeField] private float sinkSpeed = 1.5f;
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float threshold = 5f;
-
+    public override void Enter()
+    {
+        EventSystem.Current.FireEvent(new BossDivingEvent());
+    }
     public override void Run()
     {
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
-        EventSystem.Current.FireEvent(new BossDivingEvent());
+
         DiveDown();
         if(Boss.transform.position.y < threshold)
         {
