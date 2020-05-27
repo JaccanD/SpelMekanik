@@ -73,8 +73,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dab
-  m_Speed: 1.5
+  m_Name: Spit
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7869045145665480362}
@@ -87,7 +87,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 8e3009aa75ca902469b78c4916a04dd2,
+  m_Motion: {fileID: 1827226128182048838, guid: 6938e1ea9b2fff34989823eb4eb3b395,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -190,7 +190,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.7222222
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -219,7 +219,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Dab
+    m_ConditionEvent: Spit
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8134415317357186959}
@@ -296,6 +296,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Spit
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -310,9 +316,9 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Dab
+    m_Name: SpitAnim
     m_StateMachine: {fileID: 5886064215098489899}
-    m_Mask: {fileID: 31900000, guid: 3d63519d618df4f40acacc50bc0724fd, type: 2}
+    m_Mask: {fileID: 31900000, guid: 7f7e9bb1f62fc0b4693cee94997c7ac0, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -615,7 +621,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dab
+  m_Name: SpitAnim
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5552481431900473361}
@@ -653,11 +659,38 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 73a79e14267c3ff478651b41f00b7aeb,
       type: 3}
-    m_Threshold: 0.25
+    m_Threshold: 0.0625
     m_Position: {x: 0, y: 0.5}
     m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 1827226128182048838, guid: b91c0b14eaac8d648b248cd2e041dfc4,
+      type: 3}
+    m_Threshold: 0.125
+    m_Position: {x: -0.5, y: 0}
+    m_TimeScale: 3.5
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Speed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 1827226128182048838, guid: a594ee73664ef9d4497a2f2b481cb673,
+      type: 3}
+    m_Threshold: 0.1875
+    m_Position: {x: 0.5, y: 0}
+    m_TimeScale: 3.5
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Speed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 1827226128182048838, guid: cecdc47dd5418054e8f54e1043069263,
+      type: 3}
+    m_Threshold: 0.25
+    m_Position: {x: 0, y: -0.5}
+    m_TimeScale: 2
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Speed
     m_Mirror: 0
   m_BlendParameter: Direction
   m_BlendParameterY: Speed
