@@ -21,10 +21,10 @@ public class MotionControl : MonoBehaviour
         controller = GetComponent<PlayerControl>();
         anim = GetComponent<Animator>();
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
-        EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
-        EventSystem.Current.RegisterListener(typeof(PlayerSwingState), Swing);
+        EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), Swing);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
+        EventSystem.Current.RegisterListener(typeof(PlayerLandingEvent), Land);
     }
 
     // Update is called once per frame
@@ -50,28 +50,15 @@ public class MotionControl : MonoBehaviour
             anim.SetFloat("Speed", speed);
             anim.SetFloat("Direction", direction);
         }
-        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
-            anim.SetTrigger("Jump");
 
-       // if (falling)
-        //{
-        //    float fallingValue = Mathf.Lerp(1, -1, t);
-        //    t += Time.deltaTime * 5;
-        //    anim.SetFloat("Jumping", fallingValue);
-        //}
     }
 
     public void Jump(Callback.Event eb)
     {
-        anim.SetFloat("Jumping", 1);
+        anim.SetTrigger("Jump");
+        anim.ResetTrigger("Land");
     }
 
-    public void Fall(Callback.Event eb)
-    {
-        //t = 0;
-        //falling = true;
-        anim.SetTrigger("Falling");
-    }
 
     public void Spit(Callback.Event eb)
     {
@@ -81,6 +68,7 @@ public class MotionControl : MonoBehaviour
     public void Swing(Callback.Event eb)
     {
         anim.SetTrigger("Swing");
+        anim.ResetTrigger("Land");
     }
 
     public void WaterBounce(Callback.Event eb)
@@ -90,5 +78,10 @@ public class MotionControl : MonoBehaviour
             return;
         }
         anim.SetTrigger("WaterBounce");
+    }
+
+    public void Land(Callback.Event eb)
+    {
+        anim.SetTrigger("Land");
     }
 }
