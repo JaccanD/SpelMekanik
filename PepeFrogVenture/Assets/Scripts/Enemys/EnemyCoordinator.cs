@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
 namespace EnemyAI
-{ 
+{
     public class EnemyCoordinator : MonoBehaviour
     {
         static private EnemyCoordinator currentCoordinator;

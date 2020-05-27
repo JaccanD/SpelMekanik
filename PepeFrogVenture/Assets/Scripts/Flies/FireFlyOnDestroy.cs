@@ -8,6 +8,7 @@ public class FireFlyOnDestroy : MonoBehaviour
     public GameObject Parent;
     private void OnDestroy()
     {
-        EventSystem.Current.FireEvent(new FireFlyDeathEvent(Parent));
+        if(Parent != null)
+            EventSystem.Current.FireEvent(new FireFlyDeathEvent(Parent));
     }
 }

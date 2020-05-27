@@ -13,12 +13,10 @@ public class EnemyDefeatedState : EnemyBaseState
     public override void Enter()
     {
         EventSystem.Current.FireEvent(new EnemyDeathEvent(Enemy));
-        Debug.Log("dead");
     }
 
     public override void Run()
     {
-
         timer += 1 * Time.deltaTime;
 
         if (timer > timeToDie)

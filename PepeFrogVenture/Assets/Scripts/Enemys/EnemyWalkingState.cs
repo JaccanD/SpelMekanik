@@ -7,14 +7,13 @@ using Callback;
 // Author: Valter Fallsterljung
 public class EnemyWalkingState : EnemyBaseState
 {
-    //[SerializeField] private float spotPlayerDistance;
     [SerializeField] private float NearbyEnemyHeardDistance = 5;
 
     private int currentPatrolPoint = 0;
 
     public override void Enter()
     {
-        ChooseClosest();
+        ChooseClosestPatrolPoint();
         EventSystem.Current.RegisterListener(typeof(PlayerSeenEvent), PlayerSeen);
     }
     public override void Run()
@@ -38,10 +37,8 @@ public class EnemyWalkingState : EnemyBaseState
         {
             stateMachine.TransitionTo<EnemyPlayerNearState>();
         }
-
     }
-
-    private void ChooseClosest()
+    private void ChooseClosestPatrolPoint()
     {
         int closest = 0;
         for (int i = 0; i < PatrolPoints.Length; i++)
