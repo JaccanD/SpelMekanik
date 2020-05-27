@@ -762,6 +762,19 @@ Transform:
   m_Father: {fileID: 1687709770501905480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4107587234173553207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206893517159314627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306aea8efb2ee40b1487e195d6c324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BellyGlow: {fileID: 7416975773903625795}
 --- !u!1 &3324332091273984247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,19 +1360,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4107587234173553207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206893517159314627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59306aea8efb2ee40b1487e195d6c324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BellyGlow: {fileID: 7416975773903625795}
 --- !u!1 &4107587235668315936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,7 +2057,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2560
   camera: {fileID: 4107587235668315936}
-  cooldown: 0.5
+  cooldown: 0.3
 --- !u!114 &4107587235453292539
 MonoBehaviour:
   m_ObjectHideFlags: 0
