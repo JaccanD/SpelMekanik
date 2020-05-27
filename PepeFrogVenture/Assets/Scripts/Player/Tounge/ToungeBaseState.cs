@@ -15,13 +15,15 @@ public abstract class ToungeBaseState : State
     protected GameObject Cylinder { get { return Tounge.GetCylinder(); } set { Tounge.SetCylinder(value); } }
     protected Vector3 Point { get { return Tounge.GetPoint(); } }
     protected float MaxDistance { get { return Tounge.GetMaxDistance(); } }
+    protected Material ToungeMaterial { get { return Tounge.ToungeMaterial; } }
 
     protected void drawTounge()
     {
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        cylinder.GetComponent<MeshRenderer>().material = ToungeMaterial;
         Vector3 start = gameObject.transform.position;
         CapsuleCollider coll = Player.GetComponent<CapsuleCollider>();
-        Vector3 end = Player.transform.position + Vector3.up * (coll.height / 2);
+        Vector3 end = Player.transform.position + Vector3.up * (coll.height - coll.radius);
         Vector3 toungePos = (start + end) / 2.0f;
 
         Vector3 toungeDirection = (end - start).normalized;
