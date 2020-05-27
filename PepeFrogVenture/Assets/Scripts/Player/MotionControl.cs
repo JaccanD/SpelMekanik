@@ -57,6 +57,7 @@ public class MotionControl : MonoBehaviour
     {
         anim.SetTrigger("Jump");
         anim.ResetTrigger("Land");
+        anim.ResetTrigger("Swing");
     }
 
 
@@ -69,6 +70,7 @@ public class MotionControl : MonoBehaviour
     {
         anim.SetTrigger("Swing");
         anim.ResetTrigger("Land");
+        anim.ResetTrigger("Jump");
     }
 
     public void WaterBounce(Callback.Event eb)
@@ -83,5 +85,7 @@ public class MotionControl : MonoBehaviour
     public void Land(Callback.Event eb)
     {
         anim.SetTrigger("Land");
+        anim.ResetTrigger("Jump");
+        anim.ResetTrigger("Swing");
     }
 }
