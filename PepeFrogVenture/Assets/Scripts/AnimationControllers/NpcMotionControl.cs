@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
-public class NpcMotionController : MonoBehaviour
+public class NpcMotionControl : MonoBehaviour
 {
     private Animator anim;
     // Start is called before the first frame update
