@@ -66,7 +66,7 @@ public class PlayerSoundScript : MonoBehaviour
     public void OnPickup(Callback.Event eb)
     {
         PickupEvent e = (PickupEvent)eb;
-        if(e.Pickup.tag != "Berry")
+        if(e.Pickup.tag != "Flies")
         {
             return;
         }
