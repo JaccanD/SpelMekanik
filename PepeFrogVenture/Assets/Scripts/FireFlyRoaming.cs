@@ -26,6 +26,7 @@ public class FireFlyRoaming : MonoBehaviour
     void Update()
     {
         MoveFly();
+        Rotate();
     }
     private void MoveFly()
     {
@@ -46,6 +47,11 @@ public class FireFlyRoaming : MonoBehaviour
         Vector3 castDistance = movement - transform.position;
         RaycastHit cast;
         return(Physics.SphereCast(transform.position, collider.radius, castDistance.normalized, out cast, castDistance.magnitude, collisionMask));
+    }
+    private void Rotate()
+    {
+        Quaternion rotation = Quaternion.LookRotation(moveToPosition - lastPosition) * Quaternion.Euler(0,69,0).normalized;
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);
     }
     private void NewMoveToPosition()
     {
