@@ -39,7 +39,7 @@ public class BossAttackingState : BossBaseState
             return;
 
         RegularShoot(projectileStartingForce, projectileDistanceForceMultiplier, projectileDamage);
-
+        EventSystem.Current.FireEvent(new BossShootingEvent());
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
         if (shootsLeftBeforeSubmerge < 1)

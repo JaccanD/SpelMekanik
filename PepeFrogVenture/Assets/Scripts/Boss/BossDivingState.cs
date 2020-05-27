@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 [CreateAssetMenu(menuName = "BossState/DivingState")]
 // Author: Valter Fallsterljung
@@ -14,6 +15,7 @@ public class BossDivingState : BossBaseState
     public override void Run()
     {
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
+        EventSystem.Current.FireEvent(new BossDivingEvent());
         DiveDown();
         if(Boss.transform.position.y < threshold)
         {
