@@ -31,7 +31,7 @@ public class DeathZone : MonoBehaviour
         GameObject player = other.gameObject;
         ParticleSystem splash = GameObject.Instantiate(waterSplash, player.transform);
         splash.transform.parent = null;
-        EventSystem.Current.FireEvent(new PlayerHitEvent(player, damage));
+        EventSystem.Current.FireEvent(new PlayerHitEvent(player, damage, false));
         EventSystem.Current.FireEvent(new Pushed(player, player.transform.position, pushbackForce, pushbackHeight));
         source.volume = 0.5f;
         source.PlayOneShot(WaterSound);
