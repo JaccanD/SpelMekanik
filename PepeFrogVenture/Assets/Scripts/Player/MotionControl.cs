@@ -23,6 +23,7 @@ public class MotionControl : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
         EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
+        EventSystem.Current.RegisterListener(typeof(PlayerSwingState), Swing);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
     }
 
@@ -52,12 +53,12 @@ public class MotionControl : MonoBehaviour
         if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Jump)))
             anim.SetTrigger("Jump");
 
-        if (falling)
-        {
-            float fallingValue = Mathf.Lerp(1, -1, t);
-            t += Time.deltaTime * 5;
-            anim.SetFloat("Jumping", fallingValue);
-        }
+       // if (falling)
+        //{
+        //    float fallingValue = Mathf.Lerp(1, -1, t);
+        //    t += Time.deltaTime * 5;
+        //    anim.SetFloat("Jumping", fallingValue);
+        //}
     }
 
     public void Jump(Callback.Event eb)
@@ -67,13 +68,19 @@ public class MotionControl : MonoBehaviour
 
     public void Fall(Callback.Event eb)
     {
-        t = 0;
-        falling = true;
+        //t = 0;
+        //falling = true;
+        anim.SetTrigger("Falling");
     }
 
     public void Spit(Callback.Event eb)
     {
         anim.SetTrigger("Spit");
+    }
+
+    public void Swing(Callback.Event eb)
+    {
+        anim.SetTrigger("Swing");
     }
 
     public void WaterBounce(Callback.Event eb)
