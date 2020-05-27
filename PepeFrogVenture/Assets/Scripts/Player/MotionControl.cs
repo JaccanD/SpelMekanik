@@ -22,7 +22,7 @@ public class MotionControl : MonoBehaviour
         anim = GetComponent<Animator>();
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
         EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
-        EventSystem.Current.RegisterListener(typeof(ToungeDoneEvent), Swing);
+        EventSystem.Current.RegisterListener(typeof(HookHitEvent), Swing);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
         EventSystem.Current.RegisterListener(typeof(PlayerLandingEvent), Land);
     }

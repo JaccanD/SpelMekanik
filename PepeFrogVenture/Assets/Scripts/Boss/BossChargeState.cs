@@ -40,6 +40,7 @@ public class BossChargeState : BossBaseState
     }
     private void ChargeAtPlayer()
     {
+        EventSystem.Current.FireEvent(new BossChargeAttackEvent());
         rb.isKinematic = false;
         rb.useGravity = true;
         rb.AddForce((Boss.transform.forward + (Boss.transform.up * heightOffset)) * chargeForce, ForceMode.Impulse);

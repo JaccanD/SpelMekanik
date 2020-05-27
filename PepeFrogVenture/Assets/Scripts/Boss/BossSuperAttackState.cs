@@ -64,7 +64,7 @@ public class BossSuperAttackState : BossBaseState
 
         if (currentCool > 0)
             return;
-
+        EventSystem.Current.FireEvent(new BossSuperAttackEvent());
         SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         currentCool = cooldown;
     }
