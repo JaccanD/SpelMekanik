@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using EnemyAI;
-using Callback;
 
 [CreateAssetMenu(menuName = "EnemyState/PlayerNearState")]
 public class EnemyPlayerNearState : EnemyBaseState
@@ -11,7 +8,6 @@ public class EnemyPlayerNearState : EnemyBaseState
     {
         EnemyCoordinator.current.AddEngagedEnemy(Enemy);
         EnemyCoordinator.current.RemoveEnemyInRangeOfPlayer(Enemy);
-        Debug.Log("playernear");
     }
     public override void Run()
     {

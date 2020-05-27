@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
     {
         statemachine = new StateMachine(this, states);
     }
-
     private void Update()
     {
         statemachine.Run();
@@ -114,7 +113,6 @@ public class Enemy : MonoBehaviour
         Health -= e.Damage;
         if (Health <= 0)
         {
-
             Defeated();
         }
     }
@@ -124,6 +122,5 @@ public class Enemy : MonoBehaviour
         {
             EventSystem.Current.FireEvent(new EnemyStompedEvent(gameObject));
         }
-
     }
 }

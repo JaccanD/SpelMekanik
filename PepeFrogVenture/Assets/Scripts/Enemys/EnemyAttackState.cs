@@ -9,7 +9,6 @@ using Callback;
 public class EnemyAttackState : EnemyBaseState
 {
     [SerializeField] private float stopAttackingDistance;
-    //[SerializeField] private float playerToCloseDistance;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float startAttackCooldown;
     [SerializeField] private float pushAmount;
@@ -21,9 +20,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         currentCool = startAttackCooldown;
         Enemy.agent.isStopped = true;
-
     }
-
     public override void Run()
     {
         currentCool -= Time.deltaTime;
@@ -36,18 +33,9 @@ public class EnemyAttackState : EnemyBaseState
         {
             Attack();
         }
-
-        //if(Vector3.Distance(Position, Enemy.player.transform.position) < playerToCloseDistance)
-        //{
-        //    Attack();
-        //}
-
     }
-
     private void Attack()
     {
-
-
         if (currentCool > 0)
             return;
 

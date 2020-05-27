@@ -20,7 +20,6 @@ public class EnemyBaseState : State
     {
         Enemy.agent.speed = Speed;
     }
-
     protected bool CanSeePlayer()
     {
         return !Physics.Linecast(Position, Enemy.player.transform.position, CollisionMask);
