@@ -9,7 +9,7 @@ namespace EnemyAI
     {
         static private EnemyCoordinator currentCoordinator;
 
-        private List<Enemy> enemiesInRange = new List<Enemy>();
+        private List<Enemy> enemiesThatSeeThePlayer = new List<Enemy>();
         private List<Enemy> enemiesEngaged = new List<Enemy>();
         private void Awake()
         {
@@ -35,11 +35,11 @@ namespace EnemyAI
         }
         public void AddEnemyInRange(Enemy enemy)
         {
-            if(enemiesInRange.Contains(enemy))
+            if(enemiesThatSeeThePlayer.Contains(enemy))
             {
                 return;
             }
-            enemiesInRange.Add(enemy);
+            enemiesThatSeeThePlayer.Add(enemy);
             if (enemiesEngaged.Contains(enemy))
             {
                 enemiesEngaged.Remove(enemy);
@@ -47,22 +47,13 @@ namespace EnemyAI
         }
         public void RemoveEngagedEnemy(Enemy enemy)
         {
-            if (!enemiesEngaged.Contains(enemy))
-            {
-                return;
-            }
-
             enemiesEngaged.Remove(enemy);
         }
         public void RemoveEnemyInRangeOfPlayer(Enemy enemy)
         {
-            if (!enemiesInRange.Contains(enemy))
-            {
-                return;
-            }
-            enemiesInRange.Remove(enemy);
+            enemiesThatSeeThePlayer.Remove(enemy);
             enemiesEngaged.Add(enemy);
-            if(enemiesInRange.Count == 0)
+            if(enemiesThatSeeThePlayer.Count == 0)
             {
                 EventSystem.Current.FireEvent(new PlayerLostEvent());
                 enemiesEngaged.Clear();

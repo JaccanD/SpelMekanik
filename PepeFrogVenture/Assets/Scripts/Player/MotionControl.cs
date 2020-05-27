@@ -22,16 +22,17 @@ public class MotionControl : MonoBehaviour
         anim = GetComponent<Animator>();
         EventSystem.Current.RegisterListener(typeof(PlayerJumpEvent), Jump);
         EventSystem.Current.RegisterListener(typeof(PlayerFallingEvent), Fall);
+        EventSystem.Current.RegisterListener(typeof(FireballshotEvent), Spit);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Interact)))
-        {
-            EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
-            anim.SetTrigger("Dab");
-        }
+        //if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Interact)))
+        //{
+        //    EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
+        //    anim.SetTrigger("Dab");
+        //}
 
         if (CurrentState.GetType() == typeof(PlayerControlMovementState) || CurrentState.GetType() == typeof(PlayerControlIdleState))
         {
@@ -67,5 +68,9 @@ public class MotionControl : MonoBehaviour
     {
         t = 0;
         falling = true;
+    }
+    public void Spit(Callback.Event eb)
+    {
+        anim.SetTrigger("Spit");
     }
 }
