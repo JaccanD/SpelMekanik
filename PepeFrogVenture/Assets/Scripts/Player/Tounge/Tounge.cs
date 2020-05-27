@@ -11,13 +11,14 @@ public class Tounge : MonoBehaviour
     [SerializeField] private float Speed = 5;
     [SerializeField] private LayerMask ToungeMask;
     [SerializeField] private float MaxDistance;
+    [SerializeField] private Material toungeMaterial;
     private GameObject Player;
     private SphereCollider Coll;
     private GameObject Cylinder;
     private Vector3 Point;
 
 
-
+    public Material ToungeMaterial { get { return toungeMaterial; } }
     public float GetMaxDistance()
     {
         return MaxDistance;
