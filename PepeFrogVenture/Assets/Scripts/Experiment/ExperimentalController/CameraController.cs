@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 
 public class CameraController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class CameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         rend = model.GetComponent<SkinnedMeshRenderer>();
         rotationY = transform.parent.rotation.eulerAngles.y;
+        EventSystem.Current.RegisterListener(typeof(PlayerRespawnEvent), OnRespawn);
     }
     void LateUpdate()
     {
@@ -91,4 +93,17 @@ public class CameraController : MonoBehaviour
 
     // TODO 
     // Något sätt att rikta spelaren när den respawnar
+
+    void OnRespawn(Callback.Event eb)
+    {
+        PlayerRespawnEvent e = (PlayerRespawnEvent)eb;
+
+        rotationX = e.RespawnPoint.transform.rotation.eulerAngles.x;
+        rotationY = e.RespawnPoint.transform.rotation.eulerAngles.y;
+
+        rotationX = Mathf.Clamp(rotationX, minRotationX, maxRotationX);
+        transform.rotation = Quaternion.Euler(rotationX, rotationY, 0.0f);
+
+        transform.parent.rotation = Quaternion.Euler(0.0f, rotationY, 0.0f);
+    }
 }

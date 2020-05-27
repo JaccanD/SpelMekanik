@@ -48,7 +48,7 @@ public class PlayerControl : MonoBehaviour
     {
         coll = GetComponent<CapsuleCollider>();
         stateMachine = new StateMachine(this, states);
-        int a = 0;
+
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Die);
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Pull);
         EventSystem.Current.RegisterListener(typeof(Pushed), IsPushed);
