@@ -5,13 +5,8 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: EnemyAttack
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Enemy_1_Rigg_Lambert_rat
-    second: {fileID: 2100000, guid: 7c8e2bcdc13a44646bd513009a3e67b4, type: 2}
+    second: Attack
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -40,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: EnemyAttack
+      name: Attack
       takeName: Take 001
       internalID: 0
       firstFrame: 1
