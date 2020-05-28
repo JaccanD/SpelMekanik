@@ -52,6 +52,7 @@ public class BossSuperAttackState : BossBaseState
             rb.AddForce(Vector3.up * 15, ForceMode.Impulse);
             isNextJumpReady = false;
             currentJumpPoint++;
+            EventSystem.Current.FireEvent(new BossJumpingEvent());
         }
         else
         {
