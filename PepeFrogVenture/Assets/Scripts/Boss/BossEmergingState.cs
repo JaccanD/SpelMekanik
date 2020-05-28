@@ -7,6 +7,7 @@ using UnityEngine;
 public class BossEmergingState : BossBaseState
 {
     private DestroyableLilypad chosenLilypad;
+    [SerializeField] private Material chosenLilypadMaterial;
     [SerializeField] private float depthOffset = 4f;
     [SerializeField] private float emergingSpeed = 1.5f;
     [SerializeField] private float fullyEmergedThreshold = 1f;
@@ -27,6 +28,7 @@ public class BossEmergingState : BossBaseState
             }
         }
         chosenLilypad.BossTarget();
+        chosenLilypad.GetComponentInChildren<MeshRenderer>().material = chosenLilypadMaterial;
     }
     public override void Run()
     {
