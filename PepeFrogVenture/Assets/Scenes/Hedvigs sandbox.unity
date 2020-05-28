@@ -1307,7 +1307,7 @@ PrefabInstance:
     - target: {fileID: 1260015924839897069, guid: ba7f444b6885ab545aab8a5250cb24a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1260015924839897069, guid: ba7f444b6885ab545aab8a5250cb24a6,
         type: 3}
@@ -9880,7 +9880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143747260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07000166, y: 1.9100001, z: 3.249999}
+  m_LocalPosition: {x: -0.067, y: 2.099, z: 3.347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1593989022}
@@ -11249,7 +11249,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 82bd0988a632e774ea0edd6a89ac08d8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 82bd0988a632e774ea0edd6a89ac08d8,
         type: 3}
@@ -13818,6 +13818,9 @@ MonoBehaviour:
   - {fileID: 1101698764}
   - {fileID: 731818726}
   - {fileID: 735692884}
+  projectileStartingForce: 50
+  projectileDamage: 2
+  projectileDistanceForceMultiplier: 100
 --- !u!65 &1593989024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14941,7 +14944,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9f058f498adebdf4da8a10c761f5913c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9f058f498adebdf4da8a10c761f5913c,
         type: 3}
@@ -15816,7 +15819,7 @@ PrefabInstance:
     - target: {fileID: 5916630305366257532, guid: 3a52d3d726ebbb9458f551fcdab1260b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5916630305366257532, guid: 3a52d3d726ebbb9458f551fcdab1260b,
         type: 3}
@@ -16572,7 +16575,7 @@ PrefabInstance:
     - target: {fileID: 5916630305366257532, guid: 3a52d3d726ebbb9458f551fcdab1260b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5916630305366257532, guid: 3a52d3d726ebbb9458f551fcdab1260b,
         type: 3}
