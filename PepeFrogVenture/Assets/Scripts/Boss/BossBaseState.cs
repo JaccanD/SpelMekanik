@@ -51,7 +51,7 @@ public class BossBaseState : State
         newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * randomSpread/*Quaternion.Euler(xRotation, yRotation, zRotation)*/);
         //newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
-        newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
+        //newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
         //EventSystem.Current.FireEvent(new BossShootingEvent());
     }
