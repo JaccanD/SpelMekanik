@@ -50,6 +50,6 @@ public class BossBaseState : State
 
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
-        EventSystem.Current.FireEvent(new BossShootingEvent());
+        //EventSystem.Current.FireEvent(new BossShootingEvent());
     }
 }
