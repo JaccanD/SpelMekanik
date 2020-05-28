@@ -10,15 +10,15 @@ public class EnemyMotionControl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), EnemyAttack);
+        EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), EnemyAttack);
         EventSystem.Current.RegisterListener(typeof(EnemyDeathEvent), EnemyDeath);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), EnemyStomped);
     }
 
     public void EnemyAttack(Callback.Event eb)
     {
-        EnemyDeathEvent e = (EnemyDeathEvent)eb;
-        if (e.enemy == this.gameObject) { 
+        PlayerHitEvent e = (PlayerHitEvent)eb;
+        { 
             anim.SetTrigger("Attack");
         }
     }
@@ -36,8 +36,8 @@ public class EnemyMotionControl : MonoBehaviour
 
     public void EnemyStomped(Callback.Event eb)
     {
-        EnemyDeathEvent e = (EnemyDeathEvent)eb;
-        if (e.enemy == this.gameObject)
+        EnemyStompedEvent e = (EnemyStompedEvent)eb;
+        if (e.enemyStomped == this.gameObject)
         {
             anim.SetTrigger("Death");
             EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), EnemyAttack);
