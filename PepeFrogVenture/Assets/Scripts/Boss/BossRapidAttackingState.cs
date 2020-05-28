@@ -11,9 +11,6 @@ public class BossRapidAttackingState : BossBaseState
     [SerializeField] private float cooldown = 0.3f;
     [SerializeField] private int shoots = 15;
     [SerializeField] private float rotationSpeed = 3;
-    [SerializeField] private float projectileStartingForce = 1000;
-    [SerializeField] private float projectileDamage = 4;
-    [SerializeField] private float projectileDistanceMultiplier = 40;
     [SerializeField] private float shootSpread = 5;
     private int shootsLeftBeforeSubmerge;
 
@@ -33,7 +30,7 @@ public class BossRapidAttackingState : BossBaseState
         if (currentCool > 0)
             return;
         EventSystem.Current.FireEvent(new BossRapidAttackEvent());
-        Shoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
+        Shoot(projectileStartingForce, projectileDistanceForceMultiplier, projectileDamage, shootSpread);
         shootsLeftBeforeSubmerge -= 1;
         if (shootsLeftBeforeSubmerge < 1)
         {

@@ -19,9 +19,6 @@ public class BossSuperAttackState : BossBaseState
     [Header("Shooting variables")]
     private float currentCool;
     [SerializeField] private float cooldown = 0.3f;
-    [SerializeField] private float projectileStartingForce = 1000;
-    [SerializeField] private float projectileDamage = 4;
-    [SerializeField] private float projectileDistanceMultiplier = 40;
     [SerializeField] private float shootSpread = 5;
 
     public override void Enter()
@@ -66,7 +63,7 @@ public class BossSuperAttackState : BossBaseState
         if (currentCool > 0)
             return;
         EventSystem.Current.FireEvent(new BossSuperAttackEvent());
-        Shoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
+        Shoot(projectileStartingForce, projectileDistanceForceMultiplier, projectileDamage, shootSpread);
         currentCool = cooldown;
     }
     private void CheckIfBelowWater()
