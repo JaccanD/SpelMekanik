@@ -57,6 +57,6 @@ public class BossMotionControl: MonoBehaviour
 
     public void BossDead(Callback.Event eb)
     {
-        anim.SetTrigger("BossDead");
+        anim.SetTrigger("Dead");
     }
 }
