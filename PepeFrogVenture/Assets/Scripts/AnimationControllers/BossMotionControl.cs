@@ -11,7 +11,13 @@ public class BossMotionControl: MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        EventSystem.Current.RegisterListener(typeof(BossDivingState), BossDive);
+        EventSystem.Current.RegisterListener(typeof(BossDivingEvent), BossDive);
+        EventSystem.Current.RegisterListener(typeof(BossShootingEvent), BossAttack);
+        EventSystem.Current.RegisterListener(typeof(BossChargeAttackEvent), BossChargeAttack);
+        EventSystem.Current.RegisterListener(typeof(BossRapidAttackEvent), BossRapidAttack);
+        EventSystem.Current.RegisterListener(typeof(BossSuperAttackEvent), BossSuperAttack);
+        EventSystem.Current.RegisterListener(typeof(BossJumpingEvent), BossJump);
+        EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossDead);
     }
 
     void Update()
@@ -24,4 +30,33 @@ public class BossMotionControl: MonoBehaviour
         anim.SetTrigger("Dive");
     }
 
+    public void BossAttack(Callback.Event eb)
+    {
+        anim.SetTrigger("Attack");
+    }
+
+    public void BossChargeAttack(Callback.Event eb)
+    {
+        anim.SetTrigger("ChargeAttack");
+    }
+
+    public void BossRapidAttack(Callback.Event eb)
+    {
+        anim.SetTrigger("RapidAttack");
+    }
+
+    public void BossSuperAttack(Callback.Event eb)
+    {
+        anim.SetTrigger("SuperAttack");
+    }
+
+    public void BossJump(Callback.Event eb)
+    {
+        anim.SetTrigger("Jump");
+    }
+
+    public void BossDead(Callback.Event eb)
+    {
+        anim.SetTrigger("BossDead");
+    }
 }
