@@ -121,6 +121,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5454263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 899474205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &5454270
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454263}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &7349690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9031,6 +9053,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 3829889a6fccbc145977aa60fe35effa, type: 3}
+--- !u!1 &283505574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 500864016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &283505581
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283505574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &291047329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13126,6 +13170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LilyPad (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15057,6 +15106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilyPad (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
@@ -27555,6 +27609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LilyPad (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29849,6 +29908,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilyPad (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
@@ -47433,6 +47497,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1458888771}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1459784293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 959841573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1459784300
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459784293}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1460641175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48791,6 +48877,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500524907}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1503996930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 2115433581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1503996937
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503996930}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1506233039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61104,6 +61212,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e2738cf1fcc4844980703fa1b2fdc9, type: 3}
+--- !u!1 &1860020864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 433797598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1860020871
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860020864}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1863438706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 163cdfb82df761c4db913ea62b778540,
@@ -62873,6 +63003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilyPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
@@ -66905,6 +67040,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3edba90e549f141bd008a2142e324d, type: 3}
+--- !u!1 &2052505787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3930222154410784719, guid: d09ee10abe5fff245b239e6d63db8026,
+    type: 3}
+  m_PrefabInstance: {fileID: 1925105145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2052505794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052505787}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2052531729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68427,6 +68584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LilyPad (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711849248488051013, guid: d09ee10abe5fff245b239e6d63db8026,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601006378162202984, guid: d09ee10abe5fff245b239e6d63db8026,
         type: 3}
