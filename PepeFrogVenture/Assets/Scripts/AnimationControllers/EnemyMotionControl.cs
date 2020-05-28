@@ -10,38 +10,37 @@ public class EnemyMotionControl : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), EnemyAttack);
+        EventSystem.Current.RegisterListener(typeof(EnemyAttackingEvent), EnemyAttack);
         EventSystem.Current.RegisterListener(typeof(EnemyDeathEvent), EnemyDeath);
         EventSystem.Current.RegisterListener(typeof(EnemyStompedEvent), EnemyStomped);
     }
 
     public void EnemyAttack(Callback.Event eb)
     {
-        PlayerHitEvent e = (PlayerHitEvent)eb;
-        { 
-            anim.SetTrigger("Attack");
-        }
+        anim.SetTrigger("Attack");
     }
     
     public void EnemyDeath(Callback.Event eb)
     {
         EnemyDeathEvent e = (EnemyDeathEvent)eb;
-        if(e.enemy == this.gameObject)
+        if(e.enemy.gameObject == transform.parent.gameObject)
         {
             anim.SetTrigger("Death");
-            EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), EnemyAttack);
+            EventSystem.Current.UnRegisterListener(typeof(EnemyAttackingEvent), EnemyAttack);
             EventSystem.Current.UnRegisterListener(typeof(EnemyDeathEvent), EnemyDeath);
+            EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), EnemyStomped);
         }
     }
 
     public void EnemyStomped(Callback.Event eb)
     {
         EnemyStompedEvent e = (EnemyStompedEvent)eb;
-        if (e.enemyStomped == this.gameObject)
+        if (e.enemyStomped == transform.parent.gameObject)
         {
             anim.SetTrigger("Death");
-            EventSystem.Current.UnRegisterListener(typeof(EnemyHitEvent), EnemyAttack);
+            EventSystem.Current.UnRegisterListener(typeof(EnemyAttackingEvent), EnemyAttack);
             EventSystem.Current.UnRegisterListener(typeof(EnemyDeathEvent), EnemyDeath);
+            EventSystem.Current.UnRegisterListener(typeof(EnemyStompedEvent), EnemyStomped);
         }
     }
 }
