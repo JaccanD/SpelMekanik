@@ -13,8 +13,7 @@ public class TalkController : MonoBehaviour
         {
             Collider[] npcCheck = Physics.OverlapSphere(transform.position, talkRange, talkMask, QueryTriggerInteraction.Collide);
             if (npcCheck.Length != 0)
-            {
-                Debug.Log("Hit");
+            { 
                 // TODO
                 // Ändra till event istället
                 npcCheck[0].gameObject.GetComponent<NPC>().Talk();

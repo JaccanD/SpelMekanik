@@ -9,7 +9,7 @@ public class PlayerControlFallingState : PlayerControlInAirState
 
     public override void Enter()
     {
-        EventSystem.Current.FireEvent(new PlayerFallingEvent());
+        Player.IsLanding = false;
     }
     public override void Run()
     {

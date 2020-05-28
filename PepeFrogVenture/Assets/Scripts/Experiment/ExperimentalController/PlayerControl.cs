@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     private CapsuleCollider coll;
     private float stunnedTime = 0;
     private bool isStunned = false;
+    private bool isLanding = false;
 
     [Header("Movement Settings")]
     [SerializeField] private LayerMask collisionMask;
@@ -28,12 +29,17 @@ public class PlayerControl : MonoBehaviour
     [Range(0.01f, 0.99f)] [SerializeField] private float dynamicFriction;
     [Range (0.01f, 0.99f)][SerializeField] private float airResistance;
 
+    [Header("Animation Settings")]
+    [SerializeField] private float LandingCheckDistance;
+
+
     public Vector3 Velocity { get; set; }
     public Vector3 Point { get { return point; } }
     public GameObject GameObject { get { return gameObject; } }
     public CapsuleCollider Collider { get { return coll; } }
     public LayerMask CollisionMask { get { return collisionMask; } }
     public State InState { get { return stateMachine.GetCurrentState(); } }
+    public bool IsLanding { set { isLanding = value; } }
 
     public float SkinWidth {  get { return skinWidth; } }
     public float StaticFriction { get { return staticFriction; } }
@@ -56,7 +62,16 @@ public class PlayerControl : MonoBehaviour
     }
     private void Update()
     {
-            stateMachine.Run();
+        stateMachine.Run();
+
+        if (stateMachine.GetCurrentState().GetType() == typeof(PlayerControlFallingState))
+        {
+            if (LandingCheck() && !isLanding)
+            {
+                EventSystem.Current.FireEvent(new PlayerLandingEvent());
+                isLanding = true;
+            }
+        }
     }
 
     public void Pull(Callback.Event eb)
@@ -69,7 +84,15 @@ public class PlayerControl : MonoBehaviour
     //TODO
     // Lyssnare för HitEvent, DeathEvent, RespawnEvent
     // Ta från gammla controller
+    private bool LandingCheck()
+    {
 
+        Vector3 topPoint = transform.position + Vector3.up * (Collider.height - Collider.radius); // + höjden av collider - radius
+        Vector3 botPoint = transform.position + Vector3.up * Collider.radius; // + radius
+
+        return Physics.CapsuleCast(topPoint, botPoint, Collider.radius, Vector3.down, out RaycastHit collHit, LandingCheckDistance, CollisionMask);
+
+    }
     private void IsPushed(Callback.Event eb)
     {
         Pushed e = (Pushed)eb;
