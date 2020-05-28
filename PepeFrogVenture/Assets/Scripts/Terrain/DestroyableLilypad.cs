@@ -18,7 +18,7 @@ public class DestroyableLilypad : MonoBehaviour
 
     public void BossTarget()
     {
-        gameObject.GetComponentInChildren<Renderer>().material.color = Color.black;
+        //gameObject.GetComponentInChildren<Renderer>().material.color = Color.black;
         StartCoroutine(waitForDestruction());
     }
 
@@ -35,5 +35,9 @@ public class DestroyableLilypad : MonoBehaviour
     {
         EventSystem.Current.FireEvent(new LilyPadDestroyedEvent(this.gameObject));
         Destroy(gameObject);
+    }
+    public void ChangeMaterial(Material mat)
+    {
+        gameObject.GetComponent<MeshRenderer>().material = mat;
     }
 }
