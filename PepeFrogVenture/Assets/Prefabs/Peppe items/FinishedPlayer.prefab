@@ -2058,6 +2058,7 @@ MonoBehaviour:
     m_Bits: 2560
   camera: {fileID: 4107587235668315936}
   cooldown: 0.3
+  mouth: {fileID: 1231324852568677798}
 --- !u!114 &4107587235453292539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,6 +2132,7 @@ MonoBehaviour:
   staticFriction: 0.7
   dynamicFriction: 0.6
   airResistance: 0.4
+  LandingCheckDistance: 5
 --- !u!114 &4107587235453292420
 MonoBehaviour:
   m_ObjectHideFlags: 0

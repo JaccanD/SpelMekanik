@@ -12,12 +12,13 @@ public class Tounge : MonoBehaviour
     [SerializeField] private LayerMask ToungeMask;
     [SerializeField] private float MaxDistance;
     [SerializeField] private Material toungeMaterial;
+    private Transform mouth;
     private GameObject Player;
     private SphereCollider Coll;
     private GameObject Cylinder;
     private Vector3 Point;
 
-
+    public Transform Mouth { get { return mouth; } set { mouth = value; } }
     public Material ToungeMaterial { get { return toungeMaterial; } }
     public float GetMaxDistance()
     {

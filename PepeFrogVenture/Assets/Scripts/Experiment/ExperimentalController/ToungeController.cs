@@ -11,11 +11,14 @@ public class ToungeController : MonoBehaviour
     [SerializeField] private LayerMask hookMask;
     [SerializeField] new private GameObject camera;
     [SerializeField] private float cooldown;
+    [SerializeField] private Transform mouth;
 
     private bool toungeReady = true;
     private Vector3 topPoint { get { return transform.position + Vector3.up * (parent.Collider.height - parent.Collider.height); } }
     private Vector3 forward { get { return camera.transform.rotation * Vector3.forward; } }
     private Vector3 cameraPosition { get { return camera.transform.position; } }
+    private Transform Mouth { get { return mouth; } }
+
     private void start()
     {
         if (parent == null)
@@ -59,6 +62,7 @@ public class ToungeController : MonoBehaviour
         Quaternion rotate = new Quaternion(rotation.x, rotation.y, rotation.z, 0);
         GameObject go = Instantiate(prefab, topPoint, rotate);
         go.GetComponent<Tounge>().SetPoint(end);
+        go.GetComponent<Tounge>().Mouth = mouth;
 
     }
 
