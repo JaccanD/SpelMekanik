@@ -10,11 +10,11 @@ public class BossSuperAttackState : BossBaseState
     private int currentJumpPoint = 0;
     private bool isNextJumpReady = true;
     private Rigidbody rb;
-    private float waterCheckWait = 1f;
+
     [Header("Behavior variables")]
     [SerializeField] private float rotationSpeed = 4f;
-    [SerializeField] private float nextJumpThreshold = -4f;
-    [SerializeField] private float shootingThreshold = 4f;
+    [SerializeField] private float nextJumpHeightThreshold = -4f;
+    [SerializeField] private float shootingHeightThreshold = 4f;
 
     [Header("Shooting variables")]
     private float currentCool;
@@ -39,7 +39,7 @@ public class BossSuperAttackState : BossBaseState
     }
     private void CheckIfBossShouldAttack()
     {
-        if (Position.y > shootingThreshold)
+        if (Position.y > shootingHeightThreshold)
         {
             attack();
         }
@@ -65,12 +65,12 @@ public class BossSuperAttackState : BossBaseState
         if (currentCool > 0)
             return;
         EventSystem.Current.FireEvent(new BossSuperAttackEvent());
-        SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
+        Shoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         currentCool = cooldown;
     }
     private void CheckIfBelowWater()
     {
-        if (Position.y < nextJumpThreshold)
+        if (Position.y < nextJumpHeightThreshold)
         {
             if (currentJumpPoint >= SuperJumpPoints.Length)
             {

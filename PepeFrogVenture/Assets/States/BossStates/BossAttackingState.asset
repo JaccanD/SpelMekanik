@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: BossAttackingState
   m_EditorClassIdentifier: 
   cooldown: 1.5
-  shoots: 4
-  rotationSpeed: 3
+  shoots: 3
+  rotationSpeed: 5
   projectileStartingForce: 1000
   projectileDamage: 3
-  projectileDistanceMultiplier: 30
+  projectileDistanceForceMultiplier: 40
+  rapidAttackChance: 40
+  chargeAttackChance: 40
