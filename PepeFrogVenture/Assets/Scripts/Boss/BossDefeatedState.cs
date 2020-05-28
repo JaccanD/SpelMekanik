@@ -9,7 +9,8 @@ public class BossDefeatedState : BossBaseState
 {
     public override void Enter()
     {
-        Die();
+        Boss.Invoke("Die", 5f);
+
     }
     private void Die()
     {
