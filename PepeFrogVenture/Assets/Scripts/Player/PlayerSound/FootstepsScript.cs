@@ -66,4 +66,17 @@ public class FootstepsScript : MonoBehaviour
 
         time = AudioSettings.dspTime;
     }
+
+    private void PlayStaticFootstepSound() // Jack
+    {
+        if (AudioSettings.dspTime < time + filterTime)
+        {
+            return;
+        }
+        else
+        {
+            FootstepsSource.PlayOneShot(defaultSound);
+        }
+        time = AudioSettings.dspTime;
+    }
 }

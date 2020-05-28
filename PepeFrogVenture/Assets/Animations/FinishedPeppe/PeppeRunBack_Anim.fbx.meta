@@ -58,7 +58,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.4345238
+        functionName: PlayStaticFootstepSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 917df2853a662064ca2970c125010eca,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.89285713
+        functionName: PlayStaticFootstepSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 917df2853a662064ca2970c125010eca,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
