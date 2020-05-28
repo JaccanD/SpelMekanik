@@ -11,9 +11,7 @@ public class BossAttackingState : BossBaseState
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
     [SerializeField] private float rotationSpeed = 3;
-    [SerializeField] private float projectileStartingForce = 1000;
-    [SerializeField] private float projectileDamage = 4;
-    [SerializeField] private float projectileDistanceForceMultiplier = 40;
+
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
     [SerializeField] private float chargeAttackChance = 40f;

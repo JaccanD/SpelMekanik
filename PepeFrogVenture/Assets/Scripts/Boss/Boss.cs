@@ -20,6 +20,11 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject shootPoint;
     [SerializeField] private GameObject[] superJumpPoints;
 
+    [Header("Shooting variables")]
+    [SerializeField] private float projectileStartingForce = 50;
+    [SerializeField] private float projectileDamage = 4;
+    [SerializeField] private float projectileDistanceForceMultiplier = 100;
+
     private void Awake()
     {
         EventSystem.Current.RegisterListener(typeof(EnemyHitEvent), TakeDamage);
@@ -39,6 +44,18 @@ public class Boss : MonoBehaviour
     private void SinkAPad(Lilypads pad)
     {
         pad.setIsSInking(true);
+    }
+    public float GetProjectileStartingForce()
+    {
+        return projectileStartingForce;
+    }
+    public float GetProjectileDamage()
+    {
+        return projectileDamage;
+    }
+    public float GetProjectileDistanceForceMultiplier()
+    {
+        return projectileDistanceForceMultiplier;
     }
     public GameObject[] GetSuperJumpPoints()
     {

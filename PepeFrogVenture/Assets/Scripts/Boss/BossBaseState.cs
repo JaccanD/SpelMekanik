@@ -14,6 +14,9 @@ public class BossBaseState : State
     protected Vector3 StartPosition { get { return Boss.GetStartPosition(); } }
     protected GameObject[] SuperJumpPoints { get { return Boss.GetSuperJumpPoints(); } }
     protected GameObject Projectile { get { return Boss.getProjectile(); } }
+    protected float projectileDamage { get { return Boss.GetProjectileDamage(); } }
+    protected float projectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
+    protected float projectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
 
     protected void RotateTowardPlayer(Vector3 rotateTowards, float rotationSpeed)
     {

@@ -13,14 +13,10 @@ MonoBehaviour:
   m_Name: BossSuperAttackState
   m_EditorClassIdentifier: 
   rotationSpeed: 4
-  nextJumpThreshold: 11
-  shootingThreshold: 17
-
-  jumpForce: 15
-
-  cooldown: 0.2
-  shoots: 100
+  nextJumpHeightThreshold: -4
+  shootingHeightThreshold: 4
+  cooldown: 0.3
   projectileStartingForce: 1000
   projectileDamage: 4
   projectileDistanceMultiplier: 40
-  shootSpread: 8
+  shootSpread: 5
