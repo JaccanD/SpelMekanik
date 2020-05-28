@@ -13,6 +13,7 @@ public class BossProjectile : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 5f);
+        
     }
     public void SetDamage(float damage)
     {

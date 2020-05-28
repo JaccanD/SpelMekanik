@@ -41,8 +41,9 @@ public class EnemyAttackState : EnemyBaseState
 
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
         EventSystem.Current.FireEvent(new Pushed(Enemy.player.gameObject, Enemy.transform.position, pushAmount, upPushAmount, attackStunDuration));
+        EventSystem.Current.FireEvent(new EnemyAttackingEvent(Enemy.gameObject));
         currentCool = attackCooldown;
-    }
+    } 
     public override void Exit()
     {
         Enemy.agent.isStopped = false;
