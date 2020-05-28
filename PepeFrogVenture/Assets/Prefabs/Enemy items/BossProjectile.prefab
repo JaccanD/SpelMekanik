@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8510903942340083073}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 5680829601080506890, guid: c519b853d6e03e64f9fbc00979e5f806, type: 3}
 --- !u!23 &603480531997564384
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107,9 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5465b1bbb2f1d449089f7f73ec4f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 49425
   bossProjectileSplash: {fileID: 6415415615224806426, guid: 801b2b6fbd292dc43ab664acc344562a,
     type: 3}
 --- !u!54 &-4494846106007385721

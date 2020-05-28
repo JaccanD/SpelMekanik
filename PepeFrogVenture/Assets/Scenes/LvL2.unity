@@ -1672,6 +1672,7 @@ MonoBehaviour:
   staticFriction: 0.7
   dynamicFriction: 0.6
   airResistance: 0.4
+  LandingCheckDistance: 0
 --- !u!114 &391620672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,6 +1693,7 @@ MonoBehaviour:
     m_Bits: 2560
   camera: {fileID: 725461358}
   cooldown: 0
+  mouth: {fileID: 0}
 --- !u!114 &391620673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1974,6 +1976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 2063756334}
   isPaused: 0
+  firstSelected: {fileID: 0}
 --- !u!4 &438711398
 Transform:
   m_ObjectHideFlags: 0
