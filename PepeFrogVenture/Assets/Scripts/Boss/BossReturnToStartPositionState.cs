@@ -8,7 +8,6 @@ using Callback;
 [CreateAssetMenu(menuName = "BossState/BossReturnToStartPositionState")]
 public class BossReturnToStartPositionState : BossBaseState
 {
-    private Vector3 startPosition;
     private Rigidbody rb;
     private BoxCollider collider;
 
@@ -21,7 +20,7 @@ public class BossReturnToStartPositionState : BossBaseState
     public override void Run()
     {
         CollisionDetection();
-        CheckBossDepth();
+        CheckBossHeight();
     }
     private void CollisionDetection()
     {
@@ -41,11 +40,11 @@ public class BossReturnToStartPositionState : BossBaseState
             }
         }
     }
-    private void CheckBossDepth()
+    private void CheckBossHeight()
     {
-        if (Position.y < startPosition.y - 5)
+        if (Position.y < StartPosition.y - 5)
         {
-            Position = Boss.GetStartPosition() + Vector3.down * 5;
+            Position = StartPosition + Vector3.down * 5;
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
             rb.useGravity = false;

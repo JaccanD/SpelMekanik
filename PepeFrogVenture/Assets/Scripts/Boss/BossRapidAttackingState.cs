@@ -33,7 +33,7 @@ public class BossRapidAttackingState : BossBaseState
         if (currentCool > 0)
             return;
         EventSystem.Current.FireEvent(new BossRapidAttackEvent());
-        SpreadShoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
+        Shoot(projectileStartingForce, projectileDistanceMultiplier, projectileDamage, shootSpread);
         shootsLeftBeforeSubmerge -= 1;
         if (shootsLeftBeforeSubmerge < 1)
         {
