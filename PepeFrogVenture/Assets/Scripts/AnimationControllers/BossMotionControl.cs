@@ -16,6 +16,7 @@ public class BossMotionControl: MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(BossChargeAttackEvent), BossChargeAttack);
         EventSystem.Current.RegisterListener(typeof(BossRapidAttackEvent), BossRapidAttack);
         EventSystem.Current.RegisterListener(typeof(BossSuperAttackEvent), BossSuperAttack);
+        EventSystem.Current.RegisterListener(typeof(BossJumpingEvent), BossJump);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossDead);
     }
 
@@ -47,6 +48,11 @@ public class BossMotionControl: MonoBehaviour
     public void BossSuperAttack(Callback.Event eb)
     {
         anim.SetTrigger("SuperAttack");
+    }
+
+    public void BossJump(Callback.Event eb)
+    {
+        anim.SetTrigger("Jump");
     }
 
     public void BossDead(Callback.Event eb)
