@@ -49,9 +49,9 @@ public class BossBaseState : State
         //float zRotation = Random.Range(-shootSpread, shootSpread);
         Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
         newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * randomSpread/*Quaternion.Euler(xRotation, yRotation, zRotation)*/);
-        //newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+        newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
-        //newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
+        newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 
         //EventSystem.Current.FireEvent(new BossShootingEvent());
     }
