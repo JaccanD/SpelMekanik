@@ -10,8 +10,6 @@ public class MotionControl : MonoBehaviour
     private Animator anim;
     private float speed;
     private float direction;
-    private bool falling;
-    private float t;
     private State CurrentState { get { return controller.InState; } } 
 
     private PlayerControl controller;
@@ -25,16 +23,12 @@ public class MotionControl : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(HookHitEvent), Swing);
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), WaterBounce);
         EventSystem.Current.RegisterListener(typeof(PlayerLandingEvent), Land);
+        EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), Give);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.Interact)))
-        //{
-        //    EventSystem.Current.FireEvent(new PlayerDabbing(transform.position));
-        //    anim.SetTrigger("Dab");
-        //}
 
         if (CurrentState.GetType() == typeof(PlayerControlMovementState) || CurrentState.GetType() == typeof(PlayerControlIdleState))
         {
@@ -87,5 +81,10 @@ public class MotionControl : MonoBehaviour
         anim.SetTrigger("Land");
         anim.ResetTrigger("Jump");
         anim.ResetTrigger("Swing");
+    }
+
+    public void Give(Callback.Event eb)
+    {
+        anim.SetTrigger("Give");
     }
 }
