@@ -5502,6 +5502,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 989878451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &644523036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644523037}
+  - component: {fileID: 644523038}
+  m_Layer: 0
+  m_Name: BossProjectilePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &644523037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644523036}
+  m_LocalRotation: {x: -0, y: 0.7037668, z: -0, w: 0.7104311}
+  m_LocalPosition: {x: 3.4150348, y: 3.4570818, z: 4.905718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1875772515}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &644523038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644523036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86cfc36ee0d0f4685391373ea1a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 8510903942340083073, guid: 13da8831c602e0c44af640414bbf4f91,
+    type: 3}
+  amountOfPooledObjects: 15
 --- !u!1001 &647112317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14338,6 +14384,7 @@ MonoBehaviour:
   - {fileID: 1101698764}
   - {fileID: 731818726}
   - {fileID: 735692884}
+  projectilePool: {fileID: 644523038}
   projectileStartingForce: 50
   projectileDamage: 2
   projectileDistanceForceMultiplier: 100
@@ -16541,6 +16588,7 @@ Transform:
   - {fileID: 1101698765}
   - {fileID: 731818727}
   - {fileID: 735692885}
+  - {fileID: 644523037}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -89.46, z: 0}
