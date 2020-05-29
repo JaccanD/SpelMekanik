@@ -38,12 +38,13 @@ public abstract class PlayerBaseState : State
         Vector3 nextMove = CheckCollision(Velocity * Time.deltaTime);
         Transform.position += nextMove;
     }
-    protected bool GroundCheck()
+    protected /*bool*/RaycastHit GroundCheck()
     {
         Vector3 topPoint = Center + Vector3.up * (Coll.height / 2 - Coll.radius);
         Vector3 botPoint = Center + Vector3.down * (Coll.height / 2 - Coll.radius);
         RaycastHit cast;
-        return Physics.CapsuleCast(topPoint, botPoint, Coll.radius, Vector3.down, out cast, SkinWidth + GroundCheckDistance, CollisionMask, QueryTriggerInteraction.Ignore);
+        Physics.CapsuleCast(topPoint, botPoint, Coll.radius, Vector3.down, out cast, SkinWidth + GroundCheckDistance, CollisionMask, QueryTriggerInteraction.Ignore);
+        return cast;/*Physics.CapsuleCast(topPoint, botPoint, Coll.radius, Vector3.down, out cast, SkinWidth + GroundCheckDistance, CollisionMask, QueryTriggerInteraction.Ignore);*/
     }
     protected Vector3 CheckCollision(Vector3 startingVelocity) 
     {
