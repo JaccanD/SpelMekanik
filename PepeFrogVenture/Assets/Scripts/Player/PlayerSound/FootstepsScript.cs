@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Callback;
 // Author: Jack Noaksson
 public class FootstepsScript : MonoBehaviour
 {
 
     [SerializeField] private AudioSource FootstepsSource; //Jack 
-
+    [SerializeField] private LayerMask collisionMask;
 
     [Header("Sounds")]
     private double time; // Jack
     private float filterTime; // Jack
     private string colliderType; // Jack
+    private CapsuleCollider collider;
     public ParticleSystem grassParticle;
     public AudioClip defaultSound; // Jack                      //Detta är bara betan tills animationerna är klara
     public AudioClip stockSound; // Jack
@@ -25,6 +27,8 @@ public class FootstepsScript : MonoBehaviour
         time = AudioSettings.dspTime; // Jack
         filterTime = 0.2f;
         FootstepsSource.volume = 0.12f;
+
+        collider = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,7 @@ public class FootstepsScript : MonoBehaviour
     {
         
     }
+
 
     private void OnCollisionEnter(Collision col) // Jack
     {
@@ -70,6 +75,9 @@ public class FootstepsScript : MonoBehaviour
 
     private void PlayStaticFootstepSound() // Jack
     {
+
+        string groundTag = CheckGroundTag();
+        Debug.Log(groundTag);
         if (AudioSettings.dspTime < time + filterTime)
         {
             return;
@@ -80,5 +88,17 @@ public class FootstepsScript : MonoBehaviour
         }
         time = AudioSettings.dspTime;
         grassParticle.Play();
+    }
+    private string CheckGroundTag()
+    {
+        Vector3 topPoint = transform.position + Vector3.up * (collider.height - collider.radius);
+        Vector3 botPoint = transform.position + Vector3.up * collider.radius;
+
+        Physics.CapsuleCast(topPoint, botPoint, collider.radius, Vector3.down, out RaycastHit cast, 5f, collisionMask);
+        if(cast.collider != null)
+        {
+            return cast.collider.tag;
+        }
+        return "nothing";
     }
 }
