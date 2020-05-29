@@ -14,6 +14,7 @@ public class FishPatrol : MonoBehaviour
 
     private void Update()
     {
+        Rotate();
         MoveTowardsNextPoint();
     }
 
@@ -38,5 +39,15 @@ public class FishPatrol : MonoBehaviour
     {
         currentIndex++;
         currentIndex = currentIndex % points.Length;
+    }
+    void Rotate()
+    {
+        Vector3 between = nextPoint.transform.position - transform.position;
+
+        between.y = 0;
+
+        Quaternion rotation = Quaternion.LookRotation(between);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
     }
 }
