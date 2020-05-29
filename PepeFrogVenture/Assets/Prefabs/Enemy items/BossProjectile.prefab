@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8510903942340083073}
-  m_Mesh: {fileID: 5680829601080506890, guid: c519b853d6e03e64f9fbc00979e5f806, type: 3}
+  m_Mesh: {fileID: -4473154116820419545, guid: ca6185691c3c95e44a22579152314d80, type: 3}
 --- !u!23 &603480531997564384
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -158,6 +158,11 @@ PrefabInstance:
       propertyPath: cullingMode
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4380099247912140626, guid: 67852224497a43749af0a7972b6f8c4c,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5104289690960816468, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,12 +171,12 @@ PrefabInstance:
     - target: {fileID: 5104289690960816468, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5104289690960816468, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5104289690960816468, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
