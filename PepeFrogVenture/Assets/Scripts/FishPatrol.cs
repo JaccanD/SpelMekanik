@@ -28,7 +28,7 @@ public class FishPatrol : MonoBehaviour
     }
     bool NextPointReached()
     {
-        if(Vector3.Distance(transform.position, nextPoint.transform.position) < 0.1f)
+        if(Vector3.Distance(transform.position, nextPoint.transform.position) < 0.5f)
         {
             IncrementIndex();
             return true;
