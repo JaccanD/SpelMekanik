@@ -52,21 +52,22 @@ public class SpawnerController : MonoBehaviour
                 offset.x *= 3;
                 offset.z *= 3;
                 spawnPoint += offset;
-                //SpawnFly(spawnPoint, spawnTarget);
-                GameObject newFlies = Instantiate(fireFlyPrefab, spawnPoint, transform.rotation);
-                newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
+                SpawnFly(spawnPoint, spawnTarget);
+                //GameObject newFlies = Instantiate(fireFlyPrefab, spawnPoint, transform.rotation);
+                //newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
                 IsOccupied[spawnTarget] = true;
                 currentChildren++;
                 timer = 0;
             }
     }
-    //private void SpawnFly(Vector3 spawnPoint, GameObject spawnTarget)
-    //{
-    //    GameObject newFlies = fireFlyPool.GetObjectInstance();
-    //    newFlies.transform.position = spawnPoint;
-    //    newFlies.transform.rotation = transform.rotation;
-    //    newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
-    //}
+    private void SpawnFly(Vector3 spawnPoint, GameObject spawnTarget)
+    {
+        GameObject newFly = fireFlyPool.GetObjectInstance();
+        newFly.transform.position = spawnPoint;
+        newFly.transform.rotation = transform.rotation;
+        newFly.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
+        newFly.GetComponent<FireFlyRoaming>().SetStartingPositions();
+    }
     public void OnLilyPadDestroyed(Callback.Event eb)
     {
         LilyPadDestroyedEvent e = (LilyPadDestroyedEvent)eb;
