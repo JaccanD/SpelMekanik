@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Callback;
-// Author: August Brunnsätter
+// Author: August Brunnsäter
 public class FireflyInBelly : MonoBehaviour
 {
     public ParticleSystem BellyGlow;
