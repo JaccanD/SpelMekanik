@@ -66,7 +66,7 @@ public class SpawnerController : MonoBehaviour
         newFly.transform.position = spawnPoint;
         newFly.transform.rotation = transform.rotation;
         newFly.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
-        newFly.GetComponent<FireFlyRoaming>().SetStartingPositions();
+        newFly.SetActive(true);
     }
     public void OnLilyPadDestroyed(Callback.Event eb)
     {

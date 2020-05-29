@@ -27,7 +27,6 @@ public class ObjectPooling : MonoBehaviour
         {
             if (!pooledObjects[i].activeInHierarchy)
             {
-                pooledObjects[i].SetActive(true);
                 return pooledObjects[i];
             }
         }

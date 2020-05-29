@@ -18722,6 +18722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 1259476734}
   isPaused: 0
+  controller: 0
   firstSelected: {fileID: 1415080848}
 --- !u!4 &589123414
 Transform:
@@ -31279,6 +31280,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163cdfb82df761c4db913ea62b778540, type: 3}
+--- !u!1 &965467651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965467653}
+  - component: {fileID: 965467652}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965467652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965467651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a994e323c03947145bdbe1fc4c1b57ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DifferentObjectsToPool:
+  - objectToPool: {fileID: 4268898367792873684, guid: d1a076914d823744781c94f11ef00fd8,
+      type: 3}
+    pooledAmount: 10
+  - objectToPool: {fileID: 5269876719919793408, guid: 0db393337aea21b47846f75ea0f2cbfe,
+      type: 3}
+    pooledAmount: 15
+  - objectToPool: {fileID: 3896928112521868876, guid: 8913b4d3d44384e448c4f6291c71e8c6,
+      type: 3}
+    pooledAmount: 3
+  pooledObjects: []
+--- !u!4 &965467653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965467651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 48.811512, y: 8.475038, z: 105.39744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &967150880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: d06c26b8ce25fe044bcfeb43f813c08c,
