@@ -10,6 +10,13 @@ public class PlayerControlJumpState : PlayerControlInAirState
     public override void Enter()
     {
         EventSystem.Current.FireEvent(new PlayerJumpEvent());
+        Vector3 temp = Velocity;
+        temp.y = 0;
+        Debug.Log(temp.magnitude);
+        if(temp.magnitude < 4)
+        {
+            Velocity += Direction * 2;
+        }
         Velocity += Vector3.up * jumpForce;
     }
     public override void Run()
