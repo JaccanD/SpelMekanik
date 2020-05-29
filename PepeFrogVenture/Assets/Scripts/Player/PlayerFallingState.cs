@@ -10,7 +10,7 @@ public class PlayerFallingState : PlayerBaseState
     [SerializeField] private float FallingGravity;
     public override void Run()
     {
-        if (GroundCheck())
+        if (GroundCheck().collider)
         {
             SwitchToGroundedState();
         }

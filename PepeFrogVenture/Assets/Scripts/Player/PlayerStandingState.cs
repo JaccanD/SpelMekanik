@@ -24,7 +24,7 @@ public class PlayerStandingState : PlayerBaseState
             stateMachine.TransitionTo<PlayerMovingState>();
             return;
         }
-        if (!GroundCheck())
+        if (!GroundCheck().collider)
         {
             stateMachine.TransitionTo<PlayerFallingState>();
             return;

@@ -13,15 +13,18 @@ public class PlayerMovingState : PlayerBaseState
 
     public override void Enter()
     {
+        Debug.Log("moving");
         MovePlayer();
     }
     public override void Run()
     {
-        if (!GroundCheck())
+        RaycastHit cast = GroundCheck();
+        if (/*!GroundCheck()*/cast.collider)
         {
             stateMachine.TransitionTo<PlayerFallingState>();
             return;
         }
+        EventSystem.Current.FireEvent(new PlayerWalkingEvent(cast.collider.tag));
         if (Input.GetKeyDown(KeyCode.Space))
         {
             EventSystem.Current.FireEvent(new PlayerJumpEvent());
