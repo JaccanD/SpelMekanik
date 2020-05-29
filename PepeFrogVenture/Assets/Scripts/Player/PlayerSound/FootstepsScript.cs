@@ -12,6 +12,7 @@ public class FootstepsScript : MonoBehaviour
     private double time; // Jack
     private float filterTime; // Jack
     private string colliderType; // Jack
+    public ParticleSystem grassParticle;
     public AudioClip defaultSound; // Jack                      //Detta är bara betan tills animationerna är klara
     public AudioClip stockSound; // Jack
     public AudioClip lilySound; // Jack
@@ -78,5 +79,6 @@ public class FootstepsScript : MonoBehaviour
             FootstepsSource.PlayOneShot(defaultSound);
         }
         time = AudioSettings.dspTime;
+        grassParticle.Play();
     }
 }

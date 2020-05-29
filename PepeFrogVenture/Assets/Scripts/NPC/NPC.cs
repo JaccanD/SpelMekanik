@@ -13,6 +13,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject RespawnPoint;
     [SerializeField] private float turnSpeed;
 
+    [SerializeField] private AudioSource NPCAudioSource;
+    [SerializeField] private AudioClip RecieveBluberry;
+
     private GameObject player;
 
     int currentDialog = 0;
@@ -54,6 +57,7 @@ public class NPC : MonoBehaviour
         if (QuestDone)
         {
             currentDialog = 3;
+            NPCAudioSource.PlayOneShot(RecieveBluberry);
         }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
     }

@@ -13,10 +13,12 @@ public class BossBaseState : State
     protected Vector3 Position { get { return Boss.transform.position; } set { Boss.transform.position = value; } }
     protected Vector3 StartPosition { get { return Boss.GetStartPosition(); } }
     protected GameObject[] SuperJumpPoints { get { return Boss.GetSuperJumpPoints(); } }
-    protected GameObject Projectile { get { return Boss.getProjectile(); } }
+    protected GameObject Projectile { get { return Boss.GetProjectile(); } }
+    protected GameObject ShootPoint { get { return Boss.GetShootPoint(); } }
     protected float projectileDamage { get { return Boss.GetProjectileDamage(); } }
     protected float projectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
     protected float projectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
+    protected ObjectPooling projectilePool { get { return Boss.GetProjectilePool(); } }
 
     protected void RotateTowardPlayer(Vector3 rotateTowards, float rotationSpeed)
     {
@@ -43,13 +45,18 @@ public class BossBaseState : State
         float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
-        GameObject newProjectile;
-        //float xRotation = Random.Range(-shootSpread, shootSpread);
-        //float yRotation = Random.Range(-shootSpread, shootSpread);
-        //float zRotation = Random.Range(-shootSpread, shootSpread);
+        GameObject newProjectile = projectilePool.GetObjectInstance();
         Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
-        newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation * randomSpread/*Quaternion.Euler(xRotation, yRotation, zRotation)*/);
+        newProjectile.transform.position = ShootPoint.transform.position/*ShootPoint.transform.position*/;
+        newProjectile.transform.rotation = ShootPoint.transform.rotation * randomSpread/*ShootPoint.transform.rotation * randomSpread*/;
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+        //GameObject newProjectile;
+        ////float xRotation = Random.Range(-shootSpread, shootSpread);
+        ////float yRotation = Random.Range(-shootSpread, shootSpread);
+        ////float zRotation = Random.Range(-shootSpread, shootSpread);
+        //Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
+        //newProjectile = Instantiate(Projectile, Boss.GetShootPoint().transform.position, Boss.GetShootPoint().transform.rotation * randomSpread/*Quaternion.Euler(xRotation, yRotation, zRotation)*/);
+        //newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
 
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
 

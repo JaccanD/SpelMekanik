@@ -48,12 +48,12 @@ public class BossAttackingState : BossBaseState
     }
     private void ChooseSpecialAttack()
     {
-        if (Boss.getHealth() < 15 && Random.Range(0, 100) <= rapidAttackChance)
+        if (Boss.GetHealth() < 15 && Random.Range(0, 100) <= rapidAttackChance)
         {
             stateMachine.TransitionTo<BossRapidAttackingState>();
             return;
         }
-        if (Boss.getHealth() < 11 && Random.Range(0, 100) <= chargeAttackChance)
+        if (Boss.GetHealth() < 11 && Random.Range(0, 100) <= chargeAttackChance)
         {
             stateMachine.TransitionTo<BossChargeState>();
             return;

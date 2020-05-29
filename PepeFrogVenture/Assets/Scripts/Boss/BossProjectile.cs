@@ -10,9 +10,14 @@ public class BossProjectile : MonoBehaviour
     private float projectileDamage = 3;
     [SerializeField] private ParticleSystem bossProjectileSplash;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    Destroy(gameObject, 5f);
+
+    //}
+    private void OnEnable()
     {
-        Destroy(gameObject, 5f);
+        Invoke("DisableThisObject", 5f);
         
     }
     public void SetDamage(float damage)
@@ -26,6 +31,13 @@ public class BossProjectile : MonoBehaviour
             GameObject.Instantiate(bossProjectileSplash, transform.position, transform.rotation);
             EventSystem.Current.FireEvent(new PlayerHitEvent(collision.gameObject, projectileDamage));
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        DisableThisObject();
+    }
+    private void DisableThisObject()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        gameObject.SetActive(false);
     }
 }
