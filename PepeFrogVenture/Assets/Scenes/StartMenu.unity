@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 278731988}
   - component: {fileID: 278731987}
   m_Layer: 5
-  m_Name: Boss version 2
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 278731987}
-        m_MethodName: BossTwo
+        m_MethodName: DoQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -587,7 +587,7 @@ RectTransform:
   m_Children:
   - {fileID: 1435011370}
   m_Father: {fileID: 1377806157}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -856,7 +856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Boss version 2
+  m_Text: Avsluta
 --- !u!222 &1210881662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -877,6 +877,7 @@ GameObject:
   - component: {fileID: 1377806156}
   - component: {fileID: 1377806155}
   - component: {fileID: 1377806154}
+  - component: {fileID: 1377806158}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -956,8 +957,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1537075725}
-  - {fileID: 1527495666}
   - {fileID: 747804382}
+  - {fileID: 1527495666}
   - {fileID: 329049015}
   - {fileID: 278731986}
   m_Father: {fileID: 0}
@@ -968,6 +969,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1377806158
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377806153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1435011369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1290,7 @@ PrefabInstance:
     - target: {fileID: 7649604454506144737, guid: 072a551e8e6b67e49ac3f897045ca509,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7649604454506144737, guid: 072a551e8e6b67e49ac3f897045ca509,
         type: 3}
