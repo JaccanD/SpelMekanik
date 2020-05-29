@@ -11,6 +11,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject Target;
     [SerializeField] private float TalkRadius = 2.5f;
     [SerializeField] private GameObject RespawnPoint;
+    
+
+    private GameObject player;
 
     int currentDialog = 0;
     private bool QuestDone = false;
@@ -18,27 +21,20 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject TalkPrefab;
     private GameObject TalkMarker;
 
-    /*private void Update()
+    private void Update()
     {
-        TalkMarker.SetActive(false);
-        Collider[] colliders = Physics.OverlapSphere(transform.position, TalkRadius);
-        for(int i = 0; i < colliders.Length; i++)
+        if(Vector3.Distance(transform.position, player.transform.position) < 5)
         {
-            if(colliders[i].gameObject.tag == "Player")
-            {
-                if(TalkMarker != null)
-                {
-                    TalkMarker.SetActive(true);
-                }
-            }
+            RotateTowardsPlayer();
         }
-    }*/
+    }
     private void Awake()
     {
         TalkMarker = GameObject.Instantiate(TalkPrefab, transform.position, transform.rotation);
         TalkMarker.transform.position = transform.position + Vector3.up;
         TalkMarker.SetActive(false);
         Target.SetActive(true);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     public void Talk()
     {
@@ -88,5 +84,16 @@ public class NPC : MonoBehaviour
         if (RespawnPoint != null)
             EventSystem.Current.FireEvent(new RespawnPointReachedEvent(RespawnPoint));
         EventSystem.Current.FireEvent(new QuestDoneEvent(gameObject));
+    }
+
+    private void RotateTowardsPlayer()
+    {
+        Vector3 between = player.transform.position - transform.position;
+
+        between.y = 0;
+
+        Quaternion rotation = Quaternion.LookRotation(between);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
     }
 }
