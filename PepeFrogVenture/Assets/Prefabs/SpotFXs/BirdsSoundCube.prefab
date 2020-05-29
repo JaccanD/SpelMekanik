@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1913093605064681201}
   - component: {fileID: 1913093605064681202}
   - component: {fileID: 1913093605064681203}
-  - component: {fileID: 1913093605064681204}
+  - component: {fileID: 1879178132175527595}
   m_Layer: 0
   m_Name: BirdsSoundCube
   m_TagString: Untagged
@@ -117,7 +117,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 250
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -192,7 +192,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1913093605064681204
+--- !u!114 &1879178132175527595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,9 +201,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913093605064681205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec26ae69f3f06149a0078cc68f498c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ddaa9fb7acd8184496b9452de5d98cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDelay: 3
-  MaxDelay: 6
+  MinDelay: 2
+  MaxDelay: 4
   SpotFX: {fileID: 8300000, guid: 470f403a076fd564d8825d2bc68c83ae, type: 3}
