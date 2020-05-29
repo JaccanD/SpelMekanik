@@ -11,7 +11,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject Target;
     [SerializeField] private float TalkRadius = 2.5f;
     [SerializeField] private GameObject RespawnPoint;
-    
+    [SerializeField] private float turnSpeed;
 
     private GameObject player;
 
@@ -94,6 +94,6 @@ public class NPC : MonoBehaviour
 
         Quaternion rotation = Quaternion.LookRotation(between);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
     }
 }
