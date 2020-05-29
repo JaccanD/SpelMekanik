@@ -857,6 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94340474}
   - component: {fileID: 94340473}
+  - component: {fileID: 94340475}
   m_Layer: 0
   m_Name: FireFlySpawner
   m_TagString: Untagged
@@ -899,6 +900,7 @@ MonoBehaviour:
   - {fileID: 138914427}
   - {fileID: 1902116525}
   - {fileID: 487566601}
+  fireFlyPool: {fileID: 94340475}
 --- !u!4 &94340474
 Transform:
   m_ObjectHideFlags: 0
@@ -913,6 +915,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &94340475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94340472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86cfc36ee0d0f4685391373ea1a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 4268898367792873684, guid: d1a076914d823744781c94f11ef00fd8,
+    type: 3}
+  amountOfPooledObjects: 10
 --- !u!1 &100593007
 GameObject:
   m_ObjectHideFlags: 0
@@ -11136,7 +11153,7 @@ MonoBehaviour:
   waterSplash: {fileID: 6025584178970722442, guid: 24be41033cea57e4486677bd07fe4772,
     type: 3}
   WaterSound: {fileID: 8300000, guid: 47f850c76b7f1d54b82fba2f1ce774e6, type: 3}
-  damage: 4
+  damage: 2
   pushbackForce: 10
   pushbackHeight: 10
 --- !u!65 &1298640330
