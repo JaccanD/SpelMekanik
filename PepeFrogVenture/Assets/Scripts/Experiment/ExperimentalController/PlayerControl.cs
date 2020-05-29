@@ -62,6 +62,9 @@ public class PlayerControl : MonoBehaviour
     }
     private void Update()
     {
+        if (Time.timeScale != 1)
+            return;
+
         stateMachine.Run();
 
         if (stateMachine.GetCurrentState().GetType() == typeof(PlayerControlFallingState))

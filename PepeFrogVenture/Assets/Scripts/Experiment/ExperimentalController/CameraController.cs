@@ -36,6 +36,8 @@ public class CameraController : MonoBehaviour
     }
     void LateUpdate()
     {
+        if (Time.timeScale != 1)
+            return;
         RotateCamera();
         MoveCamera();
     }
