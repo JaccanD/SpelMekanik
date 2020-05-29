@@ -13,8 +13,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject RespawnPoint;
     [SerializeField] private float turnSpeed;
 
-    [SerializeField] private AudioSource NPCAudioSource;
+    [SerializeField] private AudioSource NpcTalkAudioSource;
+    [SerializeField] private AudioSource NpcWallAudioSource;
     [SerializeField] private AudioClip RecieveBluberry;
+    [SerializeField] private AudioClip RemoveWall;
 
     private GameObject player;
 
@@ -56,8 +58,9 @@ public class NPC : MonoBehaviour
         }
         if (QuestDone)
         {
-            currentDialog = 3;
-            NPCAudioSource.PlayOneShot(RecieveBluberry);
+           currentDialog = 3;
+           NpcTalkAudioSource.PlayOneShot(RecieveBluberry);
+            NpcWallAudioSource.PlayOneShot(RemoveWall);
         }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
     }
