@@ -8,8 +8,13 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenuUI;
     [SerializeField] private bool isPaused;
+    [SerializeField] private bool controller;
 
     [SerializeField] private GameObject firstSelected;
+    private void Start()
+    {
+        Controlls.UsingController = controller;
+    }
     void Update()
     {
         if (Input.GetKeyDown(Controlls.GetKeyBinding(Function.OpenMenu)))
