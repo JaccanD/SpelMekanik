@@ -7392,15 +7392,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8975671255921840674, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975671255921840674, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975671255921840674, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975671255921840674, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7344a8ab3bbe5904d96000d21245d56c,
+        type: 3}
+    - target: {fileID: 8975671255921840676, guid: 5d7beee1f3993ab459974b780a0aaa73,
+        type: 3}
+      propertyPath: m_Name
+      value: Crosshair
+      objectReference: {fileID: 0}
     - target: {fileID: 8975671255921840677, guid: 5d7beee1f3993ab459974b780a0aaa73,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8975671255921840677, guid: 5d7beee1f3993ab459974b780a0aaa73,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7beee1f3993ab459974b780a0aaa73, type: 3}
@@ -11944,12 +11970,12 @@ PrefabInstance:
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
@@ -11990,7 +12016,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: efb778115b37a10429035f0496212e38,
+      objectReference: {fileID: 21300000, guid: 478414e89f2bf5c4eb05ef1a6822f9dc,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfa2fb42a876d14dbb961710d8a84e0, type: 3}
@@ -13862,6 +13888,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1562838206}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1563565239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4107587235668315946, guid: 25593bc9ff5d66d4d9a95f0150297dad,
+    type: 3}
+  m_PrefabInstance: {fileID: 964476832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1564086233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: 0267c62f4fba0d649a2666282ef43ab2,
@@ -15606,6 +15638,31 @@ Transform:
   m_Father: {fileID: 1258588333}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1726985019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8975671255921840676, guid: 5d7beee1f3993ab459974b780a0aaa73,
+    type: 3}
+  m_PrefabInstance: {fileID: 792892058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1726985023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726985019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fae5e22a2432840a67dee0932a0201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 1563565239}
+  toungeLength: 15
+  hookMask:
+    serializedVersion: 2
+    m_Bits: 2560
+  missColor: {r: 0.8396226, g: 0.19900799, b: 0.1782218, a: 0.627451}
+  hitColor: {r: 0.41668725, g: 0.8113208, b: 0.36356357, a: 0.627451}
 --- !u!4 &1743887410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2092314015791646139, guid: e7786ca8f36f8ca49a3cdd3fbc3e49b6,
