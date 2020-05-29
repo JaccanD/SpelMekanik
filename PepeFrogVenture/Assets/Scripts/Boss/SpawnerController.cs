@@ -9,6 +9,8 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private int maxChildren;
     [SerializeField] private float respawnDelay;
     [SerializeField] private List<GameObject> spawners;
+    //nytt
+    [SerializeField] private ObjectPooling fireFlyPool;
 
     private int currentChildren;
     private Dictionary<GameObject, bool> IsOccupied;
@@ -50,6 +52,7 @@ public class SpawnerController : MonoBehaviour
                 offset.x *= 3;
                 offset.z *= 3;
                 spawnPoint += offset;
+                //SpawnFly(spawnPoint, spawnTarget);
                 GameObject newFlies = Instantiate(fireFlyPrefab, spawnPoint, transform.rotation);
                 newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
                 IsOccupied[spawnTarget] = true;
@@ -57,6 +60,13 @@ public class SpawnerController : MonoBehaviour
                 timer = 0;
             }
     }
+    //private void SpawnFly(Vector3 spawnPoint, GameObject spawnTarget)
+    //{
+    //    GameObject newFlies = fireFlyPool.GetObjectInstance();
+    //    newFlies.transform.position = spawnPoint;
+    //    newFlies.transform.rotation = transform.rotation;
+    //    newFlies.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
+    //}
     public void OnLilyPadDestroyed(Callback.Event eb)
     {
         LilyPadDestroyedEvent e = (LilyPadDestroyedEvent)eb;

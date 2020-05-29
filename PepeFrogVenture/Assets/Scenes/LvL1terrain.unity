@@ -3597,6 +3597,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3284153873183958847, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3455126888340439873, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_Name
@@ -3702,6 +3707,11 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 1839968452}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: c1b79143f86f8904381deaf074d70d6e, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -6623,6 +6633,16 @@ PrefabInstance:
       propertyPath: dialog.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b94ec03ebb5db041a1056cdcaaf693b, type: 3}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: NpcTalkAudioSource
+      value: 
+      objectReference: {fileID: 201064622}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -6675,6 +6695,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd7306312c307a48921c402af7bd892, type: 3}
+--- !u!82 &201064622 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -3697409584309430888, guid: 3bd7306312c307a48921c402af7bd892,
+    type: 3}
+  m_PrefabInstance: {fileID: 201064621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &202800956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: 612c31422192ab042a3671c9ca36e265,
@@ -33842,6 +33868,11 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 567009088}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b94ec03ebb5db041a1056cdcaaf693b, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -42279,6 +42310,11 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 8557779}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f76c2dd80631d047909d851a53b698a, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -50271,6 +50307,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 432584803}
     m_Modifications:
+    - target: {fileID: -3697409584309430888, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2774711482185064327, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -50461,6 +50502,11 @@ PrefabInstance:
       propertyPath: dialog.Array.data[19]
       value: "H\xE4r bakom \xE4r dammen, lycka till!"
       objectReference: {fileID: 0}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: c1b79143f86f8904381deaf074d70d6e, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -53477,6 +53523,11 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 60413969}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 648f41dcc339e88408cd6334d7596226, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder
@@ -63225,6 +63276,11 @@ PrefabInstance:
       propertyPath: RespawnPoint
       value: 
       objectReference: {fileID: 7657055}
+    - target: {fileID: 3455126888340439902, guid: 3bd7306312c307a48921c402af7bd892,
+        type: 3}
+      propertyPath: RemoveWall
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b94ec03ebb5db041a1056cdcaaf693b, type: 3}
     - target: {fileID: 3609641351403872120, guid: 3bd7306312c307a48921c402af7bd892,
         type: 3}
       propertyPath: m_RootOrder

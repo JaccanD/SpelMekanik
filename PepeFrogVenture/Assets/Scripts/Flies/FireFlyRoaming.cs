@@ -21,6 +21,12 @@ public class FireFlyRoaming : MonoBehaviour
         lastPosition = transform.position;
         moveToPosition = Random.insideUnitSphere * radius + startPosition;
     }
+    //private void OnEnable()
+    //{
+    //    startPosition = transform.position;
+    //    lastPosition = transform.position;
+    //    moveToPosition = Random.insideUnitSphere * radius + startPosition;
+    //}
 
     // Update is called once per frame
     void Update()
