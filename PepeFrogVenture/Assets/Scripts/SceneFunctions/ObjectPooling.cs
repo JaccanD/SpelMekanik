@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public static ObjectPooling Current { get; private set; }
+    //public static ObjectPooling Current { get; private set; }
     [SerializeField] private GameObject pooledObject;
     [SerializeField] private int amountOfPooledObjects = 10;
 
@@ -12,7 +12,7 @@ public class ObjectPooling : MonoBehaviour
 
     void Awake()
     {
-        Current = this;
+        //Current = this;
         pooledObjects = new List<GameObject>();
         for (int i = 0; i < amountOfPooledObjects; i++)
         {
