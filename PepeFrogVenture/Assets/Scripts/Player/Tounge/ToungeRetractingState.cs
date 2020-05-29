@@ -47,7 +47,9 @@ public class ToungeRetractingState : ToungeBaseState
                 if (HitObject != null)
                 {
                     EventSystem.Current.FireEvent(new PickupEvent(HitObject));
-                    Destroy(HitObject);
+                    //Så vi kan återanvända flugor
+                    HitObject.SetActive(false);
+                    //Destroy(HitObject);
                 }
                 Destroy(Cylinder);
                 Destroy(Tounge.gameObject);

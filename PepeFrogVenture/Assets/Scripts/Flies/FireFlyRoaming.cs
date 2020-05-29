@@ -17,22 +17,28 @@ public class FireFlyRoaming : MonoBehaviour
     void Start()
     {
         collider = GetComponent<SphereCollider>();
+        //startPosition = transform.position;
+        //lastPosition = transform.position;
+        //moveToPosition = Random.insideUnitSphere * radius + startPosition;
+    }
+    private void OnEnable()
+    {
         startPosition = transform.position;
         lastPosition = transform.position;
         moveToPosition = Random.insideUnitSphere * radius + startPosition;
     }
-    //private void OnEnable()
-    //{
-    //    startPosition = transform.position;
-    //    lastPosition = transform.position;
-    //    moveToPosition = Random.insideUnitSphere * radius + startPosition;
-    //}
 
     // Update is called once per frame
     void Update()
     {
         MoveFly();
         Rotate();
+    }
+    public void SetStartingPositions()
+    {
+        startPosition = transform.position;
+        lastPosition = transform.position;
+        moveToPosition = Random.insideUnitSphere * radius + startPosition;
     }
     private void MoveFly()
     {
