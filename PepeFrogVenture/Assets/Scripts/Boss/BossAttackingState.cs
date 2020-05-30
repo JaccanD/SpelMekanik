@@ -28,7 +28,7 @@ public class BossAttackingState : BossBaseState
         RotateTowardPlayer(Player.transform.position, rotationSpeed);
         Attack();
     }
-
+    
     private void Attack()
     {
         currentCool -= Time.deltaTime;

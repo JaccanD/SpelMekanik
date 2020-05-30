@@ -11,9 +11,9 @@ public class PooledObject
 
 public class ObjectPooler : MonoBehaviour
 {
-    public static ObjectPooler instance;
-    public List<PooledObject> DifferentObjectsToPool;
-    public List<GameObject> pooledObjects;
+    public static ObjectPooler instance { get; private set; }
+    [SerializeField] private List<PooledObject> DifferentObjectsToPool;
+    private List<GameObject> pooledObjects;
 
     void Awake()
     {
