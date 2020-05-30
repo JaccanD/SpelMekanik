@@ -35,7 +35,12 @@ public class SpittingController : MonoBehaviour
     private void Shoot()
     {
         EventSystem.Current.FireEvent(new FireballshotEvent());
-        GameObject fireball = Instantiate(prefab, topPoint, RotateFireball());
+        //ändrade till att använda fireballs från vår pool istället för att instansiera nya
+        //GameObject fireball = Instantiate(prefab, topPoint, RotateFireball());
+        GameObject fireball = ObjectPooler.instance.GetPooledObject(prefab.tag);
+        fireball.transform.position = topPoint;
+        fireball.transform.rotation = RotateFireball();
+        fireball.SetActive(true);
         canShoot = false;
     }
     private Quaternion RotateFireball()

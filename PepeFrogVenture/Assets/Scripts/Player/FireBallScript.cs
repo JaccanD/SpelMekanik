@@ -30,18 +30,26 @@ public class FireBallScript : MonoBehaviour
                     GameObject.Instantiate(enemyBurned, transform.position, transform.rotation);
                     EventSystem.Current.FireEvent(new EnemyHitEvent(colls[i].transform.gameObject, Damage));
                 }
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                //Destroy(gameObject);
             }
         }
     }
     private void Awake()
     {
-        Velocity = speed * (transform.rotation * Vector3.forward);
+        
         Coll = GetComponent<SphereCollider>();
+        
+    }
+    private void OnEnable()
+    {
+        //flyttade från awake
+        Velocity = speed * (transform.rotation * Vector3.forward);
         Invoke("TimeOut", 6);
     }
     private void TimeOut()
     {
-        Destroy(transform.gameObject);
+        gameObject.SetActive(false);
+        //Destroy(transform.gameObject);
     }
 }

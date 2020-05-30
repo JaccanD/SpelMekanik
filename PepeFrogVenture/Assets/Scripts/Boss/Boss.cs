@@ -19,7 +19,6 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
     [SerializeField] private GameObject[] superJumpPoints;
-    [SerializeField] private ObjectPooling projectilePool;
 
     [Header("Shooting variables")]
     [SerializeField] private float projectileStartingForce = 50;
@@ -57,10 +56,6 @@ public class Boss : MonoBehaviour
     public float GetProjectileDistanceForceMultiplier()
     {
         return projectileDistanceForceMultiplier;
-    }
-    public ObjectPooling GetProjectilePool()
-    {
-        return projectilePool;
     }
     public GameObject[] GetSuperJumpPoints()
     {

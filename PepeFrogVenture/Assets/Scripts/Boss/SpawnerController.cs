@@ -9,8 +9,6 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] private int maxChildren;
     [SerializeField] private float respawnDelay;
     [SerializeField] private List<GameObject> spawners;
-    //nytt
-    [SerializeField] private ObjectPooling fireFlyPool;
 
     private int currentChildren;
     private Dictionary<GameObject, bool> IsOccupied;
@@ -62,7 +60,7 @@ public class SpawnerController : MonoBehaviour
     }
     private void SpawnFly(Vector3 spawnPoint, GameObject spawnTarget)
     {
-        GameObject newFly = fireFlyPool.GetObjectInstance();
+        GameObject newFly = ObjectPooler.instance.GetPooledObject(fireFlyPrefab.tag);
         newFly.transform.position = spawnPoint;
         newFly.transform.rotation = transform.rotation;
         newFly.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;

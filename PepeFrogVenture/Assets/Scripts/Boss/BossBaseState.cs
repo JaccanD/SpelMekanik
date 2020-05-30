@@ -18,7 +18,6 @@ public class BossBaseState : State
     protected float projectileDamage { get { return Boss.GetProjectileDamage(); } }
     protected float projectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
     protected float projectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
-    protected ObjectPooling projectilePool { get { return Boss.GetProjectilePool(); } }
 
     protected void RotateTowardPlayer(Vector3 rotateTowards, float rotationSpeed)
     {
@@ -45,11 +44,13 @@ public class BossBaseState : State
         float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
         float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
-        GameObject newProjectile = projectilePool.GetObjectInstance();
+        //GameObject newProjectile = projectilePool.GetObjectInstance();
+        GameObject newProjectile = ObjectPooler.instance.GetPooledObject(Projectile.tag);
         Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
         newProjectile.transform.position = ShootPoint.transform.position/*ShootPoint.transform.position*/;
         newProjectile.transform.rotation = ShootPoint.transform.rotation * randomSpread/*ShootPoint.transform.rotation * randomSpread*/;
         newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+        newProjectile.SetActive(true);
         //GameObject newProjectile;
         ////float xRotation = Random.Range(-shootSpread, shootSpread);
         ////float yRotation = Random.Range(-shootSpread, shootSpread);
