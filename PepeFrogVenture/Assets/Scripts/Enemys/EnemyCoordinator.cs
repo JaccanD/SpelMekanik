@@ -54,7 +54,6 @@ namespace EnemyAI
             AddEngagedEnemy(enemy);
             if(enemiesThatSeeThePlayer.Count == 0)
             {
-                Debug.Log("no enemy sees the player");
                 EventSystem.Current.FireEvent(new PlayerLostEvent());
                 enemiesEngaged.Clear();
             }
