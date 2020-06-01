@@ -9,8 +9,10 @@ public class Marker : MonoBehaviour
     [SerializeField] private GameObject firstSelected;
     [SerializeField] private float buttonOffset;
     [SerializeField] private float sliderOffset;
+    [SerializeField] private RectTransform canvasTransform;
 
     private GameObject selected;
+    private float ButtonOffset { get { return buttonOffset * canvasTransform.localScale.x; } }
     private void Awake()
     {
         if(Controlls.UsingController == false)
@@ -40,7 +42,7 @@ public class Marker : MonoBehaviour
             transform.position = handle.transform.position + Vector3.left * (sliderOffset + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
         }
         else
-            transform.position = selected.transform.position + Vector3.left * (buttonOffset + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
+            transform.position = selected.transform.position + Vector3.left * (ButtonOffset + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
     }
 
     private void OnEnable()
