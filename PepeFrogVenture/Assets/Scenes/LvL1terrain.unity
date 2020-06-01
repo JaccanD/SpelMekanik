@@ -1859,7 +1859,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54692049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1907,7 +1907,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54692049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ea093fde12cb71a4bb5efa16270c0dca, type: 2}
   m_CullingMode: 0
@@ -3491,6 +3491,7 @@ GameObject:
   - component: {fileID: 105844343}
   - component: {fileID: 105844342}
   - component: {fileID: 105844341}
+  - component: {fileID: 105844344}
   m_Layer: 8
   m_Name: Invisible Wall (6)
   m_TagString: Untagged
@@ -3575,6 +3576,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105844339}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &105844344
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105844339}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6719a0d30001ea439172cd09f22370f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &111000134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10775,6 +10795,7 @@ GameObject:
   - component: {fileID: 317482194}
   - component: {fileID: 317482193}
   - component: {fileID: 317482192}
+  - component: {fileID: 317482195}
   m_Layer: 8
   m_Name: Invisible Wall (3)
   m_TagString: Untagged
@@ -10862,6 +10883,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317482190}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &317482195
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317482190}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 128e3299c574bcf408c6c4f84f416d10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &317953727 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: 1d7e7fb595a1d51428d4b4e716e5ed8f,
@@ -41539,6 +41579,7 @@ GameObject:
   - component: {fileID: 1210736666}
   - component: {fileID: 1210736665}
   - component: {fileID: 1210736664}
+  - component: {fileID: 1210736667}
   m_Layer: 8
   m_Name: Invisible Wall (1)
   m_TagString: Untagged
@@ -41624,6 +41665,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210736662}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1210736667
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210736662}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09242b1f03c27da498be00be828de0b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1211982252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49867,6 +49927,7 @@ GameObject:
   - component: {fileID: 1413899184}
   - component: {fileID: 1413899183}
   - component: {fileID: 1413899182}
+  - component: {fileID: 1413899185}
   m_Layer: 8
   m_Name: Invisible Wall (4)
   m_TagString: Untagged
@@ -49949,6 +50010,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413899180}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1413899185
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413899180}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1df9bf636ac158e48a4acdf0b9309739, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1414531737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: c51917847694df6489a5154116892284,
@@ -70073,6 +70153,7 @@ GameObject:
   - component: {fileID: 1973888348}
   - component: {fileID: 1973888347}
   - component: {fileID: 1973888346}
+  - component: {fileID: 1973888350}
   m_Layer: 8
   m_Name: Invisible Wall
   m_TagString: Untagged
@@ -70091,8 +70172,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 16, z: 22.7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 9.670726, z: 22.7}
+  m_Center: {x: 0, y: -3.1646276, z: 0}
 --- !u!23 &1973888347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70160,6 +70241,25 @@ Transform:
   m_Father: {fileID: 1381982422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 30.151001, z: 0}
+--- !u!95 &1973888350
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973888345}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc0c206071c9db847a2e7f6117050f1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1978378511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71076,6 +71176,7 @@ GameObject:
   - component: {fileID: 2010601230}
   - component: {fileID: 2010601229}
   - component: {fileID: 2010601228}
+  - component: {fileID: 2010601231}
   m_Layer: 8
   m_Name: Invisible Wall (2)
   m_TagString: Untagged
@@ -71158,6 +71259,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010601226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &2010601231
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010601226}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c30c61aa293fbd4eaae25b4bf82c2ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2012239291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 163cdfb82df761c4db913ea62b778540,

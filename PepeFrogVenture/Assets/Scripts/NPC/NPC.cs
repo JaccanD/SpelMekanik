@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private AudioSource NpcWallAudioSource;
     [SerializeField] private AudioClip RecieveBluberry;
     [SerializeField] private AudioClip RemoveWall;
+    private Animator targetAnimator;
 
     private GameObject player;
 
@@ -87,7 +88,10 @@ public class NPC : MonoBehaviour
     private void Unlock()
     {
         QuestDone = true;
-        Target.SetActive(false);
+        //Target.SetActive(false);
+        targetAnimator = Target.GetComponent<Animator>();
+        targetAnimator.enabled = true;
+
         if (RespawnPoint != null)
             EventSystem.Current.FireEvent(new RespawnPointReachedEvent(RespawnPoint));
         EventSystem.Current.FireEvent(new QuestDoneEvent(gameObject));
