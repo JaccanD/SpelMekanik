@@ -1592,6 +1592,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 8faf406dbb680124087d6517dc19eb87,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ecd864128e2207c4588eb60468d4ad80, type: 2}
     - target: {fileID: -4216859302048453862, guid: 8faf406dbb680124087d6517dc19eb87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5749,7 +5754,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
