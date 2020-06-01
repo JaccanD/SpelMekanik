@@ -14,6 +14,8 @@ public class StartMenyMarker : MonoBehaviour
             SetActivateMarker(button);
 
         });
+
+        
     }
 
     void SetActivateMarker(Toggle changed)
