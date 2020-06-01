@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 // Author: Hanna Lindberg Johansson
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] private GameObject controllsMeny;
+    [SerializeField] private GameObject controllsButton;
+    [SerializeField] private GameObject controllerButton;
+    
     public void StartGame()
     {
         SceneManager.LoadScene(2);
@@ -12,7 +18,17 @@ public class SceneLoader : MonoBehaviour
 
     public void ControllHelp()
     {
-        SceneManager.LoadScene(1);
+        controllsMeny.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controllerButton);
+    }
+
+    public void ExitControlls()
+    {
+        controllsMeny.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controllsButton);
+
     }
 
     public void ReturnButton()

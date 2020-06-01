@@ -11,7 +11,6 @@ public class Marker : MonoBehaviour
     [SerializeField] private float sliderOffset;
 
     private GameObject selected;
-
     private void Awake()
     {
         if(Controlls.UsingController == false)
@@ -42,6 +41,12 @@ public class Marker : MonoBehaviour
         }
         else
             transform.position = selected.transform.position + Vector3.left * (buttonOffset + selected.GetComponent<RectTransform>().sizeDelta.x) * selected.GetComponent<RectTransform>().localScale.x;
+    }
+
+    private void OnEnable()
+    {
+        selected = EventSystem.current.currentSelectedGameObject;
+        MoveMarker();
     }
 }
 
