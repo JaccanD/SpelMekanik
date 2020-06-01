@@ -30,7 +30,7 @@ public class UseControllerCheckbox : MonoBehaviour
     void SetUsingController(Toggle changed)
     {
         Controlls.UsingController = changed.isOn;
-
+        Debug.Log(Controlls.UsingController);
         SetImage(changed.isOn);
     }
 
