@@ -68,6 +68,7 @@ public class PlayerSoundScript : MonoBehaviour
         PickupEvent e = (PickupEvent)eb;
         if(e.Pickup.tag != "Flies")
         {
+            PlayerAudioSource.PlayOneShot(PlayerPickupSound);
             return;
         }
         PlayerAudioSource.PlayOneShot(PlayerPickupSound);
