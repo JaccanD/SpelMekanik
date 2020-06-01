@@ -7,14 +7,21 @@ using Callback;
 // Author: Valter Fallsterljung
 public class BossDefeatedState : BossBaseState
 {
-    public override void Enter()
-    {
-        Boss.Invoke("Die", 5f);
+    private float currentTime = 0;
+    private bool hasDied;
+    [SerializeField] private float timeUntilDeathEvent = 5f;
 
+    public override void Run()
+    {
+        currentTime += Time.deltaTime;
+        if(currentTime > timeUntilDeathEvent && hasDied == false)
+        {
+            Die();
+            hasDied = true;
+        }
     }
     private void Die()
     {
         EventSystem.Current.FireEvent(new BossDeadEvent());
-        Destroy(Boss.gameObject);
     }
 }

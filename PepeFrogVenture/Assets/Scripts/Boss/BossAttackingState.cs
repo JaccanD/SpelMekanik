@@ -7,14 +7,19 @@ using Callback;
 // Author: Valter Falsterljung
 public class BossAttackingState : BossBaseState
 {
+    [SerializeField] private float rotationSpeed = 3;
+
     [Header("Shooting variables")]
     [SerializeField] private float cooldown;
     [SerializeField] private int shoots = 3;
-    [SerializeField] private float rotationSpeed = 3;
 
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
     [SerializeField] private float chargeAttackChance = 40f;
+
+    [Header("At what health the can do special attacks")]
+    [SerializeField] private int rapidAttackHealthThreshold = 15;
+    [SerializeField] private int chargeAttackHealthThreshold = 11;
 
     private float currentCool;
     private int shootsLeftBeforeSubmerge;
@@ -48,12 +53,12 @@ public class BossAttackingState : BossBaseState
     }
     private void ChooseSpecialAttack()
     {
-        if (Boss.GetHealth() < 15 && Random.Range(0, 100) <= rapidAttackChance)
+        if (Boss.GetHealth() < rapidAttackHealthThreshold && Random.Range(0, 100) <= rapidAttackChance)
         {
             stateMachine.TransitionTo<BossRapidAttackingState>();
             return;
         }
-        if (Boss.GetHealth() < 11 && Random.Range(0, 100) <= chargeAttackChance)
+        if (Boss.GetHealth() < chargeAttackHealthThreshold && Random.Range(0, 100) <= chargeAttackChance)
         {
             stateMachine.TransitionTo<BossChargeState>();
             return;
