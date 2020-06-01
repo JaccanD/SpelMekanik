@@ -3,7 +3,27 @@ guid: 086a8916cbe3c7046b422ff79024f229
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Svamp_03_01_Base
+    second: {fileID: 2100000, guid: 2bae032d03a2583418c43eb31c2dc854, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Svamp_03_01_Hatt
+    second: {fileID: 2100000, guid: 67a85541207a8bd478b1afec09e9effa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Svamp_03_01_Krage
+    second: {fileID: 2100000, guid: c6540a32e30bc574283c33f0c96cef34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Svamp_03_01_Undersida
+    second: {fileID: 2100000, guid: 41a102f36b70f1c4f9ac082976cfa0eb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -44,7 +64,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
