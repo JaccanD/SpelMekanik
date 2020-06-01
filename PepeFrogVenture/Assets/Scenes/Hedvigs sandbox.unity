@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5129043, g: 0.25543332, b: 0.12373206, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_AtlasSize: 512
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -72,10 +72,10 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 32
-    m_PVRSampleCount: 512
+    m_PVRDirectSampleCount: 16
+    m_PVRSampleCount: 256
     m_PVRBounces: 2
     m_PVREnvironmentSampleCount: 256
     m_PVREnvironmentReferencePointCount: 2048
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7c3c99d5dc6a6764580cfd3b4bbdf47c,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -188,10 +189,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_3
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5f3e50a58b6033142a1c5edae2f9a248,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 5f3e50a58b6033142a1c5edae2f9a248,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 5f3e50a58b6033142a1c5edae2f9a248,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f3e50a58b6033142a1c5edae2f9a248, type: 3}
@@ -364,10 +375,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_6
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0267c62f4fba0d649a2666282ef43ab2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 0267c62f4fba0d649a2666282ef43ab2,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 0267c62f4fba0d649a2666282ef43ab2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0267c62f4fba0d649a2666282ef43ab2, type: 3}
@@ -1384,10 +1405,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -2003,10 +2034,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdd8f4d24d5dad4e8bc604c51543b35, type: 3}
@@ -2278,10 +2319,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_big_9_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e520f0f34cee6344999746b32f101c8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 8e520f0f34cee6344999746b32f101c8,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 8e520f0f34cee6344999746b32f101c8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e520f0f34cee6344999746b32f101c8, type: 3}
@@ -2579,10 +2630,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -2764,10 +2825,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -3200,10 +3271,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_9
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 63802d28241880545b55da9500dc4794,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 63802d28241880545b55da9500dc4794,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 63802d28241880545b55da9500dc4794,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63802d28241880545b55da9500dc4794, type: 3}
@@ -3295,10 +3376,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -3819,10 +3910,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_4
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 14a7fd73d9120eb4c9910ec1feca1079,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 14a7fd73d9120eb4c9910ec1feca1079,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 14a7fd73d9120eb4c9910ec1feca1079,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a7fd73d9120eb4c9910ec1feca1079, type: 3}
@@ -5344,7 +5445,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6914,10 +7015,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_10
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: fbdd8f4d24d5dad4e8bc604c51543b35,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdd8f4d24d5dad4e8bc604c51543b35, type: 3}
@@ -7245,10 +7356,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -7433,7 +7554,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!114 &793867909
 MonoBehaviour:
@@ -8484,10 +8605,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -8744,10 +8875,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_6_2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0267c62f4fba0d649a2666282ef43ab2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 0267c62f4fba0d649a2666282ef43ab2,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 0267c62f4fba0d649a2666282ef43ab2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0267c62f4fba0d649a2666282ef43ab2, type: 3}
@@ -8824,10 +8965,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_7
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5ddb3165ab39b2c428c3a9690ebc7ad0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 5ddb3165ab39b2c428c3a9690ebc7ad0,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 5ddb3165ab39b2c428c3a9690ebc7ad0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ddb3165ab39b2c428c3a9690ebc7ad0, type: 3}
@@ -9003,10 +9154,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_big_5_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184, type: 3}
@@ -11808,10 +11969,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -11996,12 +12167,12 @@ PrefabInstance:
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 14.900024
+      value: 14.899902
       objectReference: {fileID: 0}
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.699997
+      value: -41.700012
       objectReference: {fileID: 0}
     - target: {fileID: 1904736128360389812, guid: 5dfa2fb42a876d14dbb961710d8a84e0,
         type: 3}
@@ -12309,10 +12480,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_8
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 420fc877a1171194ebd084ee36c1c503,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 420fc877a1171194ebd084ee36c1c503,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 420fc877a1171194ebd084ee36c1c503,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420fc877a1171194ebd084ee36c1c503, type: 3}
@@ -12606,7 +12787,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1453046953
 Transform:
@@ -14351,10 +14532,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_5
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 325a048d92e92b7489be7666de4d6ebb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 325a048d92e92b7489be7666de4d6ebb,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 325a048d92e92b7489be7666de4d6ebb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 325a048d92e92b7489be7666de4d6ebb, type: 3}
@@ -14461,10 +14652,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_7
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0080c709750ca8640975419b01eb2df7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 0080c709750ca8640975419b01eb2df7,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 0080c709750ca8640975419b01eb2df7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0080c709750ca8640975419b01eb2df7, type: 3}
@@ -14646,10 +14847,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -15158,7 +15369,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1687167503
 Transform:
@@ -15917,10 +16128,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_big_5_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184, type: 3}
@@ -16497,10 +16718,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -16777,10 +17008,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_small_1_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 74957cfb32c6b5949aea2a9021bf708f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74957cfb32c6b5949aea2a9021bf708f, type: 3}
@@ -17052,10 +17293,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_big_5_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef8ba44bbfa91d4caf7bcb907ee8184, type: 3}
@@ -17264,7 +17515,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 315907855}
   isPaused: 0
-  controller: 0
   firstSelected: {fileID: 315907854}
 --- !u!4 &2015003437
 Transform:
@@ -17437,7 +17687,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -18187,10 +18437,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIsland_12_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7fb148bdee0f30840afa2626c331bb58,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7fb148bdee0f30840afa2626c331bb58,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7fb148bdee0f30840afa2626c331bb58,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb148bdee0f30840afa2626c331bb58, type: 3}
