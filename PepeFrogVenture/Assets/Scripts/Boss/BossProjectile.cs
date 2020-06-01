@@ -8,17 +8,22 @@ public class BossProjectile : MonoBehaviour
 {
     private float projectileForce;
     private float projectileDamage = 3;
+    private float currentLifeTime;
+
     [SerializeField] private ParticleSystem bossProjectileSplash;
+    [SerializeField] private float maxLifeTime = 5;
 
-    //private void Start()
-    //{
-    //    Destroy(gameObject, 5f);
-
-    //}
     private void OnEnable()
     {
-        Invoke("DisableThisObject", 5f);
-        
+        currentLifeTime = 0;
+    }
+    private void Update()
+    {
+        currentLifeTime += Time.deltaTime;
+        if(currentLifeTime > maxLifeTime)
+        {
+            DisableThisObject();
+        }
     }
     public void SetDamage(float damage)
     {
@@ -28,10 +33,9 @@ public class BossProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.Instantiate(bossProjectileSplash, transform.position, transform.rotation);
+            Instantiate(bossProjectileSplash, transform.position, transform.rotation);
             EventSystem.Current.FireEvent(new PlayerHitEvent(collision.gameObject, projectileDamage));
         }
-        //Destroy(gameObject);
         DisableThisObject();
     }
     private void DisableThisObject()
