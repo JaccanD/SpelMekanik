@@ -32,7 +32,8 @@ public static class Controlls
             { Function.OpenMenu, KeyCode.Joystick1Button7 } // Start
         };
 
-    public static bool UsingController { get; set; } = false;
+    private static bool usingController = false;
+    public static bool UsingController { get { return usingController; } set { Debug.Log(UnityEngine.StackTraceUtility.ExtractStackTrace()); usingController = value; } }
     public static Dictionary<Function, KeyCode> CurrentKeyMap { get { return UsingController == true ? controllerBindings : keyBindings; } }
     /// <summary>
     /// Returns the Keycode the function is bound too
