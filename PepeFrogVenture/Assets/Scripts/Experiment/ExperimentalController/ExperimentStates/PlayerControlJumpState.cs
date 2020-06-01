@@ -12,7 +12,6 @@ public class PlayerControlJumpState : PlayerControlInAirState
         EventSystem.Current.FireEvent(new PlayerJumpEvent());
         Vector3 temp = Velocity;
         temp.y = 0;
-        Debug.Log(temp.magnitude);
         if(temp.magnitude < 4)
         {
             Velocity += Direction * 2;

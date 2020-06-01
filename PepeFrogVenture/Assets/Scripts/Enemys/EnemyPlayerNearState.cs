@@ -8,7 +8,6 @@ public class EnemyPlayerNearState : EnemyBaseState
     {
         EnemyCoordinator.current.AddEngagedEnemy(Enemy);
         EnemyCoordinator.current.RemoveEnemyInRangeOfPlayer(Enemy);
-        Debug.Log("enemynear");
     }
     public override void Run()
     {
