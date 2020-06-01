@@ -2072,6 +2072,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FootstepsSource: {fileID: 4107587235453292536}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
   grassParticle: {fileID: 2959461903947044283}
   defaultSound: {fileID: 8300000, guid: e990aeaf0ae2c5c45bfaac47f50861cd, type: 3}
   stockSound: {fileID: 0}
@@ -3129,6 +3132,11 @@ PrefabInstance:
     - target: {fileID: 8050573029570127063, guid: 613cdcc0fdeb4e448bd4a55901264987,
         type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050573029570127063, guid: 613cdcc0fdeb4e448bd4a55901264987,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
