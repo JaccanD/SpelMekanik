@@ -42,7 +42,6 @@ public class ObjectPooler : MonoBehaviour
         {
             if (!poooledObjects[tag][i].activeInHierarchy && poooledObjects[tag][i].tag == tag)
             {
-                Debug.Log("object returned");
                 return poooledObjects[tag][i];
             }
         }

@@ -87,7 +87,10 @@ public class FootstepsScript : MonoBehaviour
             FootstepsSource.PlayOneShot(defaultSound);
         }
         time = AudioSettings.dspTime;
-        grassParticle.Play();
+        if (groundTag == "Island")
+        {
+            grassParticle.Play();
+        }
     }
     private string CheckGroundTag()
     {

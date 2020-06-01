@@ -312,6 +312,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e360fa461a4a19e4489ddafde737449d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: e360fa461a4a19e4489ddafde737449d,
         type: 3}
       propertyPath: m_Layer
@@ -321,6 +326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: e360fa461a4a19e4489ddafde737449d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e360fa461a4a19e4489ddafde737449d, type: 3}
@@ -1799,6 +1809,7 @@ GameObject:
   - component: {fileID: 54692053}
   - component: {fileID: 54692052}
   - component: {fileID: 54692051}
+  - component: {fileID: 54692054}
   m_Layer: 8
   m_Name: Invisible Wall (5)
   m_TagString: Untagged
@@ -1848,7 +1859,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54692049}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1888,6 +1899,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54692049}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &54692054
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54692049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea093fde12cb71a4bb5efa16270c0dca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &55056074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2522,6 +2552,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5383ae489849ec24c9e077706cd66d32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 5383ae489849ec24c9e077706cd66d32,
         type: 3}
       propertyPath: m_Layer
@@ -2531,6 +2566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 5383ae489849ec24c9e077706cd66d32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5383ae489849ec24c9e077706cd66d32, type: 3}
@@ -4866,6 +4906,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 649e130d1b653b34aacae8b2abf06d91,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 649e130d1b653b34aacae8b2abf06d91,
         type: 3}
       propertyPath: m_Layer
@@ -4875,6 +4920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 649e130d1b653b34aacae8b2abf06d91,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649e130d1b653b34aacae8b2abf06d91, type: 3}
@@ -9797,6 +9847,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2dac1f96635f58743b20b6fef4bde2ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 2dac1f96635f58743b20b6fef4bde2ce,
         type: 3}
       propertyPath: m_Layer
@@ -9806,6 +9861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 2dac1f96635f58743b20b6fef4bde2ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dac1f96635f58743b20b6fef4bde2ce, type: 3}
@@ -11160,6 +11220,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 18ff3a9df3066494d8a62d553ea80dad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 18ff3a9df3066494d8a62d553ea80dad,
         type: 3}
       propertyPath: m_Layer
@@ -11169,6 +11234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 18ff3a9df3066494d8a62d553ea80dad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ff3a9df3066494d8a62d553ea80dad, type: 3}
@@ -14405,6 +14475,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 486d8aba3dee20e4a980df6f595415b2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 486d8aba3dee20e4a980df6f595415b2,
         type: 3}
       propertyPath: m_Layer
@@ -14414,6 +14489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 486d8aba3dee20e4a980df6f595415b2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486d8aba3dee20e4a980df6f595415b2, type: 3}
@@ -14840,6 +14920,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ef4d84bc75e10f54a8583f12f1e3e374,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: ef4d84bc75e10f54a8583f12f1e3e374,
         type: 3}
       propertyPath: m_Layer
@@ -14849,6 +14934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ef4d84bc75e10f54a8583f12f1e3e374,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef4d84bc75e10f54a8583f12f1e3e374, type: 3}
@@ -16674,6 +16764,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bc4687d5579fcbd40830ba91e10b7353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: bc4687d5579fcbd40830ba91e10b7353,
         type: 3}
       propertyPath: m_Layer
@@ -16683,6 +16778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: bc4687d5579fcbd40830ba91e10b7353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc4687d5579fcbd40830ba91e10b7353, type: 3}
@@ -17427,6 +17527,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 937d4188a54ccb944986c98003e95f82,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 937d4188a54ccb944986c98003e95f82,
         type: 3}
       propertyPath: m_Layer
@@ -17436,6 +17541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 937d4188a54ccb944986c98003e95f82,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 937d4188a54ccb944986c98003e95f82, type: 3}
@@ -17640,6 +17750,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4c60ef104491d7c41812341bb37547b4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 4c60ef104491d7c41812341bb37547b4,
         type: 3}
       propertyPath: m_Layer
@@ -17649,6 +17764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 4c60ef104491d7c41812341bb37547b4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c60ef104491d7c41812341bb37547b4, type: 3}
@@ -17910,6 +18030,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e5fbd21f1d2c6924a984834deb7bd61c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: e5fbd21f1d2c6924a984834deb7bd61c,
         type: 3}
       propertyPath: m_Layer
@@ -17919,6 +18044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: e5fbd21f1d2c6924a984834deb7bd61c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fbd21f1d2c6924a984834deb7bd61c, type: 3}
@@ -20250,6 +20380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aed09db55000714181771d1aba6f71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animation: {fileID: 0}
+  transistionTime: 1
   LevelIndex: 6
 --- !u!1 &607149757 stripped
 GameObject:
@@ -24815,6 +24947,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2a0634f754ae91c4b9596620decdf82d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 2a0634f754ae91c4b9596620decdf82d,
         type: 3}
       propertyPath: m_Layer
@@ -24824,6 +24961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 2a0634f754ae91c4b9596620decdf82d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0634f754ae91c4b9596620decdf82d, type: 3}
@@ -25479,6 +25621,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 92a0a137c28919e4ca0293cdadede260,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 92a0a137c28919e4ca0293cdadede260,
         type: 3}
       propertyPath: m_Layer
@@ -25488,6 +25635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 92a0a137c28919e4ca0293cdadede260,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a0a137c28919e4ca0293cdadede260, type: 3}
@@ -26492,6 +26644,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d4d8ab00c6bf04d418e4921a481fd5bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: d4d8ab00c6bf04d418e4921a481fd5bf,
         type: 3}
       propertyPath: m_Layer
@@ -26501,6 +26658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: d4d8ab00c6bf04d418e4921a481fd5bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4d8ab00c6bf04d418e4921a481fd5bf, type: 3}
@@ -29417,6 +29579,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 569d7b2845bcdf342bfa10114cbdc84d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 569d7b2845bcdf342bfa10114cbdc84d,
         type: 3}
       propertyPath: m_Layer
@@ -29426,6 +29593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 569d7b2845bcdf342bfa10114cbdc84d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 569d7b2845bcdf342bfa10114cbdc84d, type: 3}
@@ -30366,6 +30538,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bd8a23d445d443248a34cb1fe753e878,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: bd8a23d445d443248a34cb1fe753e878,
         type: 3}
       propertyPath: m_Layer
@@ -30375,6 +30552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: bd8a23d445d443248a34cb1fe753e878,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8a23d445d443248a34cb1fe753e878, type: 3}
@@ -33005,7 +33187,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 4b7d2828b3a09c44cab27348d49c6688,
         type: 3}
       propertyPath: m_TagString
-      value: second island
+      value: Island
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4b7d2828b3a09c44cab27348d49c6688,
         type: 3}
@@ -33021,6 +33203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 4b7d2828b3a09c44cab27348d49c6688,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7d2828b3a09c44cab27348d49c6688, type: 3}
@@ -33122,6 +33309,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7b89a66735c93c849bf34e6897c7e99f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7b89a66735c93c849bf34e6897c7e99f,
         type: 3}
       propertyPath: m_Layer
@@ -33131,6 +33323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7b89a66735c93c849bf34e6897c7e99f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b89a66735c93c849bf34e6897c7e99f, type: 3}
@@ -33302,6 +33499,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fc9a6eba1bdaefa46b54bfb67de04862,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: fc9a6eba1bdaefa46b54bfb67de04862,
         type: 3}
       propertyPath: m_Layer
@@ -33311,6 +33513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: fc9a6eba1bdaefa46b54bfb67de04862,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9a6eba1bdaefa46b54bfb67de04862, type: 3}
@@ -34222,6 +34429,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7cf8aefe0ac824a4cb72a2b838018a75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7cf8aefe0ac824a4cb72a2b838018a75,
         type: 3}
       propertyPath: m_Layer
@@ -34231,6 +34443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7cf8aefe0ac824a4cb72a2b838018a75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf8aefe0ac824a4cb72a2b838018a75, type: 3}
@@ -34665,6 +34882,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d895dc716cead954bb4eb3c29ddd6d90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: d895dc716cead954bb4eb3c29ddd6d90,
         type: 3}
       propertyPath: m_Layer
@@ -34674,6 +34896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: d895dc716cead954bb4eb3c29ddd6d90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d895dc716cead954bb4eb3c29ddd6d90, type: 3}
@@ -34874,6 +35101,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6b28e49374268cb408c8950444a1ce12,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 6b28e49374268cb408c8950444a1ce12,
         type: 3}
       propertyPath: m_Layer
@@ -34883,6 +35115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 6b28e49374268cb408c8950444a1ce12,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b28e49374268cb408c8950444a1ce12, type: 3}
@@ -35800,6 +36037,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ff0cfdf594279ee4480e5135d163d663,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: ff0cfdf594279ee4480e5135d163d663,
         type: 3}
       propertyPath: m_Layer
@@ -35809,6 +36051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ff0cfdf594279ee4480e5135d163d663,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0cfdf594279ee4480e5135d163d663, type: 3}
@@ -37993,6 +38240,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c51917847694df6489a5154116892284,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: c51917847694df6489a5154116892284,
         type: 3}
       propertyPath: m_Layer
@@ -38002,6 +38254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: c51917847694df6489a5154116892284,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c51917847694df6489a5154116892284, type: 3}
@@ -41406,6 +41663,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1b572370a811d0546946572409d98f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 1b572370a811d0546946572409d98f73,
         type: 3}
       propertyPath: m_Layer
@@ -41415,6 +41677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 1b572370a811d0546946572409d98f73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b572370a811d0546946572409d98f73, type: 3}
@@ -41682,6 +41949,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4d803d588c691b344956d8e5d3e50fe9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 4d803d588c691b344956d8e5d3e50fe9,
         type: 3}
       propertyPath: m_Layer
@@ -41691,6 +41963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 4d803d588c691b344956d8e5d3e50fe9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d803d588c691b344956d8e5d3e50fe9, type: 3}
@@ -42102,6 +42379,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b6747c02d3eb2794cbb5742ba81d1613,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: b6747c02d3eb2794cbb5742ba81d1613,
         type: 3}
       propertyPath: m_Layer
@@ -42111,6 +42393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: b6747c02d3eb2794cbb5742ba81d1613,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6747c02d3eb2794cbb5742ba81d1613, type: 3}
@@ -49588,6 +49875,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7eeb03ac4affb3e45a4437619a19e549,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 7eeb03ac4affb3e45a4437619a19e549,
         type: 3}
       propertyPath: m_Layer
@@ -49597,6 +49889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 7eeb03ac4affb3e45a4437619a19e549,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eeb03ac4affb3e45a4437619a19e549, type: 3}
@@ -50944,6 +51241,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.43467426
       objectReference: {fileID: 0}
+    - target: {fileID: 4577894390757740262, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577894390757740262, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 439364f2c72332e41bde42d5e5f2da51,
+        type: 3}
+    - target: {fileID: 4577894390757740262, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4577894390757740263, guid: ed947a825b866c64084d6cfbb604c0a0,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -50973,6 +51286,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577894391543652243, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 439364f2c72332e41bde42d5e5f2da51,
+        type: 3}
+    - target: {fileID: 4577894391543652243, guid: ed947a825b866c64084d6cfbb604c0a0,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4577894392361223856, guid: ed947a825b866c64084d6cfbb604c0a0,
         type: 3}
@@ -52928,7 +53252,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 612c31422192ab042a3671c9ca36e265,
         type: 3}
       propertyPath: m_TagString
-      value: first island
+      value: Island
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 612c31422192ab042a3671c9ca36e265,
         type: 3}
@@ -52944,6 +53268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 612c31422192ab042a3671c9ca36e265,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 612c31422192ab042a3671c9ca36e265, type: 3}
@@ -55968,6 +56297,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 516cb28998762334085e93bf191b5dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 516cb28998762334085e93bf191b5dd0,
         type: 3}
       propertyPath: m_Layer
@@ -55977,6 +56311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 516cb28998762334085e93bf191b5dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 516cb28998762334085e93bf191b5dd0, type: 3}
@@ -56981,6 +57320,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: af557cc23625fdc4286cd12a1520bbe8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: af557cc23625fdc4286cd12a1520bbe8,
         type: 3}
       propertyPath: m_Layer
@@ -56990,6 +57334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: af557cc23625fdc4286cd12a1520bbe8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af557cc23625fdc4286cd12a1520bbe8, type: 3}
@@ -57466,6 +57815,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 825ab3226f8673b4c84c7ae2a69e65f7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 825ab3226f8673b4c84c7ae2a69e65f7,
         type: 3}
       propertyPath: m_Layer
@@ -57475,6 +57829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 825ab3226f8673b4c84c7ae2a69e65f7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825ab3226f8673b4c84c7ae2a69e65f7, type: 3}
@@ -60247,6 +60606,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dc46992f4e073ff4fa4abc643f021d07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: dc46992f4e073ff4fa4abc643f021d07,
         type: 3}
       propertyPath: m_Layer
@@ -60256,6 +60620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: dc46992f4e073ff4fa4abc643f021d07,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc46992f4e073ff4fa4abc643f021d07, type: 3}
@@ -60337,6 +60706,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ac41d1ee3ce1594d840be779cb88a61,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 8ac41d1ee3ce1594d840be779cb88a61,
         type: 3}
       propertyPath: m_Layer
@@ -60346,6 +60720,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 8ac41d1ee3ce1594d840be779cb88a61,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac41d1ee3ce1594d840be779cb88a61, type: 3}
@@ -60813,6 +61192,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 66c2f8bed1eeab34690637d5bd2b3289,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 66c2f8bed1eeab34690637d5bd2b3289,
         type: 3}
       propertyPath: m_Layer
@@ -60822,6 +61206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 66c2f8bed1eeab34690637d5bd2b3289,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66c2f8bed1eeab34690637d5bd2b3289, type: 3}
@@ -60909,6 +61298,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: abe5d84fee4cadf4399fd57a96f251ec,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: abe5d84fee4cadf4399fd57a96f251ec,
         type: 3}
       propertyPath: m_Layer
@@ -60918,6 +61312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: abe5d84fee4cadf4399fd57a96f251ec,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe5d84fee4cadf4399fd57a96f251ec, type: 3}
@@ -61143,6 +61542,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2eab7bb1a106e1444b24165f3c4b1a08,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 2eab7bb1a106e1444b24165f3c4b1a08,
         type: 3}
       propertyPath: m_Layer
@@ -61152,6 +61556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 2eab7bb1a106e1444b24165f3c4b1a08,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eab7bb1a106e1444b24165f3c4b1a08, type: 3}
@@ -62138,6 +62547,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c38cf0e7242d6c148b5dc23d4fc67296,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: c38cf0e7242d6c148b5dc23d4fc67296,
         type: 3}
       propertyPath: m_Layer
@@ -62147,6 +62561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: c38cf0e7242d6c148b5dc23d4fc67296,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38cf0e7242d6c148b5dc23d4fc67296, type: 3}
@@ -63025,6 +63444,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6e0760cee1a47654fb213cb9b5d465aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 6e0760cee1a47654fb213cb9b5d465aa,
         type: 3}
       propertyPath: m_Layer
@@ -63034,6 +63458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 6e0760cee1a47654fb213cb9b5d465aa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0760cee1a47654fb213cb9b5d465aa, type: 3}
@@ -63796,6 +64225,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 50a83e289ab0d8741a9583196a716fed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 50a83e289ab0d8741a9583196a716fed,
         type: 3}
       propertyPath: m_Layer
@@ -63805,6 +64239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 50a83e289ab0d8741a9583196a716fed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a83e289ab0d8741a9583196a716fed, type: 3}
@@ -65053,6 +65492,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5383ae489849ec24c9e077706cd66d32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 5383ae489849ec24c9e077706cd66d32,
         type: 3}
       propertyPath: m_Layer
@@ -65062,6 +65506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 5383ae489849ec24c9e077706cd66d32,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5383ae489849ec24c9e077706cd66d32, type: 3}
@@ -66806,6 +67255,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1d7e7fb595a1d51428d4b4e716e5ed8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 1d7e7fb595a1d51428d4b4e716e5ed8f,
         type: 3}
       propertyPath: m_Layer
@@ -66815,6 +67269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 1d7e7fb595a1d51428d4b4e716e5ed8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d7e7fb595a1d51428d4b4e716e5ed8f, type: 3}
@@ -68636,6 +69095,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: fcbb038d4caf4e648bb77add9d85dac4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: fcbb038d4caf4e648bb77add9d85dac4,
         type: 3}
       propertyPath: m_Layer
@@ -68645,6 +69109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: fcbb038d4caf4e648bb77add9d85dac4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcbb038d4caf4e648bb77add9d85dac4, type: 3}
@@ -68726,6 +69195,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e573c5233af551f49869c7bb5f437d34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: e573c5233af551f49869c7bb5f437d34,
         type: 3}
       propertyPath: m_Layer
@@ -68735,6 +69209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: e573c5233af551f49869c7bb5f437d34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e573c5233af551f49869c7bb5f437d34, type: 3}
@@ -68856,6 +69335,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b31cfba635e81f845ab20e80a619c886,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: b31cfba635e81f845ab20e80a619c886,
         type: 3}
       propertyPath: m_Layer
@@ -68865,6 +69349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: b31cfba635e81f845ab20e80a619c886,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31cfba635e81f845ab20e80a619c886, type: 3}
@@ -73680,6 +74169,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8cc4e792da3d0704d8b4544b642060a4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
+      objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 8cc4e792da3d0704d8b4544b642060a4,
         type: 3}
       propertyPath: m_Layer
@@ -73689,6 +74183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 8cc4e792da3d0704d8b4544b642060a4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Island
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cc4e792da3d0704d8b4544b642060a4, type: 3}
