@@ -3,7 +3,17 @@ guid: 4ee83adf3f18b03468d7c30403d02265
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Willow_base
+    second: {fileID: 2100000, guid: d1087963479c035439ec714afbfb9530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Willow_leaf_03
+    second: {fileID: 2100000, guid: 0798169b63eb63e40ad078cbf1d0d699, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -44,7 +54,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
