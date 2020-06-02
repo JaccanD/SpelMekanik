@@ -99,6 +99,7 @@ public class PlayerControl : MonoBehaviour
     private void IsPushed(Callback.Event eb)
     {
         Pushed e = (Pushed)eb;
+        Debug.Log("Pushed");
         Vector3 direction = (e.Player.transform.position - e.Origin).normalized;
         Velocity = direction * e.PushBackStrenght + (Vector3.up * e.Height);
         Stun(e.StunDuration);
