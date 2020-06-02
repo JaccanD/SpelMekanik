@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 using Callback;
 
 // Author: Valter Fallsterljung
@@ -10,9 +7,11 @@ public class BossReturnToStartPositionState : BossBaseState
 {
     private Rigidbody rb;
     private BoxCollider collider;
+    private float diveTransitionHeight;
 
     public override void Enter()
     {
+        diveTransitionHeight = StartPosition.y * 5;
         rb = Boss.GetComponent<Rigidbody>();
         collider = Boss.GetComponent<BoxCollider>();
         rb.AddForce(rb.velocity * -1.5f, ForceMode.Impulse);
@@ -42,7 +41,7 @@ public class BossReturnToStartPositionState : BossBaseState
     }
     private void CheckBossHeight()
     {
-        if (Position.y < StartPosition.y - 5)
+        if (Position.y < diveTransitionHeight)
         {
             Position = StartPosition + Vector3.down * 5;
             rb.velocity = Vector3.zero;

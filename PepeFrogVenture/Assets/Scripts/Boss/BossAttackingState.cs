@@ -15,9 +15,9 @@ public class BossAttackingState : BossBaseState
 
     [Header("between 0 - 100")]
     [SerializeField] private float rapidAttackChance = 40f;
-    [SerializeField] private float chargeAttackChance = 40f;
+    [SerializeField] private float chargeAttackChance = 25f;
 
-    [Header("At what health the can do special attacks")]
+    [Header("At what health the boss can do special attacks")]
     [SerializeField] private int rapidAttackHealthThreshold = 15;
     [SerializeField] private int chargeAttackHealthThreshold = 11;
 
@@ -41,7 +41,7 @@ public class BossAttackingState : BossBaseState
         if (currentCool > 0)
             return;
 
-        Shoot(projectileStartingForce, projectileDistanceForceMultiplier, projectileDamage, 0);
+        Shoot(0);
         EventSystem.Current.FireEvent(new BossShootingEvent());
         shootsLeftBeforeSubmerge -= 1;
         currentCool = cooldown;
@@ -53,12 +53,13 @@ public class BossAttackingState : BossBaseState
     }
     private void ChooseSpecialAttack()
     {
-        if (Boss.GetHealth() < rapidAttackHealthThreshold && Random.Range(0, 100) <= rapidAttackChance)
+        int randomRoll = Random.Range(0, 100);
+        if (Boss.GetHealth() < rapidAttackHealthThreshold && randomRoll <= rapidAttackChance)
         {
             stateMachine.TransitionTo<BossRapidAttackingState>();
             return;
         }
-        if (Boss.GetHealth() < chargeAttackHealthThreshold && Random.Range(0, 100) <= chargeAttackChance)
+        else if (Boss.GetHealth() < chargeAttackHealthThreshold && randomRoll <= rapidAttackChance + chargeAttackChance)
         {
             stateMachine.TransitionTo<BossChargeState>();
             return;

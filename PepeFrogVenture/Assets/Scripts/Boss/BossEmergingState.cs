@@ -20,11 +20,11 @@ public class BossEmergingState : BossBaseState
     }
     private void LilyPadWithPlayer()
     {
-        chosenLilypad = Boss.lilypads[0];
-        for (int i = 1; i < Boss.lilypads.Count; i++)
+        chosenLilypad = Lilypads[0];
+        for (int i = 1; i < Lilypads.Count; i++)
         {
-            if(Vector3.Distance(Boss.lilypads[i].transform.position, Player.transform.position) < Vector3.Distance(chosenLilypad.transform.position, Player.transform.position)){
-                chosenLilypad = Boss.lilypads[i];
+            if(Vector3.Distance(Lilypads[i].transform.position, Player.transform.position) < Vector3.Distance(chosenLilypad.transform.position, Player.transform.position)){
+                chosenLilypad = Lilypads[i];
             }
         }
         chosenLilypad.BossTarget();

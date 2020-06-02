@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 
-// Author: Valter Fallsterljung? 
-// Jack (Designer) har också varit här
+// Author: Jack 
 public class BossSoundScript : MonoBehaviour
 {
 
