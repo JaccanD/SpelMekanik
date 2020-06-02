@@ -7,11 +7,16 @@ public class FishPatrol : MonoBehaviour
     [SerializeField] GameObject[] points;
     [SerializeField] float speed;
     [SerializeField] float turnSpeed;
+    [SerializeField] int startAtIndex = 0;
 
     private int currentIndex = 0;
     private Vector3 direction { get { return transform.rotation * Vector3.forward; } }
     private GameObject nextPoint { get { return points[currentIndex]; } }
 
+    private void Start()
+    {
+        currentIndex = startAtIndex;
+    }
     private void Update()
     {
         Rotate();
