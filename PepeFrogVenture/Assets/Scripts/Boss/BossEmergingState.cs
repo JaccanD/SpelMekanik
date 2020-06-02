@@ -48,7 +48,7 @@ public class BossEmergingState : BossBaseState
     }
     private void CheckIfBossShouldSuperAttack()
     {
-        if (Boss.GetHealth() <= 6 && hasSuperAttacked == false)
+        if (Boss.GetHealth() <= SuperAttackHealthThreshold && hasSuperAttacked == false)
         {
             hasSuperAttacked = true;
             stateMachine.TransitionTo<BossSuperAttackState>();

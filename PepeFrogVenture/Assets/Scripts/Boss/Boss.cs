@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
     [SerializeField] private GameObject[] superJumpPoints;
+    [SerializeField] private float superAttackHealthThreshold = 7;
     [SerializeField] private float chargeAttackDamage = 8;
 
     [Header("Shooting variables")]
@@ -49,6 +50,10 @@ public class Boss : MonoBehaviour
     public List<DestroyableLilypad> GetLilyPads()
     {
         return lilypads;
+    }
+    public float GetSuperAttackHealthThreshold()
+    {
+        return superAttackHealthThreshold;
     }
     public float GetChargeAttackDamage()
     {

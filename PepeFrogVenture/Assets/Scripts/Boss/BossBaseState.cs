@@ -20,6 +20,7 @@ public class BossBaseState : State
     protected float ProjectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
     protected float ProjectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
     protected float ChargeAttackDamage { get { return Boss.GetChargeAttackDamage(); } }
+    protected float SuperAttackHealthThreshold { get { return Boss.GetSuperAttackHealthThreshold(); } }
 
     protected void RotateTowardPlayer(Vector3 rotateTowards, float rotationSpeed)
     {
