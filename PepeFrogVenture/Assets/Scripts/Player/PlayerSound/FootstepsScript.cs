@@ -18,6 +18,7 @@ public class FootstepsScript : MonoBehaviour
     public AudioClip defaultSound; // Jack                      //Detta är bara betan tills animationerna är klara
     public AudioClip stockSound; // Jack
     public AudioClip lilySound; // Jack
+    public AudioClip stoneSound; // Jack
 
 
     // Start is called before the first frame update
@@ -90,6 +91,7 @@ public class FootstepsScript : MonoBehaviour
         if (groundTag == "Island")
         {
             grassParticle.Play();
+            FootstepsSource.pitch = 1.4f;
             FootstepsSource.PlayOneShot(defaultSound);
         }
         if(groundTag == "Log")
@@ -99,6 +101,10 @@ public class FootstepsScript : MonoBehaviour
         if(groundTag == "Lilypad")
         {
             FootstepsSource.PlayOneShot(lilySound);
+        }
+        if (groundTag == "Stone")
+        {
+            FootstepsSource.PlayOneShot(stoneSound);
         }
     }
     private string CheckGroundTag()
