@@ -20,11 +20,12 @@ public class EnemyWalkingState : EnemyBaseState
     {
         Enemy.agent.SetDestination(PatrolPoints[currentPatrolPoint].transform.position);
 
+        //if close enough to see the player start chasing
         if (CanSeePlayer() && Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) < spotPlayerDistance)
         {
-            
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         }
+        //if close to the current patrolpoint switch to the next one
         if (Vector3.Distance(Enemy.transform.position, PatrolPoints[currentPatrolPoint].transform.position) < 1)
         {
             currentPatrolPoint = (currentPatrolPoint + 1) % PatrolPoints.Length;

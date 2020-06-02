@@ -14,7 +14,6 @@ public class EnemyChasePlayerState : EnemyBaseState
     public override void Enter()
     {
         Enemy.agent.isStopped = false;
-        //flyttade från walkingstate
         EventSystem.Current.FireEvent(new PlayerSeenEvent(Position, Enemy.gameObject));
         EnemyCoordinator.current.AddEnemyInRange(Enemy);
     }
