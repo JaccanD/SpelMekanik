@@ -17,7 +17,7 @@ public class BossMotionControl: MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(BossRapidAttackEvent), BossRapidAttack);
         EventSystem.Current.RegisterListener(typeof(BossSuperAttackEvent), BossSuperAttack);
         EventSystem.Current.RegisterListener(typeof(BossJumpingEvent), BossJump);
-        EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossDead);
+        EventSystem.Current.RegisterListener(typeof(BoosDyingEvent), BossDead);
     }
 
     void Update()
