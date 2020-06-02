@@ -19,6 +19,8 @@ public class Marker : MonoBehaviour
             return;
         }
         selected = firstSelected;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(selected);
         MoveMarker();
 
     }
