@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d955a5d68211d5a43828fcf5d9c5d4f2, type: 3}
   m_Name: BossAttackingState
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
   cooldown: 2.5
   shoots: 3
-  rotationSpeed: 5
   rapidAttackChance: 40
   chargeAttackChance: 40
+  rapidAttackHealthThreshold: 10
+  chargeAttackHealthThreshold: 10
