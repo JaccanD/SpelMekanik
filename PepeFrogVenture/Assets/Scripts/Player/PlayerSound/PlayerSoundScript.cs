@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Callback;
 using System;
+using UnityEngine.SceneManagement;
 
 // Main Author: Jack Noaksson
 // Secondary Author: Jacob Didenbäck
@@ -88,7 +89,6 @@ public class PlayerSoundScript : MonoBehaviour
         MusicAudioSource.PlayOneShot(MusicSound);
         MusicAudioSource.volume = 0.3f;
     }
-
     public void OnPlayerJump(Callback.Event eb) // Jack
     {
         PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
@@ -115,5 +115,10 @@ public class PlayerSoundScript : MonoBehaviour
         PlayerAudioSource.PlayOneShot(PlayerDeath); // Jack
         LowHealthAudioSource.Stop();
 
+    }
+
+    private void fadeIn()
+    {
+                MusicAudioSource.volume += 0.3f * Time.deltaTime;
     }
 }
