@@ -60,8 +60,7 @@ public class NPC : MonoBehaviour
         if (QuestDone)
         {
            currentDialog = 3;
-           NpcTalkAudioSource.PlayOneShot(RecieveBluberry);
-            NpcWallAudioSource.PlayOneShot(RemoveWall);
+
         }
         EventSystem.Current.FireEvent(new NPCDialogueEvent(dialog[currentDialog]));
     }
@@ -91,6 +90,9 @@ public class NPC : MonoBehaviour
         //Target.SetActive(false);
         targetAnimator = Target.GetComponent<Animator>();
         targetAnimator.enabled = true;
+
+        NpcTalkAudioSource.PlayOneShot(RecieveBluberry);
+        NpcWallAudioSource.PlayOneShot(RemoveWall);
 
         if (RespawnPoint != null)
             EventSystem.Current.FireEvent(new RespawnPointReachedEvent(RespawnPoint));
