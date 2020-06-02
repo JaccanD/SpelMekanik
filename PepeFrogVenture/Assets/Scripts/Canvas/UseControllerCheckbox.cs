@@ -12,6 +12,7 @@ public class UseControllerCheckbox : MonoBehaviour
     [SerializeField] private Sprite keyboardImage;
     [SerializeField] private Sprite controllerImage;
     [SerializeField] private GameObject controllerImageText;
+    [SerializeField] private GameObject keyBoardImageText;
 
 
     private void Awake()
@@ -39,12 +40,14 @@ public class UseControllerCheckbox : MonoBehaviour
         if (controllType == true)
         {
             controllerImageText.SetActive(true);
+            keyBoardImageText.SetActive(false);
             target.sprite = controllerImage;
         }
 
         else
         {
             controllerImageText.SetActive(false);
+            keyBoardImageText.SetActive(true);
             target.sprite = keyboardImage;
         }
     }
