@@ -123,6 +123,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(respawnTime);
         PlayerStats.ResetHealth();
         Player.transform.position = CurrentRespawnPoint.transform.position;
+        fadeAnimation.ResetTrigger("End");
         EventSystem.Current.FireEvent(new PlayerRespawnEvent(CurrentRespawnPoint));
     }
     public void Respawn(Callback.Event eb)
