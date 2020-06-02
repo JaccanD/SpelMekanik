@@ -69,11 +69,15 @@ public class PlayerSoundScript : MonoBehaviour
         if(e.Pickup.tag != "Flies")
         {
             PlayerAudioSource.PlayOneShot(PlayerPickupSound);
+            PlayerAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
+            PlayerAudioSource.volume = 0.7f;
             return;
         }
+        
         PlayerAudioSource.PlayOneShot(PlayerPickupSound);
-        PlayerAudioSource.pitch = UnityEngine.Random.Range(1f, 1.3f);
-        if(health > 2)
+        PlayerAudioSource.pitch = UnityEngine.Random.Range(1.4f, 1.6f);
+        PlayerAudioSource.volume = 0.7f;
+        if (health > 2)
         {
             LowHealthAudioSource.Stop();
         }
