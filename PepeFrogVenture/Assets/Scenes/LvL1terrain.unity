@@ -76239,6 +76239,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4107587234366520663, guid: 25593bc9ff5d66d4d9a95f0150297dad,
+        type: 3}
+      propertyPath: PlayerDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f61edea8e993a04fb02576ba0fbd4f9, type: 3}
+    - target: {fileID: 4107587234366520663, guid: 25593bc9ff5d66d4d9a95f0150297dad,
+        type: 3}
+      propertyPath: PlayerPickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f463fbe7e2a77ca478d131f42996693d, type: 3}
     - target: {fileID: 4107587235453292423, guid: 25593bc9ff5d66d4d9a95f0150297dad,
         type: 3}
       propertyPath: LandingCheckDistance
@@ -76258,12 +76268,12 @@ PrefabInstance:
         type: 3}
       propertyPath: stockSound
       value: 
-      objectReference: {fileID: 8300000, guid: c798056f0dd42854f98f72cbfcdbd7d6, type: 3}
+      objectReference: {fileID: 8300000, guid: 3e61453d4ce50f14d91792592e63dd24, type: 3}
     - target: {fileID: 4107587235453292537, guid: 25593bc9ff5d66d4d9a95f0150297dad,
         type: 3}
       propertyPath: lilySound
       value: 
-      objectReference: {fileID: 8300000, guid: 94feb1b57a7eb394ab86ae8d845c9e2b, type: 3}
+      objectReference: {fileID: 8300000, guid: 52f0542c31dbbbe49b577fddd259136a, type: 3}
     - target: {fileID: 4107587235668315937, guid: 25593bc9ff5d66d4d9a95f0150297dad,
         type: 3}
       propertyPath: antialiasingMode

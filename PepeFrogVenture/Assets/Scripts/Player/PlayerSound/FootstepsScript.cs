@@ -82,15 +82,15 @@ public class FootstepsScript : MonoBehaviour
         {
             return;
         }
-        else
+      /*  else
         {
             FootstepsSource.PlayOneShot(defaultSound);
-        }
+        }*/
         time = AudioSettings.dspTime;
         if (groundTag == "Island")
         {
             grassParticle.Play();
-            FootstepsSource.PlayOneShot(default);
+            FootstepsSource.PlayOneShot(defaultSound);
         }
         if(groundTag == "Log")
         {
