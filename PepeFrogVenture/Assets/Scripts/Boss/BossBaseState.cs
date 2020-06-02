@@ -12,55 +12,34 @@ public class BossBaseState : State
     protected PlayerControl Player { get { return Boss.GetPlayer(); } }
     protected Vector3 Position { get { return Boss.transform.position; } set { Boss.transform.position = value; } }
     protected Vector3 StartPosition { get { return Boss.GetStartPosition(); } }
+    protected List<DestroyableLilypad> Lilypads { get { return Boss.GetLilyPads(); } }
     protected GameObject[] SuperJumpPoints { get { return Boss.GetSuperJumpPoints(); } }
     protected GameObject Projectile { get { return Boss.GetProjectile(); } }
     protected GameObject ShootPoint { get { return Boss.GetShootPoint(); } }
-    protected float projectileDamage { get { return Boss.GetProjectileDamage(); } }
-    protected float projectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
-    protected float projectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
+    protected float ProjectileDamage { get { return Boss.GetProjectileDamage(); } }
+    protected float ProjectileStartingForce { get { return Boss.GetProjectileStartingForce(); } }
+    protected float ProjectileDistanceForceMultiplier { get { return Boss.GetProjectileDistanceForceMultiplier(); } }
+    protected float ChargeAttackDamage { get { return Boss.GetChargeAttackDamage(); } }
 
     protected void RotateTowardPlayer(Vector3 rotateTowards, float rotationSpeed)
     {
         Quaternion rotation = Quaternion.LookRotation((rotateTowards - Boss.transform.position).normalized);
         Boss.transform.rotation = Quaternion.Slerp(Boss.transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
-    //protected void RegularShoot(float projectileStartingForce, float projectileDistanceMultiplier, float projectileDamage)
-    //{
-    //    float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-    //    float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
 
-    //    GameObject newProjectile;
-
-    //    newProjectile = Instantiate(Projectile, Boss.getShootPoint().transform.position, Boss.getShootPoint().transform.rotation);
-    //    newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
-
-    //    newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
-
-    //    EventSystem.Current.FireEvent(new BossShootingEvent());
-    //}
-
-    protected void Shoot(float projectileStartingForce, float projectileDistanceMultiplier, float projectileDamage, float shootSpread)
+    protected void Shoot(float shootSpread)
     {
+        //Calculate the initial velocity of the projectile based on how far away the player is
         float distance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-        float force = projectileStartingForce + (distance * projectileDistanceMultiplier);
+        float force = ProjectileStartingForce + (distance * ProjectileDistanceForceMultiplier);
 
-        //GameObject newProjectile = projectilePool.GetObjectInstance();
-        GameObject newProjectile = ObjectPooler.instance.GetPooledObject(Projectile.tag);
         Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
-        newProjectile.transform.position = ShootPoint.transform.position/*ShootPoint.transform.position*/;
-        newProjectile.transform.rotation = ShootPoint.transform.rotation * randomSpread/*ShootPoint.transform.rotation * randomSpread*/;
-        newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
+        GameObject newProjectile = ObjectPooler.instance.GetPooledObject(Projectile.tag);
+        newProjectile.transform.position = ShootPoint.transform.position;
+        newProjectile.transform.rotation = ShootPoint.transform.rotation * randomSpread;
+
+        newProjectile.GetComponent<BossProjectile>().SetDamage(ProjectileDamage);
         newProjectile.SetActive(true);
-        //GameObject newProjectile;
-        ////float xRotation = Random.Range(-shootSpread, shootSpread);
-        ////float yRotation = Random.Range(-shootSpread, shootSpread);
-        ////float zRotation = Random.Range(-shootSpread, shootSpread);
-        //Quaternion randomSpread = Quaternion.Euler(Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread), Random.Range(-shootSpread, shootSpread));
-        //newProjectile = Instantiate(Projectile, Boss.GetShootPoint().transform.position, Boss.GetShootPoint().transform.rotation * randomSpread/*Quaternion.Euler(xRotation, yRotation, zRotation)*/);
-        //newProjectile.GetComponent<BossProjectile>().SetDamage(projectileDamage);
-
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * force);
-
-        //EventSystem.Current.FireEvent(new BossShootingEvent());
     }
 }

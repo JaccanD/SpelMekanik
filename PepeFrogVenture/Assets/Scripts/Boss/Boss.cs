@@ -8,7 +8,7 @@ public class Boss : MonoBehaviour
 {
     protected StateMachine statemachine;
     public State[] states;
-    public List<DestroyableLilypad> lilypads;
+    [SerializeField] private List<DestroyableLilypad> lilypads;
     private bool isInvulnarable;
     private bool isEncountered;
     private Vector3 startPosition;
@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject shootPoint;
     [SerializeField] private GameObject[] superJumpPoints;
+    [SerializeField] private float chargeAttackDamage = 8;
 
     [Header("Shooting variables")]
     [SerializeField] private float projectileStartingForce = 50;
@@ -44,6 +45,14 @@ public class Boss : MonoBehaviour
     private void SinkAPad(Lilypads pad)
     {
         pad.setIsSInking(true);
+    }
+    public List<DestroyableLilypad> GetLilyPads()
+    {
+        return lilypads;
+    }
+    public float GetChargeAttackDamage()
+    {
+        return chargeAttackDamage;
     }
     public float GetProjectileStartingForce()
     {
