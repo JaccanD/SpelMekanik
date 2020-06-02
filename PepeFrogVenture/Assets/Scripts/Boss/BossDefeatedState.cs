@@ -11,6 +11,10 @@ public class BossDefeatedState : BossBaseState
     private bool hasDied;
     [SerializeField] private float timeUntilDeathEvent = 5f;
 
+    public override void Enter()
+    {
+        EventSystem.Current.FireEvent(new BoosDyingEvent());
+    }
     public override void Run()
     {
         currentTime += Time.deltaTime;
