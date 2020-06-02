@@ -12,14 +12,10 @@ public class FireFlyRoaming : MonoBehaviour
     [SerializeField] private float radius = 2;
     [SerializeField] LayerMask collisionMask;
     [SerializeField] private float skinWidth = 0.1f;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         collider = GetComponent<SphereCollider>();
-        //startPosition = transform.position;
-        //lastPosition = transform.position;
-        //moveToPosition = Random.insideUnitSphere * radius + startPosition;
     }
     private void OnEnable()
     {
@@ -28,7 +24,6 @@ public class FireFlyRoaming : MonoBehaviour
         moveToPosition = Random.insideUnitSphere * radius + startPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveFly();

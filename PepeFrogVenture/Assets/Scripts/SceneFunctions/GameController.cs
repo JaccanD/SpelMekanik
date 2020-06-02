@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public Vector3 secretDab;
     public bool Tounge = true;
     public bool HasFire;
+    [SerializeField] private Animator fadeAnimation;
     [SerializeField] private bool restartWholeLevelOnDeath;
     [SerializeField] private float respawnTime;
     
@@ -128,10 +129,12 @@ public class GameController : MonoBehaviour
     {
         if (restartWholeLevelOnDeath)
         {
+            fadeAnimation.SetTrigger("End");
             StartCoroutine(WaitForSceneLoad(SceneManager.GetActiveScene().name));
         }
         else
         {
+            fadeAnimation.SetTrigger("End");
             StartCoroutine(WaitForPlayerRespawn());
         }
     }

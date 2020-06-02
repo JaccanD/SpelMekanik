@@ -9,7 +9,7 @@ public class FireFlySpawnPoint : MonoBehaviour
     public GameObject currentFirefly;
 
     [SerializeField] private float spawnTimer = 5f;
-    private float currentSpawnTimeLeft = 0;
+    private float currentSpawnTime = 0;
 
     private void Start()
     {
@@ -19,19 +19,13 @@ public class FireFlySpawnPoint : MonoBehaviour
 
     void Update()
     {
-        //if(currentFirefly == null)
         if(!currentFirefly.activeInHierarchy)
         {
-            currentSpawnTimeLeft += Time.deltaTime;
-            if(currentSpawnTimeLeft > spawnTimer)
+            currentSpawnTime += Time.deltaTime;
+            if(currentSpawnTime > spawnTimer)
             {
-                Vector3 randomPos = Random.insideUnitSphere;
-                randomPos *= 2;
-                randomPos.y = 0;
-                randomPos += transform.position;
-                //currentFirefly = Instantiate(Prefab, randomPos, Quaternion.identity);
-                SpawnFly(randomPos);
-                currentSpawnTimeLeft = 0;
+                SpawnFly(GetSpawnPosition());
+                currentSpawnTime = 0;
             }
         }
     }
