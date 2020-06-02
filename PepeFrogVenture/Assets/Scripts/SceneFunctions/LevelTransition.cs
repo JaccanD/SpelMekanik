@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Author: Jacob Didenbäck
+// Secondary Author: Valter Fallsterljung
 public class LevelTransition : MonoBehaviour
 {
     private BoxCollider Coll;
@@ -31,7 +32,6 @@ public class LevelTransition : MonoBehaviour
             if (overLaps[i].transform.gameObject.tag == "Player" && !isLoading)
             {
 
-                //SceneManager.LoadScene(LevelIndex);
                 animation.SetTrigger("End");
                 isLoading = true;
                 StartCoroutine(WaitToLoadLevel());

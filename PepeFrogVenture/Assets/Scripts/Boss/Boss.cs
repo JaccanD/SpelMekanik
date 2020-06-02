@@ -97,7 +97,6 @@ public class Boss : MonoBehaviour
     public void TakeDamage(Callback.Event eb)
     {
         EnemyHitEvent e = (EnemyHitEvent)eb;
-        Debug.Log("BossDamageTaken");
         health -= e.Damage;
         if(health <= 0)
             statemachine.TransitionTo<BossDefeatedState>();
