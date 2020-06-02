@@ -1550,6 +1550,11 @@ MonoBehaviour:
   mouseSensitivity: 1
   horizontalStickSensitivity: 2
   verticalStickSensitivity: 2
+  autoAimRange: 20
+  autoAimRadius: 0.1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &4137315479891436071
 GameObject:
   m_ObjectHideFlags: 0

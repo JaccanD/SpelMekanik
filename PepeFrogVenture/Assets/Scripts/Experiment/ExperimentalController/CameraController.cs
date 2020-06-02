@@ -21,11 +21,17 @@ public class CameraController : MonoBehaviour
     [Header("Controller")]
     [Range (1 , 6)][SerializeField] private float horizontalStickSensitivity;
     [Range (1 , 6)][SerializeField] private float verticalStickSensitivity;
+    [Header ("AutoAim")]
+    [Tooltip ("How far away the enemy can be before the autoaim ignores it")][SerializeField] private float autoAimRange;
+    [Tooltip ("How far from the crosshair the autoaim can \"see\"")][Range (0 , 4)][SerializeField] private float autoAimRadius;
+    [SerializeField] private LayerMask enemyMask;
 
     private Vector3 anchor { get { return transform.parent.position + Vector3.up * heigthOffset; } }
     private float rotationX = 0;
     private float rotationY = 0;
     private SkinnedMeshRenderer rend;
+
+
 
     private void Start()
     {
@@ -40,6 +46,7 @@ public class CameraController : MonoBehaviour
             return;
         RotateCamera();
         MoveCamera();
+        AutoAim();
     }
     void RotateCamera()
     {
@@ -93,6 +100,59 @@ public class CameraController : MonoBehaviour
     // TODO
     // Auto aim om man använder kontroll
 
+    void AutoAim()
+    {
+        // Använd inte autoAim om spelaren spelar med mus
+        if (!Controlls.UsingController) return;
+
+        Vector2 joystick = new Vector2(Input.GetAxisRaw("RightStickHorizontal"), Input.GetAxisRaw("RightStickVertical")).normalized;
+
+        // Använd inte autoAim
+        // Om spelaren trycker tillräckligt hårt på joysticken 
+        if (joystick.magnitude > 0.6f) return;
+
+
+        // Hitta alla fiender nära siktet
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, autoAimRadius, transform.rotation * Vector3.forward, autoAimRange, enemyMask, QueryTriggerInteraction.Ignore);
+        if (hits.Length == 0)
+        {
+            return;
+        }
+        // Hitta närmaste fienden
+        RaycastHit closest = FindClosestHit(hits);
+        // Hitta vinkeln mellan camerans riktning och riktningen till närmaste fienden
+        Vector3 midPoint = Vector3.Lerp(closest.point, closest.transform.position, 0.25f);
+        Vector3 toClosest = midPoint - transform.position;
+
+        Quaternion newRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(toClosest), 0.5f);
+        transform.rotation = newRotation;
+        //transform.rotation = Quaternion.LookRotation(toClosest);
+        rotationX = transform.rotation.eulerAngles.x;
+        rotationY = transform.rotation.eulerAngles.y;
+        MoveCamera();
+
+        // sätt rotationen till den vinkeln
+        // Om vinkeln är tillräckligt liten 
+    }
+    private RaycastHit FindClosestHit(RaycastHit[] hits)
+    {
+        if (hits.Length == 1) return hits[0];
+
+        int returnIndex = 0;
+        Vector3 toHit = hits[0].transform.position - transform.position;
+        float dot = Vector3.Dot(toHit, transform.rotation * Vector3.forward);
+        for (int i = 1; i < hits.Length; i++)
+        {
+            toHit = hits[i].transform.position - transform.position;
+            float nextDot = Vector3.Dot(toHit, transform.position);
+            if (dot < nextDot)
+            {
+                dot = nextDot;
+                returnIndex = i;
+            }
+        }
+        return hits[returnIndex];
+    }
     // TODO 
     // Något sätt att rikta spelaren när den respawnar
 
