@@ -50,28 +50,28 @@ public class FootstepsScript : MonoBehaviour
 
     }
 
-    private void PlayDynamicFootstepSound() // Jack
-    {
-        if (AudioSettings.dspTime < time + filterTime)
-        {
-            return;
-        }
+    //private void PlayDynamicFootstepSound() // Jack
+    //{
+    //    if (AudioSettings.dspTime < time + filterTime)
+    //    {
+    //        return;
+    //    }
 
-        switch (colliderType)
-        {
-            case "Stock":                                           //Detta funkar inte av någon anledning...
-                FootstepsSource.PlayOneShot(stockSound);
-                break;
-            case "Lily":
-                FootstepsSource.PlayOneShot(lilySound);
-                break;
-            default:
-                FootstepsSource.PlayOneShot(defaultSound);
-                break;
-        }
+    //    switch (colliderType)
+    //    {
+    //        case "Stock":                                           //Detta funkar inte av någon anledning...
+    //            FootstepsSource.PlayOneShot(stockSound);
+    //            break;
+    //        case "Lily":
+    //            FootstepsSource.PlayOneShot(lilySound);
+    //            break;
+    //        default:
+    //            FootstepsSource.PlayOneShot(defaultSound);
+    //            break;
+    //    }
 
-        time = AudioSettings.dspTime;
-    }
+    //    time = AudioSettings.dspTime;
+    //}
 
     private void PlayStaticFootstepSound() // Jack
     {
@@ -90,6 +90,15 @@ public class FootstepsScript : MonoBehaviour
         if (groundTag == "Island")
         {
             grassParticle.Play();
+            FootstepsSource.PlayOneShot(default);
+        }
+        if(groundTag == "Log")
+        {
+            FootstepsSource.PlayOneShot(stockSound);
+        }
+        if(groundTag == "Lilypad")
+        {
+            FootstepsSource.PlayOneShot(lilySound);
         }
     }
     private string CheckGroundTag()

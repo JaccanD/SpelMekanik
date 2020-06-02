@@ -41814,6 +41814,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1976228477498899159, guid: 559f609ca07f5b54d869768b35a5021f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
+      objectReference: {fileID: 0}
     - target: {fileID: 3613384185194320564, guid: 559f609ca07f5b54d869768b35a5021f,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -46677,6 +46682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976228477498899159, guid: 559f609ca07f5b54d869768b35a5021f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
       objectReference: {fileID: 0}
     - target: {fileID: 3613384185194320564, guid: 559f609ca07f5b54d869768b35a5021f,
         type: 3}
@@ -70088,6 +70098,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1976228477498899159, guid: 559f609ca07f5b54d869768b35a5021f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
+      objectReference: {fileID: 0}
     - target: {fileID: 3613384185194320564, guid: 559f609ca07f5b54d869768b35a5021f,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -76239,6 +76254,16 @@ PrefabInstance:
       propertyPath: collisionMask.m_Bits
       value: 33025
       objectReference: {fileID: 0}
+    - target: {fileID: 4107587235453292537, guid: 25593bc9ff5d66d4d9a95f0150297dad,
+        type: 3}
+      propertyPath: stockSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c798056f0dd42854f98f72cbfcdbd7d6, type: 3}
+    - target: {fileID: 4107587235453292537, guid: 25593bc9ff5d66d4d9a95f0150297dad,
+        type: 3}
+      propertyPath: lilySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94feb1b57a7eb394ab86ae8d845c9e2b, type: 3}
     - target: {fileID: 4107587235668315937, guid: 25593bc9ff5d66d4d9a95f0150297dad,
         type: 3}
       propertyPath: antialiasingMode
