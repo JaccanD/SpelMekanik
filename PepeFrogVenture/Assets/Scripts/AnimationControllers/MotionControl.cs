@@ -29,21 +29,10 @@ public class MotionControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (CurrentState.GetType() == typeof(PlayerControlMovementState) || CurrentState.GetType() == typeof(PlayerControlIdleState))
-        {
-            speed = Input.GetAxis("Vertical");
-            direction = Input.GetAxis("Horizontal");
-            anim.SetFloat("Speed", speed);
-            anim.SetFloat("Direction", direction);
-        }
-        else
-        {
-            speed = 0;
-            direction = 0;
-            anim.SetFloat("Speed", speed);
-            anim.SetFloat("Direction", direction);
-        }
+        speed = Input.GetAxis("Vertical");
+        direction = Input.GetAxis("Horizontal");
+        anim.SetFloat("Speed", speed);
+        anim.SetFloat("Direction", direction);
 
     }
 
