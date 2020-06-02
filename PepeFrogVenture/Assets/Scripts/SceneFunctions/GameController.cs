@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(PlayerDabbing), OnDab);
         EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), Respawn);
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
+        EventSystem.Current.RegisterListener(typeof(BoosDyingEvent), BossDying);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
 
     }
@@ -111,6 +112,10 @@ public class GameController : MonoBehaviour
     {
         ToungeDoneEvent e = (ToungeDoneEvent)eb;
         Tounge = true;
+    }
+    private void BossDying(Callback.Event eb)
+    {
+        fadeAnimation.SetTrigger("End");
     }
     IEnumerator WaitForSceneLoad(string scene)
     {
