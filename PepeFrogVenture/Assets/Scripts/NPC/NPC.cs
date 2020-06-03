@@ -92,7 +92,7 @@ public class NPC : MonoBehaviour
         targetAnimator.enabled = true;
 
         NpcTalkAudioSource.PlayOneShot(RecieveBluberry);
-        NpcTalkAudioSource.volume = 0.8f;
+        NpcTalkAudioSource.volume = 0.5f;
         NpcWallAudioSource.PlayOneShot(RemoveWall);
 
         if (RespawnPoint != null)
