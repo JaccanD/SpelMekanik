@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
         slider.value = PlayerStats.getHealth();
         EventSystem.Current.RegisterListener(typeof(PlayerHitEvent), LoseHealth);
         EventSystem.Current.RegisterListener(typeof(PickupEvent), GainHealth);
-        EventSystem.Current.RegisterListener(typeof(PlayerDeathEvent), ResetBar);
+        EventSystem.Current.RegisterListener(typeof(PlayerRespawnEvent), ResetBar);
     }
 
     public void LoseHealth(Callback.Event eb)

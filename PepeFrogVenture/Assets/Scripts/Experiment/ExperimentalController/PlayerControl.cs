@@ -100,6 +100,10 @@ public class PlayerControl : MonoBehaviour
     {
         Pushed e = (Pushed)eb;
         Debug.Log("Pushed");
+        if(stateMachine.GetCurrentState().GetType() == typeof(PlayerControlDeadState))
+        {
+            return;
+        }
         Vector3 direction = (e.Player.transform.position - e.Origin).normalized;
         Velocity = direction * e.PushBackStrenght + (Vector3.up * e.Height);
         Stun(e.StunDuration);
