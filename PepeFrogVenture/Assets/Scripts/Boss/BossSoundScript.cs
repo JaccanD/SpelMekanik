@@ -14,7 +14,8 @@ public class BossSoundScript : MonoBehaviour
     [SerializeField] private AudioClip bossSpit;
     [SerializeField] private AudioClip bossRapidAttack;
     [SerializeField] private AudioClip bossSuperAttack;
-    [SerializeField] private AudioClip bossChargeAttack;
+
+
 
 
 
@@ -23,9 +24,6 @@ public class BossSoundScript : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(BossShootingEvent), OnBossSpit);
         EventSystem.Current.RegisterListener(typeof(BossRapidAttackEvent), OnBossRapidAttack);
         EventSystem.Current.RegisterListener(typeof(BossSuperAttackEvent), OnBossSuperAttack);
-        EventSystem.Current.RegisterListener(typeof(BossChargeAttackEvent), OnBossChargeAttack);
-
-
     }
     public void OnBossSpit(Callback.Event eb)
     {
@@ -43,11 +41,5 @@ public class BossSoundScript : MonoBehaviour
     {
         bossSound.volume = 0.5f;
         bossSound.PlayOneShot(bossSuperAttack);
-    }
-
-    public void OnBossChargeAttack(Callback.Event eb)
-    {
-        bossSound.volume = 0.5f;
-        bossSound.PlayOneShot(bossChargeAttack);
     }
 }
