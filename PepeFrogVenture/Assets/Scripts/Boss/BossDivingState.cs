@@ -7,7 +7,6 @@ using Callback;
 // Author: Valter Fallsterljung
 public class BossDivingState : BossBaseState
 {
-    private Lilypads sinkTarget;
     [SerializeField] private float sinkSpeed = 1.5f;
     [SerializeField] private float rotationSpeed = 3;
     [SerializeField] private float threshold = 5f;

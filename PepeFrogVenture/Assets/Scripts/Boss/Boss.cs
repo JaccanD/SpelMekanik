@@ -43,10 +43,6 @@ public class Boss : MonoBehaviour
         LilyPadDestroyedEvent e = (LilyPadDestroyedEvent)eb;
         lilypads.Remove(e.Pad.GetComponent<DestroyableLilypad>());
     }
-    private void SinkAPad(Lilypads pad)
-    {
-        pad.setIsSInking(true);
-    }
     public List<DestroyableLilypad> GetLilyPads()
     {
         return lilypads;
