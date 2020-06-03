@@ -5189,6 +5189,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8731562429661222529, guid: e19b90aab62940c4d8c01678b26d257a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19b90aab62940c4d8c01678b26d257a, type: 3}
 --- !u!1001 &149791297
@@ -38397,6 +38402,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8731562429661222529, guid: e19b90aab62940c4d8c01678b26d257a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19b90aab62940c4d8c01678b26d257a, type: 3}
 --- !u!1001 &1020064468
@@ -60144,7 +60154,7 @@ GameObject:
   - component: {fileID: 1609819599}
   m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Log
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80120,6 +80130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731562429661222529, guid: e19b90aab62940c4d8c01678b26d257a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Log
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19b90aab62940c4d8c01678b26d257a, type: 3}
