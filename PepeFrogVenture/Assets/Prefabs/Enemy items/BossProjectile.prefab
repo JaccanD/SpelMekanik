@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossProjectileSplash: {fileID: 6415415615224806426, guid: 801b2b6fbd292dc43ab664acc344562a,
     type: 3}
+  maxLifeTime: 5
 --- !u!54 &-4494846106007385721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 2117089292416182288, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
       propertyPath: m_Name
-      value: ProjectileEffect 1
+      value: 'ProjectileEffect '
       objectReference: {fileID: 0}
     - target: {fileID: 4380099247912140626, guid: 67852224497a43749af0a7972b6f8c4c,
         type: 3}
