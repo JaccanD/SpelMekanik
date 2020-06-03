@@ -61,7 +61,9 @@ public class SpawnerController : MonoBehaviour
     private void SpawnFly(Vector3 spawnPoint, GameObject spawnTarget)
     {
         GameObject newFly = ObjectPooler.instance.GetPooledObject(fireFlyPrefab.tag);
-        newFly.transform.position = spawnPoint;
+        Vector3 random = Random.insideUnitSphere;
+        random.y = 0;
+        newFly.transform.position = spawnPoint + random.normalized;
         newFly.transform.rotation = transform.rotation;
         newFly.GetComponent<FireFlyOnDestroy>().Parent = spawnTarget;
         newFly.SetActive(true);
@@ -72,9 +74,6 @@ public class SpawnerController : MonoBehaviour
 
         spawners.Remove(e.Pad);
         IsOccupied.Remove(e.Pad);
-
-        //Debug.Log(spawners.Count);
-        //Debug.Log(IsOccupied.Count);
     }
     public void OnEatEvent(Callback.Event eb)
     {
