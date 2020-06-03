@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         EventSystem.Current.RegisterListener(typeof(BossDeadEvent), BossIsDead);
         EventSystem.Current.RegisterListener(typeof(BoosDyingEvent), BossDying);
         EventSystem.Current.RegisterListener(typeof(QuestDoneEvent), RemoveBerries);
-
+        Cursor.visible = false;
     }
     public bool CheckTounge()
     {
@@ -148,4 +148,6 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("Lvl3Slut");
     }
+    
+
 }
