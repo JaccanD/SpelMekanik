@@ -1539,13 +1539,13 @@ MonoBehaviour:
   model: {fileID: 3490864128880257204}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 33024
   cameraOffset: {x: 0, y: 2, z: -5}
   maxRotationX: 60
   minRotationX: -60
   hidePlayerDistance: 1
   collisionRadius: 0.3
-  skinWidth: 0.1
+  skinWidth: 0.3
   heigthOffset: 0.7
   mouseSensitivity: 1
   horizontalStickSensitivity: 2
@@ -2084,6 +2084,7 @@ MonoBehaviour:
   defaultSound: {fileID: 8300000, guid: e990aeaf0ae2c5c45bfaac47f50861cd, type: 3}
   stockSound: {fileID: 8300000, guid: 3e61453d4ce50f14d91792592e63dd24, type: 3}
   lilySound: {fileID: 8300000, guid: 52f0542c31dbbbe49b577fddd259136a, type: 3}
+  stoneSound: {fileID: 0}
 --- !u!114 &4107587235453292422
 MonoBehaviour:
   m_ObjectHideFlags: 0
