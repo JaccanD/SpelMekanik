@@ -25,7 +25,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         currentCool -= Time.deltaTime;
 
-        if (Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > stopAttackingDistance && currentCool <= 0)
+        if (!IsPlayerWithinAttackrange() && currentCool <= 0)
         {
             stateMachine.TransitionTo<EnemyChasePlayerState>();
         }
@@ -38,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         if (currentCool > 0)
             return;
-
+        
         EventSystem.Current.FireEvent(new Pushed(Enemy.player.gameObject, Enemy.transform.position, pushAmount, upPushAmount, attackStunDuration));
         EventSystem.Current.FireEvent(new PlayerHitEvent(Enemy.player.gameObject, Enemy.getDamage()));
         EventSystem.Current.FireEvent(new EnemyAttackingEvent(Enemy.gameObject));
@@ -47,5 +47,13 @@ public class EnemyAttackState : EnemyBaseState
     public override void Exit()
     {
         Enemy.agent.isStopped = false;
+    }
+    private bool IsPlayerWithinAttackrange()
+    {
+        if(Vector3.Distance(Enemy.transform.position, Enemy.player.transform.position) > stopAttackingDistance)
+        {
+            return false;
+        }
+        return true;
     }
 }

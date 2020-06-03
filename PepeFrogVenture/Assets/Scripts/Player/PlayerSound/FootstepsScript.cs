@@ -92,6 +92,7 @@ public class FootstepsScript : MonoBehaviour
         {
             grassParticle.Play();
             FootstepsSource.pitch = 1.4f;
+            FootstepsSource.volume = 0.2f;
             FootstepsSource.PlayOneShot(defaultSound);
         }
         if(groundTag == "Log")
